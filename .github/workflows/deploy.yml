@@ -45,7 +45,13 @@ jobs:
       - name: Build for E2E tests
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: http://localhost:3000
+          NEXT_PUBLIC_SITE_URL: http://localhost:3001
+      
+      - name: Start server for E2E tests
+        run: npx http-server out -p 3001 -s &
+        
+      - name: Wait for server
+        run: sleep 5
       
       - name: Run E2E tests
         run: npm run test:e2e
