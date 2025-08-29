@@ -1,0 +1,131 @@
+name: Deploy Blog to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  quality-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run ESLint
+        run: npm run lint
+      
+      - name: Run TypeScript check
+        run: npm run type-check
+      
+      - name: Run unit tests
+        run: npm run test:ci
+      
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      
+      - name: Build for E2E tests
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          CI: true
+
+  lighthouse-audit:
+    runs-on: ubuntu-latest
+    needs: quality-checks
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'yourusername.github.io' && 'https://yourusername.github.io' || format('https://yourusername.github.io/{0}', github.event.repository.name) }}
+      
+      - name: Serve site and run Lighthouse
+        run: |
+          npm run start &
+          sleep 5
+          npx lighthouse http://localhost:3000 --output json --output-path lighthouse-results.json --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"
+        
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: lighthouse-results.json
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: [quality-checks, lighthouse-audit]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Generate RSS feeds
+        run: npm run generate:rss
+      
+      - name: Generate sitemap
+        run: npm run generate:sitemap
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'yourusername.github.io' && 'https://yourusername.github.io' || format('https://yourusername.github.io/{0}', github.event.repository.name) }}
+      
+      - name: Build with Next.js
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'yourusername.github.io' && 'https://yourusername.github.io' || format('https://yourusername.github.io/{0}', github.event.repository.name) }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.GA_TRACKING_ID }}
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
