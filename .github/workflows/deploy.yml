@@ -83,12 +83,12 @@ jobs:
       - name: Generate sitemap
         run: npm run generate:sitemap
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'yourusername.github.io' && 'https://yourusername.github.io' || format('https://yourusername.github.io/{0}', github.event.repository.name) }}
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'neonwatty.github.io' && 'https://neonwatty.github.io' || format('https://neonwatty.github.io/{0}', github.event.repository.name) }}
       
       - name: Build with Next.js
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'yourusername.github.io' && 'https://yourusername.github.io' || format('https://yourusername.github.io/{0}', github.event.repository.name) }}
+          NEXT_PUBLIC_SITE_URL: ${{ github.event.repository.name == 'neonwatty.github.io' && 'https://neonwatty.github.io' || format('https://neonwatty.github.io/{0}', github.event.repository.name) }}
           NEXT_PUBLIC_GA_ID: ${{ secrets.GA_TRACKING_ID }}
       
       - name: Setup Pages
