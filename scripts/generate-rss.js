@@ -4,7 +4,7 @@ const path = require('path')
 // We need to dynamically import the ESM module
 async function importRSSModule() {
   const module = await import('../lib/rss.ts')
-  return module.generateRSSFiles
+  return module.generateRSSFiles || module.default?.generateRSSFiles
 }
 
 async function generateFeeds() {
@@ -12,7 +12,7 @@ async function generateFeeds() {
     console.log('Generating RSS feeds...')
     
     const generateRSSFiles = await importRSSModule()
-    const feeds = generateRSSFiles()
+    const feeds = await generateRSSFiles()
     const outputDir = path.join(process.cwd(), 'public')
     
     // Ensure public directory exists
