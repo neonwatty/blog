@@ -144,27 +144,38 @@ export default async function PostPage({ params }: PostPageProps) {
               dangerouslySetInnerHTML={{
                 __html: `
                   function copyCode(button) {
-                    const codeElement = button.closest('.code-block-container').querySelector('code');
-                    const codeText = decodeURIComponent(codeElement.dataset.code || codeElement.textContent);
+                    // Get the plain text from the button's data attribute or extract from code element
+                    let codeText = decodeURIComponent(button.dataset.code || '');
+                    
+                    if (!codeText) {
+                      const codeElement = button.closest('.code-block-container').querySelector('code');
+                      codeText = codeElement.textContent || codeElement.innerText || '';
+                      // Clean up the text by removing HTML entities and extra whitespace
+                      codeText = codeText.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").trim();
+                    }
                     
                     if (navigator.clipboard) {
                       navigator.clipboard.writeText(codeText).then(() => {
+                        const originalIcon = button.innerHTML;
                         button.innerHTML = '<svg class="w-4 h-4 text-green-500 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
                         setTimeout(() => {
-                          button.innerHTML = '<svg class="w-4 h-4 text-tertiary hover:text-primary transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>';
+                          button.innerHTML = originalIcon;
                         }, 2000);
                       });
                     } else {
                       // Fallback
                       const textArea = document.createElement('textarea');
                       textArea.value = codeText;
+                      textArea.style.position = 'fixed';
+                      textArea.style.opacity = '0';
                       document.body.appendChild(textArea);
                       textArea.select();
                       document.execCommand('copy');
                       document.body.removeChild(textArea);
+                      const originalIcon = button.innerHTML;
                       button.innerHTML = '<svg class="w-4 h-4 text-green-500 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
                       setTimeout(() => {
-                        button.innerHTML = '<svg class="w-4 h-4 text-tertiary hover:text-primary transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>';
+                        button.innerHTML = originalIcon;
                       }, 2000);
                     }
                   }

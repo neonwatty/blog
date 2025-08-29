@@ -2,7 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
-import html from 'remark-html'
+import remarkRehype from 'remark-rehype'
+import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeStringify from 'rehype-stringify'
 import readingTime from 'reading-time'
 
 // Ensure we only use fs on server side
@@ -11,15 +13,19 @@ const postsDirectory = isServer ? path.join(process.cwd(), 'posts') : ''
 
 // Function to enhance HTML code blocks with custom styling
 function enhanceCodeBlocks(html: string): string {
-  // Replace <pre><code class="language-x">...</code></pre> with custom markup
+  // Handle rehype-prism-plus generated code blocks with line numbers
   return html.replace(
-    /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g,
-    (match, language, code) => {
-      const decodedCode = code
+    /<div class="rehype-code-title"[^>]*>([\s\S]*?)<\/div>\s*<pre[^>]*><code class="language-(\w+)"[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+    (match, title, language, code) => {
+      // Extract plain text for copy functionality
+      const plainText = code
+        .replace(/<span[^>]*>/g, '')
+        .replace(/<\/span>/g, '')
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&amp;/g, '&')
         .replace(/&quot;/g, '"')
+        .replace(/&#x27;/g, "'")
         .trim()
       
       return `<div class="code-block-container">
@@ -33,7 +39,7 @@ function enhanceCodeBlocks(html: string): string {
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-medium text-tertiary bg-surface-secondary px-2 py-1 rounded-full">${language.toUpperCase()}</span>
-            <button class="copy-button" title="Copy code to clipboard" onclick="copyCode(this)">
+            <button class="copy-button" title="Copy code to clipboard" onclick="copyCode(this)" data-code="${encodeURIComponent(plainText)}">
               <svg class="w-4 h-4 text-tertiary hover:text-primary transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
               </svg>
@@ -41,19 +47,60 @@ function enhanceCodeBlocks(html: string): string {
           </div>
         </div>
         <div class="code-block-content">
-          <pre class="code-pre"><code class="language-${language}" data-code="${encodeURIComponent(decodedCode)}">${code}</code></pre>
+          <pre class="code-pre"><code class="language-${language}">${code}</code></pre>
         </div>
       </div>`
     }
   ).replace(
-    // Also handle code blocks without language
-    /<pre><code>([\s\S]*?)<\/code><\/pre>/g,
-    (match, code) => {
-      const decodedCode = code
+    // Handle regular code blocks without titles
+    /<pre[^>]*><code class="language-(\w+)"[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+    (match, language, code) => {
+      // Extract plain text for copy functionality
+      const plainText = code
+        .replace(/<span[^>]*>/g, '')
+        .replace(/<\/span>/g, '')
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&amp;/g, '&')
         .replace(/&quot;/g, '"')
+        .replace(/&#x27;/g, "'")
+        .trim()
+      
+      return `<div class="code-block-container">
+        <div class="code-block-header">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-medium text-tertiary bg-surface-secondary px-2 py-1 rounded-full">${language.toUpperCase()}</span>
+            <button class="copy-button" title="Copy code to clipboard" onclick="copyCode(this)" data-code="${encodeURIComponent(plainText)}">
+              <svg class="w-4 h-4 text-tertiary hover:text-primary transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="code-block-content">
+          <pre class="code-pre"><code class="language-${language}">${code}</code></pre>
+        </div>
+      </div>`
+    }
+  ).replace(
+    // Handle code blocks without language
+    /<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+    (match, code) => {
+      const plainText = code
+        .replace(/<span[^>]*>/g, '')
+        .replace(/<\/span>/g, '')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&quot;/g, '"')
+        .replace(/&#x27;/g, "'")
         .trim()
       
       return `<div class="code-block-container">
@@ -67,7 +114,7 @@ function enhanceCodeBlocks(html: string): string {
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-medium text-tertiary bg-surface-secondary px-2 py-1 rounded-full">CODE</span>
-            <button class="copy-button" title="Copy code to clipboard" onclick="copyCode(this)">
+            <button class="copy-button" title="Copy code to clipboard" onclick="copyCode(this)" data-code="${encodeURIComponent(plainText)}">
               <svg class="w-4 h-4 text-tertiary hover:text-primary transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
               </svg>
@@ -75,7 +122,7 @@ function enhanceCodeBlocks(html: string): string {
           </div>
         </div>
         <div class="code-block-content">
-          <pre class="code-pre"><code data-code="${encodeURIComponent(decodedCode)}">${code}</code></pre>
+          <pre class="code-pre"><code>${code}</code></pre>
         </div>
       </div>`
     }
@@ -177,8 +224,15 @@ export async function getPostData(id: string): Promise<PostData | null> {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
   
-  // Process markdown content to HTML
-  const processedContent = await remark().use(html).process(matterResult.content)
+  // Process markdown content to HTML with syntax highlighting
+  const processedContent = await remark()
+    .use(remarkRehype)
+    .use(rehypePrismPlus, {
+      ignoreMissing: true,
+      showLineNumbers: false
+    })
+    .use(rehypeStringify)
+    .process(matterResult.content)
   let contentHtml = processedContent.toString()
   
   // Post-process to enhance code blocks

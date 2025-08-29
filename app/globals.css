@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Prism CSS for syntax highlighting */
+@import 'prismjs/themes/prism-tomorrow.css';
+
 @layer base {
   :root {
     /* Primary Brand Colors */
@@ -594,18 +597,43 @@
 
 .code-pre {
   @apply m-0 p-4;
-  margin-left: 3rem; /* Account for line numbers */
   background: transparent !important;
   font-family: inherit;
   font-size: 0.875rem;
   line-height: 1.5;
+  text-align: left;
+  overflow-x: auto;
 }
 
 .code-block-content .code-pre code {
   background: transparent !important;
-  color: inherit !important;
+  color: var(--color-text-primary) !important;
   font-family: inherit !important;
   font-size: inherit !important;
+  text-align: left !important;
+  white-space: pre;
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Force all code blocks to be left-aligned */
+.code-block-container pre,
+.code-block-container code,
+.code-block-content pre,
+.code-block-content code {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Override any prose styles that might affect code blocks */
+.prose .code-block-container pre,
+.prose .code-block-container code {
+  text-align: left !important;
+  margin: 0 !important;
 }
 
 /* Custom Prism theme overrides */

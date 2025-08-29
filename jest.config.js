@@ -22,7 +22,7 @@ const customJestConfig = {
     '<rootDir>/tests/e2e/',
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(remark|remark-html|remark-parse|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-from-markdown|mdast-util-to-markdown|mdast-util-to-hast|hast-util-to-html)/)'
+    'node_modules/(?!(remark|remark-html|remark-parse|remark-rehype|rehype-prism-plus|rehype-stringify|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-.*|hast-util-.*|unist-.*)/)'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
