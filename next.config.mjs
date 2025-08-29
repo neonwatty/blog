@@ -8,10 +8,7 @@ const nextConfig = {
     unoptimized: true,
     formats: ['image/webp', 'image/avif']
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  // Disable SWC for Jest tests
-  swcMinify: process.env.NODE_ENV !== 'test',
-  compiler: process.env.NODE_ENV === 'test' ? undefined : {}
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
 }
 
 const withMDX = createMDX({
