@@ -70,5 +70,8 @@
     "postcss": "^8.5.6",
     "serve": "^14.2.4",
     "typescript": "^5.9.2"
+  },
+  "optionalDependencies": {
+    "@next/swc-darwin-arm64": "^15.5.2"
   }
 }

@@ -8,7 +8,8 @@ const nextConfig = {
     unoptimized: true,
     formats: ['image/webp', 'image/avif']
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  outputFileTracingRoot: process.cwd(), // Fix workspace root warning
 }
 
 const withMDX = createMDX({
