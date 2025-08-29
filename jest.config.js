@@ -27,7 +27,7 @@ const customJestConfig = {
     '<rootDir>/node_modules/',
     '<rootDir>/tests/e2e/',
   ],
-  moduleNameMapping: {
+  moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
 }
