@@ -10,9 +10,9 @@ const customJestConfig = {
   collectCoverageFrom: [
     'components/**/*.{js,jsx,ts,tsx}',
     'lib/**/*.{js,jsx,ts,tsx}',
-    'app/**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!app/**/*.{js,jsx,ts,tsx}', // Exclude Next.js app directory
   ],
   coverageThreshold: {
     global: {
