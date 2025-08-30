@@ -39,7 +39,7 @@ export default function Home() {
               Archive of all blog posts
             </h1>
             <div className="w-24 h-px mx-auto mb-8 transition-all duration-300"
-                 style={{ background: 'var(--gradient-subtle)' }}></div>
+                 style={{ background: 'var(--gradient-professional)', boxShadow: 'var(--shadow-professional)' }}></div>
             <p className="text-xl font-medium transition-all duration-300"
                style={{ 
                  color: 'var(--color-text-secondary)',
@@ -64,7 +64,7 @@ export default function Home() {
                     {year}
                   </h2>
                   <div className="flex-grow h-px ml-8 transition-all duration-300"
-                       style={{ background: 'var(--gradient-subtle)' }}></div>
+                       style={{ background: 'var(--gradient-hero)', boxShadow: 'var(--shadow-professional)' }}></div>
                 </div>
                 
                 <div className="space-y-10">
@@ -103,12 +103,6 @@ export default function Home() {
                                     color: 'var(--color-text-primary)',
                                     letterSpacing: '-0.02em'
                                   }}
-                                  onMouseEnter={(e) => {
-                                    e.currentTarget.style.color = 'var(--color-accent-hover)';
-                                  }}
-                                  onMouseLeave={(e) => {
-                                    e.currentTarget.style.color = 'var(--color-text-primary)';
-                                  }}
                                 >
                                   {post.title}
                                 </Link>
@@ -131,22 +125,9 @@ export default function Home() {
                                       <Link
                                         key={tag}
                                         href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                                        className="px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105"
-                                        style={{
-                                          background: 'var(--gradient-subtle)',
-                                          border: '1px solid var(--color-border-subtle)',
-                                          color: 'var(--color-text-secondary)'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                          e.currentTarget.style.boxShadow = 'var(--shadow-subtle)';
-                                          e.currentTarget.style.color = 'var(--color-accent-hover)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                          e.currentTarget.style.boxShadow = 'none';
-                                          e.currentTarget.style.color = 'var(--color-text-secondary)';
-                                        }}
+                                        className="tag-badge focus-indigo"
                                       >
-                                        #{tag}
+                                        {tag}
                                       </Link>
                                     ))}
                                   </div>

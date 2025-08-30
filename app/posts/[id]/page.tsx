@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
 import { getPostData, getAllPostIds } from '@/lib/posts'
 import { format } from 'date-fns'
 import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ReadingProgress from '@/components/ReadingProgress'
+import CodeBlockClient from '@/components/CodeBlockClient'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
 interface PostPageProps {
   params: Promise<{
@@ -73,6 +75,8 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <>
       <StructuredData post={post} type="article" />
+      <ReadingProgress target="article" />
+      <CodeBlockClient />
       
       <div className="min-h-screen flex flex-col transition-all duration-300"
            style={{ background: 'var(--color-background-primary)' }}>
@@ -109,22 +113,9 @@ export default async function PostPage({ params }: PostPageProps) {
                       <Link
                         key={tag}
                         href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                        className="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
-                        style={{
-                          background: 'var(--gradient-subtle)',
-                          border: '1px solid var(--color-border-subtle)',
-                          color: 'var(--color-text-secondary)'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.boxShadow = 'var(--shadow-subtle)';
-                          e.currentTarget.style.color = 'var(--color-accent-hover)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.boxShadow = 'none';
-                          e.currentTarget.style.color = 'var(--color-text-secondary)';
-                        }}
+                        className="tag-badge focus-indigo"
                       >
-                        #{tag}
+                        {tag}
                       </Link>
                     ))}
                   </div>
@@ -133,7 +124,7 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-xl max-w-none mb-20"
+            <div className="prose prose-xl max-w-none mb-20 prose-content"
                  style={{ 
                    color: 'var(--color-text-secondary)',
                    lineHeight: '1.8'
@@ -153,12 +144,6 @@ export default async function PostPage({ params }: PostPageProps) {
                       href="#" 
                       className="transition-all duration-300 relative"
                       style={{ color: 'var(--color-text-primary)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = 'var(--color-accent-hover)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = 'var(--color-text-primary)';
-                      }}
                     >
                       GitHub
                     </a>
@@ -171,12 +156,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     className="font-medium transition-all duration-300 relative group"
                     style={{ color: 'var(--color-text-secondary)' }}
                   >
-                    <span onMouseEnter={(e) => {
-                            e.currentTarget.style.color = 'var(--color-accent-hover)';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.color = 'var(--color-text-secondary)';
-                          }}>
+                    <span>
                       Edit this post
                     </span>
                     <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"

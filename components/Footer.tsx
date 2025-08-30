@@ -28,12 +28,7 @@ export default function Footer() {
               style={{ color: 'var(--color-text-secondary)' }}
             >
               <span className="transition-all duration-300"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--color-accent-hover)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--color-text-secondary)';
-                    }}>
+>
                 RSS
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
@@ -45,12 +40,7 @@ export default function Footer() {
               style={{ color: 'var(--color-text-secondary)' }}
             >
               <span className="transition-all duration-300"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--color-accent-hover)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--color-text-secondary)';
-                    }}>
+>
                 GitHub
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
@@ -62,12 +52,7 @@ export default function Footer() {
               style={{ color: 'var(--color-text-secondary)' }}
             >
               <span className="transition-all duration-300"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--color-accent-hover)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--color-text-secondary)';
-                    }}>
+>
                 Twitter
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"

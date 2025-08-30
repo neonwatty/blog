@@ -22,9 +22,9 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105"
                  style={{
-                   background: 'var(--gradient-subtle)',
-                   border: '2px solid var(--color-border-secondary)',
-                   boxShadow: 'var(--shadow-subtle)'
+                   background: 'var(--gradient-professional)',
+                   border: '2px solid var(--color-accent-primary)',
+                   boxShadow: 'var(--shadow-professional)'
                  }}>
               <svg className="w-8 h-8 transition-colors duration-300" 
                    style={{ color: 'var(--color-text-tertiary)' }}
@@ -66,12 +66,7 @@ export default function Header() {
                       style={{ 
                         color: 'var(--color-text-secondary)'
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = 'var(--color-accent-hover)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = 'var(--color-text-secondary)';
-                      }}>
+>
                   {item.name}
                 </span>
                 <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
@@ -85,12 +80,7 @@ export default function Header() {
               style={{ color: 'var(--color-text-secondary)' }}
             >
               <span className="group-hover:text-opacity-100 transition-all duration-300"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--color-accent-hover)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--color-text-secondary)';
-                    }}>
+>
                 RSS
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
