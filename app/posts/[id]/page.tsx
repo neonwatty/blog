@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <>
       <StructuredData post={post} type="article" />
       
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors">
         <Header />
         
         <main className="flex-grow">
@@ -82,12 +82,12 @@ export default async function PostPage({ params }: PostPageProps) {
             {/* Article Header */}
             <header className="mb-12">
               {/* Title */}
-              <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors">
                 {post.title}
               </h1>
 
               {/* Meta info */}
-              <div className="flex items-center text-gray-500 text-sm mb-6">
+              <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-6 transition-colors">
                 <time dateTime={post.date} className="mr-6">
                   {formattedDate}
                 </time>
@@ -98,7 +98,7 @@ export default async function PostPage({ params }: PostPageProps) {
                       <Link
                         key={tag}
                         href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                        className="hover:text-gray-700"
+                        className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                       >
                         #{tag}
                       </Link>
@@ -109,21 +109,21 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg dark:prose-invert max-w-none">
               <div 
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
 
             {/* Article Footer */}
-            <footer className="mt-16 pt-8 border-t border-gray-200">
-              <div className="flex justify-between items-center text-sm text-gray-500">
+            <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 transition-colors">
+              <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 transition-colors">
                 <div>
                   <p>
                     Every commit lands on{' '}
                     <a 
                       href="#" 
-                      className="text-gray-700 hover:text-gray-900 transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
                     >
                       GitHub
                     </a>
@@ -133,18 +133,18 @@ export default async function PostPage({ params }: PostPageProps) {
                 <div>
                   <a 
                     href="#"
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     Edit this post
                   </a>
                 </div>
               </div>
               
-              <div className="mt-6 pt-6 border-t border-gray-100">
-                <p className="text-xs text-gray-400 mb-2">
+              <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800 transition-colors">
+                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2 transition-colors">
                   Steal this post
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">
                   This work is licensed under a Creative Commons License.
                 </p>
               </div>

@@ -11,6 +11,12 @@
     line-height: 1.6;
     color: #374151;
     background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark body {
+    color: #d1d5db;
+    background-color: #111827;
   }
   
   /* Typography */
@@ -18,15 +24,29 @@
     color: #111827;
     font-weight: 600;
     line-height: 1.3;
+    transition: color 0.3s ease;
+  }
+  
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #ffffff;
   }
   
   a {
     color: #374151;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
   
   a:hover {
     color: #111827;
+  }
+  
+  .dark a {
+    color: #d1d5db;
+  }
+  
+  .dark a:hover {
+    color: #ffffff;
   }
   
   /* Code blocks */
@@ -38,6 +58,12 @@
     overflow-x: auto;
     font-size: 0.875rem;
     line-height: 1.5;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .dark pre {
+    background: #1f2937 !important;
+    border-color: #374151;
   }
   
   code {
@@ -46,12 +72,65 @@
     border-radius: 0.25rem;
     font-size: 0.875rem;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dark code {
+    background: #374151;
+    color: #e5e7eb;
   }
   
   pre code {
     background: transparent;
     padding: 0;
     border-radius: 0;
+  }
+  
+  /* Prose styles for dark mode */
+  .dark .prose {
+    color: #d1d5db;
+  }
+  
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose h5,
+  .dark .prose h6 {
+    color: #ffffff;
+  }
+  
+  .dark .prose strong {
+    color: #ffffff;
+  }
+  
+  .dark .prose a {
+    color: #60a5fa;
+  }
+  
+  .dark .prose a:hover {
+    color: #93c5fd;
+  }
+  
+  .dark .prose blockquote {
+    border-left-color: #374151;
+    color: #9ca3af;
+  }
+  
+  .dark .prose hr {
+    border-color: #374151;
+  }
+  
+  .dark .prose table {
+    background-color: #1f2937;
+  }
+  
+  .dark .prose thead {
+    border-bottom-color: #374151;
+  }
+  
+  .dark .prose tbody tr {
+    border-bottom-color: #374151;
   }
 }
 

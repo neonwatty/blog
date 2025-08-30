@@ -13,12 +13,12 @@ export default function About() {
     <>
       <StructuredData type="website" />
       
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors">
         <Header />
         
         <main className="flex-grow">
           <div className="max-w-4xl mx-auto px-4 py-16">
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg dark:prose-invert max-w-none">
               <h1>About</h1>
               
               <p>

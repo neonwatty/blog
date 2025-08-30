@@ -3,6 +3,7 @@ import { Inter, Poppins, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Toaster } from 'react-hot-toast'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -85,23 +86,25 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans`}>
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        {children}
-        <Toaster 
-          position="top-right"
-          toastOptions={{
-            duration: 3000,
-            style: {
-              background: 'var(--color-surface-primary)',
-              color: 'var(--color-text-primary)',
-              border: '1px solid var(--color-border-primary)',
-            },
-          }}
-        />
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          {children}
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: 'var(--color-surface-primary)',
+                color: 'var(--color-text-primary)',
+                border: '1px solid var(--color-border-primary)',
+              },
+            }}
+          />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   )
