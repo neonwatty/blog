@@ -18,40 +18,15 @@ export default function Header() {
             }}>
       <nav className="max-w-4xl mx-auto px-4 py-4" aria-label="Top">
         <div className="flex items-center justify-between">
-          {/* Personal branding with avatar */}
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105"
-                 style={{
-                   background: 'var(--gradient-professional)',
-                   border: '2px solid var(--color-accent-primary)',
-                   boxShadow: 'var(--shadow-professional)'
-                 }}>
-              <svg className="w-8 h-8 transition-colors duration-300" 
-                   style={{ color: 'var(--color-text-tertiary)' }}
-                   fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div>
-              <Link href="/" className="block group">
-                <div className="font-bold text-lg transition-all duration-300 group-hover:letter-spacing-wide"
-                     style={{ 
-                       color: 'var(--color-text-primary)',
-                       letterSpacing: '-0.02em',
-                       textShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
-                     }}>
-                  Your Name
-                </div>
-                <div className="text-sm font-medium transition-all duration-300"
-                     style={{ 
-                       color: 'var(--color-text-secondary)',
-                       letterSpacing: '-0.01em'
-                     }}>
-                  AI-powered tools from web roots
-                </div>
-              </Link>
-            </div>
-          </div>
+          {/* Simple logo/home link */}
+          <Link href="/" className="font-bold text-lg transition-all duration-300"
+                style={{ 
+                  color: 'var(--color-text-primary)',
+                  letterSpacing: '-0.02em',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
+                }}>
+            Blog
+          </Link>
 
           {/* Simple navigation */}
           <div className="flex items-center space-x-8">
