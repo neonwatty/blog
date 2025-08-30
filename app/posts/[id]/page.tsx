@@ -74,31 +74,55 @@ export default async function PostPage({ params }: PostPageProps) {
     <>
       <StructuredData post={post} type="article" />
       
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen flex flex-col transition-all duration-300"
+           style={{ background: 'var(--color-background-primary)' }}>
         <Header />
         
         <main className="flex-grow">
-          <article className="max-w-4xl mx-auto px-4 py-16">
+          <article className="max-w-4xl mx-auto px-4 py-20">
             {/* Article Header */}
-            <header className="mb-12">
+            <header className="mb-16">
               {/* Title */}
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors">
+              <h1 className="text-5xl font-extrabold mb-6 leading-tight transition-all duration-300"
+                  style={{ 
+                    color: 'var(--color-text-primary)',
+                    letterSpacing: '-0.04em',
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+                  }}>
                 {post.title}
               </h1>
 
+              {/* Divider */}
+              <div className="w-24 h-px mb-8 transition-all duration-300"
+                   style={{ background: 'var(--gradient-subtle)' }}></div>
+
               {/* Meta info */}
-              <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-6 transition-colors">
-                <time dateTime={post.date} className="mr-6">
+              <div className="flex items-center text-base mb-8 transition-all duration-300 space-x-8"
+                   style={{ color: 'var(--color-text-secondary)' }}>
+                <time dateTime={post.date} className="font-medium">
                   {formattedDate}
                 </time>
-                <span className="mr-6">{post.readingTime}</span>
+                <span className="font-medium">{post.readingTime}</span>
                 {post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {post.tags.map((tag) => (
                       <Link
                         key={tag}
                         href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                        className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                        className="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
+                        style={{
+                          background: 'var(--gradient-subtle)',
+                          border: '1px solid var(--color-border-subtle)',
+                          color: 'var(--color-text-secondary)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.boxShadow = 'var(--shadow-subtle)';
+                          e.currentTarget.style.color = 'var(--color-accent-hover)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.boxShadow = 'none';
+                          e.currentTarget.style.color = 'var(--color-text-secondary)';
+                        }}
                       >
                         #{tag}
                       </Link>
@@ -109,21 +133,32 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <div 
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+            <div className="prose prose-xl max-w-none mb-20"
+                 style={{ 
+                   color: 'var(--color-text-secondary)',
+                   lineHeight: '1.8'
+                 }}>
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
             {/* Article Footer */}
-            <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 transition-colors">
-              <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 transition-colors">
+            <footer className="mt-20 pt-12 transition-all duration-300"
+                    style={{ borderTop: '1px solid var(--color-border-primary)' }}>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-base mb-8 transition-all duration-300 space-y-4 md:space-y-0"
+                   style={{ color: 'var(--color-text-secondary)' }}>
                 <div>
-                  <p>
+                  <p className="font-medium">
                     Every commit lands on{' '}
                     <a 
                       href="#" 
-                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                      className="transition-all duration-300 relative"
+                      style={{ color: 'var(--color-text-primary)' }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'var(--color-accent-hover)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'var(--color-text-primary)';
+                      }}
                     >
                       GitHub
                     </a>
@@ -133,18 +168,35 @@ export default async function PostPage({ params }: PostPageProps) {
                 <div>
                   <a 
                     href="#"
-                    className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="font-medium transition-all duration-300 relative group"
+                    style={{ color: 'var(--color-text-secondary)' }}
                   >
-                    Edit this post
+                    <span onMouseEnter={(e) => {
+                            e.currentTarget.style.color = 'var(--color-accent-hover)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color = 'var(--color-text-secondary)';
+                          }}>
+                      Edit this post
+                    </span>
+                    <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
+                          style={{ background: 'var(--color-border-primary)' }}></span>
                   </a>
                 </div>
               </div>
               
-              <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800 transition-colors">
-                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2 transition-colors">
+              <div className="mt-8 pt-8 transition-all duration-300"
+                   style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
+                <p className="text-xs font-medium mb-3 transition-all duration-300"
+                   style={{ 
+                     color: 'var(--color-text-tertiary)',
+                     letterSpacing: '0.05em',
+                     textTransform: 'uppercase'
+                   }}>
                   Steal this post
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">
+                <p className="text-base transition-all duration-300"
+                   style={{ color: 'var(--color-text-secondary)' }}>
                   This work is licensed under a Creative Commons License.
                 </p>
               </div>
