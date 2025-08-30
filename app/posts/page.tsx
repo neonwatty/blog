@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { format } from 'date-fns'
 
-export default function Home() {
+export default function PostsPage() {
   const allPostsData = getSortedPostsData()
   
   // Group posts by year
@@ -26,14 +26,11 @@ export default function Home() {
       <Header />
       
       <main className="flex-grow">
-        {/* Simple hero section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Archive of all blog posts
-            </h1>
+          <div className="mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Posts</h1>
             <p className="text-lg text-gray-600">
-              iOS, Swift, web development, and open source insights.
+              All blog posts, organized chronologically.
             </p>
           </div>
 

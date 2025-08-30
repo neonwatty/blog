@@ -1,13 +1,11 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { getPostData, getAllPostIds, getRelatedPosts } from '@/lib/posts'
+import { getPostData, getAllPostIds } from '@/lib/posts'
 import { format } from 'date-fns'
 import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import BlogCard from '@/components/BlogCard'
-import SocialShare from '@/components/SocialShare'
-import ReadingProgress from '@/components/ReadingProgress'
+import Link from 'next/link'
 
 interface PostPageProps {
   params: Promise<{
@@ -70,151 +68,88 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound()
   }
 
-  const relatedPosts = getRelatedPosts(post.id, 3)
   const formattedDate = format(new Date(post.date), 'MMMM d, yyyy')
 
   return (
     <>
       <StructuredData post={post} type="article" />
       
-      <div className="min-h-screen flex flex-col">
-        <ReadingProgress target="#main-content" size="normal" />
-        <ReadingProgress variant="circular" showPercentage />
+      <div className="min-h-screen flex flex-col bg-white">
         <Header />
         
-        <main id="main-content" className="flex-grow">
-          <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main className="flex-grow">
+          <article className="max-w-4xl mx-auto px-4 py-16">
             {/* Article Header */}
-            <header className="mb-8">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <span 
-                    key={tag}
-                    className="text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
+            <header className="mb-12">
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 {post.title}
               </h1>
 
               {/* Meta info */}
-              <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 mb-6">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  <time dateTime={post.date}>{formattedDate}</time>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  <span>{post.readingTime}</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
-                  </svg>
-                  <span>{post.author}</span>
-                </div>
+              <div className="flex items-center text-gray-500 text-sm mb-6">
+                <time dateTime={post.date} className="mr-6">
+                  {formattedDate}
+                </time>
+                <span className="mr-6">{post.readingTime}</span>
+                {post.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <Link
+                        key={tag}
+                        href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
+                        className="hover:text-gray-700"
+                      >
+                        #{tag}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-
-              {/* Social sharing */}
-              <SocialShare 
-                title={post.title}
-                url={`/posts/${post.id}`}
-                postId={post.id}
-              />
             </header>
 
             {/* Article Content */}
-            <div 
-              className="prose prose-lg dark:prose-invert max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-
-            {/* Code copy functionality script */}
-            <script 
-              dangerouslySetInnerHTML={{
-                __html: `
-                  function copyCode(button) {
-                    // Get the plain text from the button's data attribute or extract from code element
-                    let codeText = decodeURIComponent(button.dataset.code || '');
-                    
-                    if (!codeText) {
-                      const codeElement = button.closest('.code-block-container').querySelector('code');
-                      codeText = codeElement.textContent || codeElement.innerText || '';
-                      // Clean up the text by removing HTML entities and extra whitespace
-                      codeText = codeText.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").trim();
-                    }
-                    
-                    if (navigator.clipboard) {
-                      navigator.clipboard.writeText(codeText).then(() => {
-                        const originalIcon = button.innerHTML;
-                        button.innerHTML = '<svg class="w-4 h-4 text-green-500 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
-                        setTimeout(() => {
-                          button.innerHTML = originalIcon;
-                        }, 2000);
-                      });
-                    } else {
-                      // Fallback
-                      const textArea = document.createElement('textarea');
-                      textArea.value = codeText;
-                      textArea.style.position = 'fixed';
-                      textArea.style.opacity = '0';
-                      document.body.appendChild(textArea);
-                      textArea.select();
-                      document.execCommand('copy');
-                      document.body.removeChild(textArea);
-                      const originalIcon = button.innerHTML;
-                      button.innerHTML = '<svg class="w-4 h-4 text-green-500 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
-                      setTimeout(() => {
-                        button.innerHTML = originalIcon;
-                      }, 2000);
-                    }
-                  }
-                  
-                  // Initialize Prism highlighting for enhanced code blocks
-                  if (typeof Prism !== 'undefined') {
-                    document.querySelectorAll('.code-block-container code[class*="language-"]').forEach(el => {
-                      Prism.highlightElement(el);
-                    });
-                  }
-                `
-              }}
-            />
+            <div className="prose prose-lg max-w-none">
+              <div 
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
 
             {/* Article Footer */}
-            <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <SocialShare 
-                title={post.title}
-                url={`/posts/${post.id}`}
-                postId={post.id}
-              />
-            </footer>
-          </article>
-
-          {/* Related Posts */}
-          {relatedPosts.length > 0 && (
-            <section className="bg-gray-50 dark:bg-gray-800 py-12">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-                  Related Posts
-                </h2>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  {relatedPosts.map((relatedPost) => (
-                    <BlogCard key={relatedPost.id} post={relatedPost} />
-                  ))}
+            <footer className="mt-16 pt-8 border-t border-gray-200">
+              <div className="flex justify-between items-center text-sm text-gray-500">
+                <div>
+                  <p>
+                    Every commit lands on{' '}
+                    <a 
+                      href="#" 
+                      className="text-gray-700 hover:text-gray-900 transition-colors"
+                    >
+                      GitHub
+                    </a>
+                    {' '}for you to fork & remix.
+                  </p>
+                </div>
+                <div>
+                  <a 
+                    href="#"
+                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                  >
+                    Edit this post
+                  </a>
                 </div>
               </div>
-            </section>
-          )}
+              
+              <div className="mt-6 pt-6 border-t border-gray-100">
+                <p className="text-xs text-gray-400 mb-2">
+                  Steal this post
+                </p>
+                <p className="text-sm text-gray-600">
+                  This work is licensed under a Creative Commons License.
+                </p>
+              </div>
+            </footer>
+          </article>
         </main>
 
         <Footer />
