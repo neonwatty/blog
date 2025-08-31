@@ -21,7 +21,7 @@ export default function About() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <div className="mb-4 text-center">
                 <img 
-                  src="https://neonwatty.com/assets/images/image01.jpg?v=865be4d0" 
+                  src="/images/jeremy-watt-headshot.jpg" 
                   alt="Jeremy Watt" 
                   className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-indigo-200 dark:border-indigo-700 shadow-xl mb-6"
                 />

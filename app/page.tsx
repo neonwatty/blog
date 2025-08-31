@@ -41,7 +41,7 @@ export default function Home() {
               {/* Profile Image */}
               <div className="flex-shrink-0">
                 <img 
-                  src="https://neonwatty.com/assets/images/image01.jpg?v=865be4d0"
+                  src="/images/jeremy-watt-headshot.jpg"
                   alt="Jeremy Watt"
                   className="w-40 h-40 rounded-full object-cover border-4 border-white/20 shadow-xl transition-all duration-300 hover:scale-105"
                 />
