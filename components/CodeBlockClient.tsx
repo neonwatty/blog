@@ -59,6 +59,7 @@ export default function CodeBlockClient() {
     // Cleanup
     return () => {
       if (typeof window !== 'undefined') {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         delete (window as any).copyCode
       }
     }

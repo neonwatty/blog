@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Header from '@/components/Header'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 // Mock Next.js router
 jest.mock('next/navigation', () => ({
@@ -10,35 +11,44 @@ jest.mock('next/navigation', () => ({
   usePathname: () => '/'
 }))
 
+// Helper function to render with ThemeProvider
+const renderWithTheme = (component: React.ReactElement) => {
+  return render(
+    <ThemeProvider>
+      {component}
+    </ThemeProvider>
+  )
+}
+
 describe('Header Component', () => {
   test('renders header with title', () => {
-    render(<Header />)
-    expect(screen.getByText('ModernBlog')).toBeInTheDocument()
+    renderWithTheme(<Header />)
+    expect(screen.getByText('Blog')).toBeInTheDocument()
   })
 
   test('renders navigation links', () => {
-    render(<Header />)
-    expect(screen.getByText('Home')).toBeInTheDocument()
+    renderWithTheme(<Header />)
+    expect(screen.getByText('Posts')).toBeInTheDocument()
     expect(screen.getByText('About')).toBeInTheDocument()
-    expect(screen.getByText('Tags')).toBeInTheDocument()
+    expect(screen.getByText('Search')).toBeInTheDocument()
     expect(screen.getByText('RSS')).toBeInTheDocument()
   })
 
   test('has proper link attributes', () => {
-    render(<Header />)
-    const homeLink = screen.getByRole('link', { name: 'Home' })
+    renderWithTheme(<Header />)
     const aboutLink = screen.getByRole('link', { name: 'About' })
-    const tagsLink = screen.getByRole('link', { name: 'Tags' })
+    const postsLink = screen.getByRole('link', { name: 'Posts' })
+    const searchLink = screen.getByRole('link', { name: 'Search' })
     const rssLink = screen.getByRole('link', { name: 'RSS' })
     
-    expect(homeLink).toHaveAttribute('href', '/')
+    expect(postsLink).toHaveAttribute('href', '/posts')
     expect(aboutLink).toHaveAttribute('href', '/about')
-    expect(tagsLink).toHaveAttribute('href', '/tags')
+    expect(searchLink).toHaveAttribute('href', '/search')
     expect(rssLink).toHaveAttribute('href', '/rss.xml')
   })
 
   test('renders with responsive design classes', () => {
-    render(<Header />)
+    renderWithTheme(<Header />)
     const header = screen.getByRole('banner')
     expect(header).toBeInTheDocument()
   })

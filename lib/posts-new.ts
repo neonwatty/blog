@@ -1,4 +1,5 @@
 // Simplified function to enhance HTML code blocks with custom styling
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function enhanceCodeBlocks(html: string): string {
   // Handle the actual structure we found: <pre class="language-python"><code class="language-python code-highlight">
   return html.replace(
