@@ -4,8 +4,6 @@ import { format } from 'date-fns'
 import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ReadingProgress from '@/components/ReadingProgress'
-import CodeBlockClient from '@/components/CodeBlockClient'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -75,8 +73,6 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <>
       <StructuredData post={post} type="article" />
-      <ReadingProgress target="article" />
-      <CodeBlockClient />
       
       <div className="min-h-screen flex flex-col transition-all duration-300"
            style={{ background: 'var(--color-background-primary)' }}>

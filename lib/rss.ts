@@ -6,7 +6,7 @@ export function generateRSSFeed() {
   const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
   
   const feed = new Feed({
-    title: 'Jeremy Watt's Blog',
+    title: 'Jeremy Watt\'s Blog',
     description: 'A modern, performant blog built with Next.js',
     id: siteURL,
     link: siteURL,

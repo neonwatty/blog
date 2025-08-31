@@ -12,7 +12,7 @@ test.describe('Basic functionality', () => {
   })
 
   test('blog post page loads successfully', async ({ page }) => {
-    const response = await page.goto('/posts/getting-started-with-nextjs/')
+    const response = await page.goto('/posts/getting-started-with-nextjs')
     
     // Check page loads with 200 status
     expect(response?.status()).toBe(200)

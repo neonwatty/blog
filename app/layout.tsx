@@ -27,8 +27,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Jeremy Watt's Blog',
-    template: '%s | Jeremy Watt's Blog'
+    default: 'Jeremy Watt\'s Blog',
+    template: '%s | Jeremy Watt\'s Blog'
   },
   description: 'A modern, performant blog built with Next.js',
   keywords: ['blog', 'next.js', 'typescript', 'tailwind'],
@@ -39,21 +39,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
-    siteName: 'Jeremy Watt's Blog',
-    title: 'Jeremy Watt's Blog',
+    siteName: 'Jeremy Watt\'s Blog',
+    title: 'Jeremy Watt\'s Blog',
     description: 'A modern, performant blog built with Next.js',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jeremy Watt's Blog',
+        alt: 'Jeremy Watt\'s Blog',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeremy Watt's Blog',
+    title: 'Jeremy Watt\'s Blog',
     description: 'A modern, performant blog built with Next.js',
     images: ['/images/og-image.jpg'],
   },
