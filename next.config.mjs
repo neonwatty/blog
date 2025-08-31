@@ -4,8 +4,8 @@ import createMDX from '@next/mdx'
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/modern-nextjs-blog' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/modern-nextjs-blog' : '',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
     formats: ['image/webp', 'image/avif']
