@@ -104,6 +104,28 @@ export default function RootLayout({
           />
           <Analytics />
           <SpeedInsights />
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              // Add captions to liars-dice images
+              document.addEventListener('DOMContentLoaded', function() {
+                const liarsDiceImages = document.querySelectorAll('img[src*="liars-dice"]');
+                
+                liarsDiceImages.forEach(img => {
+                  if (img.alt) {
+                    const caption = document.createElement('div');
+                    caption.className = 'image-caption';
+                    caption.textContent = img.alt;
+                    
+                    // Insert the caption after the image's parent paragraph
+                    const paragraph = img.closest('p');
+                    if (paragraph && paragraph.parentNode) {
+                      paragraph.parentNode.insertBefore(caption, paragraph.nextSibling);
+                    }
+                  }
+                });
+              });
+            `
+          }} />
         </ThemeProvider>
       </body>
     </html>

@@ -13,6 +13,12 @@ const postsDirectory = isServer ? path.join(process.cwd(), 'posts') : ''
 
 // Function to enhance HTML code blocks with custom styling
 function enhanceCodeBlocks(html: string): string {
+  // First, handle inline code elements (backtick-surrounded text)
+  html = html.replace(
+    /<code(?![^>]*class="[^"]*language-)([^>]*)>((?:(?!<\/code>).)*)<\/code>/g,
+    '<code$1>$2</code>'
+  )
+  
   // Handle rehype-prism-plus generated code blocks with line numbers
   return html.replace(
     /<div class="rehype-code-title"[^>]*>([\s\S]*?)<\/div>\s*<pre[^>]*><code class="[^"]*language-(\w+)[^"]*"[^>]*>([\s\S]*?)<\/code><\/pre>/g,
@@ -190,7 +196,9 @@ export async function getPostData(id: string): Promise<PostData | null> {
     .use(remarkRehype)
     .use(rehypePrismPlus, {
       ignoreMissing: true,
-      showLineNumbers: false
+      showLineNumbers: false,
+      // Only process code blocks, not inline code
+      inline: false
     })
     .use(rehypeStringify)
     .process(matterResult.content)

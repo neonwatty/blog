@@ -128,55 +128,6 @@ export default async function PostPage({ params }: PostPageProps) {
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
-            {/* Article Footer */}
-            <footer className="mt-20 pt-12 transition-all duration-300"
-                    style={{ borderTop: '1px solid var(--color-border-primary)' }}>
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-base mb-8 transition-all duration-300 space-y-4 md:space-y-0"
-                   style={{ color: 'var(--color-text-secondary)' }}>
-                <div>
-                  <p className="font-medium">
-                    Every commit lands on{' '}
-                    <a 
-                      href="#" 
-                      className="transition-all duration-300 relative"
-                      style={{ color: 'var(--color-text-primary)' }}
-                    >
-                      GitHub
-                    </a>
-                    {' '}for you to fork & remix.
-                  </p>
-                </div>
-                <div>
-                  <a 
-                    href="#"
-                    className="font-medium transition-all duration-300 relative group"
-                    style={{ color: 'var(--color-text-secondary)' }}
-                  >
-                    <span>
-                      Edit this post
-                    </span>
-                    <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
-                          style={{ background: 'var(--color-border-primary)' }}></span>
-                  </a>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-8 transition-all duration-300"
-                   style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
-                <p className="text-xs font-medium mb-3 transition-all duration-300"
-                   style={{ 
-                     color: 'var(--color-text-tertiary)',
-                     letterSpacing: '0.05em',
-                     textTransform: 'uppercase'
-                   }}>
-                  Steal this post
-                </p>
-                <p className="text-base transition-all duration-300"
-                   style={{ color: 'var(--color-text-secondary)' }}>
-                  This work is licensed under a Creative Commons License.
-                </p>
-              </div>
-            </footer>
           </article>
         </main>
 
