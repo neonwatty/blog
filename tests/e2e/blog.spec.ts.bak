@@ -5,11 +5,11 @@ test.describe('Blog functionality', () => {
     await page.goto('/')
     
     // Check page title
-    await expect(page).toHaveTitle(/Modern Blog/)
+    await expect(page).toHaveTitle(/Jeremy Watt's Blog/)
     
     // Check main heading
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome to Modern Blog')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Welcome to Jeremy Watt's Blog')
     
     // Check navigation is present
     await expect(page.getByRole('navigation').first()).toBeVisible()

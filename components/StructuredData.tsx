@@ -11,7 +11,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
   const websiteStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Website',
-    name: 'Modern Blog',
+    name: 'Jeremy Watt's Blog',
     description: 'A modern, performant blog built with Next.js',
     url: siteUrl,
     potentialAction: {
@@ -25,7 +25,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Modern Blog',
+      name: 'Jeremy Watt's Blog',
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/images/logo.png`
@@ -36,7 +36,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
   const blogStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Modern Blog',
+    name: 'Jeremy Watt's Blog',
     description: 'A modern, performant blog built with Next.js',
     url: siteUrl,
     author: {
@@ -45,7 +45,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Modern Blog',
+      name: 'Jeremy Watt's Blog',
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/images/logo.png`
@@ -67,7 +67,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Modern Blog',
+      name: 'Jeremy Watt's Blog',
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/images/logo.png`

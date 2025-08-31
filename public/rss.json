@@ -1,6 +1,6 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Modern Blog",
+    "title": "Jeremy Watt's Blog",
     "home_page_url": "https://localhost:3000",
     "feed_url": "https://localhost:3000/rss.json",
     "description": "A modern, performant blog built with Next.js",

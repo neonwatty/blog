@@ -1,4 +1,4 @@
-# Modern Blog
+# Jeremy Watt's Blog
 
 A production-ready, high-performance blog built with Next.js 15, featuring excellent SEO, accessibility, and user experience.
 

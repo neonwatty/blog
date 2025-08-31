@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://localhost:3000</id>
-    <title>Modern Blog</title>
+    <title>Jeremy Watt's Blog</title>
     <updated>2025-01-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
