@@ -33,11 +33,11 @@ export default defineConfig({
     },
   ],
 
-  // /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run build && npx http-server out -p 3001 -s',
-  //   url: 'http://localhost:3001',
-  //   reuseExistingServer: true, // Always reuse to avoid port conflicts
-  //   timeout: 120 * 1000, // 120 seconds timeout
-  // },
+  /* Run your local dev server before starting the tests */
+  webServer: {
+    command: 'npx http-server out -p 3001 -s',
+    url: 'http://localhost:3001',
+    reuseExistingServer: true, // Always reuse to avoid port conflicts
+    timeout: 120 * 1000, // 120 seconds timeout
+  },
 })

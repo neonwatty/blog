@@ -5,7 +5,6 @@ export default function Header() {
   const navigation = [
     { name: 'Posts', href: '/posts' },
     { name: 'About', href: '/about' },
-    { name: 'Search', href: '/search' },
   ]
 
   return (
@@ -24,7 +23,7 @@ export default function Header() {
                   letterSpacing: '-0.02em',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
                 }}>
-            Blog
+            Jeremy Watt
           </Link>
 
           {/* Simple navigation */}
@@ -47,19 +46,6 @@ export default function Header() {
                       style={{ background: 'var(--color-border-primary)' }}></span>
               </Link>
             ))}
-            <Link
-              href="/rss.xml"
-              className="text-sm font-medium transition-all duration-300 relative group"
-              title="RSS Feed"
-              style={{ color: 'var(--color-text-secondary)' }}
-            >
-              <span className="group-hover:text-opacity-100 transition-all duration-300"
->
-                RSS
-              </span>
-              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
-                    style={{ background: 'var(--color-border-primary)' }}></span>
-            </Link>
             <ThemeToggle />
           </div>
         </div>

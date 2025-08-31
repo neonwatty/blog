@@ -10,24 +10,14 @@ describe('Footer Component', () => {
   test('displays copyright information', () => {
     render(<Footer />)
     const currentYear = new Date().getFullYear()
-    expect(screen.getByText(new RegExp(`© ${currentYear} Your Name`))).toBeInTheDocument()
+    expect(screen.getByText(new RegExp(`© ${currentYear} Jeremy Watt`))).toBeInTheDocument()
   })
 
-  test('contains RSS link', () => {
-    render(<Footer />)
-    const rssLink = screen.getByRole('link', { name: 'RSS' })
-    expect(rssLink).toHaveAttribute('href', '/rss.xml')
-  })
 
-  test('contains GitHub link', () => {
+  test('contains social media links', () => {
     render(<Footer />)
-    const githubLink = screen.getByRole('link', { name: 'GitHub' })
-    expect(githubLink).toHaveAttribute('href', '#')
-  })
-
-  test('contains Twitter link', () => {
-    render(<Footer />)
-    const twitterLink = screen.getByRole('link', { name: 'Twitter' })
-    expect(twitterLink).toHaveAttribute('href', '#')
+    expect(document.querySelector('a[href="https://github.com/neonwatty"]')).toBeInTheDocument()
+    expect(document.querySelector('a[href="https://x.com/neonwatty"]')).toBeInTheDocument()
+    expect(document.querySelector('a[href="https://www.linkedin.com/in/jeremy-watt/"]')).toBeInTheDocument()
   })
 })

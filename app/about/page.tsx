@@ -4,8 +4,8 @@ import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'AI-powered tools from web roots to Swift frontiers.',
+  title: 'About Jeremy',
+  description: 'AI Engineer, HVAC certified technician, and Religious Studies BA passionate about building intelligent systems.',
 }
 
 export default function About() {
@@ -16,34 +16,32 @@ export default function About() {
       <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors">
         <Header />
         
-        <main className="flex-grow">
-          <div className="max-w-4xl mx-auto px-4 py-16">
+        <main className="mb-10">
+          <div className="max-w-4xl mx-auto px-4 py-12">
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              <h1>About</h1>
+              <div className="mb-4 text-center">
+                <img 
+                  src="https://neonwatty.com/assets/images/image01.jpg?v=865be4d0" 
+                  alt="Jeremy Watt" 
+                  className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-indigo-200 dark:border-indigo-700 shadow-xl mb-6"
+                />
+                <h1 className="text-4xl font-bold mb-4">Hi, I'm Jeremy!</h1>
+              </div>
               
-              <p>
-                I create AI-powered tools from Swift roots to web frontiers. Every commit lands on GitHub for you to fork & remix.
-              </p>
-              
-              <p>
-                I'm passionate about building tools that help developers and creators work more efficiently. My background spans iOS development, machine learning, and modern web technologies.
-              </p>
-              
-              <h2>What I do</h2>
-              
-              <p>
-                Currently focused on exploring AI-assisted development workflows, building developer tools, and sharing insights about the intersection of traditional software development with modern AI capabilities.
-              </p>
-              
-              <p>
-                When I'm not coding, you can find me writing about development processes, contributing to open source projects, or experimenting with new technologies.
-              </p>
-              
-              <h2>Get in touch</h2>
-              
-              <p>
-                Feel free to reach out if you want to collaborate on projects, discuss development topics, or just say hello.
-              </p>
+              <div className="space-y-3">
+                <section>
+                  <p className="text-lg text-center" style={{ color: 'var(--color-text-primary)' }}>
+                    I'm an AI Engineer busy building and thinking about the exponential timeline we live in.
+                  </p>
+                </section>
+
+                <section>
+                  <p className="text-lg text-center" style={{ color: 'var(--color-text-primary)' }}>
+                    In previous lives I've been a scholar of Religion, a PhD student in Machine Learning, and an HVAC certified technician.
+                  </p>
+                </section>
+
+              </div>
             </div>
           </div>
         </main>
