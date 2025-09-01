@@ -6,7 +6,7 @@ tags: ["Testing", "CLI", "Claude Code", "AI", "Context Management", "DevTools"]
 featured: true
 author: "Jeremy Watt"
 seoTitle: "TFQ: Avoid Claude Code Context Limits When Debugging Tests"
-metaDescription: "Stop hitting context limits when debugging large test suites with Claude Code.  TFQ queues failing tests and fixes them individually in separate headless sessions."
+metaDescription: "Stop running out of context when debugging large test suites with Claude Code; use a queue and fix failing tests individually in separate headless sessions."
 ---
 
 Once a project gets some beef to it using Claude Code to debug a failing test suite can get dicey; its easy to hit session context limits once Claude gets noodling on dozens or hundreds of tests.
