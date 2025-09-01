@@ -4,6 +4,7 @@ import { format } from 'date-fns'
 import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -80,6 +81,15 @@ export default async function PostPage({ params }: PostPageProps) {
         
         <main className="flex-grow">
           <article className="max-w-4xl mx-auto px-4 py-20">
+            {/* Breadcrumbs */}
+            <Breadcrumbs 
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Blog', href: '/posts' },
+                { label: post.title }
+              ]} 
+            />
+            
             {/* Article Header */}
             <header className="mb-16">
               {/* Title */}

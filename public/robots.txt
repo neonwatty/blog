@@ -1,5 +1,13 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /500
+Disallow: /_next/
+Disallow: /api/
 
-# Sitemap
-Sitemap: https://localhost:3000/sitemap.xml
+# Host
+Host: https://neonwatty.com
+
+# Sitemaps
+Sitemap: https://neonwatty.com/sitemap.xml
