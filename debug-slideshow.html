@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Slideshow</title>
+    <script>
+        async function testSlideshow() {
+            try {
+                console.log('Testing slideshow initialization...');
+                
+                // Test CSS loading
+                const cssTests = [
+                    '/reveal.js/reveal.css',
+                    '/reveal.js/theme/black.css',
+                    '/reveal.js/plugin/highlight/monokai.css'
+                ];
+                
+                for (const css of cssTests) {
+                    try {
+                        const response = await fetch(css);
+                        console.log(`CSS ${css}:`, response.status === 200 ? 'OK' : 'FAILED');
+                    } catch (err) {
+                        console.error(`CSS ${css}:`, err);
+                    }
+                }
+                
+                // Test Reveal.js loading
+                try {
+                    console.log('Loading Reveal.js...');
+                    const module = await import('/node_modules/reveal.js/dist/reveal.esm.js');
+                    console.log('Reveal.js loaded:', !!module.default);
+                } catch (err) {
+                    console.error('Reveal.js load error:', err);
+                }
+                
+                // Test plugins
+                try {
+                    console.log('Loading plugins...');
+                    const highlight = await import('/node_modules/reveal.js/plugin/highlight/highlight.esm.js');
+                    console.log('Highlight plugin loaded:', !!highlight.default);
+                } catch (err) {
+                    console.error('Plugin load error:', err);
+                }
+                
+            } catch (err) {
+                console.error('Test failed:', err);
+            }
+        }
+        
+        window.addEventListener('load', testSlideshow);
+    </script>
+</head>
+<body>
+    <h1>Debug Slideshow</h1>
+    <p>Check browser console for debug information.</p>
+</body>
+</html>

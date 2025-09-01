@@ -64,90 +64,105 @@ export function convertPostToSlideshow(post: PostData): SlideShow {
  */
 function parseContentIntoSlides(content: string): Slide[] {
   const slides: Slide[] = []
-  const lines = content.split('\n')
-  let currentSlide: Partial<Slide> = {}
-  let currentContent: string[] = []
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
+  
+  // First, let's split the content into logical sections
+  // We'll use paragraphs as natural slide boundaries
+  const paragraphs = content.split('\n\n').filter(p => p.trim())
+  
+  let slideContent = ''
+  let slideCount = 0
+  const maxContentLength = 300 // Characters per slide for readability
+  
+  for (let i = 0; i < paragraphs.length; i++) {
+    const paragraph = paragraphs[i].trim()
     
-    // Handle headers (create new slides)
-    if (line.match(/^##\s+(.+)/)) {
-      // Save previous slide
-      if (currentSlide.title || currentContent.length > 0) {
-        slides.push(createSlideFromBuffer(currentSlide, currentContent))
-      }
-      
-      // Start new slide
-      currentSlide = {
-        type: 'content',
-        title: line.replace(/^##\s+/, '')
-      }
-      currentContent = []
-    }
+    // Skip empty paragraphs
+    if (!paragraph) continue
+    
     // Handle code blocks
-    else if (line.match(/^```(\w+)?/)) {
-      const language = line.match(/^```(\w+)?/)?.[1] || 'text'
-      const codeLines: string[] = []
-      i++ // Skip opening ```
-      
-      while (i < lines.length && !lines[i].match(/^```$/)) {
-        codeLines.push(lines[i])
-        i++
+    if (paragraph.startsWith('```')) {
+      // If we have content, save it as a slide first
+      if (slideContent.trim()) {
+        slides.push({
+          type: 'content',
+          title: `Slide ${slideCount + 1}`,
+          content: slideContent.trim()
+        })
+        slideContent = ''
+        slideCount++
       }
       
-      // Create code slide
-      if (currentSlide.title || currentContent.length > 0) {
-        slides.push(createSlideFromBuffer(currentSlide, currentContent))
-      }
+      // Extract code block
+      const lines = paragraph.split('\n')
+      const language = lines[0].replace('```', '') || 'text'
+      const codeContent = lines.slice(1, -1).join('\n') // Remove ``` lines
       
       slides.push({
         type: 'code',
-        title: currentSlide.title || 'Code',
+        title: `Code Example`,
         code: {
           language,
-          content: codeLines.join('\n')
+          content: codeContent
         }
       })
-      
-      currentSlide = {}
-      currentContent = []
+      slideCount++
+      continue
     }
+    
     // Handle images
-    else if (line.match(/!\[([^\]]*)\]\(([^)]+)\)/)) {
-      const match = line.match(/!\[([^\]]*)\]\(([^)]+)\)/)
-      if (match) {
-        const [, alt, src] = match
-        
+    const imageMatch = paragraph.match(/!\[([^\]]*)\]\(([^)]+)\)/)
+    if (imageMatch) {
+      // Save current content if any
+      if (slideContent.trim()) {
         slides.push({
-          type: 'image',
-          title: currentSlide.title,
-          image: {
-            src,
-            alt,
-            caption: alt
-          }
+          type: 'content', 
+          title: `Slide ${slideCount + 1}`,
+          content: slideContent.trim()
         })
-        
-        currentSlide = {}
-        currentContent = []
+        slideContent = ''
+        slideCount++
       }
+      
+      const [, alt, src] = imageMatch
+      slides.push({
+        type: 'image',
+        title: alt || 'Image',
+        image: {
+          src,
+          alt,
+          caption: alt
+        }
+      })
+      slideCount++
+      continue
     }
-    // Regular content
-    else if (line.trim()) {
-      currentContent.push(line)
-    }
-    // Empty lines - potential slide breaks
-    else if (currentContent.length > 0) {
-      currentContent.push('')
+    
+    // Regular content - accumulate until we have enough for a slide
+    const potentialContent = slideContent + (slideContent ? '\n\n' : '') + paragraph
+    
+    // If adding this paragraph would make the slide too long, finish current slide
+    if (potentialContent.length > maxContentLength && slideContent.trim()) {
+      slides.push({
+        type: 'content',
+        title: `Slide ${slideCount + 1}`, 
+        content: slideContent.trim()
+      })
+      slideContent = paragraph
+      slideCount++
+    } else {
+      slideContent = potentialContent
     }
   }
-
-  // Handle remaining content
-  if (currentSlide.title || currentContent.length > 0) {
-    slides.push(createSlideFromBuffer(currentSlide, currentContent))
+  
+  // Handle any remaining content
+  if (slideContent.trim()) {
+    slides.push({
+      type: 'content',
+      title: `Slide ${slideCount + 1}`,
+      content: slideContent.trim()
+    })
   }
-
+  
   return slides
 }
 

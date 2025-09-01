@@ -6,14 +6,15 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
   const posts = getSortedPostsData()
-  const slideshow = getSlideshowById(params.slug, posts)
+  const slideshow = getSlideshowById(slug, posts)
 
   if (!slideshow) {
     return {
@@ -40,9 +41,10 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function SlideshowPage({ params }: Props) {
+export default async function SlideshowPage({ params }: Props) {
+  const { slug } = await params
   const posts = getSortedPostsData()
-  const slideshow = getSlideshowById(params.slug, posts)
+  const slideshow = getSlideshowById(slug, posts)
 
   if (!slideshow) {
     notFound()
