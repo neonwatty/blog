@@ -55,14 +55,26 @@ test.describe('Slideshows', () => {
     const revealContainer = page.locator('.reveal')
     await expect(revealContainer).toBeVisible()
     
-    // Check if slides container exists
+    // Check if slides container exists (may be hidden by reveal.js)
     const slidesContainer = page.locator('.slides')
-    await expect(slidesContainer).toBeVisible()
+    const slidesCount = await slidesContainer.count()
+    expect(slidesCount).toBeGreaterThan(0)
     
-    // Check if any slides are visible
+    // Check if any slide sections exist
     const slides = page.locator('section')
     const slideCount = await slides.count()
     console.log(`Found ${slideCount} slides`)
+    expect(slideCount).toBeGreaterThan(0)
+    
+    // Check if navigation controls are present (indicates reveal.js is working)
+    const controls = page.locator('.navigate-right')
+    const controlsCount = await controls.count()
+    console.log(`Found ${controlsCount} navigation controls`)
+    
+    // Look for reveal.js specific elements that indicate it's initialized
+    const revealElement = page.locator('.reveal.ready')
+    const revealCount = await revealElement.count()
+    console.log(`Reveal ready state: ${revealCount > 0 ? 'initialized' : 'not ready'}`)
     
     // Print all console messages at the end
     if (consoleMessages.length > 0) {

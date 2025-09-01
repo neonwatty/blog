@@ -66,53 +66,95 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
         // Small delay to ensure CSS is applied
         await new Promise(resolve => setTimeout(resolve, 200))
 
-        // Dynamically import Reveal.js to avoid SSR issues
-        console.log('Loading Reveal.js...')
-        const RevealModule = await import('reveal.js')
-        const Reveal = RevealModule.default || RevealModule
-        console.log('Reveal.js loaded:', typeof Reveal)
+        // Load Reveal.js from our static assets
+        console.log('Loading Reveal.js from static assets...')
         
-        // Import plugins
-        console.log('Loading plugins...')
-        const HighlightModule = await import('reveal.js/plugin/highlight/highlight.esm.js')
-        const NotesModule = await import('reveal.js/plugin/notes/notes.esm.js')
-        const Highlight = HighlightModule.default || HighlightModule
-        const Notes = NotesModule.default || NotesModule
-        console.log('Plugins loaded')
-
-        if (deckRef.current && Reveal) {
-          console.log('Initializing Reveal.js...')
-          // Clean up any existing instance
-          if (revealRef.current) {
-            try {
-              revealRef.current.destroy()
-            } catch (e) {
-              console.warn('Error destroying previous instance:', e)
+        // Create script elements for Reveal.js and plugins
+        const loadScript = (src: string) => {
+          return new Promise<void>((resolve, reject) => {
+            const existing = document.querySelector(`script[src="${src}"]`)
+            if (existing) {
+              resolve()
+              return
             }
-          }
-
-          revealRef.current = new Reveal(deckRef.current, {
-            plugins: [Highlight, Notes].filter(Boolean),
-            hash: false,
-            controls: true,
-            progress: true,
-            center: true,
-            transition: 'slide',
-            backgroundTransition: 'fade',
-            width: '100%',
-            height: '100%',
-            margin: 0.04,
-            minScale: 0.2,
-            maxScale: 2.0,
-            embedded: false
+            
+            const script = document.createElement('script')
+            script.src = src
+            script.onload = () => {
+              console.log(`Script loaded: ${src}`)
+              resolve()
+            }
+            script.onerror = () => {
+              console.error(`Failed to load script: ${src}`)
+              reject(new Error(`Failed to load script: ${src}`))
+            }
+            document.head.appendChild(script)
           })
-
-          await revealRef.current.initialize()
-          console.log('Reveal.js initialized successfully')
-          setIsLoading(false)
-        } else {
-          throw new Error('Reveal.js not loaded or deck reference not available')
         }
+
+        // Load Reveal.js and plugins sequentially
+        await loadScript('/reveal.js/reveal.js')
+        await loadScript('/reveal.js/plugin/highlight/highlight.js')
+        await loadScript('/reveal.js/plugin/notes/notes.js')
+        
+        // Small delay to ensure scripts are fully loaded
+        await new Promise(resolve => setTimeout(resolve, 100))
+        
+        // Check if Reveal is available on window
+        const Reveal = (window as any).Reveal
+        const RevealHighlight = (window as any).RevealHighlight
+        const RevealNotes = (window as any).RevealNotes
+        
+        console.log('Reveal.js loaded:', typeof Reveal)
+        console.log('Plugins available:', {
+          highlight: typeof RevealHighlight,
+          notes: typeof RevealNotes
+        })
+
+        console.log('Checking initialization conditions...')
+        console.log('deckRef.current:', deckRef.current)
+        console.log('Reveal available:', typeof Reveal)
+        
+        if (!deckRef.current) {
+          throw new Error('Deck reference not available - component may not be mounted properly')
+        }
+        
+        if (!Reveal) {
+          throw new Error('Reveal.js not loaded from window object')
+        }
+
+        console.log('Initializing Reveal.js...')
+        // Clean up any existing instance
+        if (revealRef.current) {
+          try {
+            revealRef.current.destroy()
+            console.log('Destroyed previous instance')
+          } catch (e) {
+            console.warn('Error destroying previous instance:', e)
+          }
+        }
+
+        console.log('Creating new Reveal instance...')
+        revealRef.current = new Reveal(deckRef.current, {
+          plugins: [RevealHighlight, RevealNotes].filter(Boolean),
+          hash: false,
+          controls: true,
+          progress: true,
+          center: true,
+          transition: 'slide',
+          backgroundTransition: 'fade',
+          width: '100%',
+          height: '100%',
+          margin: 0.04,
+          minScale: 0.2,
+          maxScale: 2.0,
+          embedded: false
+        })
+
+        console.log('Initializing Reveal instance...')
+        await revealRef.current.initialize()
+        console.log('Reveal.js initialized successfully')
+        setIsLoading(false)
       } catch (err) {
         console.error('Failed to initialize Reveal.js:', err)
         setError(err instanceof Error ? err.message : 'Unknown error')
@@ -120,8 +162,8 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
       }
     }
 
-    // Add a small delay to ensure component is mounted
-    const timer = setTimeout(loadReveal, 100)
+    // Add a longer delay to ensure component is fully mounted and DOM is ready
+    const timer = setTimeout(loadReveal, 500)
     
     // Cleanup on unmount
     return () => {
@@ -136,36 +178,36 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
     }
   }, [theme])
 
-  if (error) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-red-100 text-red-800">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-2">Error Loading Slideshow</h2>
-          <p>{error}</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white mb-4"></div>
-          <p>Loading slideshow...</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="reveal" ref={deckRef}>
-      <div className="slides">
-        {slideshow.slides.map((slide, index) => (
-          <SlideshowSlide key={index} slide={slide} />
-        ))}
+    <>
+      {/* Always render the reveal container for DOM reference */}
+      <div className="reveal" ref={deckRef} style={{ display: error || isLoading ? 'none' : 'block' }}>
+        <div className="slides">
+          {slideshow.slides.map((slide, index) => (
+            <SlideshowSlide key={index} slide={slide} />
+          ))}
+        </div>
       </div>
-    </div>
+
+      {/* Show loading/error states as overlays */}
+      {error && (
+        <div className="flex items-center justify-center h-screen bg-red-100 text-red-800">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-2">Error Loading Slideshow</h2>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
+
+      {isLoading && !error && (
+        <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white mb-4"></div>
+            <p>Loading slideshow...</p>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
