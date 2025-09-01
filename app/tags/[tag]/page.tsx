@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BlogCard from '@/components/BlogCard'
 import StructuredData from '@/components/StructuredData'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { getPostsByTag, getAllTags } from '@/lib/posts'
 
 interface TagPageProps {
@@ -66,6 +67,17 @@ export default async function TagPage({ params }: TagPageProps) {
         <Header />
         
         <main id="main-content" className="flex-grow">
+          {/* Breadcrumbs */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <Breadcrumbs 
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Tags', href: '/tags' },
+                { label: tagName }
+              ]} 
+            />
+          </div>
+          
           {/* Page Header */}
           <section className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-16">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,0 +1,79 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run type check
+      run: npm run type-check
+
+    - name: Run unit tests
+      run: npm run test:ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Run e2e tests
+      run: npm run test:e2e
+
+    - name: Build static export
+      run: npm run build
+      env:
+        NEXT_PUBLIC_SITE_URL: https://neonwatty.com
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: static-export
+        path: out/
+        retention-days: 30
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build static export
+      run: npm run build
+      env:
+        NEXT_PUBLIC_SITE_URL: https://neonwatty.com
+
+    - name: Deploy to production
+      run: |
+        echo "Deploying to neonwatty.com"
+        echo "Static files ready in ./out directory"
+        # Add your deployment script here
+        # e.g., rsync, FTP upload, or cloud deployment
