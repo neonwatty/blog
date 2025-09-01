@@ -179,16 +179,21 @@ function createSlideFromBuffer(slide: Partial<Slide>, content: string[]): Slide 
 }
 
 /**
- * Get all available slideshows (from existing posts)
+ * Get all available slideshows (only from posts with slideshow: true)
  */
 export function getAllSlideshows(posts: PostData[]): SlideShow[] {
-  return posts.map(convertPostToSlideshow)
+  return posts
+    .filter(post => post.slideshow === true)
+    .map(convertPostToSlideshow)
 }
 
 /**
- * Get slideshow by ID
+ * Get slideshow by ID (only if the post has slideshow: true)
  */
 export function getSlideshowById(id: string, posts: PostData[]): SlideShow | null {
   const post = posts.find(p => p.id === id)
-  return post ? convertPostToSlideshow(post) : null
+  if (!post || !post.slideshow) {
+    return null
+  }
+  return convertPostToSlideshow(post)
 }
