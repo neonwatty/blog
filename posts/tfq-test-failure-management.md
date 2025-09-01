@@ -21,22 +21,42 @@ This little tool makes managing the context on a per-test level a breeze, fixes 
 
 ---
 
-Here's basically how you use it after installing it.
+Here's basically how you use it after installing it.  Say you had a simple javascript projec for a calculator app, consisting of a few files.
 
 1. Use the `tfq` `run-tests` command to run your full test suite (or your desired subset of it).  
 
 ```bash
 # run your project's tests and store failures in the queue
-tfq run-tests --auto-detect --auto-add
+$ tfq run-tests --auto-detect
+Auto-detected: JavaScript project using Jest
+Running: npm test
+=============================================
+  PASS  src/utils/validator.test.js
+  PASS  src/services/user.test.js
+  FAIL  src/utils/calculator.test.js
+  FAIL  src/api/auth.test.js
+  FAIL  src/components/Button.test.js
+=============================================
+Test Suites: 3 failed, 2 passed, 5 total
+Tests:       8 failed, 15 passed, 23 total
+
+✗ 3 tests failed
+- src/utils/calculator.test.js
+- src/api/auth.test.js
+- src/components/Button.test.js
 ```
 
-Use the flags `--auto-detect` to detect your setup (e.g., js / ts, python, ruby) automatically and `--auto-add` to add failing tests to the `tfq` queue.
+Use the flags `--auto-detect` to detect your setup (e.g., js / ts, python, ruby and the corresponding test framework your using), and `--auto-add` to add failing tests to your `tfq` queue.
 
 You can see your failing tests as
 
 ```bash
 # see all failed tests currently in the queue
-tfq list
+$ tfq list
+Queue contains 3 file(s):
+1. src/utils/calculator.test.js (1 failure)
+2. src/api/auth.test.js (1 failure)
+3. src/components/Button.test.js (1 failure)
 ```
 
 There are a host of CLI commands to `clear`, `resolve`, and `group` tests as well (see [the repo here for details](https://github.com/neonwatty/tfq)).
@@ -44,7 +64,7 @@ There are a host of CLI commands to `clear`, `resolve`, and `group` tests as wel
 
 2.  **Let CLaude Code fix a test**
 
-When ou install `tfq` it automatically finds loops in your Claude Code for fixing individual tests headlessly.  You'll see a config file on instnatiation of `tfq` that looks like this, porting over all of Claude Code's current options.
+When ou install `tfq` it automatically finds loops in Claude Code for fixing individual tests in headless mode.  You'll see a config file on instnatiation of `tfq` that looks like this, porting over all of Claude Code's current options.
 
 ```json
 {
@@ -69,6 +89,10 @@ When ou install `tfq` it automatically finds loops in your Claude Code for fixin
 }
 ```
 
+You can configure your (system) prompt, tools, etc., just like you would at the command line.
+
+In the default prompt `testFilePath` is resolved automatically; its an absolute path to the next failed test in your `tfq` queue.
+
 You can then have Claude fix the next test in your `tfq` queue
 
 ```bash
@@ -76,7 +100,13 @@ You can then have Claude fix the next test in your `tfq` queue
 tfq fix-next
 ```
 
-Or sequentially loop through and fix each failed test
+This command
+
+- dequeues the next failed test in your `tfq` queue, and provides its absolute `testFilePath` to Claude along with your prompt and other configs
+- runs Claude Code in [headless mode](https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless) to fix the test
+- re-tests the test afterwards - if it fails, then its added back to your `tfq` queue
+
+You can run the same operation sequentially on each failed test in your queue with
 
 ```bash
 # fix each failed test in the queue sequentially using headless claude code
