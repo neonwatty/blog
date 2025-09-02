@@ -59,7 +59,7 @@ describe('Slideshow Error Handling Tests', () => {
         // Simulate CSS loading failure
         setTimeout(() => {
           if ('onerror' in element && typeof element.onerror === 'function') {
-            element.onerror()
+            element.onerror(new Event('error') as any)
           }
         }, 0)
       }
@@ -89,14 +89,14 @@ describe('Slideshow Error Handling Tests', () => {
         // Simulate script loading failure
         setTimeout(() => {
           if ('onerror' in element && typeof element.onerror === 'function') {
-            element.onerror()
+            element.onerror(new Event('error') as any)
           }
         }, 0)
       } else if (tagName === 'link') {
         // Allow CSS to load successfully
         setTimeout(() => {
           if ('onload' in element && typeof element.onload === 'function') {
-            element.onload()
+            element.onload(new Event('load') as any)
           }
         }, 0)
       }
@@ -125,7 +125,7 @@ describe('Slideshow Error Handling Tests', () => {
       if (tagName === 'script' || tagName === 'link') {
         setTimeout(() => {
           if ('onload' in element && typeof element.onload === 'function') {
-            element.onload()
+            element.onload(new Event('load') as any)
           }
         }, 0)
       }
@@ -162,7 +162,7 @@ describe('Slideshow Error Handling Tests', () => {
       if (tagName === 'script' || tagName === 'link') {
         setTimeout(() => {
           if ('onload' in element && typeof element.onload === 'function') {
-            element.onload()
+            element.onload(new Event('load') as any)
           }
         }, 0)
       }
@@ -250,35 +250,37 @@ describe('Slideshow Error Handling Tests', () => {
       if (tagName === 'script' || tagName === 'link') {
         setTimeout(() => {
           if ('onload' in element && typeof element.onload === 'function') {
-            element.onload()
+            element.onload(new Event('load') as any)
           }
         }, 0)
       }
       return element
     }) as any
 
-    const mockReveal = {
+    const mockRevealInstance = {
       initialize: jest.fn().mockResolvedValue(undefined),
       slide: jest.fn().mockImplementation(() => {
         throw new Error('Runtime error during slide navigation')
       }),
       addEventListener: jest.fn(),
-      removeEventListener: jest.fn()
+      removeEventListener: jest.fn(),
+      destroy: jest.fn()
     }
 
-    ;(window as any).Reveal = mockReveal
+    // Mock Reveal as a constructor function that returns the mock instance
+    ;(window as any).Reveal = jest.fn().mockImplementation(() => mockRevealInstance)
     ;(window as any).RevealHighlight = jest.fn()
     ;(window as any).RevealNotes = jest.fn()
 
     render(<Slideshow slideshow={mockSlideshow} />)
     
     await waitFor(() => {
-      expect(mockReveal.initialize).toHaveBeenCalled()
+      expect(mockRevealInstance.initialize).toHaveBeenCalled()
     })
 
     // Trigger a runtime error
     try {
-      mockReveal.slide()
+      mockRevealInstance.slide()
     } catch (error) {
       // Error should be caught and logged
       expect(error).toBeInstanceOf(Error)

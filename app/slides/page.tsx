@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllSlideshows } from '@/lib/slides'
 import { Metadata } from 'next'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'Slideshows - Modern Blog',
@@ -16,17 +17,15 @@ export default function SlidesIndex() {
   const slideshows = getAllSlideshows()
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
+    <>
+      <Header />
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Slideshows
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Interactive slide presentations of blog posts. Each slideshow transforms 
-            blog content into an engaging presentation format.
-          </p>
         </div>
 
         {/* Slideshows Grid */}
@@ -122,17 +121,8 @@ export default function SlidesIndex() {
             </Link>
           </div>
         )}
-
-        {/* Back to Blog */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
-          >
-            ← Back to Blog
-          </Link>
         </div>
       </div>
-    </div>
+    </>
   )
 }
