@@ -1,0 +1,152 @@
+{
+  "id": "tfq-test-failure-management",
+  "title": "Claude Code Powered Test Debugging Without The Context Overload",
+  "slides": [
+    {
+      "type": "title",
+      "title": "Claude Code Powered Test Debugging Without The Context Overload",
+      "content": "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions.",
+      "notes": "Published on 2025-08-31. Tags: Testing, CLI, Claude Code, AI, Context Management, DevTools"
+    },
+    {
+      "type": "content",
+      "title": "Slide 1",
+      "content": "Once a project gets some beef to it using Claude Code to debug a failing test suite can get dicey; its easy to hit session context limits once Claude gets noodling on dozens or hundreds of tests."
+    },
+    {
+      "type": "content",
+      "title": "Slide 2",
+      "content": "Its a natural limitation of context in and of itself, and doesn't need \"solving\" on the model level.  It just needs good engineered guardrail solutioning on the agentic IDE / coding level."
+    },
+    {
+      "type": "content",
+      "title": "Slide 3",
+      "content": "Right now I deal with limitation using a simple CLI queueing tool I used called [tfq](https://www.npmjs.com/package/tfq)."
+    },
+    {
+      "type": "content",
+      "title": "Slide 4",
+      "content": "`tfq` (short for Test Failure Queue) is a simple CLI tool that lets you run your whole test suite and queue up failing tests, that you can then sequentially address using Claude Code.  Each failed test is individually fed (along its failure / traceback, imports, etc.,) into a separate headless Claude Code session for fixing."
+    },
+    {
+      "type": "content",
+      "title": "Slide 5",
+      "content": "This little tool makes managing the context on a per-test level a breeze, fixes tests much faster, and severely cuts down on test confusion / lying (\"all tests look great and your app is now super production ready!!\").\n\n---"
+    },
+    {
+      "type": "content",
+      "title": "Slide 6",
+      "content": "Here's basically how you use it after installing it.  Say you had a simple javascript projec for a calculator app, consisting of a few files.\n\n1. Use the `tfq` `run-tests` command to run your full test suite (or your desired subset of it)."
+    },
+    {
+      "type": "code",
+      "title": "Code Example",
+      "code": {
+        "language": "bash",
+        "content": "# run your project's tests and store failures in the queue\n$ tfq run-tests --auto-detect\nAuto-detected: JavaScript project using Jest\nRunning: npm test\n=============================================\n  PASS  src/utils/validator.test.js\n  PASS  src/services/user.test.js\n  FAIL  src/utils/calculator.test.js\n  FAIL  src/api/auth.test.js\n  FAIL  src/components/Button.test.js\n=============================================\nTest Suites: 3 failed, 2 passed, 5 total"
+      }
+    },
+    {
+      "type": "content",
+      "title": "Slide 8",
+      "content": "✗ 3 tests failed\n- src/utils/calculator.test.js\n- src/api/auth.test.js\n- src/components/Button.test.js\n```\n\nUse the flags `--auto-detect` to detect your setup (e.g., js / ts, python, ruby and the corresponding test framework your using), and `--auto-add` to add failing tests to your `tfq` queue."
+    },
+    {
+      "type": "content",
+      "title": "Slide 9",
+      "content": "You can see your failing tests as"
+    },
+    {
+      "type": "code",
+      "title": "Code Example",
+      "code": {
+        "language": "bash",
+        "content": "# see all failed tests currently in the queue\n$ tfq list\nQueue contains 3 file(s):\n1. src/utils/calculator.test.js (1 failure)\n2. src/api/auth.test.js (1 failure)\n3. src/components/Button.test.js (1 failure)"
+      }
+    },
+    {
+      "type": "content",
+      "title": "Slide 11",
+      "content": "There are a host of CLI commands to `clear`, `resolve`, and `group` tests as well (see [the repo here for details](https://github.com/neonwatty/tfq)).\n\n2.  **Let CLaude Code fix a test**"
+    },
+    {
+      "type": "content",
+      "title": "Slide 12",
+      "content": "When ou install `tfq` it automatically finds loops in Claude Code for fixing individual tests in headless mode.  You'll see a config file on instnatiation of `tfq` that looks like this, porting over all of Claude Code's current options."
+    },
+    {
+      "type": "code",
+      "title": "Code Example",
+      "code": {
+        "language": "json",
+        "content": "{\n  \"claude\": {\n    // Basic\n    \"enabled\": true,"
+      }
+    },
+    {
+      "type": "content",
+      "title": "Slide 14",
+      "content": "// Test params\n    \"maxIterations\": 10,\n    \"testTimeout\": 300000,\n\n// Prompts\n    \"prompt\": \"Run the test file at {testFilePath} and debug any errors you encounter one at a time. Then run the test again to verify that your changes have fixed any errors.\","
+    },
+    {
+      "type": "content",
+      "title": "Slide 15",
+      "content": "// Security & Permissions\n    \"dangerouslySkipPermissions\": true,\n    \"allowedTools\": [\"Edit\", \"Read\", \"Write\"],\n    ....\n  }\n}\n```\n\nYou can configure your (system) prompt, tools, etc., just like you would at the command line."
+    },
+    {
+      "type": "content",
+      "title": "Slide 16",
+      "content": "In the default prompt `testFilePath` is resolved automatically; its an absolute path to the next failed test in your `tfq` queue.\n\nYou can then have Claude fix the next test in your `tfq` queue"
+    },
+    {
+      "type": "code",
+      "title": "Code Example",
+      "code": {
+        "language": "bash",
+        "content": "# fix your next failed test in the queue using headless claude code\ntfq fix-next"
+      }
+    },
+    {
+      "type": "content",
+      "title": "Slide 18",
+      "content": "This command"
+    },
+    {
+      "type": "content",
+      "title": "Slide 19",
+      "content": "- dequeues the next failed test in your `tfq` queue, and provides its absolute `testFilePath` to Claude along with your prompt and other configs\n- runs Claude Code in [headless mode](https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless) to fix the test\n- re-tests the test afterwards - if it fails, then its added back to your `tfq` queue"
+    },
+    {
+      "type": "content",
+      "title": "Slide 20",
+      "content": "You can run the same operation sequentially on each failed test in your queue with"
+    },
+    {
+      "type": "code",
+      "title": "Code Example",
+      "code": {
+        "language": "bash",
+        "content": "# fix each failed test in the queue sequentially using headless claude code\ntfq fix-all"
+      }
+    },
+    {
+      "type": "content",
+      "title": "Slide 22",
+      "content": "---\n\nNothing magical here - just much needed structure for test fixing by managing context in an ordered fashion."
+    }
+  ],
+  "metadata": {
+    "author": "Jeremy Watt",
+    "date": "2025-08-31",
+    "tags": [
+      "Testing",
+      "CLI",
+      "Claude Code",
+      "AI",
+      "Context Management",
+      "DevTools"
+    ],
+    "totalSlides": 23,
+    "generatedAt": "2025-09-01T21:45:54.436Z",
+    "sourcePost": "tfq-test-failure-management"
+  }
+}

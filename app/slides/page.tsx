@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { getSortedPostsData } from '@/lib/posts'
 import { getAllSlideshows } from '@/lib/slides'
 import { Metadata } from 'next'
 
@@ -14,8 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function SlidesIndex() {
-  const posts = getSortedPostsData()
-  const slideshows = getAllSlideshows(posts)
+  const slideshows = getAllSlideshows()
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -109,8 +107,13 @@ export default function SlidesIndex() {
               No slideshows yet
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Slideshows will be automatically generated from your blog posts.
+              Generate slideshows manually from your blog posts using the CLI command:
             </p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 mb-6 text-left">
+              <code className="text-sm text-gray-800 dark:text-gray-200">
+                npm run generate:slideshow &lt;post-id&gt;
+              </code>
+            </div>
             <Link
               href="/posts"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"

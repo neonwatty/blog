@@ -16,6 +16,7 @@
     "test:e2e:ui": "playwright test --ui",
     "generate:rss": "tsx scripts/generate-rss.js",
     "generate:sitemap": "next-sitemap",
+    "generate:slideshow": "node scripts/generate-slideshow.js",
     "analyze": "ANALYZE=true npm run build",
     "dev:clean": "rm -rf .next && npm run dev"
   },

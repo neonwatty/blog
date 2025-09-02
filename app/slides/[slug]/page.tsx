@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getSortedPostsData, getAllPostIds } from '@/lib/posts'
-import { getSlideshowById } from '@/lib/slides'
+import { getSlideshowById, getAllSlideshows } from '@/lib/slides'
 import Slideshow from '@/components/Slideshow'
 import Link from 'next/link'
 import { Metadata } from 'next'
@@ -13,8 +12,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const posts = getSortedPostsData()
-  const slideshow = getSlideshowById(slug, posts)
+  const slideshow = getSlideshowById(slug)
 
   if (!slideshow) {
     return {
@@ -34,17 +32,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const postIds = getAllPostIds()
+  const slideshows = getAllSlideshows()
   
-  return postIds.map((postId) => ({
-    slug: postId.params.id,
+  return slideshows.map((slideshow) => ({
+    slug: slideshow.id,
   }))
 }
 
 export default async function SlideshowPage({ params }: Props) {
   const { slug } = await params
-  const posts = getSortedPostsData()
-  const slideshow = getSlideshowById(slug, posts)
+  const slideshow = getSlideshowById(slug)
 
   if (!slideshow) {
     notFound()

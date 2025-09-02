@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getPostData, getAllPostIds } from '@/lib/posts'
+import { slideshowExists } from '@/lib/slides'
 import { format } from 'date-fns'
 import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
@@ -138,8 +139,8 @@ export default async function PostPage({ params }: PostPageProps) {
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
-            {/* Slideshow CTA - only show if post has slideshow enabled */}
-            {post.slideshow && (
+            {/* Slideshow CTA - only show if slideshow exists */}
+            {slideshowExists(post.id) && (
               <div className="mt-12 p-6 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50">
                 <div className="text-center">
                   <div className="text-4xl mb-4">📽️</div>

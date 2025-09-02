@@ -8,6 +8,10 @@ declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Reveal: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    RevealHighlight: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    RevealNotes: any
   }
 }
 
@@ -48,121 +52,97 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
       })
     }
 
+    const loadScript = (src: string) => {
+      return new Promise<void>((resolve, reject) => {
+        const existing = document.querySelector(`script[src="${src}"]`)
+        if (existing) {
+          resolve()
+          return
+        }
+        
+        const script = document.createElement('script')
+        script.src = src
+        script.onload = () => resolve()
+        script.onerror = () => reject(new Error(`Failed to load script: ${src}`))
+        document.head.appendChild(script)
+      })
+    }
+
     const loadReveal = async () => {
       try {
         setIsLoading(true)
         setError(null)
-        console.log('Starting slideshow initialization...')
-
-        // Load CSS files
-        console.log('Loading CSS files...')
+        
+        // Load CSS files first
         await Promise.all([
           loadCSS('/reveal.js/reveal.css'),
           loadCSS(`/reveal.js/theme/${theme}.css`),
           loadCSS('/reveal.js/plugin/highlight/monokai.css')
         ])
-        console.log('CSS files loaded successfully')
-
-        // Small delay to ensure CSS is applied
-        await new Promise(resolve => setTimeout(resolve, 200))
-
-        // Load Reveal.js from our static assets
-        console.log('Loading Reveal.js from static assets...')
         
-        // Create script elements for Reveal.js and plugins
-        const loadScript = (src: string) => {
-          return new Promise<void>((resolve, reject) => {
-            const existing = document.querySelector(`script[src="${src}"]`)
-            if (existing) {
-              resolve()
-              return
-            }
-            
-            const script = document.createElement('script')
-            script.src = src
-            script.onload = () => {
-              console.log(`Script loaded: ${src}`)
-              resolve()
-            }
-            script.onerror = () => {
-              console.error(`Failed to load script: ${src}`)
-              reject(new Error(`Failed to load script: ${src}`))
-            }
-            document.head.appendChild(script)
-          })
-        }
-
-        // Load Reveal.js and plugins sequentially
+        // Load JavaScript files
         await loadScript('/reveal.js/reveal.js')
         await loadScript('/reveal.js/plugin/highlight/highlight.js')
         await loadScript('/reveal.js/plugin/notes/notes.js')
         
-        // Small delay to ensure scripts are fully loaded
-        await new Promise(resolve => setTimeout(resolve, 100))
+        // Small delay to ensure scripts are loaded
+        await new Promise(resolve => setTimeout(resolve, 200))
         
-        // Check if Reveal is available on window
-        const Reveal = (window as any).Reveal
-        const RevealHighlight = (window as any).RevealHighlight
-        const RevealNotes = (window as any).RevealNotes
+        const Reveal = window.Reveal
+        const RevealHighlight = window.RevealHighlight
+        const RevealNotes = window.RevealNotes
         
-        console.log('Reveal.js loaded:', typeof Reveal)
-        console.log('Plugins available:', {
-          highlight: typeof RevealHighlight,
-          notes: typeof RevealNotes
-        })
-
-        console.log('Checking initialization conditions...')
-        console.log('deckRef.current:', deckRef.current)
-        console.log('Reveal available:', typeof Reveal)
-        
-        if (!deckRef.current) {
-          throw new Error('Deck reference not available - component may not be mounted properly')
+        if (!deckRef.current || !Reveal) {
+          throw new Error('Reveal.js or deck reference not available')
         }
         
-        if (!Reveal) {
-          throw new Error('Reveal.js not loaded from window object')
-        }
-
-        console.log('Initializing Reveal.js...')
         // Clean up any existing instance
         if (revealRef.current) {
           try {
             revealRef.current.destroy()
-            console.log('Destroyed previous instance')
           } catch (e) {
             console.warn('Error destroying previous instance:', e)
           }
         }
-
-        console.log('Creating new Reveal instance...')
+        
+        // Create new Reveal instance with minimal safe configuration
         revealRef.current = new Reveal(deckRef.current, {
           plugins: [RevealHighlight, RevealNotes].filter(Boolean),
+          // Minimal configuration to avoid stack overflow
           hash: false,
+          history: false,
           controls: true,
           progress: true,
-          center: true,
-          transition: 'slide',
-          backgroundTransition: 'fade',
-          width: '100%',
-          height: '100%',
-          margin: 0.04,
-          minScale: 0.2,
-          maxScale: 2.0,
-          embedded: false
+          center: false, // Disable centering to avoid layout recursion
+          transition: 'none', // Disable transitions to avoid animation recursion
+          embedded: true, // Use embedded mode for better compatibility
+          touch: false, // Disable touch to avoid event recursion
+          mouseWheel: false,
+          // Use fixed dimensions to avoid layout calculation recursion
+          width: 960,
+          height: 700,
+          minScale: 1.0,
+          maxScale: 1.0 // Disable scaling to avoid recursion
         })
-
-        console.log('Initializing Reveal instance...')
+        
         await revealRef.current.initialize()
-        console.log('Reveal.js initialized successfully')
+        
+        // Additional delay and layout refresh to fix vertical text issue
+        await new Promise(resolve => setTimeout(resolve, 100))
+        if (revealRef.current && revealRef.current.layout) {
+          revealRef.current.layout()
+        }
+        
         setIsLoading(false)
       } catch (err) {
-        console.error('Failed to initialize Reveal.js:', err)
-        setError(err instanceof Error ? err.message : 'Unknown error')
+        console.error('Failed to load slideshow:', err)
+        const error = err instanceof Error ? err : new Error('Unknown error occurred')
+        setError(error.message)
         setIsLoading(false)
       }
     }
 
-    // Add a longer delay to ensure component is fully mounted and DOM is ready
+    // Re-enable reveal.js with minimal config
     const timer = setTimeout(loadReveal, 500)
     
     // Cleanup on unmount
@@ -179,9 +159,20 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
   }, [theme])
 
   return (
-    <>
+    <div data-testid="slideshow-wrapper" className={`theme-${theme}`} id={`slideshow-${slideshow.id}`}>
       {/* Always render the reveal container for DOM reference */}
-      <div className="reveal" ref={deckRef} style={{ display: error || isLoading ? 'none' : 'block' }}>
+      <div 
+        className="reveal" 
+        ref={deckRef} 
+        style={{ 
+          display: error || isLoading ? 'none' : 'block',
+          textAlign: 'center',
+          width: '100%',
+          height: '100vh',
+          overflow: 'hidden', // Changed from 'auto' to prevent scrolling issues
+          position: 'relative'
+        }}
+      >
         <div className="slides">
           {slideshow.slides.map((slide, index) => (
             <SlideshowSlide key={index} slide={slide} />
@@ -204,10 +195,20 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
           <div className="text-center">
             <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white mb-4"></div>
             <p>Loading slideshow...</p>
+            <p className="text-sm mt-2 opacity-60">Debug: Loading state is {isLoading ? 'true' : 'false'}</p>
           </div>
         </div>
       )}
-    </>
+      
+      {/* Debug info - remove this later */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="fixed top-4 right-4 bg-black/80 text-white p-2 text-xs font-mono z-50">
+          Loading: {isLoading ? 'true' : 'false'}<br/>
+          Error: {error ? 'true' : 'false'}<br/>
+          Theme: {theme}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -216,11 +217,37 @@ interface SlideshowSlideProps {
 }
 
 function SlideshowSlide({ slide }: SlideshowSlideProps) {
+  
   if (slide.type === 'title') {
     return (
       <section>
-        <h1 style={{ fontSize: '2.5em', marginBottom: '0.5em' }}>{slide.title}</h1>
-        {slide.content && <p style={{ fontSize: '1.2em', color: '#ccc' }}>{slide.content}</p>}
+        <h1 style={{ 
+          fontSize: '2.5em', 
+          marginBottom: '0.5em',
+          lineHeight: '1.2',
+          textAlign: 'center',
+          wordWrap: 'break-word',
+          maxWidth: '90%',
+          margin: '0 auto 0.5em auto',
+          whiteSpace: 'normal',
+          wordBreak: 'normal',
+          display: 'block',
+          width: 'auto'
+        }}>
+          {slide.title}
+        </h1>
+        {slide.content && (
+          <p style={{ 
+            fontSize: '1.2em', 
+            color: '#ccc',
+            lineHeight: '1.4',
+            textAlign: 'center',
+            maxWidth: '80%',
+            margin: '0 auto'
+          }}>
+            {slide.content}
+          </p>
+        )}
         {slide.notes && (
           <aside className="notes">
             {slide.notes}
