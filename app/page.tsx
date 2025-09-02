@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col transition-all duration-300"
-         style={{ background: 'var(--color-background-primary)' }}>
+         style={{ backgroundColor: 'transparent' }}>
       <Header />
       
       <main className="flex-grow">

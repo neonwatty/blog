@@ -85,7 +85,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans`}>
+      <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`}>
         <ThemeProvider>
           <a href="#main-content" className="skip-link">
             Skip to main content

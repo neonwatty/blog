@@ -12,7 +12,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
 
   useEffect(() => {
     // Check localStorage and system preference
@@ -21,18 +21,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     
     if (savedTheme) {
       setTheme(savedTheme)
-    } else if (systemPrefersDark) {
-      setTheme('dark')
+    } else if (!systemPrefersDark) {
+      // If system prefers light, set to light; otherwise keep dark as default
+      setTheme('light')
     }
   }, [])
 
   useEffect(() => {
     // Apply theme to document
     const root = document.documentElement
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
+    // Since we inverted the CSS: dark is now default, light needs the class
+    if (theme === 'light') {
+      root.classList.add('light')
       root.classList.remove('dark')
+    } else {
+      root.classList.remove('light')
+      root.classList.add('dark')
     }
     localStorage.setItem('theme', theme)
   }, [theme])
