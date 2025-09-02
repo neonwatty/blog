@@ -3,6 +3,7 @@ title: "A watchOS app to help you cheat at Liars Dice using math"
 date: "2025-08-31"
 excerpt: "A watchOS app to help you cheat at Liars Dice using math"
 tags: ["apple watch", "watchos", "swift", "gaming", "probability"]
+slideshow: true
 ---
 
 I like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make a simple Apple Watch app to help me cheat?

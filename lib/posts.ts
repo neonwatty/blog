@@ -111,6 +111,7 @@ export interface PostData {
   metaDescription?: string
   canonicalUrl?: string
   relatedPosts?: string[]
+  slideshow?: boolean
 }
 
 export interface PostMeta {
@@ -151,7 +152,8 @@ export function getSortedPostsData(): PostData[] {
         seoTitle: matterResult.data.seoTitle || matterResult.data.title,
         metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
         canonicalUrl: matterResult.data.canonicalUrl,
-        relatedPosts: matterResult.data.relatedPosts || []
+        relatedPosts: matterResult.data.relatedPosts || [],
+        slideshow: matterResult.data.slideshow || false
       }
     })
 
@@ -222,7 +224,8 @@ export async function getPostData(id: string): Promise<PostData | null> {
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,
     metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
     canonicalUrl: matterResult.data.canonicalUrl,
-    relatedPosts: matterResult.data.relatedPosts || []
+    relatedPosts: matterResult.data.relatedPosts || [],
+    slideshow: matterResult.data.slideshow || false
   }
 }
 

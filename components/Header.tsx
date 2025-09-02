@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle'
 export default function Header() {
   const navigation = [
     { name: 'Posts', href: '/posts' },
+    { name: 'Slides', href: '/slides' },
     { name: 'About', href: '/about' },
   ]
 

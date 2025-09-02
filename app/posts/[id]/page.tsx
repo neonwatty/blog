@@ -76,7 +76,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <StructuredData post={post} type="article" />
       
       <div className="min-h-screen flex flex-col transition-all duration-300"
-           style={{ background: 'var(--color-background-primary)' }}>
+           style={{ backgroundColor: 'transparent' }}>
         <Header />
         
         <main className="flex-grow">
@@ -137,6 +137,7 @@ export default async function PostPage({ params }: PostPageProps) {
                  }}>
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
+
 
           </article>
         </main>

@@ -7,17 +7,17 @@
 
 @layer base {
   :root {
-    /* Professional Blue UI Design System - Light Mode */
-    --color-background-primary: #ffffff;
-    --color-background-secondary: #f8fafc;
-    --color-background-tertiary: #f1f5f9;
-    --color-background-elevated: #ffffff;
+    /* Professional Dark UI Design System - Now Default */
+    --color-background-primary: #111827;
+    --color-background-secondary: #1f2937;
+    --color-background-tertiary: #374151;
+    --color-background-elevated: #1f2937;
     
-    /* Untitled UI text hierarchy - darker tones */
-    --color-text-primary: #111827;
-    --color-text-secondary: #374151;
-    --color-text-tertiary: #6b7280;
-    --color-text-inverse: #ffffff;
+    /* Dark text hierarchy - light colors for dark background */
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #cbd5e1;
+    --color-text-tertiary: #94a3b8;
+    --color-text-inverse: #111827;
     
     /* Untitled UI Indigo-Blue accent system */
     --color-accent-primary: #6366F1;
@@ -43,9 +43,9 @@
     --color-indigo-700: #4338CA;
     --color-indigo-900: #312E81;
     
-    /* Professional gradients */
-    --gradient-subtle: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    --gradient-elevated: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    /* Professional dark gradients */
+    --gradient-subtle: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    --gradient-elevated: linear-gradient(135deg, #1f2937 0%, #374151 100%);
     --gradient-professional: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
     --gradient-hero: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
     
@@ -54,50 +54,79 @@
     --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-professional: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04);
+    
+    /* Grid pattern background */
+    --grid-pattern: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    --grid-size: 40px 40px;
+  }
+  
+  .light {
+    /* Professional Light UI Design System - Now Optional Light Mode */
+    --color-background-primary: #ffffff;
+    --color-background-secondary: #f8fafc;
+    --color-background-tertiary: #f1f5f9;
+    --color-background-elevated: #ffffff;
+    
+    /* Light text hierarchy */
+    --color-text-primary: #111827;
+    --color-text-secondary: #374151;
+    --color-text-tertiary: #6b7280;
+    --color-text-inverse: #ffffff;
+    
+    /* Light mode accents */
+    --color-accent-primary: #6366F1;
+    --color-accent-hover: #4F46E5;
+    --color-accent-light: #E0E7FF;
+    
+    /* Light mode borders */
+    --color-border-primary: #e5e7eb;
+    --color-border-secondary: #d1d5db;
+    --color-border-subtle: #f3f4f6;
+    --color-border-accent: #6366F1;
+    
+    /* Content-friendly links and accents */
+    --color-content-accent: #6366F1;
+    --color-content-link: #4F46E5;
+    --color-content-hover: #4338CA;
+    
+    /* Light gradients */
+    --gradient-subtle: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    --gradient-elevated: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    --gradient-professional: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    --gradient-hero: linear-gradient(135deg, #818CF8 0%, #A855F7 100%);
   }
   
   .dark {
-    /* Professional Blue UI Design System - Dark Mode */
-    --color-background-primary: #0f172a;
-    --color-background-secondary: #1e293b;
-    --color-background-tertiary: #334155;
-    --color-background-elevated: #1e293b;
+    /* Dark theme - same as default but explicit for theme switching */
+    --color-background-primary: #111827;
+    --color-background-secondary: #1f2937;
+    --color-background-tertiary: #374151;
+    --color-background-elevated: #1f2937;
     
-    /* Professional dark text hierarchy */
     --color-text-primary: #f1f5f9;
     --color-text-secondary: #cbd5e1;
     --color-text-tertiary: #94a3b8;
-    --color-text-inverse: #0f172a;
+    --color-text-inverse: #111827;
     
-    /* Untitled UI indigo accents for dark mode */
-    --color-accent-primary: #818CF8;
-    --color-accent-hover: #6366F1;
+    --color-accent-primary: #6366F1;
+    --color-accent-hover: #4F46E5;
     --color-accent-light: #312E81;
     
-    /* Dark mode borders */
-    --color-border-primary: #334155;
+    --color-border-primary: #374151;
     --color-border-secondary: #475569;
-    --color-border-subtle: #1e293b;
-    --color-border-accent: #818CF8;
+    --color-border-subtle: #1f2937;
+    --color-border-accent: #6366F1;
     
-    /* Content-friendly links and accents for dark mode */
-    --color-content-accent: #818CF8;
+    --color-content-accent: #6366F1;
     --color-content-link: #A5B4FC;
     --color-content-hover: #C7D2FE;
     
-    /* Professional blue palette for dark mode */
-    --color-blue-50: #1e3a8a;
-    --color-blue-100: #1d4ed8;
-    --color-blue-500: #60a5fa;
-    --color-blue-600: #3b82f6;
-    --color-blue-700: #2563eb;
-    --color-blue-900: #93c5fd;
-    
-    /* Professional dark gradients */
-    --gradient-subtle: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    --gradient-elevated: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    --gradient-professional: linear-gradient(135deg, #818CF8 0%, #6366F1 100%);
-    --gradient-hero: linear-gradient(135deg, #818CF8 0%, #A855F7 100%);
+    --gradient-subtle: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    --gradient-elevated: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    --gradient-professional: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    --gradient-hero: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
     
     /* Professional dark shadows */
     --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -112,17 +141,17 @@
     color: var(--color-text-primary);
     background-color: var(--color-background-primary);
     background-image: 
-      linear-gradient(rgba(99, 102, 241, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 102, 241, 0.02) 1px, transparent 1px);
+      linear-gradient(rgba(129, 140, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(129, 140, 248, 0.05) 1px, transparent 1px);
     background-size: 32px 32px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: -0.01em;
   }
   
-  .dark body {
+  .light body {
     background-image: 
-      linear-gradient(rgba(129, 140, 248, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(129, 140, 248, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
   }
   
   /* Enhanced Typography */
@@ -1706,4 +1735,55 @@
   opacity: 1;
   transform: scale(1.02) translateY(-4px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Grid Background Pattern Utilities */
+@layer utilities {
+  .grid-pattern {
+    /* Default dark theme - light grid lines */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px) !important;
+    background-size: 40px 40px !important;
+    background-position: 0 0 !important;
+  }
+  
+  /* Light theme - darker grid lines */
+  .light .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px) !important;
+  }
+  
+  .grid-pattern-fine {
+    /* Default dark theme */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0;
+  }
+  
+  /* Light theme fine grid */
+  .light .grid-pattern-fine {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  }
+  
+  .grid-pattern-large {
+    /* Default dark theme */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.06) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 2px, transparent 2px);
+    background-size: 80px 80px;
+    background-position: 0 0;
+  }
+  
+  /* Light theme large grid */
+  .light .grid-pattern-large {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
+  }
 }

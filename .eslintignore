@@ -1,0 +1,15 @@
+.next/
+out/
+node_modules/
+coverage/
+public/
+*.config.js
+scripts/
+test-*.js
+*.test.ts
+*.test.tsx
+__tests__/
+playwright-report/
+test-results/
+build/
+dist/
