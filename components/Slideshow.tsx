@@ -278,17 +278,37 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
   if (slide.type === 'image') {
     return (
       <section>
-        {slide.title && <h2 style={{ marginBottom: '1em' }}>{slide.title}</h2>}
+        {slide.title && <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>{slide.title}</h2>}
         {slide.image && (
-          <div>
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            height: '100%'
+          }}>
+            {slide.image.caption && (
+              <p style={{ 
+                fontSize: '1em', 
+                color: '#ccc', 
+                marginBottom: '1.5em',
+                textAlign: 'center',
+                maxWidth: '80%'
+              }}>
+                {slide.image.caption}
+              </p>
+            )}
             <img 
               src={slide.image.src} 
               alt={slide.image.alt}
-              style={{ maxWidth: '80%', maxHeight: '60vh', objectFit: 'contain' }}
+              style={{ 
+                maxWidth: '80%', 
+                maxHeight: '50vh', 
+                objectFit: 'contain',
+                display: 'block',
+                margin: '0 auto'
+              }}
             />
-            {slide.image.caption && (
-              <p style={{ fontSize: '0.8em', color: '#ccc', marginTop: '1em' }}>{slide.image.caption}</p>
-            )}
           </div>
         )}
         {slide.notes && (
@@ -331,17 +351,25 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
  * Format slide content for better presentation
  */
 function formatSlideContent(content: string): string {
-  return content
-    // Convert markdown-style lists to HTML
+  // First preserve existing HTML links (already formatted)
+  let processedContent = content
+  
+  // Convert markdown-style links to HTML
+  processedContent = processedContent.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #6366F1; text-decoration: underline;">$1</a>')
+  
+  // Convert markdown-style lists to HTML
+  processedContent = processedContent
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>)/g, '<ul style="text-align: left; margin: 1em 0;">$1</ul>')
     // Convert bold text
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    // Convert italic text  
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // Convert italic text (but not if it's part of a bold marker)
+    .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
     // Convert inline code
     .replace(/`([^`]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.2em 0.4em; border-radius: 3px; font-family: monospace;">$1</code>')
-    // Convert paragraphs
+    
+  // Convert paragraphs
+  return processedContent
     .split('\n\n')
     .filter(para => para.trim())
     .map(para => `<p style="margin-bottom: 1em;">${para.trim()}</p>`)
