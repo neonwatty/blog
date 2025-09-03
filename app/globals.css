@@ -1737,6 +1737,65 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Reveal.js Slideshow Font Size Controls */
+.reveal h1 { 
+  font-size: 2.5em !important; 
+}
+
+.reveal h2 { 
+  font-size: 1.6em !important; 
+}
+
+.reveal h3 { 
+  font-size: 1.3em !important; 
+}
+
+.reveal p { 
+  font-size: 1em !important; 
+}
+
+.reveal li { 
+  font-size: 0.9em !important; 
+}
+
+/* Reveal.js text size modifiers */
+.reveal .text-xs { font-size: 0.6em !important; }
+.reveal .text-sm { font-size: 0.8em !important; }
+.reveal .text-base { font-size: 1em !important; }
+.reveal .text-lg { font-size: 1.2em !important; }
+.reveal .text-xl { font-size: 1.5em !important; }
+.reveal .text-2xl { font-size: 2em !important; }
+.reveal .text-3xl { font-size: 2.5em !important; }
+.reveal .text-4xl { font-size: 3em !important; }
+
+/* Reveal.js slide-specific font sizes */
+.reveal .slide-title { 
+  font-size: 3em !important; 
+  font-weight: bold !important;
+}
+
+.reveal .slide-subtitle { 
+  font-size: 1.5em !important; 
+  font-weight: normal !important;
+}
+
+.reveal .slide-content { 
+  font-size: 1.1em !important; 
+}
+
+.reveal .slide-small { 
+  font-size: 0.85em !important; 
+}
+
+/* Reveal.js code block font sizes */
+.reveal pre { 
+  font-size: 0.55em !important; 
+}
+
+.reveal code { 
+  font-size: 0.9em !important; 
+}
+
 /* Grid Background Pattern Utilities */
 @layer utilities {
   .grid-pattern {
