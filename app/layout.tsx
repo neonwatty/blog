@@ -87,9 +87,6 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`}>
         <ThemeProvider>
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
           {children}
           <Toaster 
             position="top-right"
