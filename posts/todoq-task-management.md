@@ -130,6 +130,45 @@ The command follows this process:
 
 This approach handles the complexity of PRD analysis while keeping the human in the loop for critical decisions.
 
----
+## Claude Code Integration
 
-Simple tooling that respects context limits and prevents errors. No JSON juggling, just clean commands that do exactly what they say.
+`todoq` integrates with Claude Code to work tasks in isolated [headless sessions](https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless).  When configured as described in the repo's [README (see “Claude Code Integration”)](https://github.com/neonwatty/todoq?tab=readme-ov-file#claude-code-integration), `todoq` auto-detects your Claude setup so each session focuses on a single task without pulling the entire backlog into context.
+
+Call on Claude Code to headlessly work on your next task using the `work-next` cli command.  This looks like:
+
+```bash
+# Have Claude work on the next task in an isolated session, headlessly
+$ todoq work-next
+```
+
+The output looks like this:
+
+```bash
+$ todoq work-next
+
+📋 Current task: 1.2 - Implement user authentication
+Status: pending → in_progress
+
+🤖 Claude is working on this task...
+✓ Read src/auth/login.ts
+✓ Updated authentication logic
+✓ Added input validation
+✓ Created unit tests
+✓ All tests passing
+
+✅ Task completed successfully!
+Status: in_progress → completed
+Next task: 1.3 - Add password reset functionality
+```
+
+The `work-next` command supports cli and config based settings.
+
+The headless cli for Claude Code does not include automatic retries (e.g., when attempting to read a non-existant file), but this is built into `todoq` (with features like exponential backoff).
+
+If you choose to use Claude Code / `work-next`, here's my recommended flow:
+
+1. Generate/curate tasks (manually or via [`/generate-todoq-tasks`](https://github.com/neonwatty/todoq/blob/main/commands/todoq-generate-tasks.md)).
+2. Pick the next task and start a Claude session per the README instructions.
+3. Keep updates in `todoq` (`update`, `note`, `complete`) so only the active task enters context.
+
+This keeps prompts, limits, and permissions consistent while letting Claude focus tightly on the current task. 
