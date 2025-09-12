@@ -157,6 +157,76 @@ NEXT_PUBLIC_GA_ID=your-google-analytics-id
 GOOGLE_VERIFICATION_CODE=your-google-verification-code
 ```
 
+## 📊 Analytics Setup
+
+### Google Analytics Integration
+
+The blog includes built-in Google Analytics 4 (GA4) support for tracking visitor traffic and engagement.
+
+#### Setup Instructions:
+
+1. **Create a Google Analytics Account**:
+   - Visit [Google Analytics](https://analytics.google.com/)
+   - Create a new GA4 property for your website
+   - Get your Measurement ID (format: `G-XXXXXXXXXX`)
+
+2. **Configure for Local Development**:
+   - Add to `.env.local`:
+   ```env
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   ```
+
+3. **Configure for Production (GitHub Pages)**:
+   - Go to your GitHub repository Settings
+   - Navigate to Secrets and variables → Actions
+   - Add a new repository secret named `GA_TRACKING_ID` with your GA4 ID
+
+#### Features Tracked:
+
+- **Page Views**: Automatic tracking of all page visits
+- **Blog Engagement**: 
+  - Post views with reading progress (25%, 50%, 75%, 100%)
+  - Time on page for each post
+  - Tag clicks and navigation
+  - Social sharing events
+- **User Behavior**:
+  - Scroll depth tracking
+  - External link clicks
+  - Search usage
+  - Overall time on site
+- **Performance Metrics**:
+  - Page load times
+  - Search latency
+  - Image load performance
+
+#### Viewing Analytics:
+
+Once configured, you can view your analytics at:
+- [Google Analytics Dashboard](https://analytics.google.com/)
+- Real-time data usually appears within minutes
+- Historical data and trends available after 24-48 hours
+
+### Alternative Analytics Options
+
+If you prefer privacy-focused alternatives:
+
+1. **Cloudflare Web Analytics** (Recommended for privacy):
+   - Free, cookie-less analytics
+   - No personal data collection
+   - Server-side tracking available with custom domain
+
+2. **Plausible Analytics**:
+   - Privacy-friendly, GDPR compliant
+   - Simple, lightweight script
+   - Self-hosting option available
+
+3. **Umami**:
+   - Open-source, self-hosted
+   - Privacy-focused
+   - Simple setup
+
+To use an alternative, replace the Google Analytics script in `app/layout.tsx` with your chosen provider's tracking code.
+
 ## 🔍 SEO Features
 
 - **Structured Data**: JSON-LD for articles and website
