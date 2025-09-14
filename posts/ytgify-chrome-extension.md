@@ -20,29 +20,7 @@ This morning I spent some time with Claude Code creating SVG logos for a new Chr
 
 Creating SVG logos with Claude Code is pretty fun.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with CC to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
 
-## Evolution as Design Strategy
-
-I iterated in generations.  Evolving designs I liked, discarding the others.
-
-### The Conversation Loop
-
-My loop with CC went like this:
-
-- **Me**: "Carefully analyze this app and create 5 SVG logo designs that capture its theme and target users"
-- **Claude Code**: *Generates 5 SVG logos of various aesthetics given my abstract request*
-- **Me**: "I like these two designs (X and Y) - show me 5 variations of each"
-- **Claude Code**: *Generates 5 new variations of X and Y*
-- **Me**: "I like the first two X variations, and the middle 3 Y variations.  Create different color themes / sizing / ..."
-- **Claude Code**: *Generates new variations*
-
-and so on and so forth.
-
-### Generate, Curate, Cull
-
-I treated the design cycle with Claude Code as an evolutionary process.  Generate, curate, cull, repeat.
-
-Probably did about 15 rounds of this, and ended up with a nice array of interesting logo options.
-
+Here's a short gallery of my favorites.  Ended up using the first (for reasons detailed below).
 
 <div class="logo-carousel-container" style="position: relative; max-width: 600px; margin: 3rem auto; background: #1a1a1a; border-radius: 12px; padding: 2rem; overflow: hidden;">
   <div class="logo-carousel" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #4a5568 #1a1a1a; gap: 2rem; padding: 1rem 0;">
@@ -86,6 +64,29 @@ Probably did about 15 rounds of this, and ended up with a nice array of interest
   background: #606060;
 }
 </style>
+
+## Evolution as Design Strategy
+
+I iterated in generations.  Evolving designs I liked, discarding the others.
+
+### The Conversation Loop
+
+My loop with CC went like this:
+
+- **Me**: "Carefully analyze this app and create 5 SVG logo designs that capture its theme and target users"
+- **Claude Code**: *Generates 5 SVG logos of various aesthetics given my abstract request*
+- **Me**: "I like these two designs (X and Y) - show me 5 variations of each"
+- **Claude Code**: *Generates 5 new variations of X and Y*
+- **Me**: "I like the first two X variations, and the middle 3 Y variations.  Create different color themes / sizing / ..."
+- **Claude Code**: *Generates new variations*
+
+and so on and so forth.
+
+### Generate, Curate, Cull
+
+I treated the design cycle with Claude Code as an evolutionary process.  Generate, curate, cull, repeat.
+
+Probably did about 15 rounds of this, and ended up with a nice array of interesting logo options.
 
 ### Design Themes That Emerged
 
