@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkRehype from 'remark-rehype'
 import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
 import readingTime from 'reading-time'
 
@@ -195,14 +196,15 @@ export async function getPostData(id: string): Promise<PostData | null> {
   
   // Process markdown content to HTML with syntax highlighting
   const processedContent = await remark()
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypePrismPlus, {
       ignoreMissing: true,
       showLineNumbers: false,
       // Only process code blocks, not inline code
       inline: false
     })
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content)
   let contentHtml = processedContent.toString()
   
