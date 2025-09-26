@@ -1,0 +1,22 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="70" fill="#fff" stroke="url(#heartGradient)" stroke-width="2.5"/>
+
+  <path d="M100 135 C 100 135, 75 115, 75 95 C 75 80, 85 72, 100 82 C 115 72, 125 80, 125 95 C 125 115, 100 135, 100 135 Z"
+        fill="url(#heartGradient)"
+        stroke="none"/>
+
+  <text x="100" y="100"
+        font-family="Arial, sans-serif"
+        font-size="36"
+        font-weight="bold"
+        fill="#fff"
+        text-anchor="middle"
+        dominant-baseline="middle">QC</text>
+</svg>
