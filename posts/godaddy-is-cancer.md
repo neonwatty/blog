@@ -26,6 +26,8 @@ Once you have your images, use a prompt like this to generate the treasure map. 
 
 Note this 'treasure map' aesthetic only makes sense on desktop, since you want zig-zagging paths / arrows connecting images.  On mobile you can just stack the images vertically.
 
+**[View standalone treasure map →](/treasure-maps/godaddy)** (easier to share!)
+
 
 <div class="treasure-map-container" style="position: relative; max-width: 1100px; margin: 3rem auto; padding: 2rem 1rem; min-height: 2100px; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 16px; border: 2px solid #3a3a3a;">
 
