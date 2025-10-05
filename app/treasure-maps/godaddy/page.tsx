@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GoDaddy Customer Service Treasure Map',
     description: 'Follow the treasure map through GoDaddy\'s customer service cancellation flow',
-    images: ['/images/godaddy/godaddy-1.png'],
+    images: ['/images/godaddy/treasure-map-preview.png'],
   },
 };
 
