@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTgify Chrome Extension - Video Storyboard</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="YTgify Chrome Extension - Complete User Journey Storyboard">
+    <meta property="og:description" content="Interactive storyboard showing the complete user flow for ytgify - from YouTube video to GIF creation. 11 steps with screenshots and descriptions.">
+    <meta property="og:image" content="https://neonwatty.com/storyboard/10-success-screen.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neonwatty.com/ytgify-storyboard.html">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YTgify Chrome Extension - Complete User Journey Storyboard">
+    <meta name="twitter:description" content="Interactive storyboard showing the complete user flow for ytgify - from YouTube video to GIF creation. 11 steps with screenshots and descriptions.">
+    <meta name="twitter:image" content="https://neonwatty.com/storyboard/10-success-screen.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #282828;
+            --text-color: #0f0f0f;
+            --bg-color: #ffffff;
+            --card-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+            --accent-blue: #065fd4;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #cc0000);
+            color: white;
+            padding: 60px 0 40px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .metadata {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .metadata-item strong {
+            color: var(--accent-blue);
+        }
+
+        .step {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .step-number {
+            background: var(--accent-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .screenshot-container {
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .step-section {
+            margin: 20px 0;
+        }
+
+        .step-section h3 {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-section p {
+            color: #3c3c3c;
+            line-height: 1.8;
+        }
+
+        .summary-section {
+            background: linear-gradient(135deg, #f5f5f5, #e9e9e9);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .summary-section h2 {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .flow-steps {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flow-step {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flow-step-num {
+            background: var(--accent-blue);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card h3 {
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: #5f5f5f;
+            font-size: 0.95rem;
+        }
+
+        .checkmark {
+            color: #00a000;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .toc h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 8px 0;
+        }
+
+        .toc a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .technical-details {
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .technical-details h2 {
+            margin-bottom: 20px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item strong {
+            color: #ff6b6b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: static;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .step-title {
+                font-size: 1.4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎬 YTgify Chrome Extension</h1>
+            <p>Complete User Journey Storyboard</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="metadata">
+            <div class="metadata-grid">
+                <div class="metadata-item">
+                    <strong>Extension Version:</strong> 1.0.0
+                </div>
+                <div class="metadata-item">
+                    <strong>Platform:</strong> YouTube (Chrome Extension)
+                </div>
+                <div class="metadata-item">
+                    <strong>Generated:</strong> 2025-09-30
+                </div>
+                <div class="metadata-item">
+                    <strong>Total Steps:</strong> 11
+                </div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <aside>
+                <nav class="toc">
+                    <h2>Quick Navigation</h2>
+                    <ul>
+                        <li><a href="#step-1">Step 1: YouTube Video Page</a></li>
+                        <li><a href="#step-2">Step 2: GIF Button</a></li>
+                        <li><a href="#step-3">Step 3: Quick Capture</a></li>
+                        <li><a href="#step-4">Step 4: Resolution</a></li>
+                        <li><a href="#step-5">Step 5: Frame Rate</a></li>
+                        <li><a href="#step-6">Step 6: Timeline</a></li>
+                        <li><a href="#step-7">Step 7: Text Overlay</a></li>
+                        <li><a href="#step-8">Step 8: Text Example</a></li>
+                        <li><a href="#step-9">Step 9: Processing</a></li>
+                        <li><a href="#step-10">Step 10: Success</a></li>
+                        <li><a href="#step-11">Step 11: Library</a></li>
+                        <li><a href="#summary">Flow Summary</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main>
+                <!-- Step 1 -->
+                <div class="step" id="step-1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h2 class="step-title">YouTube Video Page</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/01-youtube-video-page.png" alt="YouTube Video Page">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>User navigates to any YouTube video. The video page loads normally with standard YouTube interface. The YTgify extension is active but not yet visible.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User watches or browses a YouTube video and wants to create a GIF from a specific moment.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step" id="step-2">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h2 class="step-title">GIF Button in Player Controls</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/02-gif-button-in-controls.png" alt="GIF Button in Player Controls">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>The YTgify extension automatically injects a "GIF" button into YouTube's native player controls. The button appears on the right side of the control bar, seamlessly integrated with YouTube's UI and styled to match YouTube's design language.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User hovers over the video player to reveal controls, then clicks the "GIF" button to start creating a GIF.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step" id="step-3">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h2 class="step-title">Quick Capture Screen (Initial State)</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/03-wizard-quick-capture-initial.png" alt="Quick Capture Screen">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>A wizard overlay appears on top of the YouTube video. The "Quick Capture" screen is displayed as the first step. User sees options for:</p>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Resolution:</strong> Select output GIF quality (144p, 240p, 360p, 480p)</li>
+                            <li><strong>Frame Rate:</strong> Choose animation smoothness (5 fps, 10 fps, 15 fps)</li>
+                            <li><strong>Timeline:</strong> Select which portion of the video to convert to GIF</li>
+                        </ul>
+                        <p style="margin-top: 10px;">Default settings are pre-selected (typically 144p and 5 fps for optimal file size).</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User reviews the current settings and timeline selection.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step" id="step-4">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <h2 class="step-title">Resolution Selection</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/04-wizard-resolution-selected.png" alt="Resolution Selection">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>User has clicked on the "360p" resolution option. The selected resolution button is highlighted/activated. Higher resolution means better quality but larger file size. Resolution options: 144p, 240p, 360p, 480p.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User selects their preferred resolution based on quality vs. file size needs.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step" id="step-5">
+                    <div class="step-header">
+                        <div class="step-number">5</div>
+                        <h2 class="step-title">Frame Rate Selection</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/05-wizard-framerate-selected.png" alt="Frame Rate Selection">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>User has clicked on the "10 fps" frame rate option. The selected frame rate button is highlighted/activated. Higher frame rate means smoother animation but larger file size. Frame rate options: 5 fps, 10 fps, 15 fps.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User selects their preferred frame rate to balance smoothness with file size.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="step" id="step-6">
+                    <div class="step-header">
+                        <div class="step-number">6</div>
+                        <h2 class="step-title">Timeline Selection Interface</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/06-wizard-timeline-interface.png" alt="Timeline Selection">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>The timeline scrubber interface allows users to select which portion of the video to convert. User can drag handles to adjust the start and end times of the GIF. Timeline shows the current video duration and selected segment. Visual feedback indicates the selected time range.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User fine-tunes the exact start and end times for their GIF. User can drag timeline handles to select the perfect moment.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="step" id="step-7">
+                    <div class="step-header">
+                        <div class="step-number">7</div>
+                        <h2 class="step-title">Text Overlay Screen</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/07-wizard-text-overlay-screen.png" alt="Text Overlay Screen">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>After clicking "Continue" on the Quick Capture screen, user advances to the Text Overlay screen. This screen allows users to add custom text to their GIF. User can choose to add text or skip this step entirely.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User decides whether to add text overlay to the GIF.</p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="step" id="step-8">
+                    <div class="step-header">
+                        <div class="step-number">8</div>
+                        <h2 class="step-title">Text Overlay with Example Text</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/08-wizard-text-overlay-filled.png" alt="Text Overlay Example">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>User has entered example text: "Hello World!" The text preview shows how it will appear on the final GIF. Text customization options are visible (if available). User can see a live preview of the text overlay on the video frame.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User types their desired text and positions it as needed. User can adjust text styling and placement. User clicks "Continue" to proceed or "Skip" to omit text overlay.</p>
+                    </div>
+                </div>
+
+                <!-- Step 9 -->
+                <div class="step" id="step-9">
+                    <div class="step-header">
+                        <div class="step-number">9</div>
+                        <h2 class="step-title">Processing Screen</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/09-processing-screen.png" alt="Processing Screen">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>The extension is now processing the video frames and encoding the GIF. A progress indicator shows the current processing status. Processing steps include:</p>
+                        <ol style="margin-top: 10px; margin-left: 20px;">
+                            <li>Extracting video frames from the selected timeline segment</li>
+                            <li>Resizing frames to the selected resolution</li>
+                            <li>Applying text overlay (if specified)</li>
+                            <li>Encoding frames into GIF format</li>
+                        </ol>
+                        <p style="margin-top: 10px;">Processing time varies based on selected resolution, frame rate, length of segment, and device performance.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User waits while the GIF is being created. No interaction required during processing.</p>
+                    </div>
+                </div>
+
+                <!-- Step 10 -->
+                <div class="step" id="step-10">
+                    <div class="step-header">
+                        <div class="step-number">10</div>
+                        <h2 class="step-title">Success Screen with GIF Preview</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/10-success-screen.png" alt="Success Screen">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>GIF has been successfully created! User sees a preview of the completed GIF playing in a loop. Options available:</p>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Download:</strong> Save the GIF to local device</li>
+                            <li><strong>Save to Library:</strong> Store in the extension's GIF library</li>
+                            <li><strong>Copy:</strong> Copy GIF to clipboard for quick sharing</li>
+                            <li><strong>Create Another:</strong> Start over to make a new GIF</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User reviews the final GIF to ensure it meets their expectations. User chooses how to save or share the GIF.</p>
+                    </div>
+                </div>
+
+                <!-- Step 11 -->
+                <div class="step" id="step-11">
+                    <div class="step-header">
+                        <div class="step-number">11</div>
+                        <h2 class="step-title">Extension Popup & Library View</h2>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <img src="/storyboard/11-extension-popup.png" alt="Extension Popup">
+                    </div>
+
+                    <div class="step-section">
+                        <h3>What's Happening</h3>
+                        <p>User can access the extension popup by clicking the YTgify icon in the Chrome toolbar. The popup provides access to the GIF library, settings, and quick creation options. Library shows thumbnails of saved GIFs with metadata. User can search, filter, and manage their GIF collection.</p>
+                    </div>
+
+                    <div class="step-section">
+                        <h3>User Action</h3>
+                        <p>User clicks the extension icon to open the popup. User can browse their saved GIFs, manage the library, or adjust settings.</p>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="summary-section" id="summary">
+                    <h2>User Flow Summary</h2>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="flow-step-num">1</div>
+                            <div><strong>Start:</strong> User navigates to a YouTube video</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">2</div>
+                            <div><strong>Initiate:</strong> User clicks the GIF button in the player controls</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">3</div>
+                            <div><strong>Configure:</strong> User selects resolution, frame rate, and timeline segment</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">4</div>
+                            <div><strong>Customize:</strong> User optionally adds text overlay</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">5</div>
+                            <div><strong>Process:</strong> Extension processes the video and creates the GIF</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">6</div>
+                            <div><strong>Complete:</strong> User previews and saves the GIF</div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">7</div>
+                            <div><strong>Manage:</strong> User can access saved GIFs through the extension popup library</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="summary-section" id="features">
+                    <h2>Key Features Demonstrated</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Seamless Integration</h3>
+                            <p>GIF button appears naturally in YouTube controls</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Flexible Configuration</h3>
+                            <p>Multiple resolution and frame rate options</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Precise Selection</h3>
+                            <p>Timeline interface for selecting exact video segments</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Text Overlay</h3>
+                            <p>Optional text customization for GIFs</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Real-time Preview</h3>
+                            <p>See the final result before saving</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3><span class="checkmark">✓</span> Persistent Library</h3>
+                            <p>Save and manage GIF collection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Details -->
+                <div class="technical-details">
+                    <h2>Technical Details</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>Extension Type:</strong> Chrome Extension (Manifest V3)
+                        </div>
+                        <div class="tech-item">
+                            <strong>Platform:</strong> YouTube video pages
+                        </div>
+                        <div class="tech-item">
+                            <strong>Output Format:</strong> Animated GIF
+                        </div>
+                        <div class="tech-item">
+                            <strong>Integration:</strong> Seamlessly injected into YouTube's native UI
+                        </div>
+                        <div class="tech-item">
+                            <strong>Storage:</strong> IndexedDB for GIF library, Chrome Storage for settings
+                        </div>
+                        <div class="tech-item">
+                            <strong>Processing:</strong> Client-side video frame extraction and GIF encoding
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>YTgify Chrome Extension</strong> - Version 1.0.0</p>
+            <p>Generated: 2025-09-30</p>
+        </div>
+    </footer>
+</body>
+</html>
