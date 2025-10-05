@@ -1,0 +1,68 @@
+{
+  "id": "godaddy-is-cancer",
+  "title": "GoDaddy is Cancer",
+  "slides": [
+    {
+      "type": "title",
+      "title": "GoDaddy is Cancer",
+      "content": "Have Fun Trying to Cancel Even a \"Free\" Service",
+      "notes": "Published on 2025-10-04. Tags: webdev, customer service, cancer"
+    },
+    {
+      "type": "image",
+      "title": "GoDaddy Screenshot 1",
+      "image": {
+        "src": "/images/godaddy/godaddy-1.png",
+        "alt": "GoDaddy Screenshot 1",
+        "caption": "GoDaddy Screenshot 1"
+      }
+    },
+    {
+      "type": "image",
+      "title": "GoDaddy Screenshot 2",
+      "image": {
+        "src": "/images/godaddy/godaddy-2.png",
+        "alt": "GoDaddy Screenshot 2",
+        "caption": "GoDaddy Screenshot 2"
+      }
+    },
+    {
+      "type": "image",
+      "title": "GoDaddy Screenshot 3",
+      "image": {
+        "src": "/images/godaddy/godaddy-3.png",
+        "alt": "GoDaddy Screenshot 3",
+        "caption": "GoDaddy Screenshot 3"
+      }
+    },
+    {
+      "type": "image",
+      "title": "GoDaddy Screenshot 4",
+      "image": {
+        "src": "/images/godaddy/godaddy-4.png",
+        "alt": "GoDaddy Screenshot 4",
+        "caption": "GoDaddy Screenshot 4"
+      }
+    },
+    {
+      "type": "image",
+      "title": "GoDaddy Screenshot 5",
+      "image": {
+        "src": "/images/godaddy/godaddy-5.png",
+        "alt": "GoDaddy Screenshot 5",
+        "caption": "GoDaddy Screenshot 5"
+      }
+    }
+  ],
+  "metadata": {
+    "date": "2025-10-04",
+    "tags": [
+      "webdev",
+      "customer service",
+      "cancer"
+    ],
+    "totalSlides": 6,
+    "generatedAt": "2025-10-05T00:53:18.082Z",
+    "sourcePost": "godaddy-is-cancer"
+  }
+}

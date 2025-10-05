@@ -2,7 +2,7 @@
 title: "Generative SVG Logo Design Using Claude Code"
 date: "2025-09-13"
 excerpt: "Generate, evolve, and iterate on SVG logos using natural language and Claude Code."
-tags: ["Claude Code", "SVG Design", "Logo Design", "Vector Graphics", "AI Design", "Generative Design", "Chrome Extension", "No-Code Design"]
+tags: ["Claude Code", "Logo Design", "Chrome Extension"]
 featured: true
 author: "Jeremy Watt"
 seoTitle: "Generative SVG Logo Design Using Claude Code"

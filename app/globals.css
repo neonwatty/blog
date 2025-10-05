@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Prism CSS for syntax highlighting */
-@import 'prismjs/themes/prism-tomorrow.css';
-
 @layer base {
   :root {
     /* Professional Dark UI Design System - Now Default */

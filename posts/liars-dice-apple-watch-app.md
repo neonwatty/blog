@@ -2,7 +2,7 @@
 title: "A watchOS app to help you cheat at Liars Dice using math"
 date: "2025-08-31"
 excerpt: "A watchOS app to help you cheat at Liars Dice using math"
-tags: ["apple watch", "watchos", "swift", "gaming", "probability"]
+tags: ["apple watch", "swift", "gaming"]
 slideshow: true
 ---
 

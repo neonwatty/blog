@@ -2,7 +2,7 @@
 title: "Claude Code Powered Test Debugging Without The Context Overload"
 date: "2025-08-31"
 excerpt: "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions."
-tags: ["Testing", "CLI", "Claude Code", "AI", "Context Management", "DevTools"]
+tags: ["Testing", "Claude Code", "CLI"]
 featured: true
 author: "Jeremy Watt"
 seoTitle: "TFQ: Avoid Claude Code Context Limits When Debugging Tests"
