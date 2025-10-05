@@ -115,13 +115,6 @@ export interface PostData {
   slideshow?: boolean
 }
 
-export interface PostMeta {
-  totalPosts: number
-  totalTags: string[]
-  recentPosts: PostData[]
-  popularTags: { tag: string; count: number }[]
-}
-
 // Enhanced post retrieval with SEO data
 export function getSortedPostsData(): PostData[] {
   // Return empty array on client side or if posts directory doesn't exist
@@ -231,51 +224,23 @@ export async function getPostData(id: string): Promise<PostData | null> {
   }
 }
 
-// Search functionality
-export function searchPosts(query: string): PostData[] {
-  const allPosts = getSortedPostsData()
-  const lowercaseQuery = query.toLowerCase()
-  
-  return allPosts.filter(post => 
-    post.title.toLowerCase().includes(lowercaseQuery) ||
-    post.excerpt.toLowerCase().includes(lowercaseQuery) ||
-    post.content.toLowerCase().includes(lowercaseQuery) ||
-    post.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
-  )
-}
-
 // Get posts by tag
 export function getPostsByTag(tag: string): PostData[] {
   const allPosts = getSortedPostsData()
-  return allPosts.filter(post => 
+  return allPosts.filter(post =>
     post.tags.map(t => t.toLowerCase()).includes(tag.toLowerCase())
   )
-}
-
-// Get related posts
-export function getRelatedPosts(currentPostId: string, limit = 3): PostData[] {
-  const allPosts = getSortedPostsData()
-  const currentPost = allPosts.find(post => post.id === currentPostId)
-  
-  if (!currentPost) return []
-  
-  const relatedPosts = allPosts
-    .filter(post => post.id !== currentPostId)
-    .filter(post => post.tags.some(tag => currentPost.tags.includes(tag)))
-    .slice(0, limit)
-    
-  return relatedPosts
 }
 
 // Get all unique tags
 export function getAllTags(): string[] {
   const allPosts = getSortedPostsData()
   const tagsSet = new Set<string>()
-  
+
   allPosts.forEach(post => {
     post.tags.forEach(tag => tagsSet.add(tag))
   })
-  
+
   return Array.from(tagsSet).sort()
 }
 
@@ -283,27 +248,15 @@ export function getAllTags(): string[] {
 export function getPopularTags(limit = 10): { tag: string; count: number }[] {
   const allPosts = getSortedPostsData()
   const tagCounts: { [key: string]: number } = {}
-  
+
   allPosts.forEach(post => {
     post.tags.forEach(tag => {
       tagCounts[tag] = (tagCounts[tag] || 0) + 1
     })
   })
-  
+
   return Object.entries(tagCounts)
     .map(([tag, count]) => ({ tag, count }))
     .sort((a, b) => b.count - a.count)
     .slice(0, limit)
-}
-
-// Get blog metadata
-export function getBlogMeta(): PostMeta {
-  const allPosts = getSortedPostsData()
-  
-  return {
-    totalPosts: allPosts.length,
-    totalTags: getAllTags(),
-    recentPosts: allPosts.slice(0, 5),
-    popularTags: getPopularTags(10)
-  }
 }

@@ -2,7 +2,7 @@
 title: "Claude Code Task Management Without The JSON Overhead"
 date: "2025-09-03"
 excerpt: "Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks."
-tags: ["Claude Code", "Task Management", "Context Optimization", "CLI", "Agentic IDEs", "Productivity"]
+tags: ["Claude Code", "Task Management", "Productivity"]
 featured: true
 author: "Jeremy Watt"
 seoTitle: "Stop Wasting Context: todoq vs JSON Task Management in Claude Code"

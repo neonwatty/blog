@@ -1,0 +1,41 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "scripts/**/*.{ts,tsx,js,jsx}"
+  ],
+  "project": [
+    "**/*.{ts,tsx,js,jsx}",
+    "!**/*.test.{ts,tsx,js,jsx}",
+    "!**/*.spec.{ts,tsx,js,jsx}",
+    "!**/__tests__/**",
+    "!**/tests/**"
+  ],
+  "ignore": [
+    "**/*.md",
+    "**/*.mdx",
+    "**/posts/**",
+    "**/slideshows/**",
+    "public/**",
+    ".next/**",
+    "node_modules/**",
+    "**/*.d.ts",
+    "plans/**",
+    "next-sitemap.config.js"
+  ],
+  "ignoreDependencies": [
+    "reveal.js",
+    "@types/reveal.js",
+    "@types/testing-library__jest-dom",
+    "eslint-config-next"
+  ],
+  "ignoreExportsUsedInFile": true,
+  "eslint": {
+    "config": ["eslint.config.js", ".eslintrc.json"]
+  },
+  "postcss": {
+    "config": ["postcss.config.js"]
+  },
+  "tailwind": {
+    "config": ["tailwind.config.js"]
+  }
+}
