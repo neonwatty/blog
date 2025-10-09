@@ -3,6 +3,11 @@ name: CI/CD Pipeline
 on:
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - '.github/workflows/*.yml'
+      - '.github/workflows/*.yaml'
+  workflow_dispatch:
 
 jobs:
   test:
