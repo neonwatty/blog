@@ -12,7 +12,7 @@ metaDescription: "X Search Pro is now live. Build your personal X/Twitter search
 [X Search Pro](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) is now live in the Chrome Web Store!
 
 <div style="max-width: 800px; margin: 2rem auto;">
-  <iframe width="100%" height="450" src="https://www.youtube.com/embed/OetiwUbEyxY" title="X Search Pro Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
+  <iframe width="100%" height="450" src="https://www.youtube.com/embed/Xqn1spThqFk" title="X Search Pro Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
 </div>
 
 Even after pruning my X / Twitter feed of unwanted clickbait posts (e.g., politics, tech drama) I still felt like the signal to noise ratio in my feed was too low.
