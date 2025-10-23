@@ -5,6 +5,7 @@ export default function Header() {
   const navigation = [
     { name: 'Posts', href: '/posts' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Newsletter', href: '/newsletter' },
     { name: 'Slides', href: '/slides' },
     { name: 'About', href: '/about' },
   ]

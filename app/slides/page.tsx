@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { getAllSlideshows } from '@/lib/slides'
 import { Metadata } from 'next'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Slideshows - Modern Blog',
@@ -17,9 +18,11 @@ export default function SlidesIndex() {
   const slideshows = getAllSlideshows()
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col transition-all duration-300"
+         style={{ backgroundColor: 'transparent' }}>
       <Header />
-      <div className="container mx-auto px-4 py-8">
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -122,7 +125,9 @@ export default function SlidesIndex() {
           </div>
         )}
         </div>
-      </div>
-    </>
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }

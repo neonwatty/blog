@@ -1,5 +1,13 @@
+'use client'
+
+import Newsletter from './Newsletter'
+import { usePathname } from 'next/navigation'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+  // Handle both /newsletter and /newsletter/
+  const isNewsletterPage = pathname === '/newsletter' || pathname.startsWith('/newsletter/')
 
   return (
     <footer className="transition-all duration-300"
@@ -9,6 +17,18 @@ export default function Footer() {
               boxShadow: '0 -1px 3px rgba(0, 0, 0, 0.02)'
             }}>
       <div className="max-w-4xl mx-auto px-4 py-12">
+        {/* Newsletter Section - hidden on newsletter page */}
+        {!isNewsletterPage && (
+          <>
+            <div className="mb-16">
+              <Newsletter />
+            </div>
+
+            {/* Divider */}
+            <div className="mb-12"
+                 style={{ borderTop: '1px solid var(--color-border-subtle)' }}></div>
+          </>
+        )}
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm transition-all duration-300">
           <div className="mb-6 sm:mb-0">
             <p className="font-medium transition-all duration-300"
@@ -52,13 +72,6 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </div>
-        
-        {/* Subtle decorative element */}
-        <div className="mt-8 pt-8 flex justify-center"
-             style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
-          <div className="w-12 h-px transition-all duration-300"
-               style={{ background: 'var(--gradient-subtle)' }}></div>
         </div>
       </div>
     </footer>

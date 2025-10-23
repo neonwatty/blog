@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <filter id="glow-final">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="800" height="800" fill="#0a0a0a"/>
+
+  <!-- Large /nw -->
+  <text x="400" y="500"
+        font-family="'Courier New', monospace"
+        font-size="360"
+        font-weight="bold"
+        fill="#00ffff"
+        filter="url(#glow-final)"
+        text-anchor="middle">/nw</text>
+</svg>
