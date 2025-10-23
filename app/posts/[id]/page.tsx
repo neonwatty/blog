@@ -131,13 +131,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
             {/* Article Content */}
             <div className="prose prose-xl max-w-none mb-20 prose-content"
-                 style={{ 
+                 style={{
                    color: 'var(--color-text-secondary)',
                    lineHeight: '1.8'
                  }}>
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
-
 
           </article>
         </main>

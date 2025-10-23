@@ -127,13 +127,13 @@ export default function RootLayout({
               // Add captions to liars-dice images
               document.addEventListener('DOMContentLoaded', function() {
                 const liarsDiceImages = document.querySelectorAll('img[src*="liars-dice"]');
-                
+
                 liarsDiceImages.forEach(img => {
                   if (img.alt) {
                     const caption = document.createElement('div');
                     caption.className = 'image-caption';
                     caption.textContent = img.alt;
-                    
+
                     // Insert the caption after the image's parent paragraph
                     const paragraph = img.closest('p');
                     if (paragraph && paragraph.parentNode) {
@@ -142,6 +142,37 @@ export default function RootLayout({
                   }
                 });
               });
+            `
+          }} />
+
+          {/* Beehiiv UTM Parameter Forwarding */}
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const params = new URLSearchParams(window.location.search);
+                const utmParams = {};
+
+                // Collect all UTM parameters
+                for (const [key, value] of params.entries()) {
+                  if (key.startsWith('utm_')) {
+                    utmParams[key] = value;
+                  }
+                }
+
+                // If we have UTM parameters, forward them to beehiiv iframes
+                if (Object.keys(utmParams).length > 0) {
+                  window.addEventListener('load', function() {
+                    const beehiivIframes = document.querySelectorAll('iframe.beehiiv-embed');
+                    beehiivIframes.forEach(function(iframe) {
+                      const iframeSrc = new URL(iframe.src);
+                      Object.keys(utmParams).forEach(function(key) {
+                        iframeSrc.searchParams.set(key, utmParams[key]);
+                      });
+                      iframe.src = iframeSrc.toString();
+                    });
+                  });
+                }
+              })();
             `
           }} />
         </ThemeProvider>
