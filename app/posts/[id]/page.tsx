@@ -39,13 +39,14 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       publishedTime: post.date,
       authors: [post.author || 'Blog Author'],
       tags: post.tags,
-      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/default-og.jpg`],
+      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/og-image.jpg`],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/default-og.jpg`],
+      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/og-image.jpg`],
+      creator: '@neonwatty',
     },
     alternates: {
       canonical: post.canonicalUrl || `${siteUrl}/posts/${post.id}`

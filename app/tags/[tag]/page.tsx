@@ -25,14 +25,31 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
     }
   }
 
-  const tagName = posts[0]?.tags.find(t => 
+  const tagName = posts[0]?.tags.find(t =>
     t.toLowerCase() === decodedTag.toLowerCase()
   ) || decodedTag
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const description = `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`
+
   return {
     title: `${tagName} Posts`,
-    description: `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`,
+    description,
     keywords: [tagName, 'blog', 'posts', 'articles'],
+    openGraph: {
+      title: `${tagName} Posts | Jeremy Watt's Blog`,
+      description,
+      type: 'website',
+      url: `${siteUrl}/tags/${tag}`,
+      images: [`${siteUrl}/images/og-image.jpg`],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tagName} Posts`,
+      description,
+      images: [`${siteUrl}/images/og-image.jpg`],
+      creator: '@neonwatty',
+    },
   }
 }
 

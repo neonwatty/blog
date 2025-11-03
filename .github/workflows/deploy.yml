@@ -50,7 +50,17 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://neonwatty.com
-      
+
+      - name: Generate RSS feeds for E2E tests
+        run: npm run generate:rss
+        env:
+          NEXT_PUBLIC_SITE_URL: https://neonwatty.com
+
+      - name: Generate sitemap for E2E tests
+        run: npm run generate:sitemap
+        env:
+          NEXT_PUBLIC_SITE_URL: https://neonwatty.com
+
       - name: Start server for E2E tests
         run: npx http-server out -p 3001 -s &
         
@@ -81,11 +91,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build with Next.js (includes RSS and sitemap generation)
+      - name: Build with Next.js
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://neonwatty.com
           NEXT_PUBLIC_GA_ID: ${{ secrets.GA_TRACKING_ID }}
+
+      - name: Generate RSS feeds
+        run: npm run generate:rss
+        env:
+          NEXT_PUBLIC_SITE_URL: https://neonwatty.com
+
+      - name: Generate sitemap
+        run: npm run generate:sitemap
+        env:
+          NEXT_PUBLIC_SITE_URL: https://neonwatty.com
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

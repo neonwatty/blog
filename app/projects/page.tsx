@@ -5,9 +5,25 @@ import ProjectCard from '@/components/ProjectCard'
 import StructuredData from '@/components/StructuredData'
 import { getProjectsData } from '@/lib/projects'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',
+  openGraph: {
+    title: 'Projects | Jeremy Watt\'s Blog',
+    description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',
+    type: 'website',
+    url: `${siteUrl}/projects`,
+    images: [`${siteUrl}/images/og-image.jpg`],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects',
+    description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',
+    images: [`${siteUrl}/images/og-image.jpg`],
+    creator: '@neonwatty',
+  },
 }
 
 export default function ProjectsPage() {

@@ -57,6 +57,8 @@ export const metadata: Metadata = {
     title: 'Jeremy Watt\'s Blog',
     description: 'A modern, performant blog built with Next.js',
     images: ['/images/og-image.jpg'],
+    creator: '@neonwatty',
+    site: '@neonwatty',
   },
   robots: {
     index: true,
