@@ -31,13 +31,7 @@ export default function About() {
               <div className="space-y-3">
                 <section>
                   <p className="text-lg text-center" style={{ color: 'var(--color-text-primary)' }}>
-                    I'm an AI Engineer busy building and thinking about the exponential timeline we live in.
-                  </p>
-                </section>
-
-                <section>
-                  <p className="text-lg text-center" style={{ color: 'var(--color-text-primary)' }}>
-                    In previous lives I've been a scholar of Religion, a PhD student in Machine Learning, and an HVAC certified technician.
+                    AI Engineer.  In previous lives I've been a scholar of Religion, a PhD student in Machine Learning, and an HVAC certified technician.
                   </p>
                 </section>
 
