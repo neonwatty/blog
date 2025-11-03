@@ -4,6 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
+// Track seen URLs to prevent duplicates
+const seenUrls = new Set()
+
 // Function to read posts directly from the posts directory
 function getDynamicPaths() {
   const paths = []
@@ -113,12 +116,16 @@ module.exports = {
     ],
   },
 
-  // Add dynamic paths from posts, tags, and slides
-  additionalPaths: async (config) => {
-    return getDynamicPaths()
-  },
+  // Note: additionalPaths removed - Next.js already generates all these pages
+  // via generateStaticParams, so next-sitemap auto-discovers them from the build output
 
   transform: async (config, path) => {
+    // Prevent duplicate URLs in sitemap
+    if (seenUrls.has(path)) {
+      return null // Skip this URL, already in sitemap
+    }
+    seenUrls.add(path)
+
     // Custom priority and changefreq based on path
     let priority = 0.7
     let changefreq = 'weekly'
