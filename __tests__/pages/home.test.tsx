@@ -29,7 +29,7 @@ describe('Home Page', () => {
 
   test('renders tagline', () => {
     renderWithTheme(<Home />)
-    expect(screen.getByText('Building open source AI tools and apps.')).toBeInTheDocument()
+    expect(screen.getByText('AI Engineer and certified HVAC technician')).toBeInTheDocument()
   })
 
   test('renders social links', () => {
