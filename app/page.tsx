@@ -59,7 +59,7 @@ export default function Home() {
                 
                 <p className="text-xl leading-relaxed mb-6 max-w-2xl"
                    style={{ color: 'var(--color-text-secondary)' }}>
-                  Building open source AI tools and apps.
+                  AI Engineer and certified HVAC technician
                 </p>
 
                 {/* Social links and Newsletter */}
