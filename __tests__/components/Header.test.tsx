@@ -30,7 +30,6 @@ describe('Header Component', () => {
     renderWithTheme(<Header />)
     expect(screen.getByText('Posts')).toBeInTheDocument()
     expect(screen.getByText('Projects')).toBeInTheDocument()
-    expect(screen.getByText('Newsletter')).toBeInTheDocument()
     expect(screen.getByText('Slides')).toBeInTheDocument()
     expect(screen.getByText('About')).toBeInTheDocument()
   })
@@ -39,18 +38,11 @@ describe('Header Component', () => {
     renderWithTheme(<Header />)
     const aboutLink = screen.getByRole('link', { name: 'About' })
     const postsLink = screen.getByRole('link', { name: 'Posts' })
-    const newsletterLink = screen.getByRole('link', { name: 'Newsletter' })
+    const slidesLink = screen.getByRole('link', { name: 'Slides' })
 
     expect(postsLink).toHaveAttribute('href', '/posts')
     expect(aboutLink).toHaveAttribute('href', '/about')
-    expect(newsletterLink).toHaveAttribute('href', '/newsletter')
-  })
-
-  test('newsletter link appears in navigation', () => {
-    renderWithTheme(<Header />)
-    const newsletterLink = screen.getByRole('link', { name: 'Newsletter' })
-    expect(newsletterLink).toBeInTheDocument()
-    expect(newsletterLink).toHaveAttribute('href', '/newsletter')
+    expect(slidesLink).toHaveAttribute('href', '/slides')
   })
 
   test('renders with responsive design classes', () => {

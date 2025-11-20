@@ -39,23 +39,24 @@ describe('Home Page', () => {
     expect(document.querySelector('a[href="https://www.linkedin.com/in/jeremy-watt/"]')).toBeInTheDocument()
   })
 
-  test('renders newsletter button in hero', () => {
+  test('renders Discord icon in hero social links', () => {
     renderWithTheme(<Home />)
-    const newsletterLink = screen.getByRole('link', { name: /Subscribe/i })
-    expect(newsletterLink).toBeInTheDocument()
+    const discordLink = document.querySelector('a[href="https://discord.gg/8EUxqR93"]')
+    expect(discordLink).toBeInTheDocument()
   })
 
-  test('newsletter button links to /newsletter', () => {
+  test('Discord icon links to Discord server', () => {
     renderWithTheme(<Home />)
-    const newsletterLink = screen.getByRole('link', { name: /Subscribe/i })
-    expect(newsletterLink).toHaveAttribute('href', '/newsletter')
+    const discordLink = document.querySelector('a[href="https://discord.gg/8EUxqR93"]')
+    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/8EUxqR93')
+    expect(discordLink).toHaveAttribute('target', '_blank')
   })
 
-  test('newsletter button contains emoji', () => {
+  test('Discord icon contains SVG', () => {
     renderWithTheme(<Home />)
-    const buttonText = screen.getByRole('link', { name: /Subscribe/i }).textContent
-    expect(buttonText).toContain('📬')
-    expect(buttonText).toContain('Subscribe')
+    const discordLink = document.querySelector('a[href="https://discord.gg/8EUxqR93"]')
+    const svg = discordLink?.querySelector('svg')
+    expect(svg).toBeInTheDocument()
   })
 
   test('has header and footer', () => {
@@ -68,9 +69,9 @@ describe('Home Page', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
   })
 
-  test('newsletter appears in footer on homepage', () => {
+  test('Discord appears in footer on homepage', () => {
     renderWithTheme(<Home />)
-    // Should show newsletter in footer since we're not on /newsletter page
-    expect(screen.getByText('Subscribe for updates')).toBeInTheDocument()
+    // Should show Discord in footer
+    expect(screen.getByText('Join our Discord Community')).toBeInTheDocument()
   })
 })

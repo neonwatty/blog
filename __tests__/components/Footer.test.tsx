@@ -30,29 +30,35 @@ describe('Footer Component', () => {
     expect(document.querySelector('a[href="https://www.linkedin.com/in/jeremy-watt/"]')).toBeInTheDocument()
   })
 
-  test('shows newsletter on regular pages', () => {
+  test('contains Discord icon in social links', () => {
+    render(<Footer />)
+    const discordLinks = document.querySelectorAll('a[href="https://discord.gg/8EUxqR93"]')
+    expect(discordLinks.length).toBeGreaterThanOrEqual(1)
+  })
+
+  test('shows Discord on regular pages', () => {
     mockPathname.mockReturnValue('/')
     render(<Footer />)
-    expect(screen.getByText('Subscribe for updates')).toBeInTheDocument()
-    expect(screen.getByText('Open Source releases, updates, and learnings')).toBeInTheDocument()
+    expect(screen.getByText('Join our Discord Community')).toBeInTheDocument()
+    expect(screen.getByText('Keep up to date with open source projects')).toBeInTheDocument()
   })
 
-  test('hides newsletter on newsletter page', () => {
-    mockPathname.mockReturnValue('/newsletter')
-    render(<Footer />)
-    expect(screen.queryByText('Subscribe for updates')).not.toBeInTheDocument()
-    expect(screen.queryByText('Open Source releases, updates, and learnings')).not.toBeInTheDocument()
-  })
-
-  test('shows newsletter on posts page', () => {
+  test('shows Discord on posts page', () => {
     mockPathname.mockReturnValue('/posts')
     render(<Footer />)
-    expect(screen.getByText('Subscribe for updates')).toBeInTheDocument()
+    expect(screen.getByText('Join our Discord Community')).toBeInTheDocument()
   })
 
-  test('shows newsletter on about page', () => {
+  test('shows Discord on about page', () => {
     mockPathname.mockReturnValue('/about')
     render(<Footer />)
-    expect(screen.getByText('Subscribe for updates')).toBeInTheDocument()
+    expect(screen.getByText('Join our Discord Community')).toBeInTheDocument()
+  })
+
+  test('contains Discord link', () => {
+    render(<Footer />)
+    const discordLink = screen.getByRole('link', { name: /Join Discord/i })
+    expect(discordLink).toBeInTheDocument()
+    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/8EUxqR93')
   })
 })
