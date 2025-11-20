@@ -4,37 +4,37 @@ import Newsletter from '@/components/Newsletter'
 describe('Newsletter Component', () => {
   test('renders heading', () => {
     render(<Newsletter />)
-    expect(screen.getByText('Subscribe for updates')).toBeInTheDocument()
+    expect(screen.getByText('Join our Discord Community')).toBeInTheDocument()
   })
 
   test('renders subtitle', () => {
     render(<Newsletter />)
-    expect(screen.getByText('Open Source releases, updates, and learnings')).toBeInTheDocument()
+    expect(screen.getByText('Keep up to date with open source projects')).toBeInTheDocument()
   })
 
-  test('contains beehiiv iframe with correct src', () => {
+  test('contains Discord link with correct href', () => {
     render(<Newsletter />)
-    const iframe = document.querySelector('iframe.beehiiv-embed')
-    expect(iframe).toBeInTheDocument()
-    expect(iframe).toHaveAttribute('src', 'https://subscribe-forms.beehiiv.com/f36aa878-a5f0-4ba2-bc2f-cd9b2c1894d8')
+    const link = screen.getByRole('link', { name: /Join Discord/i })
+    expect(link).toBeInTheDocument()
+    expect(link).toHaveAttribute('href', 'https://discord.gg/8EUxqR93')
   })
 
-  test('contains beehiiv script tag', () => {
+  test('Discord link opens in new tab', () => {
     render(<Newsletter />)
-    const script = document.querySelector('script[src="https://subscribe-forms.beehiiv.com/embed.js"]')
-    expect(script).toBeInTheDocument()
+    const link = screen.getByRole('link', { name: /Join Discord/i })
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer')
   })
 
-  test('iframe has correct data-test-id attribute', () => {
+  test('contains Discord icon SVG', () => {
     render(<Newsletter />)
-    const iframe = document.querySelector('[data-test-id="beehiiv-embed"]')
-    expect(iframe).toBeInTheDocument()
+    const link = screen.getByRole('link', { name: /Join Discord/i })
+    const svg = link.querySelector('svg')
+    expect(svg).toBeInTheDocument()
   })
 
-  test('iframe has correct attributes', () => {
+  test('renders Join Discord text', () => {
     render(<Newsletter />)
-    const iframe = document.querySelector('iframe.beehiiv-embed')
-    expect(iframe).toHaveAttribute('frameBorder', '0')
-    expect(iframe).toHaveAttribute('scrolling', 'no')
+    expect(screen.getByText('Join Discord')).toBeInTheDocument()
   })
 })

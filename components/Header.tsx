@@ -5,7 +5,6 @@ export default function Header() {
   const navigation = [
     { name: 'Posts', href: '/posts' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Newsletter', href: '/newsletter' },
     { name: 'Slides', href: '/slides' },
     { name: 'About', href: '/about' },
   ]
@@ -39,7 +38,7 @@ export default function Header() {
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 <span className="group-hover:text-opacity-100 transition-all duration-300"
-                      style={{ 
+                      style={{
                         color: 'var(--color-text-secondary)'
                       }}
 >
