@@ -2,7 +2,7 @@
 title: "Claude Code Helped Me Bring Quake to the Browser with HTTPS"
 date: "2025-11-29"
 excerpt: "How AI pair programming helped me finally ship a stalled project"
-tags: ["Claude Code", "AI", "DevOps", "Kamal", "Docker", "Quake"]
+tags: ["Claude Code", "AI", "DevOps", "Kamal", "Docker"]
 featured: true
 author: "Jeremy Watt"
 image: "https://github.com/jermwatt/readme_gifs/blob/main/kamal-quake-demo.webp?raw=true"
