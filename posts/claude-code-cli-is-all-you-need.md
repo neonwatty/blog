@@ -14,53 +14,41 @@ metaDescription: "Why natural language + CLI tools beats building custom slash c
 
 Claude Code supports slash commands, skills, MCP servers, and custom tooling. When you find yourself doing something repeatedly, the natural instinct kicks in: build a reusable command.
 
-You start imagining something like:
+You should absolutely resist this urge.
+
+Because you start imagining slash commands like this:
 
 ```
 /create-blog-post --image=path/to/image.png --repo=github.com/user/blog --title="My Post" --tags="AI,CLI"
 ```
 
-Arguments for every option. Validation. Error handling. Documentation. Before you know it, you're maintaining a tool instead of shipping work.
 
-# The Simpler Reality
+And before you know it, you're building and maintaining a tool instead of shipping work.
 
-Here's the thing: CLI tools + natural language is all you need.
+# Keep it simple stupid
 
-Claude Code already knows how to use `gh`, `git`, `npm`, `docker`, and dozens of other CLI tools. You don't need to wrap them in custom commands. Just describe what you want and point it at the resources.
+Skip creating more tools: modern agents like Claude Code and Codex are extremely good at using CLI tools.  So "just talk to it" and describe in detail what you want.  Citing the appropriate tools (like `gh`).
+
+Again, Claude Code and company already knows how to use `gh`, `git`, `npm`, `docker`, and dozens of other CLI tools.  You don't need to wrap them in custom commands.  Just describe what you want and point it at the resources.
 
 # Real Example: Writing This Post
 
-This very blog post was created without a single custom command. Here's what I told Claude Code:
+This blog post was created without a single custom Claude Code Slash Command / Skill / whatever.  Just an idea, some notes, and a discussion with Claude Code created the content, the PR, workflow debugging, etc., 
 
-> "Help me create a succinct article for my blog neonwatty.com whose GitHub repo is at github.com/neonwatty/blog. The topic is the power of using Claude Code + gh to handle CI. Screenshots are on my Desktop: how-it-works-fail.png and how-it-works-succeed.png. Use the autocomplete CLI to optimize keywords."
+Here's how I kicked off the conversation with Claude Code about this article (we had several back and forths to refine):
 
-That's it. One natural language prompt with:
+> "Help me create a succinct article for my blog (located at neonwatty.com) whose github repo is located at xxx.  The subject: stop over-complicating Claude Code with over-engineered Slash Commands / Skills / sub-Agents / etc.,  Claude Code, Codex, etc., are extremely solid with CLI tools - they're all you need.  Don't waste time building / maintaining agentic tooling when you can just "talk to it", describe what you want done (citing appropriate CLI tools / things you need done), and just ship."
+
+That's it. One natural language prompt to kick things off containing:
 - The blog URL and repo location
 - The topic and angle
-- Where to find the images
-- A hint about SEO tooling
+- Where to find any images
 
-Claude Code figured out the rest:
+Claude Code - with its access to tools like `gh` - can figure out the boring stuff on its own:
 - Cloned the blog repo and explored its structure
-- Found and uploaded images to the readme_gifs repo via `git`
-- Used `autocomplete google` for SEO keyword research
+- Found and uploaded images to the readme_gifs repo via `git` (where I store images for various projects)
+- Used my `autocomplete google` for SEO keyword research
 - Wrote the markdown following existing post conventions
 - Created a PR with `gh pr create`
 
 <img src="https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true" alt="Claude Code creating a PR with gh CLI" width="100%" />
-
-No slash command. No skills. No MCP server. Just natural language and standard CLI tools.
-
-# When CLI Beats Custom Commands
-
-**Flexibility:** Natural language handles edge cases. "This time, also update the frontmatter date" just works.
-
-**No maintenance:** CLI tools update themselves. Your custom slash command? That's on you.
-
-**Composability:** Combine any tools on the fly. "Use `gh` to check the CI status, then `git` to push a fix" requires zero configuration.
-
-**Context-aware:** Claude Code adapts to your project structure. It reads your existing posts and matches the format automatically.
-
-# Conclusion
-
-Stop building slash commands. Start describing what you want.
