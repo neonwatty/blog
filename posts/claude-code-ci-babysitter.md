@@ -7,16 +7,16 @@ featured: true
 author: "Jeremy Watt"
 image: "https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true"
 seoTitle: "Let Claude Code Babysit Your CI - AI Powered GitHub Actions Debugging"
-metaDescription: "Use Claude Code CLI with gh to autonomously monitor, debug, and fix GitHub Actions workflows while you step away."
+metaDescription: "Use Claude Code CLI with gh to autonomously monitor, debug, and fix GitHub Actions workflows—a massive productivity booster."
 ---
 
-# The Old Pain
+# Manually Monitoring GitHub CI is a Pain
 
-GitHub Actions workflows run on different hardware, timing, and environments than your local machine. The traditional fix? Tools like [act](https://github.com/nektos/act) that simulate CI locally. But it never quite replicates GitHub perfectly, and debugging remote failures remains tedious.
+GitHub Actions workflows run on different hardware, timing, and environments than your local machine. The traditional fix? Tools like [act](https://github.com/nektos/act) that simulate CI locally. But it never quite replicates GitHub perfectly, and debugging remote failures remains a tedious, time-consuming process that requires you to intermittently check in and fix GitHub workflow-specific bugs.
 
-# The New Way
+# Use Claude Code to Monitor Your GitHub CI Workflows
 
-Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can have Claude Code autonomously monitor your actual workflows—checking status every few minutes, detecting failures, reading logs, making fixes, and re-running. All while you step away.
+Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can have Claude Code autonomously monitor your actual workflows—checking status every few minutes, detecting failures, reading logs, making fixes, and re-running. It's a massive productivity booster.
 
 # A Real Example
 
@@ -63,7 +63,7 @@ while true; do
 done
 ```
 
-When Claude Code detects a failure, it reads the logs, identifies the issue, makes the fix, pushes the changes, and re-runs the workflow—all through natural conversation. You set it up and walk away.
+When Claude Code detects a failure, it reads the logs, identifies the issue, makes the fix, pushes the changes, and re-runs the workflow—all through natural conversation. It's a massive productivity booster that frees you up to focus on what matters.
 
 # Conclusion
 
