@@ -5,6 +5,7 @@ excerpt: "You don't need custom slash commands or skills—just point Claude Cod
 tags: ["Claude Code", "CLI", "Productivity", "AI", "Developer Tools"]
 featured: true
 author: "Jeremy Watt"
+image: "https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true"
 seoTitle: "CLI is All You Need - Skip Custom Slash Commands with Claude Code"
 metaDescription: "Why natural language + CLI tools beats building custom slash commands, skills, and complex tooling with Claude Code."
 ---
@@ -31,13 +32,22 @@ Claude Code already knows how to use `gh`, `git`, `npm`, `docker`, and dozens of
 
 This very blog post was created without a single custom command. Here's what I told Claude Code:
 
-> "Create a blog post for my blog at github.com/neonwatty/blog. Screenshots are on my Desktop. Upload images to the readme_gifs repo, write the post, and open a PR."
+> "Help me create a succinct article for my blog neonwatty.com whose GitHub repo is at github.com/neonwatty/blog. The topic is the power of using Claude Code + gh to handle CI. Screenshots are on my Desktop: how-it-works-fail.png and how-it-works-succeed.png. Use the autocomplete CLI to optimize keywords."
 
-Claude Code:
-- Cloned both repos
-- Found and uploaded the images via `git`
+That's it. One natural language prompt with:
+- The blog URL and repo location
+- The topic and angle
+- Where to find the images
+- A hint about SEO tooling
+
+Claude Code figured out the rest:
+- Cloned the blog repo and explored its structure
+- Found and uploaded images to the readme_gifs repo via `git`
+- Used `autocomplete google` for SEO keyword research
 - Wrote the markdown following existing post conventions
 - Created a PR with `gh pr create`
+
+<img src="https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true" alt="Claude Code creating a PR with gh CLI" width="100%" />
 
 No slash command. No skills. No MCP server. Just natural language and standard CLI tools.
 
