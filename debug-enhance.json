@@ -1,8 +1,0 @@
-{
-  "timestamp": "2025-08-30T21:39:30.319Z",
-  "htmlLength": 62204,
-  "preCount": 12,
-  "codeCount": 12,
-  "languageCount": 24,
-  "firstCodeBlock": "<pre class=\"language-python\"><code class=\"language-python code-highlight\"><span class=\"code-line\"><span class=\"token comment\"># Input to hidden layer</span>\n</span><span class=\"code-line\">z1 <span class=\"token operator\">=</span> np<span class=\"token punctuation\">.</span>dot<span class=\"token punctua..."
-}
