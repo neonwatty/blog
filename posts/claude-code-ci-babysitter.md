@@ -18,6 +18,25 @@ GitHub Actions workflows run on different hardware, timing, and environments tha
 
 Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can have Claude Code autonomously monitor your actual workflows—checking status every few minutes, detecting failures, reading logs, making fixes, and re-running. It's a massive productivity booster.
 
+# The gh CLI Commands
+
+With `gh` installed, Claude Code will automatically invoke these commands when prompted:
+
+```bash
+gh run view <run-id>         # Check workflow status
+gh run watch <run-id>        # Watch in real-time
+gh run view <run-id> --log   # Get detailed logs
+gh run rerun <run-id> --failed  # Re-run failed jobs
+```
+
+# The Prompt
+
+Just tell Claude Code what you want in plain English:
+
+> "Check in on this PR's gh workflows every few minutes and debug; stop when they have completed successfully"
+
+Claude Code detects failures, reads logs, identifies the issue, makes the fix, pushes the changes, and re-runs the workflow—all through natural conversation.
+
 # A Real Example
 
 Here's a before and after from a recent PR on [bleep-that-shit](https://github.com/neonwatty/bleep-that-shit):
@@ -33,37 +52,6 @@ All jobs failed: Lint, Smoke Tests, and all 3 E2E test shards. Status: Failure i
 <img src="https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true" alt="Successful CI run showing all jobs green" width="100%" />
 
 All jobs green, 5 artifacts generated. Status: Success in 2m 24s.
-
-# The gh CLI Commands
-
-Here's what Claude Code uses under the hood:
-
-```bash
-# Check workflow status
-gh run view <run-id>
-
-# Watch workflow in real-time
-gh run watch <run-id>
-
-# Get detailed logs
-gh run view <run-id> --log
-
-# Re-run failed jobs after fix
-gh run rerun <run-id> --failed
-```
-
-# The Autonomous Loop
-
-The key insight: Claude Code can monitor workflows on a schedule using simple sleep loops:
-
-```bash
-while true; do
-  gh run view <run-id>
-  sleep 300  # Check every 5 minutes
-done
-```
-
-When Claude Code detects a failure, it reads the logs, identifies the issue, makes the fix, pushes the changes, and re-runs the workflow—all through natural conversation. It's a massive productivity booster that frees you up to focus on what matters.
 
 # Conclusion
 
