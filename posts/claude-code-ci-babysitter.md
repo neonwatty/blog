@@ -20,14 +20,9 @@ Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can
 
 # The gh CLI Commands
 
-With `gh` installed, Claude Code will automatically invoke these commands when prompted:
+With `gh` installed, Claude Code will automatically invoke [GitHub CLI commands](https://cli.github.com/manual/gh_run) when prompted—whether it's [viewing workflow status](https://cli.github.com/manual/gh_run_view), [watching runs in real-time](https://cli.github.com/manual/gh_run_watch), [getting detailed logs](https://cli.github.com/manual/gh_run_view), or [re-running failed jobs](https://cli.github.com/manual/gh_run_rerun).
 
-```bash
-gh run view <run-id>         # Check workflow status
-gh run watch <run-id>        # Watch in real-time
-gh run view <run-id> --log   # Get detailed logs
-gh run rerun <run-id> --failed  # Re-run failed jobs
-```
+Beyond monitoring workflows, you can also use `gh` to [create pull requests](https://cli.github.com/manual/gh_pr_create), [merge PRs](https://cli.github.com/manual/gh_pr_merge), [manage issues](https://cli.github.com/manual/gh_issue), and perform other repository operations—all through natural conversation with Claude Code.
 
 # The Prompt
 
