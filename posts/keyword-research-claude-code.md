@@ -9,8 +9,6 @@ seoTitle: "SEO Keyword Research with Claude Code and Google Autocomplete"
 metaDescription: "How to use Claude Code with Google autocomplete suggestions for automated and scaled keyword research. Quick setup, real examples, and practical results."
 ---
 
-# Supercharged SEO Keyword Research using Claude Code and Google Autocomplete
-
 Getting your keywords right is the whole enchilada when it comes to helping users find your stuff - your blog, product, whatever.  There are a ton of dedicated tools for this - like Ahrefs and SEMrush - but each has a learning curve, and using them to get your keywords right still requires a lot of manual work.
 
 LLMs are a natural tool to turn to as an alternative keyword generator, but they aren't plugged into real search data.  So while they're super helpful for brainstorming, their recommendations still won't include fresh user search behavior by default.
