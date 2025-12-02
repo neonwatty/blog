@@ -1,13 +1,13 @@
 ---
-title: "Claude Code GitHub Actions Example: Debug CI with Natural Language"
+title: "Debug Github CI with Natural Language and Claude Code"
 date: "2025-12-02"
-excerpt: "A hands-on example showing how Claude Code uses gh CLI commands to debug and fix failing GitHub Actions workflows"
+excerpt: "Claude Code uses gh CLI commands to debug and fix failing GitHub Actions workflows"
 tags: ["Claude Code", "GitHub Actions", "CI/CD", "gh CLI", "Developer Tools"]
 featured: true
 author: "Jeremy Watt"
 image: "https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true"
 seoTitle: "Claude Code GitHub Actions Example - Debug CI Workflows with AI"
-metaDescription: "Step-by-step example of using Claude Code with gh CLI to debug GitHub Actions workflows. See the exact commands and workflow."
+metaDescription: "Use Claude Code gh CLI to debug GitHub Actions workflows."
 ---
 
 
