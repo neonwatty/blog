@@ -1,14 +1,14 @@
 ---
-title: "A watchOS app to help you cheat at Liars Dice using math"
+title: "A watchOS App for Liars Dice: Probability Calculator for Apple Watch"
 date: "2025-08-31"
 excerpt: "A watchOS app to help you cheat at Liars Dice using math"
 tags: ["apple watch", "swift", "gaming"]
 slideshow: true
 ---
 
-I like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make a simple Apple Watch app to help me cheat?
+I like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make an Apple Watch game app to help me cheat?
 
-And here we go: [a native Apple Watch app](https://github.com/neonwatty/liars-dice) that transforms gut instincts into more calculated decisions. 
+And here we go: [a native SwiftUI Apple Watch app](https://github.com/neonwatty/liars-dice) - a dice probability calculator that transforms gut instincts into more calculated decisions. 
 
 Whats it do?  Liars dice is a game of probability and bluffing.  Everyone starts with a cup of dice.  Every round you all shake em up, and secretly look at your random scramble of die.  
 

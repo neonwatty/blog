@@ -12,11 +12,11 @@ metaDescription: "Step-by-step example of using Claude Code with gh CLI to debug
 
 # Debugging CI Sucks
 
-GitHub Actions fail. It happens. The usual fix? Tools like [act](https://github.com/nektos/act) to simulate CI locally. Or SSH into runners. Neither really works the same as actual GitHub, and you're stuck babysitting either way.
+GitHub Actions fail. It happens. The usual fix for this debug CI pipeline problem? Tools like [act](https://github.com/nektos/act) to simulate CI locally. Or SSH into runners. Neither really works the same as actual GitHub, and you're stuck babysitting either way.
 
 # Just Let Claude Code Do It
 
-Skip the simulation. Have Claude Code watch your actual workflows, check status, read logs, fix issues, and re-run. One prompt:
+Skip the simulation. Have Claude Code use the GitHub CLI workflow commands - like `gh run watch` and `gh run view` - to check status, read logs, fix issues, and re-run. One prompt:
 
 > "Check in on this PR's gh workflows every few minutes and debug; stop when they have completed successfully"
 

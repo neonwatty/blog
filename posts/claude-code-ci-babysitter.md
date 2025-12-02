@@ -1,22 +1,22 @@
 ---
-title: "Let Claude Code Babysit Your CI"
+title: "Let Claude Code Babysit Your CI: AI DevOps for GitHub Actions"
 date: "2025-11-30"
 excerpt: "How I stopped babysitting GitHub Actions and let Claude Code monitor, debug, and fix CI failures autonomously"
 tags: ["Claude Code", "GitHub Actions", "CI/CD", "DevOps", "AI", "Automation"]
 featured: true
 author: "Jeremy Watt"
 image: "https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true"
-seoTitle: "Let Claude Code Babysit Your CI - AI Powered GitHub Actions Debugging"
+seoTitle: "Let Claude Code Babysit Your CI: AI DevOps Agent for GitHub Actions Debugging"
 metaDescription: "Use Claude Code CLI with gh to autonomously monitor, debug, and fix GitHub Actions workflows—a massive productivity booster."
 ---
 
 # Manually Monitoring GitHub CI is a Pain
 
-GitHub Actions workflows run on different hardware, timing, and environments than your local machine. The traditional fix? Tools like [act](https://github.com/nektos/act) that simulate CI locally. But it never quite replicates GitHub perfectly, and debugging remote failures remains a tedious, time-consuming process that requires you to intermittently check in and fix GitHub workflow-specific bugs.
+GitHub Actions debugging is tedious. Workflows run on different hardware, timing, and environments than your local machine. The traditional fix? Tools like [act](https://github.com/nektos/act) that simulate CI locally. But it never quite replicates GitHub perfectly, and CI/CD automation remains a time-consuming process that requires you to intermittently check in and fix workflow-specific bugs.
 
 # Use Claude Code to Monitor Your GitHub CI Workflows
 
-Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can have Claude Code autonomously monitor your actual workflows—checking status every few minutes, detecting failures, reading logs, making fixes, and re-running. It's a massive productivity booster.
+Claude Code + the `gh` CLI changes everything. Instead of simulating CI, you can have this AI DevOps agent autonomously monitor your actual workflows—providing GitHub workflow monitoring, detecting failures, reading logs, making fixes, and re-running. It's a massive productivity booster.
 
 # The gh CLI Commands
 

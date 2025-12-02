@@ -1,15 +1,15 @@
 ---
-title: "Generative SVG Logo Design Using Claude Code"
+title: "AI Logo Generator: Generative SVG Logo Design with Claude Code"
 date: "2025-09-13"
 excerpt: "Generate, evolve, and iterate on SVG logos using natural language and Claude Code."
 tags: ["Claude Code", "Logo Design", "Chrome Extension"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "Generative SVG Logo Design Using Claude Code"
+seoTitle: "AI Logo Generator: SVG Logo Maker with Claude Code"
 metaDescription: "Generate, evolve, and iterate on SVG logos using natural language and Claude Code."
 ---
 
-This morning I spent some time with Claude Code creating SVG logos for a new Chrome extension I'm building called [ytgify](https://github.com/neonwatty/ytgify).  It's a simple YouTube to GIF converter that lets you create GIFs directly from YouTube videos with a simple in-player interface.  A quick demo video.
+This morning I spent some time using Claude Code as an AI logo generator - creating SVG logos for a new Chrome extension I'm building called [ytgify](https://github.com/neonwatty/ytgify).  It's a simple YouTube to GIF converter that lets you create GIFs directly from YouTube videos with a simple in-player interface.  A quick demo video.
 
 <div style="max-width: 800px; margin: 2rem auto;">
   <video controls width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -18,7 +18,7 @@ This morning I spent some time with Claude Code creating SVG logos for a new Chr
   </video>
 </div>
 
-Creating SVG logos with Claude Code is pretty fun.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with CC to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
+Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
 
 Here's a short gallery of my favorites.  Ended up using the first (for reasons detailed below).
 
