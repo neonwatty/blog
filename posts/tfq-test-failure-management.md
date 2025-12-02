@@ -1,17 +1,17 @@
 ---
-title: "Claude Code Powered Test Debugging Without The Context Overload"
+title: "Claude Code Test Debugging Without Context Overload: TFQ CLI Tool"
 date: "2025-08-31"
 excerpt: "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions."
 tags: ["Testing", "Claude Code", "CLI"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "TFQ: Avoid Claude Code Context Limits When Debugging Tests"
+seoTitle: "TFQ: AI Code Testing CLI to Avoid Claude Code Context Window Limits"
 metaDescription: "Stop running out of context when debugging large test suites with Claude Code; use a queue and fix failing tests individually in separate headless sessions."
 ---
 
-Once a project gets some beef to it using Claude Code to debug a failing test suite can get dicey; its easy to hit session context limits once Claude gets noodling on dozens or hundreds of tests.
+Once a project gets some beef to it using Claude Code for AI code testing and test automation can get dicey; its easy to hit the context window limit once Claude gets noodling on dozens or hundreds of tests.
 
-Its a natural limitation of context in and of itself, and doesn't need "solving" on the model level.  It just needs good engineered guardrail solutioning on the agentic IDE / coding level.
+Its a natural limitation of context in and of itself, and doesn't need "solving" on the model level.  It just needs good engineered guardrail solutioning on the agentic IDE / coding level - like running tests in headless mode.
 
 Right now I deal with limitation using a simple CLI queueing tool I used called [tfq](https://www.npmjs.com/package/tfq).  
 

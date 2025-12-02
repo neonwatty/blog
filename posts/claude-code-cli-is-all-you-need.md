@@ -1,5 +1,5 @@
 ---
-title: "CLI is All You Need"
+title: "CLI is All You Need: Skip Custom Slash Commands with Claude Code"
 date: "2025-11-30"
 excerpt: "You don't need custom slash commands or skills—just point Claude Code at your CLI tools and describe what you want"
 tags: ["Claude Code", "CLI", "Productivity", "AI", "Developer Tools"]
@@ -12,7 +12,7 @@ metaDescription: "Why natural language + CLI tools beats building custom slash c
 
 # The Temptation to Over-Engineer
 
-Claude Code supports slash commands, skills, MCP servers, and custom tooling. When you find yourself doing something repeatedly, the natural instinct kicks in: build a reusable command.
+Claude Code - an AI coding assistant that excels at natural language programming - supports slash commands, skills, MCP servers, and custom tooling. When you find yourself doing something repeatedly, the natural instinct kicks in: build a reusable command.
 
 You should absolutely resist this urge.
 
@@ -27,9 +27,9 @@ And before you know it, you're building and maintaining a tool instead of shippi
 
 # Keep it simple stupid
 
-Skip creating more tools: modern agents like Claude Code and Codex are extremely good at using CLI tools.  So "just talk to it" and describe in detail what you want.  Citing the appropriate tools (like `gh`).
+Skip creating more tools: modern agents like Claude Code and Codex are extremely good at using CLI tools.  So "just talk to it" and describe in detail what you want.  Citing the appropriate tools (like the `gh` CLI).
 
-Again, Claude Code and company already knows how to use `gh`, `git`, `npm`, `docker`, and dozens of other CLI tools.  You don't need to wrap them in custom commands.  Just describe what you want and point it at the resources.
+Again, Claude Code and company already knows how to use `gh`, `git`, `npm`, `docker`, and dozens of other CLI tools.  You don't need to wrap them in custom commands.  Just describe what you want and point it at the resources - check out any gh CLI tutorial and you'll see Claude Code can handle it.
 
 # Real Example: Writing This Post
 

@@ -1,19 +1,19 @@
 ---
-title: "Claude Code Task Management Without The JSON Overhead"
+title: "Claude Code Task Management CLI: Skip the JSON Overhead"
 date: "2025-09-03"
 excerpt: "Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks."
 tags: ["Claude Code", "Task Management", "Productivity"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "Stop Wasting Context: todoq vs JSON Task Management in Claude Code"
+seoTitle: "AI Task Management CLI: todoq vs JSON for Developer Productivity"
 metaDescription: "JSON task management wastes context and causes errors in Claude Code. Learn how todoq's CLI approach loads only specific tasks, preventing corruption and maximizing context efficiency."
 ---
 
-Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow.
+Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach.
 
 Two core problems here: every task operation loads the entire JSON into context, wasting your context window, and JSON updates are error-prone since Claude Code (and other agnetic IDEs) must locate exact positions in complex nested structures.  These issues cause Claude Code to misformat JSON, accidentally delete fields, or corrupt entire task lists.
 
-I solve this using [todoq](https://github.com/neonwatty/todoq) - a CLI tool that manages tasks through targeted commands instead of JSON manipulation (it uses a simple queue stored in a sqlite db instead, accessible via CLI commands).  Each operation only touches the specific task being addressed, keeping context lean and operations reliable.
+I solve this using [todoq](https://github.com/neonwatty/todoq) - a task management CLI tool that manages tasks through targeted commands instead of JSON manipulation (it uses SQLite vs JSON - a simple queue stored in a sqlite db instead, accessible via CLI commands).  Each operation only touches the specific task being addressed, keeping context lean and operations reliable.
 
 This approach makes task management precise, prevents JSON corruption, and keeps Claude focused on actual work instead of file formatting.
 

@@ -1,17 +1,17 @@
 ---
-title: "ytgify: YouTube to GIF Chrome Extension Launched"
+title: "ytgify: YouTube to GIF Converter Chrome Extension - No Watermark"
 date: "2025-10-05"
 excerpt: "Turn your favorite YouTube moments into shareable GIFs."
 tags: ["Chrome Extension", "YouTube", "GIF", "Launch"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "ytgify Chrome Extension Launch - YouTube to GIF Converter"
+seoTitle: "ytgify: Free YouTube to GIF Converter Chrome Extension"
 metaDescription: "ytgify is now live in the Chrome Web Store. Turn your favorite YouTube moments into shareable GIFs."
 ---
 
-[ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is now live in the Chrome Web Store!
+[ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a YouTube to GIF converter with no watermark - is now live in the Chrome Web Store!
 
-It's a simple Chrome extension that lets you easily clip GIFs right from YouTube, by adding a simple interface directly to the YouTube player itself.  You can select your start time, gif duration, resolution and FPS, and even add text!
+It's a free GIF maker Chrome extension that lets you easily clip GIFs right from YouTube, by adding a simple video clipper interface directly to the YouTube player itself.  You can select your start time, gif duration, resolution and FPS, and even add text!
 
 <div style="max-width: 800px; margin: 2rem auto;">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
