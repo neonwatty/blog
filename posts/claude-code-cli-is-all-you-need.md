@@ -52,3 +52,8 @@ Claude Code - with its access to tools like `gh` - can figure out the boring stu
 - Created a PR with `gh pr create`
 
 <img src="https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true" alt="Claude Code creating a PR with gh CLI" width="100%" />
+
+# Related Posts
+
+- [Claude Code GitHub Actions Example](/posts/claude-code-github-actions-example) - A hands-on example of debugging CI failures with `gh` commands
+- [Let Claude Code Babysit Your CI](/posts/claude-code-ci-babysitter) - Autonomous CI monitoring with Claude Code

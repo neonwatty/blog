@@ -51,3 +51,8 @@ All jobs green, 5 artifacts generated. Status: Success in 2m 24s.
 # Conclusion
 
 Stop babysitting CI. Let Claude Code do it.
+
+# Related Posts
+
+- [Claude Code GitHub Actions Example](/posts/claude-code-github-actions-example) - Step-by-step walkthrough of the `gh` commands Claude Code executes
+- [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
