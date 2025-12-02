@@ -24,11 +24,32 @@ Done. Claude Code handles the rest.
 
 # What Actually Happens
 
-Here's a real example from this very blog post. Claude Code pushed the changes, then monitored the workflow:
+Here's what Claude Code ran while creating this very blog post:
 
 ```bash
-# PLACEHOLDER - Real gh commands will be inserted here after workflow runs
+# Check recent workflow runs
+$ gh run list --limit 5
+STATUS       TITLE                                   WORKFLOW         BRANCH                       EVENT         ID
+in_progress  Add Claude Code GitHub Actions...       CI/CD Pipeline   feature/gh-actions-example   pull_request  19866740042
+completed    Merge pull request #33...               Deploy Blog...   main                         push          19828469094
+
+# Watch the workflow in real-time
+$ gh run watch 19866740042
+✓ Checkout code
+✓ Setup Node.js
+✓ Install dependencies
+✓ Run linter
+✓ Run type check
+✓ Run unit tests
+* Install Playwright browsers
+* Run e2e tests
+...
+
+# If something fails, view the logs
+$ gh run view 19866740042 --log-failed
 ```
+
+Claude Code keeps checking until everything passes. If something breaks, it reads the logs, makes fixes, pushes, and re-runs.
 
 # Related Posts
 
