@@ -16,7 +16,7 @@ describe('Newsletter Component', () => {
     render(<Newsletter />)
     const link = screen.getByRole('link', { name: /Join Discord/i })
     expect(link).toBeInTheDocument()
-    expect(link).toHaveAttribute('href', 'https://discord.gg/8EUxqR93')
+    expect(link).toHaveAttribute('href', 'https://discord.gg/BC2Kn9Ne')
   })
 
   test('Discord link opens in new tab', () => {

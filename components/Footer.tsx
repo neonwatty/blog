@@ -64,7 +64,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://discord.gg/8EUxqR93"
+              href="https://discord.gg/BC2Kn9Ne"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"

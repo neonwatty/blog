@@ -25,7 +25,7 @@ export default function Newsletter() {
         }}
       >
         <a
-          href="https://discord.gg/8EUxqR93"
+          href="https://discord.gg/BC2Kn9Ne"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105"
