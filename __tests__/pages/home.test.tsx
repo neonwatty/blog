@@ -41,20 +41,20 @@ describe('Home Page', () => {
 
   test('renders Discord icon in hero social links', () => {
     renderWithTheme(<Home />)
-    const discordLink = document.querySelector('a[href="https://discord.gg/BC2Kn9Ne"]')
+    const discordLink = document.querySelector('a[href="https://discord.gg/7xsxU4ZG6A"]')
     expect(discordLink).toBeInTheDocument()
   })
 
   test('Discord icon links to Discord server', () => {
     renderWithTheme(<Home />)
-    const discordLink = document.querySelector('a[href="https://discord.gg/BC2Kn9Ne"]')
-    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/BC2Kn9Ne')
+    const discordLink = document.querySelector('a[href="https://discord.gg/7xsxU4ZG6A"]')
+    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/7xsxU4ZG6A')
     expect(discordLink).toHaveAttribute('target', '_blank')
   })
 
   test('Discord icon contains SVG', () => {
     renderWithTheme(<Home />)
-    const discordLink = document.querySelector('a[href="https://discord.gg/BC2Kn9Ne"]')
+    const discordLink = document.querySelector('a[href="https://discord.gg/7xsxU4ZG6A"]')
     const svg = discordLink?.querySelector('svg')
     expect(svg).toBeInTheDocument()
   })

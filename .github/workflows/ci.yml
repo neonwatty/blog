@@ -44,6 +44,9 @@ jobs:
     - name: Run e2e tests
       run: npm run test:e2e
 
+    - name: Check external links
+      run: npm run check:links
+
     - name: Build static export
       run: npm run build
       env:

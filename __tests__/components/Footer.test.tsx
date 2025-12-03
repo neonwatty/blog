@@ -32,7 +32,7 @@ describe('Footer Component', () => {
 
   test('contains Discord icon in social links', () => {
     render(<Footer />)
-    const discordLinks = document.querySelectorAll('a[href="https://discord.gg/BC2Kn9Ne"]')
+    const discordLinks = document.querySelectorAll('a[href="https://discord.gg/7xsxU4ZG6A"]')
     expect(discordLinks.length).toBeGreaterThanOrEqual(1)
   })
 
@@ -59,6 +59,6 @@ describe('Footer Component', () => {
     render(<Footer />)
     const discordLink = screen.getByRole('link', { name: /Join Discord/i })
     expect(discordLink).toBeInTheDocument()
-    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/BC2Kn9Ne')
+    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/7xsxU4ZG6A')
   })
 })

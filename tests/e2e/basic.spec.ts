@@ -33,7 +33,7 @@ test.describe('Basic functionality', () => {
     await page.goto('/')
 
     // Check Discord icon is present in social links
-    const discordLink = page.locator('a[href="https://discord.gg/BC2Kn9Ne"]').first()
+    const discordLink = page.locator('a[href="https://discord.gg/7xsxU4ZG6A"]').first()
     await expect(discordLink).toBeVisible()
   })
 
