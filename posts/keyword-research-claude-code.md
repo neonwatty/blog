@@ -19,11 +19,11 @@ But sitting around at the Google search bar and manually chunking in queries is 
 
 But hand the wheel over to an LLM - to perform the autocomplete tool calls, think about variations, and synthesize the results - and you can cover a shit load of ground very fast.
 
-## CLI Tools are all you need
+# CLI Tools are all you need
 
 Claude Code / Codex / etc., are beasts when it comes to using CLI tools ([I wrote a short post about that here](/posts/claude-code-cli-is-all-you-need)).  So I whipped up a simple to use [autocomplete-cli](https://www.npmjs.com/package/@neonwatty/autocomplete-cli) that lets you use Google / YouTube / Bing autocomplete at the terminal.  You enter in text, returns (Google) autocomplete suggestions - the same ones you see when typing in the search bar.
 
-# Let Claude Code perform industrial scale keyword research
+## Let Claude Code perform industrial scale keyword research
 
 Once installed, just briefly tell Claude Code / Codex how to use the autocomplete tool.  For example, you can either say something like this with your prompt or copy it to your CLAUDE.md / AGENTS.md file.
 
