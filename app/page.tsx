@@ -28,36 +28,36 @@ export default function Home() {
       
       <main className="flex-grow">
         {/* Enhanced hero section */}
-        <section className="max-w-4xl mx-auto px-4 py-20">
-          <div className="mb-20">
+        <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="mb-10 sm:mb-14 md:mb-20">
             {/* Profile section with side-by-side layout */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 p-8 rounded-2xl transition-all duration-300"
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl transition-all duration-300"
                  style={{
                    background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(99, 102, 241, 0.1))',
                    border: '1px solid rgba(79, 70, 229, 0.2)',
                    boxShadow: '0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05)'
                  }}>
-              
+
               {/* Profile Image */}
               <div className="flex-shrink-0">
-                <img 
+                <img
                   src="/images/jeremy-watt-headshot.jpg"
                   alt="Jeremy Watt"
-                  className="w-40 h-40 rounded-full object-cover border-4 border-white/20 shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white/20 shadow-xl transition-all duration-300 hover:scale-105"
                 />
               </div>
 
               {/* Content */}
               <div className="flex-grow text-center md:text-left">
-                <div className="mb-4">
-                  <h1 className="text-4xl md:text-5xl font-bold mb-2 tracking-tight"
+                <div className="mb-3 sm:mb-4">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 tracking-tight"
                       style={{ color: 'var(--color-text-primary)' }}>
                     Hi, I'm Jeremy.
                   </h1>
-                  <div className="w-16 h-1 bg-violet-500 mx-auto md:mx-0 rounded-full"></div>
+                  <div className="w-12 sm:w-14 md:w-16 h-1 bg-violet-500 mx-auto md:mx-0 rounded-full"></div>
                 </div>
-                
-                <p className="text-xl leading-relaxed mb-6 max-w-2xl"
+
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-6 max-w-2xl"
                    style={{ color: 'var(--color-text-secondary)' }}>
                   Machine Learning PhD & Certified HVAC Technician
                 </p>
@@ -98,39 +98,39 @@ export default function Home() {
           </div>
 
           {/* Posts grouped by year */}
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
             {sortedYears.map((year, yearIndex) => (
-              <div key={year} 
+              <div key={year}
                    className="animate-in slide-in-from-bottom-4 transition-all duration-500"
                    style={{ animationDelay: `${yearIndex * 100}ms` }}>
-                <div className="flex items-center mb-10">
-                  <h2 className="text-4xl font-bold transition-all duration-300"
-                      style={{ 
+                <div className="flex items-center mb-6 sm:mb-8 md:mb-10">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold transition-all duration-300"
+                      style={{
                         color: 'var(--color-text-primary)',
                         letterSpacing: '-0.03em'
                       }}>
                     {year}
                   </h2>
-                  <div className="flex-grow h-px ml-8 transition-all duration-300"
+                  <div className="flex-grow h-px ml-4 sm:ml-6 md:ml-8 transition-all duration-300"
                        style={{ background: 'var(--gradient-hero)', boxShadow: 'var(--shadow-professional)' }}></div>
                 </div>
-                
-                <div className="space-y-10">
+
+                <div className="space-y-6 sm:space-y-8 md:space-y-10">
                   {postsByYear[year].map((post, postIndex) => (
-                    <article key={post.id} 
+                    <article key={post.id}
                              className="group transition-all duration-300 hover:transform hover:scale-[1.01]"
                              style={{
                                borderBottom: `1px solid var(--color-border-subtle)`,
-                               paddingBottom: '2rem',
+                               paddingBottom: '1.25rem',
                                animationDelay: `${(yearIndex * 100) + (postIndex * 50)}ms`
                              }}>
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-8">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 md:space-x-8">
                         {/* Date column */}
-                        <div className="flex-shrink-0 mb-3 sm:mb-0 sm:w-28">
-                          <time 
+                        <div className="flex-shrink-0 mb-2 sm:mb-0 sm:w-24 md:w-28">
+                          <time
                             dateTime={post.date}
-                            className="text-sm font-semibold transition-all duration-300 block"
-                            style={{ 
+                            className="text-xs sm:text-sm font-semibold transition-all duration-300 block"
+                            style={{
                               color: 'var(--color-text-tertiary)',
                               letterSpacing: '0.05em'
                             }}
@@ -142,12 +142,12 @@ export default function Home() {
                         {/* Content column */}
                         <div className="flex-grow min-w-0">
                           <div className="flex items-start justify-between">
-                            <div className="flex-grow pr-6">
-                              <h3 className="text-xl font-bold mb-3 transition-all duration-300 group-hover:translate-x-1">
-                                <Link 
+                            <div className="flex-grow pr-2 sm:pr-4 md:pr-6">
+                              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-all duration-300 group-hover:translate-x-1">
+                                <Link
                                   href={`/posts/${post.id}`}
                                   className="relative transition-all duration-300"
-                                  style={{ 
+                                  style={{
                                     color: 'var(--color-text-primary)',
                                     letterSpacing: '-0.02em'
                                   }}
@@ -155,8 +155,8 @@ export default function Home() {
                                   {post.title}
                                 </Link>
                               </h3>
-                              <p className="text-base leading-relaxed mb-4 transition-all duration-300"
-                                 style={{ 
+                              <p className="text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 transition-all duration-300"
+                                 style={{
                                    color: 'var(--color-text-secondary)',
                                    lineHeight: '1.7'
                                  }}>
@@ -164,16 +164,16 @@ export default function Home() {
                               </p>
                               
                               {/* Enhanced Meta info */}
-                              <div className="flex items-center text-sm space-x-6 transition-all duration-300"
+                              <div className="flex flex-wrap items-center text-xs sm:text-sm gap-2 sm:gap-4 md:gap-6 transition-all duration-300"
                                    style={{ color: 'var(--color-text-tertiary)' }}>
                                 <span className="font-medium">{post.readingTime}</span>
                                 {post.tags.length > 0 && (
-                                  <div className="flex flex-wrap gap-2">
-                                    {post.tags.slice(0, 3).map((tag) => (
+                                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                    {post.tags.slice(0, 2).map((tag) => (
                                       <Link
                                         key={tag}
                                         href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                                        className="tag-badge focus-indigo"
+                                        className="tag-badge focus-indigo text-xs"
                                       >
                                         {tag}
                                       </Link>
@@ -183,9 +183,9 @@ export default function Home() {
                               </div>
                             </div>
                             
-                            {/* Thumbnail - optional */}
+                            {/* Thumbnail - hidden on very small screens */}
                             {post.image && (
-                              <div className="flex-shrink-0 w-16 h-16 ml-4">
+                              <div className="hidden sm:block flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ml-2 sm:ml-4">
                                 <img
                                   src={post.image}
                                   alt={post.title}

@@ -105,24 +105,27 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
           }
         }
         
-        // Create new Reveal instance with minimal safe configuration
+        // Create new Reveal instance with responsive configuration
         revealRef.current = new Reveal(deckRef.current, {
           plugins: [RevealHighlight, RevealNotes].filter(Boolean),
-          // Minimal configuration to avoid stack overflow
           hash: false,
           history: false,
           controls: true,
           progress: true,
-          center: false, // Disable centering to avoid layout recursion
-          transition: 'none', // Disable transitions to avoid animation recursion
-          embedded: true, // Use embedded mode for better compatibility
-          touch: false, // Disable touch to avoid event recursion
+          center: true,
+          transition: 'none',
+          embedded: true,
+          touch: true, // Enable touch for mobile
           mouseWheel: false,
-          // Use fixed dimensions to avoid layout calculation recursion
+          // Base dimensions - Reveal.js will scale to fit container
           width: 960,
           height: 700,
-          minScale: 1.0,
-          maxScale: 1.0 // Disable scaling to avoid recursion
+          // Enable responsive scaling
+          minScale: 0.2,
+          maxScale: 1.5,
+          margin: 0.04, // Add small margin for mobile
+          // Responsive view settings
+          disableLayout: false,
         })
         
         await revealRef.current.initialize()
@@ -159,17 +162,17 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
   }, [theme])
 
   return (
-    <div data-testid="slideshow-wrapper" className={`theme-${theme}`} id={`slideshow-${slideshow.id}`}>
+    <div data-testid="slideshow-wrapper" className={`theme-${theme} w-full`} id={`slideshow-${slideshow.id}`}>
       {/* Always render the reveal container for DOM reference */}
-      <div 
-        className="reveal" 
-        ref={deckRef} 
-        style={{ 
+      <div
+        className="reveal w-full max-w-[960px] mx-auto"
+        ref={deckRef}
+        style={{
           display: error || isLoading ? 'none' : 'block',
           textAlign: 'center',
-          width: '100%',
-          height: '100vh',
-          overflow: 'hidden', // Changed from 'auto' to prevent scrolling issues
+          aspectRatio: '960 / 700',
+          maxHeight: '100vh',
+          overflow: 'hidden',
           position: 'relative'
         }}
       >
@@ -182,20 +185,21 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
 
       {/* Show loading/error states as overlays */}
       {error && (
-        <div className="flex items-center justify-center h-screen bg-red-100 text-red-800">
+        <div className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-red-100 text-red-800 px-4 py-8"
+             style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}>
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-2">Error Loading Slideshow</h2>
-            <p>{error}</p>
+            <h2 className="text-xl sm:text-2xl font-bold mb-2">Error Loading Slideshow</h2>
+            <p className="text-sm sm:text-base">{error}</p>
           </div>
         </div>
       )}
 
       {isLoading && !error && (
-        <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
+        <div className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-gray-900 text-white px-4 py-8"
+             style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}>
           <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white mb-4"></div>
-            <p>Loading slideshow...</p>
-            <p className="text-sm mt-2 opacity-60">Debug: Loading state is {isLoading ? 'true' : 'false'}</p>
+            <div className="animate-spin rounded-full h-16 w-16 sm:h-32 sm:w-32 border-b-2 border-white mb-4 mx-auto"></div>
+            <p className="text-sm sm:text-base">Loading slideshow...</p>
           </div>
         </div>
       )}

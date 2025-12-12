@@ -355,11 +355,25 @@
   /* Content area styling for professional theme */
   .prose-content {
     background: var(--gradient-elevated);
-    border-radius: 1rem;
-    padding: 2rem;
+    border-radius: 0.75rem;
+    padding: 1rem;
     border: 1px solid var(--color-border-primary);
     box-shadow: var(--shadow-medium);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (min-width: 640px) {
+    .prose-content {
+      padding: 1.5rem;
+      border-radius: 0.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .prose-content {
+      padding: 2rem;
+      border-radius: 1rem;
+    }
   }
 
   /* Image gallery initialization script */
@@ -466,12 +480,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: var(--color-border-subtle);
     z-index: 50;
     overflow: hidden;
   }
-  
+
+  @media (min-width: 768px) {
+    .reading-progress {
+      height: 3px;
+    }
+  }
+
   .reading-progress-bar {
     height: 100%;
     background: var(--color-accent-primary);
@@ -479,7 +499,7 @@
     transition: width 0.1s ease;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
   }
-  
+
   .dark .reading-progress-bar {
     box-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
   }
@@ -642,10 +662,10 @@
   /* Scroll to Top Button */
   .scroll-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
     background: var(--color-accent-primary);
     color: var(--color-text-inverse);
     border: none;
@@ -656,21 +676,41 @@
     opacity: 0;
     transform: translateY(100px);
     z-index: 50;
+    /* Ensure 44px minimum touch target */
+    min-width: 44px;
+    min-height: 44px;
   }
-  
+
+  @media (min-width: 640px) {
+    .scroll-to-top {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .scroll-to-top {
+      bottom: 2rem;
+      right: 2rem;
+    }
+  }
+
   .scroll-to-top.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   .scroll-to-top:hover {
     background: var(--color-accent-hover);
     transform: translateY(-4px) scale(1.1);
     box-shadow: var(--shadow-professional);
   }
-  
+
   .scroll-to-top:active {
     transform: translateY(-2px) scale(1.05);
+    background: var(--color-accent-hover);
   }
   
   @media (min-width: 640px) {
@@ -1846,8 +1886,139 @@
   
   /* Light theme large grid */
   .light .grid-pattern-large {
-    background-image: 
+    background-image:
       linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
       linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
+  }
+}
+
+/* ==========================================
+   MOBILE & TOUCH-FRIENDLY ENHANCEMENTS
+   ========================================== */
+
+/* Touch-friendly tap target sizes */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements meet 44px minimum */
+  button,
+  [role="button"],
+  .tag-badge,
+  .copy-code-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Touch-action for better responsiveness */
+  a, button, [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Active states for immediate tap feedback */
+  a:active,
+  button:active,
+  [role="button"]:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+
+  /* Prevent text selection on interactive elements */
+  button,
+  [role="button"],
+  .tag-badge {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Improve tap targets for tag badges */
+.tag-badge {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .tag-badge {
+    min-height: 36px;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Better spacing for touch on navigation links */
+@media (max-width: 768px) {
+  nav a {
+    padding: 0.75rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+  }
+}
+
+/* Improved focus states for accessibility on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices to prevent sticky states */
+  a:hover,
+  button:hover {
+    transform: none;
+  }
+
+  /* Add active states instead */
+  a:active,
+  button:active {
+    opacity: 0.85;
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  .sticky-header,
+  header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .scroll-to-top {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    right: max(1rem, env(safe-area-inset-right));
+  }
+
+  @media (min-width: 640px) {
+    .scroll-to-top {
+      bottom: max(1.5rem, env(safe-area-inset-bottom));
+      right: max(1.5rem, env(safe-area-inset-right));
+    }
+  }
+}
+
+/* Prevent horizontal overflow on mobile */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  main, article {
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure code blocks scroll horizontally instead of overflowing */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Tables should scroll horizontally on mobile */
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
