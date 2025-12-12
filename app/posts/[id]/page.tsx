@@ -81,7 +81,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Header />
         
         <main className="flex-grow">
-          <article className="max-w-4xl mx-auto px-4 py-20">
+          <article className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Breadcrumbs */}
             <Breadcrumbs 
               items={[
@@ -92,10 +92,10 @@ export default async function PostPage({ params }: PostPageProps) {
             />
             
             {/* Article Header */}
-            <header className="mb-16">
+            <header className="mb-8 sm:mb-12 md:mb-16">
               {/* Title */}
-              <h1 className="text-5xl font-extrabold mb-6 leading-tight transition-all duration-300"
-                  style={{ 
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 leading-tight transition-all duration-300"
+                  style={{
                     color: 'var(--color-text-primary)',
                     letterSpacing: '-0.04em',
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
@@ -104,18 +104,18 @@ export default async function PostPage({ params }: PostPageProps) {
               </h1>
 
               {/* Divider */}
-              <div className="w-24 h-px mb-8 transition-all duration-300"
+              <div className="w-16 sm:w-20 md:w-24 h-px mb-4 sm:mb-6 md:mb-8 transition-all duration-300"
                    style={{ background: 'var(--gradient-subtle)' }}></div>
 
               {/* Meta info */}
-              <div className="flex items-center text-base mb-8 transition-all duration-300 space-x-8"
+              <div className="flex flex-col sm:flex-row sm:items-center text-sm sm:text-base mb-4 sm:mb-6 md:mb-8 transition-all duration-300 gap-2 sm:gap-0 sm:space-x-8"
                    style={{ color: 'var(--color-text-secondary)' }}>
                 <time dateTime={post.date} className="font-medium">
                   {formattedDate}
                 </time>
                 <span className="font-medium">{post.readingTime}</span>
                 {post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 mt-2 sm:mt-0">
                     {post.tags.map((tag) => (
                       <Link
                         key={tag}
@@ -131,10 +131,10 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-xl max-w-none mb-20 prose-content"
+            <div className="prose prose-base sm:prose-lg md:prose-xl max-w-none mb-10 sm:mb-16 md:mb-20 prose-content"
                  style={{
                    color: 'var(--color-text-secondary)',
-                   lineHeight: '1.8'
+                   lineHeight: '1.75'
                  }}>
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
