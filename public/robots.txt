@@ -7,7 +7,7 @@ Disallow: /_next/
 Disallow: /api/
 
 # Host
-Host: https://neonwatty.com
+Host: https://localhost:3000
 
 # Sitemaps
-Sitemap: https://neonwatty.com/sitemap.xml
+Sitemap: https://localhost:3000/sitemap.xml
