@@ -5,7 +5,7 @@ excerpt: "CLI tools for posting to Twitter, LinkedIn, Reddit, and more—designe
 tags: ["Claude Code", "CLI", "Social Media", "Productivity", "Developer Tools"]
 featured: true
 author: "Jeremy Watt"
-image: ""
+image: "/images/social-starter-pack/social-posting-demo.png"
 seoTitle: "Share Random Thoughts Without Leaving Claude Code - Social Media CLI Tools"
 metaDescription: "CLI tools for posting to Twitter, LinkedIn, Reddit, and YouTube without leaving the terminal. Designed for Claude Code and AI coding assistants."
 ---
@@ -53,6 +53,8 @@ Or for LinkedIn:
 linkedin post "Finally stopped context switching between terminal and browser. Claude Code + gh CLI = mass productivity unlock."
 ```
 
+![Social posting from terminal](/images/social-starter-pack/social-posting-demo.png)
+
 ### 2. Keyword Research for a Blog Post
 
 You're writing an article and want to know what people actually search for.
@@ -67,6 +69,8 @@ autocomplete youtube "coding workflow" --expand
 
 This helps you match your headline and content to real search behavior.
 
+![Autocomplete keyword research](/images/social-starter-pack/autocomplete-demo.png)
+
 ### 3. Reddit Research: How Do People Talk About This?
 
 You want to understand how real people describe a problem—their words, not marketing speak.
@@ -77,6 +81,8 @@ reddit search -s "programming+webdev" -k "frustrated with,struggling" --time mon
 ```
 
 Great for finding authentic language to use in your content, or just validating that a topic resonates.
+
+![Reddit search for pain points](/images/social-starter-pack/reddit-search-demo.png)
 
 ## The MCP Server: Natural Language Control
 
