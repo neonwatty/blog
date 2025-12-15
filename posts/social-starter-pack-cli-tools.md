@@ -10,15 +10,17 @@ seoTitle: "Share Random Thoughts Without Leaving Claude Code - Social Media CLI 
 metaDescription: "CLI tools for posting to Twitter, LinkedIn, Reddit, and YouTube without leaving the terminal. Designed for Claude Code and AI coding assistants."
 ---
 
-I had a problem: random thoughts I wanted to share, but opening Twitter or LinkedIn meant losing 20 minutes to the feed. Context switching from terminal to browser to social app broke my flow, and half the time I forgot what I wanted to post.
+When I have a random thought to share - about something I'm working on or reading - sometimes I don't want to open Twitter or LinkedIn; its easy to get distracted, lose 20 minutes to the feed, and forget what I had to say. 
 
-So I built a set of CLI tools to post directly from the terminal—and designed them to work with Claude Code so I don't look like a complete idiot when I hit publish.
+As my productivity increases - I'm also finding that switching from terminal to browser (esp social feed UX's) is quite a big context shift.  It takes time to enter into / recover from.  Like a smaller version of meeting context shifting.
+
+So for times I want to stay focused on work and still share, I built a set of CLI tools to post directly from the terminal—and designed them to work with Claude Code (to help me publish and polish blurbs).
 
 ## What This Is (and Isn't)
 
-This is **not** a replacement for browsing and engaging on social platforms. That would be too antisocial even for me.
+This is **not** a replacement for browsing and engaging on social platforms. That would be too anti-social.   Even for me.
 
-It's for those moments when you have a thought, want to capture and share it quickly, and get back to what you were doing. Write, polish with Claude Code, post, done.
+It's for those moments when you have a thought, want to capture and share it quickly, and get back to what you were doing.  Write, polish with Claude Code, publish, done.
 
 ## The Tools
 
@@ -38,11 +40,14 @@ It's for those moments when you have a thought, want to capture and share it qui
 
 ### 1. Random Thought to Social Post
 
-You have a thought. You want to share it without sounding half-baked.
+You have a thought (holy shit).  You want to share it without sounding like a complete moron.  A (very) short version of the kind of interaction you can have with Claude Code + the CLI tools.
 
 ```bash
 # You start with your rough thought:
 > "claude code + gh cli has been huge for me. polish this for twitter"
+
+# You go through iterations flushing out your thought / polishing it
+> ...
 
 # Claude Code polishes it, you approve, then:
 twitter post "Claude Code + gh CLI. PRs, issues, releases—all from the terminal. Mass productivity unlock."
@@ -57,7 +62,7 @@ linkedin post "Finally stopped context switching between terminal and browser. C
 
 ### 2. Keyword Research for a Blog Post
 
-You're writing an article and want to know what people actually search for.
+You're writing a blog article and want to know what people actually search for.  With `autocomplete` you can suck in autocomplete keywords from Google, YouTube, Bing, etc.,
 
 ```bash
 # Find Google autocomplete suggestions
@@ -73,7 +78,7 @@ This helps you match your headline and content to real search behavior.
 
 ### 3. Reddit Research: How Do People Talk About This?
 
-You want to understand how real people describe a problem—their words, not marketing speak.
+You want to understand how real people describe a problem—their words.
 
 ```bash
 # Search Reddit for discussions
@@ -86,7 +91,9 @@ Great for finding authentic language to use in your content, or just validating 
 
 ## The MCP Server: Natural Language Control
 
-The `mcp-server` package connects all these tools to Claude Code. Once installed, you can use natural language to:
+The `mcp-server` package bundles up all these CLI tools and makes them easily accessible to CLaude Code, Codex, etc.,  In addition to the typical reason to bundle up CLI tools via a slender MCP server; most of these tools - Twitter / Linkedin / Reddit / Youtube - have auth tokens you need for your interactions with the various platforms.  Simply Bash-ing the CLI tools won't keep the associated tokens fresh / make it seemless to refresh the tokens (this is automated in the MCP server).
+
+Once installed, you can use natural language to:
 
 - Research keywords and Reddit discussions
 - Draft and edit posts
