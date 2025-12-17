@@ -5,8 +5,8 @@ excerpt: "Use Claude Code with Google autocomplete for fast keyword research at 
 tags: ["Claude Code", "SEO", "CLI", "Productivity"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "SEO Keyword Research with Claude Code and Google Autocomplete"
-metaDescription: "How to use Claude Code with Google autocomplete suggestions for automated and scaled keyword research. Quick setup, real examples, and practical results."
+seoTitle: "Best SEO Tools for Claude Code: Keyword Research at Scale"
+metaDescription: "The best SEO keyword research method using Claude Code. Automate Google autocomplete analysis, find long-tail keywords, and scale your content research with AI."
 ---
 
 Getting your keywords right is the whole enchilada when it comes to helping users find your stuff - your blog, product, whatever.  There are a ton of dedicated tools for this - like Ahrefs and SEMrush - but each has a learning curve, and using them to get your keywords right still requires a lot of manual work.

@@ -5,8 +5,8 @@ excerpt: "Generate, evolve, and iterate on SVG logos using natural language and 
 tags: ["Claude Code", "Logo Design", "Chrome Extension"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "AI Logo Generator: SVG Logo Maker with Claude Code"
-metaDescription: "Generate, evolve, and iterate on SVG logos using natural language and Claude Code."
+seoTitle: "AI SVG Logo Generator: Create Logos with Claude Code"
+metaDescription: "Generate professional SVG logos using Claude Code and AI. Iterative design workflow: generate, curate, and evolve logos with natural language prompts. Free method."
 ---
 
 This morning I spent some time using Claude Code as an AI logo generator - creating SVG logos for a new Chrome extension I'm building called [ytgify](https://github.com/neonwatty/ytgify).  It's a simple YouTube to GIF converter that lets you create GIFs directly from YouTube videos with a simple in-player interface.  A quick demo video.
