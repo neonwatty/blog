@@ -5,8 +5,8 @@ excerpt: "Turn your favorite YouTube moments into shareable GIFs."
 tags: ["Chrome Extension", "YouTube", "GIF", "Launch"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "ytgify: Free YouTube to GIF Converter Chrome Extension"
-metaDescription: "ytgify is now live in the Chrome Web Store. Turn your favorite YouTube moments into shareable GIFs."
+seoTitle: "ytgify: Free YouTube to GIF Converter - No Watermark Chrome Extension"
+metaDescription: "Convert YouTube videos to GIFs instantly with ytgify. Free Chrome extension with no watermark, adjustable FPS, custom resolution, and text overlays. 1500+ users."
 ---
 
 [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a YouTube to GIF converter with no watermark - is now live in the Chrome Web Store!

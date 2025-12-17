@@ -7,7 +7,7 @@ featured: true
 author: "Jeremy Watt"
 image: "https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true"
 seoTitle: "Let Claude Code Babysit Your CI: AI DevOps Agent for GitHub Actions Debugging"
-metaDescription: "Use Claude Code CLI with gh to autonomously monitor, debug, and fix GitHub Actions workflows—a massive productivity booster."
+metaDescription: "Stop babysitting GitHub Actions. Let Claude Code autonomously monitor, debug, and fix CI failures using gh CLI. AI DevOps automation tutorial with examples."
 ---
 
 # Manually Monitoring GitHub CI is a Pain
