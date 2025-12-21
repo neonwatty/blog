@@ -38,31 +38,28 @@ Then authenticate (opens browser for OAuth):
 
 Here's what I ran on my own site this morning.
 
-**"Show me my top queries by impressions for the last 30 days"**
+**"Show me my top queries by clicks"**
 
 ```
-Query                            Clicks  Impressions  CTR    Position
----------------------------------------------------------------------
-best seo tools for claude        0       104          0.0%   79.8
-youtube to gif no watermark      2       67           3.0%   6.7
-ytgify                           1       33           3.0%   5.4
-todoq                            1       21           4.8%   5.0
-claude ai logo                   0       20           0.0%   4.5
+Query                            Clicks  Impressions  CTR     Position
+----------------------------------------------------------------------
+youtube to gif no watermark      2       67           3.0%    6.7
+claude code in ci                1       7            14.3%   6.7
+ytgify                           1       33           3.0%    5.4
 ```
 
-Immediately useful. I can see "youtube to gif no watermark" is getting impressions and I'm ranking 6.7 - worth optimizing. "best seo tools for claude" has 104 impressions but I'm at position 79 - that's a content gap.
+Immediately useful. "youtube to gif no watermark" is getting clicks at position 6.7—worth pushing to top 3. "claude code in ci" has a 14.3% CTR, which means the snippet is working.
 
-**"Show me queries with the pages they're ranking for"**
+**"Which pages are these ranking on?"**
 
 ```
-Query                            Page                                               Clicks  Position
------------------------------------------------------------------------------------------------------
-youtube to gif no watermark      https://neonwatty.com/posts/ytgify-launch/         2       6.7
-claude code in ci                https://neonwatty.com/posts/claude-code-ci-babysitter/  1   6.7
-best claude seo tools            https://neonwatty.com/posts/keyword-research-claude-code/  0  89.7
+Query                            Page                                                    Position
+-------------------------------------------------------------------------------------------------
+youtube to gif no watermark      neonwatty.com/posts/ytgify-launch/                      6.7
+claude code in ci                neonwatty.com/posts/claude-code-ci-babysitter/          6.7
 ```
 
-Now I know which posts are ranking for what. The keyword research post is showing up for "best claude seo tools" but at position 89 - basically invisible.
+Now I know exactly which posts to optimize for which keywords.
 
 ## Why This Beats the GSC UI
 
