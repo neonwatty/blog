@@ -1,23 +1,21 @@
 ---
-title: "Best Claude Code Tools for SEO & Keyword Research (2025)"
+title: "Pull Google Search Console Data with Claude Code"
 date: "2025-12-20"
-excerpt: "Use Claude Code with MCP servers for SEO automation. Connect to Google Search Console, analyze competitors, and automate keyword research at scale."
-tags: ["Claude Code", "SEO", "MCP", "Productivity", "Automation"]
+excerpt: "Use Claude Code to query your GSC data directly from the terminal. Find ranking opportunities, see what's working, skip the manual exports."
+tags: ["Claude Code", "SEO", "MCP", "Productivity"]
 featured: true
 author: "Jeremy Watt"
-seoTitle: "Best Claude Code Tools for SEO & Keyword Research (2025)"
-metaDescription: "Guide to using Claude Code for SEO automation. Connect to Google Search Console, automate keyword research, and generate content briefs with AI."
+seoTitle: "Pull Google Search Console Data with Claude Code"
+metaDescription: "Query Google Search Console directly from Claude Code using the social-tools MCP server. Real examples, actual commands, no fluff."
 ---
 
-Claude Code can automate the tedious parts of SEO—pulling GSC data, analyzing competitors, generating content briefs—with natural language commands.
+Exporting CSVs from Google Search Console is tedious. You click around the UI, filter, export, open in a spreadsheet, repeat. It's slow and annoying.
 
-## Essential MCP Servers for SEO
+With Claude Code + the [social-tools MCP server](https://www.npmjs.com/package/@neonwatty/social-tools), you can query GSC directly from the terminal. Ask questions in plain English, get answers immediately.
 
-**1. social-tools** — Google Search Console integration, autocomplete from Google/YouTube/Bing, Reddit search
+## Setup
 
-**2. chrome-devtools or claude-in-chrome** — Browser automation for competitor analysis and SERP research
-
-Install them in your Claude Code config:
+Add social-tools to your Claude Code MCP config (`~/.claude/settings.json`):
 
 ```json
 {
@@ -30,48 +28,59 @@ Install them in your Claude Code config:
 }
 ```
 
-## Keyword Research Workflows
-
-### Pull GSC Data Directly
+Then authenticate (opens browser for OAuth):
 
 ```bash
-gsc_auth  # One-time setup
-gsc_query --siteUrl="https://yoursite.com" --days=90 --dimensions="query,page" --limit=100
+# In Claude Code, just say: "authenticate with google search console"
 ```
 
-Then ask Claude Code: "Find queries where I rank 5-15 with high impressions"—instant optimization opportunities.
+## Real Examples
 
-### Autocomplete Research
+Here's what I ran on my own site this morning.
 
-Use the autocomplete tool to get real search suggestions:
+**"Show me my top queries by impressions for the last 30 days"**
 
-```bash
-autocomplete google "your keyword"
+```
+Query                            Clicks  Impressions  CTR    Position
+---------------------------------------------------------------------
+best seo tools for claude        0       104          0.0%   79.8
+youtube to gif no watermark      2       67           3.0%   6.7
+ytgify                           1       33           3.0%   5.4
+todoq                            1       21           4.8%   5.0
+claude ai logo                   0       20           0.0%   4.5
 ```
 
-Claude Code can run dozens of variations and synthesize results into keyword clusters.
+Immediately useful. I can see "youtube to gif no watermark" is getting impressions and I'm ranking 6.7 - worth optimizing. "best seo tools for claude" has 104 impressions but I'm at position 79 - that's a content gap.
 
-### Competitor Analysis
+**"Show me queries with the pages they're ranking for"**
 
-"Navigate to the top 5 pages ranking for [keyword] and extract: title, meta description, H1-H3 headings, word count. Identify content gaps."
+```
+Query                            Page                                               Clicks  Position
+-----------------------------------------------------------------------------------------------------
+youtube to gif no watermark      https://neonwatty.com/posts/ytgify-launch/         2       6.7
+claude code in ci                https://neonwatty.com/posts/claude-code-ci-babysitter/  1   6.7
+best claude seo tools            https://neonwatty.com/posts/keyword-research-claude-code/  0  89.7
+```
 
-Claude Code handles the browser automation and gives you a comparison table.
+Now I know which posts are ranking for what. The keyword research post is showing up for "best claude seo tools" but at position 89 - basically invisible.
 
-## Content Optimization
+## Why This Beats the GSC UI
 
-**Bulk meta descriptions:**
-"Read all markdown files in /blog/posts and generate meta descriptions under 155 characters. Output as CSV."
+- **No clicking around** - just ask what you want
+- **Instant follow-ups** - "now filter to just queries with position 5-20"
+- **Combine with other tools** - Claude Code can read your blog posts and cross-reference with GSC data
+- **No CSV exports** - data stays in your terminal
 
-**Internal linking:**
-"Analyze my blog posts and suggest internal links based on topic overlap."
+## The Commands Under the Hood
 
-**Content gaps:**
-"Compare my article to top 3 ranking pages for [keyword] and list missing sections."
+Claude Code calls these MCP tools:
 
-## Limitations
+- `gsc_auth` - authenticate with Google
+- `gsc_sites` - list your verified properties
+- `gsc_query` - pull the actual data (dimensions, date ranges, filters, sorting)
 
-- GSC data has 2-3 day delay (standard for the API)
-- No direct Ahrefs/SEMrush API access without custom integration
-- Browser automation works but is slower than direct API calls
+You don't need to remember the syntax. Just describe what you want.
 
-Claude Code is a powerful assistant for SEO automation, but you still need human judgment for strategy.
+---
+
+That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time.
