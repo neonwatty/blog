@@ -9,23 +9,23 @@ seoTitle: "Claude Code Browser Testing & iOS Test Automation with MCP Workflows"
 metaDescription: "Use Claude Code for automated browser testing and iOS simulator automation. Generate user workflows from your codebase, execute them with MCP, catch bugs early."
 ---
 
-Clicking through your app manually to test user flows gets old fast. Writing Playwright or XCTest scripts gets old even faster when the UI keeps changing.
-
-The MCP connections to browsers (via [Claude-in-Chrome](https://github.com/anthropics/claude-in-chrome), currently in beta) and iOS Simulators have gotten solid enough that Claude Code can now power through user workflow tests reliably. I'd been doing this manually for a while—re-prompting Claude to walk through flows, take screenshots, note issues—and did it often enough that it made sense to formalize it into a set of skills.
+MCP connections to browsers (via [Claude-in-Chrome](https://github.com/anthropics/claude-in-chrome), currently in beta) and iOS Simulators have gotten exponentially better in the last few months.  So much so that Claude Code can now power through user workflow tests for both browser / mobile - and really close the loop in terms of being able to verify the fundamentals of your app, edge cases you didn't find / think of, etc.,.  I've been manually driving Claude Code through user workflows bespoke-ly using these MCP connections for a while, so much so that made sense to save them as skills and make them re-usable across projects.
 
 ## The Skills
 
-Four skills, two pairs:
+To make these re-usable across projects you want to be able to generate workflows first.  These are generated via the following two skills, each of which uses the `AskUserQuestion` tool recursively to help Claude squeeze out all the ideas from your brain as it can.
 
 **Generators** — explore your codebase and create workflow files:
 - `browser-workflow-generator` — discovers routes, components, and interactions in web apps, outputs `/workflows/browser-workflows.md`
 - `ios-workflow-generator` — discovers screens, views, and interactions in iOS apps, outputs `/workflows/ios-workflows.md`
 
+The output of these skills are simple numbered workflow lists - saved in markdown files in the `/workflows` directory of whatever repo they're generated in.
+
+Using the next pair of skills, each workflow from these saved numbered lists is run through by Claude with bugs, feature ideas, etc., recorded in separate markdown files for review.
+
 **Executors** — run those workflows using MCP:
 - `browser-workflow-executor` — executes browser workflows step-by-step using Claude-in-Chrome MCP
 - `ios-workflow-executor` — executes iOS workflows step-by-step using iOS Simulator MCP
-
-All four take screenshots, document issues, flag UX concerns, and note feature ideas along the way.
 
 ## How It Works
 
@@ -62,9 +62,9 @@ Each step gets:
 
 Results go to `.claude/plans/browser-workflow-report.md`.
 
-## Why This Helps During Development
+## Why This Helps a ton During Development
 
-This isn't about replacing your test suite. It's about catching stuff while you're building:
+This isn't about replacing your test suite.  It's about catching stuff while you're building:
 
 - **Edge cases you forgot** — Claude explores systematically and finds flows you didn't think to test
 - **UI bugs** — it's actually clicking around, catching layout issues, slow responses, broken buttons
