@@ -16,7 +16,7 @@
     "test:visual": "tsx scripts/visual-test.ts",
     "check:links": "playwright test tests/e2e/external-links.spec.ts",
     "generate:rss": "tsx scripts/generate-rss.cjs",
-    "generate:sitemap": "next-sitemap",
+    "generate:sitemap": "next-sitemap --config next-sitemap.config.cjs",
     "check:sitemap": "node scripts/check-sitemap.cjs",
     "validate": "npm run lint && npm run type-check && npm run check:sitemap && npm run test",
     "generate:slideshow": "node scripts/generate-slideshow.cjs",
