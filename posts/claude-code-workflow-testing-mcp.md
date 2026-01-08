@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Browser Testing and iOS Automation with MCP Workflows"
-date: "2025-01-08"
+date: "2026-01-08"
 excerpt: "Four Claude Code skills that generate and execute user workflow tests using Claude-in-Chrome and iOS Simulator MCPs. Catch bugs and edge cases while you're still building."
 tags: ["Claude Code", "Testing", "MCP", "iOS", "Browser Automation", "AI"]
 featured: true
