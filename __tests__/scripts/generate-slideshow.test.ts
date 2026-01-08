@@ -12,7 +12,7 @@ beforeAll(async () => {
   jest.doMock('path')
   jest.doMock('gray-matter')
   
-  generateSlideshowModule = await import('../../scripts/generate-slideshow.js')
+  generateSlideshowModule = await import('../../scripts/generate-slideshow.cjs')
 })
 
 describe('Generate Slideshow Script', () => {
