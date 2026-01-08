@@ -20,7 +20,7 @@
     "node_modules/**",
     "**/*.d.ts",
     "plans/**",
-    "next-sitemap.config.js"
+    "next-sitemap.config.cjs"
   ],
   "ignoreDependencies": [
     "reveal.js",
@@ -33,9 +33,9 @@
     "config": ["eslint.config.js", ".eslintrc.json"]
   },
   "postcss": {
-    "config": ["postcss.config.js"]
+    "config": ["postcss.config.mjs"]
   },
   "tailwind": {
-    "config": ["tailwind.config.js"]
+    "config": ["tailwind.config.mjs"]
   }
 }
