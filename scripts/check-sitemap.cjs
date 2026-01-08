@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 
-const SITE_URL = 'https://neonwatty.com'
 const postsDirectory = path.join(process.cwd(), 'posts')
 const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml')
 
@@ -14,7 +13,8 @@ function getPostSlugs() {
 
 function getSitemapPostSlugs() {
   const sitemapContent = fs.readFileSync(sitemapPath, 'utf8')
-  const postUrlPattern = new RegExp(`<loc>${SITE_URL}/posts/([^/]+)/</loc>`, 'g')
+  // Match any URL ending in /posts/{slug}/ (URL-agnostic)
+  const postUrlPattern = /<loc>https?:\/\/[^<]+\/posts\/([^/]+)\/<\/loc>/g
   const slugs = []
   let match
 
