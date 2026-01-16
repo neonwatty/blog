@@ -20,7 +20,10 @@
     "node_modules/**",
     "**/*.d.ts",
     "plans/**",
-    "next-sitemap.config.cjs"
+    "next-sitemap.config.cjs",
+    "lib/slides.ts",
+    "components/Slideshow.tsx",
+    "app/_slides-disabled/**"
   ],
   "ignoreDependencies": [
     "reveal.js",
