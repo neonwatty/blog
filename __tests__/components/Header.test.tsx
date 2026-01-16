@@ -31,7 +31,7 @@ describe('Header Component', () => {
     // Navigation links appear twice: once in desktop nav, once in mobile menu
     expect(screen.getAllByText('Posts')).toHaveLength(2)
     expect(screen.getAllByText('Projects')).toHaveLength(2)
-    expect(screen.getAllByText('Slides')).toHaveLength(2)
+    // Slides nav link disabled - slideshow feature temporarily removed
     expect(screen.getAllByText('About')).toHaveLength(2)
   })
 
@@ -40,12 +40,11 @@ describe('Header Component', () => {
     // Get all links for each nav item (desktop + mobile = 2 each)
     const aboutLinks = screen.getAllByRole('link', { name: 'About' })
     const postsLinks = screen.getAllByRole('link', { name: 'Posts' })
-    const slidesLinks = screen.getAllByRole('link', { name: 'Slides' })
+    // Slides nav link disabled - slideshow feature temporarily removed
 
     // Check that at least one of each has the correct href
     expect(postsLinks.some(link => link.getAttribute('href') === '/posts')).toBe(true)
     expect(aboutLinks.some(link => link.getAttribute('href') === '/about')).toBe(true)
-    expect(slidesLinks.some(link => link.getAttribute('href') === '/slides')).toBe(true)
   })
 
   test('renders with responsive design classes', () => {

@@ -12,7 +12,7 @@ export default function Header() {
   const navigation = [
     { name: 'Posts', href: '/posts' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Slides', href: '/slides' },
+    // { name: 'Slides', href: '/slides' },  // Disabled - slideshow feature temporarily removed
     { name: 'About', href: '/about' },
   ]
 
