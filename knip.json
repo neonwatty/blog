@@ -29,7 +29,9 @@
     "reveal.js",
     "@types/reveal.js",
     "@types/testing-library__jest-dom",
-    "eslint-config-next"
+    "eslint-config-next",
+    "@jest/globals",
+    "@testing-library/user-event"
   ],
   "ignoreExportsUsedInFile": true,
   "eslint": {
