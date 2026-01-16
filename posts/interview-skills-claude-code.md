@@ -84,28 +84,7 @@ I ran the [think-through](https://github.com/neonwatty/claude-skills/blob/main/s
 **Round 3 - Target audience:**
 > "Who's at these parties? Are we talking college students pregaming, millennials at a house party, families at Thanksgiving showing memes, friend groups at someone's apartment? The vibe matters for how this would actually work."
 
-**Round 4 - Beachhead market:**
-> "If you had to pick ONE group where this would spread like wildfire—where the pain is most acute and they'd actually tell their friends about it—who is it? Where would you start?"
-
-**Round 5 - Competitive landscape:**
-> "What do you know about the existing watch party space? There's Teleparty (Netflix Party), Discord's watch-together, Amazon Watch Party, Rave, etc. Why haven't those solved this problem for in-person sharing?"
-
-**Round 6 - Technical complexity:**
-> "The multi-platform piece (YouTube, TikTok, Instagram, Reddit) is technically gnarly. These platforms actively fight embedding and have different formats. Have you thought about whether you'd try to play content natively, or just open links, or something else?"
-
-**Round 7 - Scope constraint:**
-> "Given that technical complexity, what if you started with JUST YouTube? It has the best embedding support and is probably 70%+ of what people share at parties anyway. Would that still be valuable, or does the multi-platform dream feel essential?"
-
-**Round 8 - Edge case mechanics:**
-> "Let's talk about the queue mechanics. You mentioned round-robin for fairness. But what happens when someone queues something 10 minutes long and someone else queues a 30-second TikTok? Is time-based fairness the right frame, or turn-based, or something else?"
-
-**Round 9 - Core value proposition:**
-> "Which of these feels more true to you: (A) The magic is in the fairness—everyone gets heard, no one dominates, it's democratic. Or (B) The magic is in the smooth experience—easy to queue, easy to watch, no awkward phone-passing, host keeps it moving."
-
-**Round 10 - Business model:**
-> "Let's talk about how this makes money (or sustains itself). Party apps are notoriously hard to monetize—usage is sporadic, people are cheap when having fun. What's your instinct here?"
-
-By round 10, I'd thought through scenarios I never would have considered upfront—and decided to shelve the idea until I had better answers.
+The session continued for 10 rounds total—covering beachhead market, competitive landscape, technical complexity, scope constraints, queue mechanics, core value proposition, and business model. By the end, I'd thought through scenarios I never would have considered upfront—and decided to shelve the idea until I had better answers.
 
 ## Bug Interview
 
