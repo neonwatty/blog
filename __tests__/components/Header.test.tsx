@@ -26,25 +26,21 @@ describe('Header Component', () => {
     expect(screen.getByText('Jeremy Watt')).toBeInTheDocument()
   })
 
-  test('renders navigation links (desktop and mobile)', () => {
+  test('renders desktop navigation links', () => {
     renderWithTheme(<Header />)
-    // Navigation links appear twice: once in desktop nav, once in mobile menu
-    expect(screen.getAllByText('Posts')).toHaveLength(2)
-    expect(screen.getAllByText('Projects')).toHaveLength(2)
-    // Slides nav link disabled - slideshow feature temporarily removed
-    expect(screen.getAllByText('About')).toHaveLength(2)
+    // Navigation links appear once in desktop nav (mobile uses MobileTabBar now)
+    expect(screen.getByText('Posts')).toBeInTheDocument()
+    expect(screen.getByText('Projects')).toBeInTheDocument()
+    expect(screen.getByText('About')).toBeInTheDocument()
   })
 
   test('has proper link attributes', () => {
     renderWithTheme(<Header />)
-    // Get all links for each nav item (desktop + mobile = 2 each)
-    const aboutLinks = screen.getAllByRole('link', { name: 'About' })
-    const postsLinks = screen.getAllByRole('link', { name: 'Posts' })
-    // Slides nav link disabled - slideshow feature temporarily removed
+    const aboutLink = screen.getByRole('link', { name: 'About' })
+    const postsLink = screen.getByRole('link', { name: 'Posts' })
 
-    // Check that at least one of each has the correct href
-    expect(postsLinks.some(link => link.getAttribute('href') === '/posts')).toBe(true)
-    expect(aboutLinks.some(link => link.getAttribute('href') === '/about')).toBe(true)
+    expect(postsLink.getAttribute('href')).toBe('/posts')
+    expect(aboutLink.getAttribute('href')).toBe('/about')
   })
 
   test('renders with responsive design classes', () => {
@@ -53,9 +49,10 @@ describe('Header Component', () => {
     expect(header).toBeInTheDocument()
   })
 
-  test('renders hamburger menu button for mobile', () => {
+  test('renders theme toggle', () => {
     renderWithTheme(<Header />)
-    const menuButton = screen.getByRole('button', { name: /open menu/i })
-    expect(menuButton).toBeInTheDocument()
+    // Theme toggle appears twice: once for desktop, once for mobile
+    const themeButtons = screen.getAllByRole('button', { name: /switch to (dark|light) mode/i })
+    expect(themeButtons.length).toBeGreaterThanOrEqual(1)
   })
 })
