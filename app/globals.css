@@ -1893,6 +1893,23 @@
 }
 
 /* ==========================================
+   iOS-STYLE BOTTOM TAB BAR
+   ========================================== */
+
+/* Add bottom padding on mobile to prevent content from being hidden behind tab bar */
+@media (max-width: 767px) {
+  body {
+    /* 49px tab bar height + safe area */
+    padding-bottom: calc(49px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Adjust scroll-to-top button position to be above tab bar */
+  .scroll-to-top {
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ==========================================
    MOBILE & TOUCH-FRIENDLY ENHANCEMENTS
    ========================================== */
 

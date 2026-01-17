@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import MobileTabBar from '@/components/MobileTabBar'
 import Script from 'next/script'
 import './globals.css'
 
@@ -111,6 +112,7 @@ export default function RootLayout({
         )}
         <ThemeProvider>
           {children}
+          <MobileTabBar />
           <Toaster 
             position="top-right"
             toastOptions={{
