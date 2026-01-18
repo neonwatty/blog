@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bug-body { fill: #e74c3c; }
+    .bug-head { fill: #c0392b; }
+    .bug-legs { stroke: #2c3e50; stroke-width: 3; stroke-linecap: round; fill: none; }
+    .bug-antenna { stroke: #2c3e50; stroke-width: 2; stroke-linecap: round; fill: none; }
+    .bug-spots { fill: #c0392b; }
+  </style>
+  <!-- Antennae -->
+  <path class="bug-antenna" d="M40 28 Q35 18 30 12"/>
+  <path class="bug-antenna" d="M60 28 Q65 18 70 12"/>
+  <circle cx="30" cy="12" r="3" fill="#2c3e50"/>
+  <circle cx="70" cy="12" r="3" fill="#2c3e50"/>
+  <!-- Head -->
+  <ellipse class="bug-head" cx="50" cy="32" rx="14" ry="12"/>
+  <!-- Body -->
+  <ellipse class="bug-body" cx="50" cy="62" rx="24" ry="30"/>
+  <!-- Center line -->
+  <line x1="50" y1="35" x2="50" y2="90" stroke="#c0392b" stroke-width="2"/>
+  <!-- Spots -->
+  <circle class="bug-spots" cx="38" cy="52" r="5"/>
+  <circle class="bug-spots" cx="62" cy="52" r="5"/>
+  <circle class="bug-spots" cx="38" cy="72" r="5"/>
+  <circle class="bug-spots" cx="62" cy="72" r="5"/>
+  <!-- Legs -->
+  <path class="bug-legs" d="M30 50 Q20 45 12 40"/>
+  <path class="bug-legs" d="M70 50 Q80 45 88 40"/>
+  <path class="bug-legs" d="M28 62 Q18 62 10 58"/>
+  <path class="bug-legs" d="M72 62 Q82 62 90 58"/>
+  <path class="bug-legs" d="M30 75 Q20 80 12 85"/>
+  <path class="bug-legs" d="M70 75 Q80 80 88 85"/>
+</svg>
