@@ -18,7 +18,7 @@ const projects: ProjectData[] = [
     link: 'https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje',
     type: 'chrome',
     tags: ['Chrome Extension', 'YouTube', 'GIF'],
-    lastUpdated: '2025-09-26'
+    lastUpdated: '2026-01-18'
   },
   {
     id: 'qc',
