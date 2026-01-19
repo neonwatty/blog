@@ -5,10 +5,6 @@ on:
     tags:
       - 'v*'
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -26,12 +22,7 @@ jobs:
         run: npm install -g vercel
 
       - name: Link Vercel Project
-        run: |
-          unset VERCEL_ORG_ID VERCEL_PROJECT_ID
-          vercel link --yes --project blog --scope jermwatts-projects --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ""
-          VERCEL_PROJECT_ID: ""
+        run: vercel link --yes --project blog --scope jermwatts-projects --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Install Dependencies
         run: npm ci
