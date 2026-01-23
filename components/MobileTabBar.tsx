@@ -6,12 +6,14 @@ import {
   HomeIcon,
   DocumentTextIcon,
   RocketLaunchIcon,
+  BoltIcon,
   UserIcon,
 } from '@heroicons/react/24/outline'
 import {
   HomeIcon as HomeIconSolid,
   DocumentTextIcon as DocumentTextIconSolid,
   RocketLaunchIcon as RocketLaunchIconSolid,
+  BoltIcon as BoltIconSolid,
   UserIcon as UserIconSolid,
 } from '@heroicons/react/24/solid'
 
@@ -19,6 +21,7 @@ const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, activeIcon: HomeIconSolid },
   { name: 'Posts', href: '/posts', icon: DocumentTextIcon, activeIcon: DocumentTextIconSolid },
   { name: 'Projects', href: '/projects', icon: RocketLaunchIcon, activeIcon: RocketLaunchIconSolid },
+  { name: 'Updates', href: '/project-updates', icon: BoltIcon, activeIcon: BoltIconSolid },
   { name: 'About', href: '/about', icon: UserIcon, activeIcon: UserIconSolid },
 ]
 

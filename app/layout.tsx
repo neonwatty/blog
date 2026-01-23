@@ -8,20 +8,20 @@ import MobileTabBar from '@/components/MobileTabBar'
 import Script from 'next/script'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter'
 })
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-poppins'
 })
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-jetbrains'
@@ -113,7 +113,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <MobileTabBar />
-          <Toaster 
+          <Toaster
             position="top-right"
             toastOptions={{
               duration: 3000,
