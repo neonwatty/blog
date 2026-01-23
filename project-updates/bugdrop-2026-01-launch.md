@@ -1,13 +1,13 @@
 ---
-title: "BugDrop: Open Source Visual Feedback Widget for GitHub Issues"
+title: "Launching BugDrop v1: Open Source Visual Feedback for GitHub"
 date: "2026-01-18"
-excerpt: "A free, open source alternative to BugHerd and Usersnap. Capture annotated screenshots and convert user feedback directly into GitHub Issues."
+excerpt: "Introducing BugDrop - a free, open source alternative to BugHerd and Usersnap. Capture annotated screenshots and create GitHub Issues directly from your website."
 projectId: "bugdrop"
 projectTitle: "BugDrop"
 tags: ["GitHub", "Feedback", "Developer Tools", "Open Source", "Launch"]
 ---
 
-[BugDrop](https://github.com/neonwatty/bugdrop) is a free, open source visual feedback widget that converts user feedback directly into GitHub Issues.
+Today I'm releasing the first version of [BugDrop](https://github.com/neonwatty/bugdrop) - a free, open source visual feedback widget that converts user feedback directly into GitHub Issues.
 
 If you've used tools like BugHerd or Usersnap, BugDrop works similarly - but it's free, open source, and integrates directly with your GitHub workflow. Users click a bug button, capture and annotate screenshots, and submit them as issues in your repository. No more "can you describe what you saw?" back-and-forth.
 
@@ -21,7 +21,7 @@ If you've used tools like BugHerd or Usersnap, BugDrop works similarly - but it'
 
 ## How It Works
 
-The website bug reporting flow is simple:
+The bug reporting flow is simple:
 
 1. User clicks the bug button on your site
 2. Widget captures a screenshot of the current page
@@ -30,7 +30,7 @@ The website bug reporting flow is simple:
 
 The widget runs in a Shadow DOM for style isolation, uses Cloudflare Workers for authentication, and stores screenshots directly in a `.bugdrop/` folder in your repository. No third-party data storage.
 
-## Features
+## What's in v1
 
 - **Visual feedback with annotations** - users can draw on screenshots before submitting
 - **Customizable widget** - light/dark/auto themes, configurable positioning
