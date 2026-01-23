@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectsFilter from '@/components/ProjectsFilter'
 import StructuredData from '@/components/StructuredData'
 import { getProjectsData } from '@/lib/projects'
 
@@ -37,27 +37,22 @@ export default function ProjectsPage() {
         <Header />
 
         <main className="flex-grow mb-10">
-          <div className="max-w-6xl mx-auto px-4 py-12">
-            <div className="mb-12 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight"
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+            {/* Hero Section */}
+            <div className="mb-10 sm:mb-14 text-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 tracking-tight"
                   style={{ color: 'var(--color-text-primary)' }}>
-                Projects
+                Things I've Built
               </h1>
-              <p className="text-xl text-center max-w-2xl mx-auto"
+              <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
                  style={{ color: 'var(--color-text-secondary)' }}>
-                Recent side projects I've worked on - AI tools, web apps, and experiments
+                A collection of side projects, tools, and experiments.
+                From AI-powered apps to browser extensions and CLI tools.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  animationDelay={index + 1}
-                />
-              ))}
-            </div>
+            {/* Filter + Grid */}
+            <ProjectsFilter projects={projects} />
           </div>
         </main>
 

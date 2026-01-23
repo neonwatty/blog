@@ -31,12 +31,7 @@ export default function Home() {
         <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="mb-10 sm:mb-14 md:mb-20">
             {/* Profile section with side-by-side layout */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl transition-all duration-300"
-                 style={{
-                   background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(99, 102, 241, 0.1))',
-                   border: '1px solid rgba(79, 70, 229, 0.2)',
-                   boxShadow: '0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05)'
-                 }}>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl transition-all duration-300 bg-indigo-500/[0.08] border border-indigo-500/20 shadow-md shadow-indigo-500/10 backdrop-blur-sm">
 
               {/* Profile Image */}
               <div className="flex-shrink-0">
@@ -115,88 +110,83 @@ export default function Home() {
                        style={{ background: 'var(--gradient-hero)', boxShadow: 'var(--shadow-professional)' }}></div>
                 </div>
 
-                <div className="space-y-6 sm:space-y-8 md:space-y-10">
+                <div className="space-y-4 sm:space-y-8 md:space-y-10">
                   {postsByYear[year].map((post, postIndex) => (
-                    <article key={post.id}
-                             className="group transition-all duration-300 hover:transform hover:scale-[1.01]"
-                             style={{
-                               borderBottom: `1px solid var(--color-border-subtle)`,
-                               paddingBottom: '1.25rem',
-                               animationDelay: `${(yearIndex * 100) + (postIndex * 50)}ms`
-                             }}>
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 md:space-x-8">
-                        {/* Date column */}
-                        <div className="flex-shrink-0 mb-2 sm:mb-0 sm:w-24 md:w-28">
-                          <time
-                            dateTime={post.date}
-                            className="text-xs sm:text-sm font-semibold transition-all duration-300 block"
-                            style={{
-                              color: 'var(--color-text-tertiary)',
-                              letterSpacing: '0.05em'
-                            }}
-                          >
-                            {format(new Date(post.date), 'MMM d')}
-                          </time>
-                        </div>
+                    <Link key={post.id} href={`/posts/${post.id}`} className="block">
+                      <article
+                        className="group transition-all duration-300 hover:transform hover:scale-[1.01] p-4 sm:p-0 rounded-xl sm:rounded-none bg-indigo-500/[0.08] sm:bg-transparent border border-indigo-500/20 sm:border-0 sm:border-b sm:border-b-gray-800 sm:pb-5 backdrop-blur-sm sm:backdrop-blur-none shadow-md shadow-indigo-500/10 sm:shadow-none"
+                        style={{
+                          animationDelay: `${(yearIndex * 100) + (postIndex * 50)}ms`
+                        }}
+                      >
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 md:space-x-8">
+                          {/* Date column */}
+                          <div className="flex-shrink-0 mb-2 sm:mb-0 sm:w-24 md:w-28">
+                            <time
+                              dateTime={post.date}
+                              className="text-xs sm:text-sm font-semibold transition-all duration-300 block"
+                              style={{
+                                color: 'var(--color-text-tertiary)',
+                                letterSpacing: '0.05em'
+                              }}
+                            >
+                              {format(new Date(post.date), 'MMM d')}
+                            </time>
+                          </div>
 
-                        {/* Content column */}
-                        <div className="flex-grow min-w-0">
-                          <div className="flex items-start justify-between">
-                            <div className="flex-grow pr-2 sm:pr-4 md:pr-6">
-                              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-all duration-300 group-hover:translate-x-1">
-                                <Link
-                                  href={`/posts/${post.id}`}
-                                  className="relative transition-all duration-300"
-                                  style={{
-                                    color: 'var(--color-text-primary)',
-                                    letterSpacing: '-0.02em'
-                                  }}
-                                >
+                          {/* Content column */}
+                          <div className="flex-grow min-w-0">
+                            <div className="flex items-start justify-between">
+                              <div className="flex-grow pr-2 sm:pr-4 md:pr-6">
+                                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-all duration-300 group-hover:translate-x-1"
+                                    style={{
+                                      color: 'var(--color-text-primary)',
+                                      letterSpacing: '-0.02em'
+                                    }}>
                                   {post.title}
-                                </Link>
-                              </h3>
-                              <p className="text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 transition-all duration-300"
-                                 style={{
-                                   color: 'var(--color-text-secondary)',
-                                   lineHeight: '1.7'
-                                 }}>
-                                {post.excerpt}
-                              </p>
-                              
-                              {/* Enhanced Meta info */}
-                              <div className="flex flex-wrap items-center text-xs sm:text-sm gap-2 sm:gap-4 md:gap-6 transition-all duration-300"
-                                   style={{ color: 'var(--color-text-tertiary)' }}>
-                                <span className="font-medium">{post.readingTime}</span>
-                                {post.tags.length > 0 && (
-                                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                                    {post.tags.slice(0, 2).map((tag) => (
-                                      <Link
-                                        key={tag}
-                                        href={`/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                                        className="tag-badge focus-indigo text-xs"
-                                      >
-                                        {tag}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                )}
+                                </h3>
+                                <p className="text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 transition-all duration-300"
+                                   style={{
+                                     color: 'var(--color-text-secondary)',
+                                     lineHeight: '1.7'
+                                   }}>
+                                  {post.excerpt}
+                                </p>
+
+                                {/* Enhanced Meta info */}
+                                <div className="flex flex-wrap items-center text-xs sm:text-sm gap-2 sm:gap-4 md:gap-6 transition-all duration-300"
+                                     style={{ color: 'var(--color-text-tertiary)' }}>
+                                  <span className="font-medium">{post.readingTime}</span>
+                                  {post.tags.length > 0 && (
+                                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                      {post.tags.slice(0, 2).map((tag) => (
+                                        <span
+                                          key={tag}
+                                          className="tag-badge text-xs"
+                                        >
+                                          {tag}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
                               </div>
+
+                              {/* Thumbnail - hidden on very small screens */}
+                              {post.image && (
+                                <div className="hidden sm:block flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ml-2 sm:ml-4">
+                                  <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    className="w-full h-full object-cover rounded"
+                                  />
+                                </div>
+                              )}
                             </div>
-                            
-                            {/* Thumbnail - hidden on very small screens */}
-                            {post.image && (
-                              <div className="hidden sm:block flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ml-2 sm:ml-4">
-                                <img
-                                  src={post.image}
-                                  alt={post.title}
-                                  className="w-full h-full object-cover rounded"
-                                />
-                              </div>
-                            )}
                           </div>
                         </div>
-                      </div>
-                    </article>
+                      </article>
+                    </Link>
                   ))}
                 </div>
               </div>

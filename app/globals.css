@@ -1890,6 +1890,18 @@
       linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
       linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
   }
+
+  /* Mobile bottom nav spacing */
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 4rem; /* Height of bottom nav */
+    }
+  }
+
+  /* Safe area for notched devices */
+  .h-safe-area-inset-bottom {
+    height: env(safe-area-inset-bottom, 0px);
+  }
 }
 
 /* ==========================================
