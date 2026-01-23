@@ -2,11 +2,9 @@
 title: "BugDrop: Open Source Visual Feedback Widget for GitHub Issues"
 date: "2026-01-18"
 excerpt: "A free, open source alternative to BugHerd and Usersnap. Capture annotated screenshots and convert user feedback directly into GitHub Issues."
+projectId: "bugdrop"
+projectTitle: "BugDrop"
 tags: ["GitHub", "Feedback", "Developer Tools", "Open Source", "Launch"]
-featured: true
-author: "Jeremy Watt"
-seoTitle: "BugDrop: Free BugHerd Alternative - Open Source Feedback Widget"
-metaDescription: "BugDrop is a free, open source visual feedback tool and BugHerd alternative. Capture annotated screenshots from your website and create GitHub Issues instantly."
 ---
 
 [BugDrop](https://github.com/neonwatty/bugdrop) is a free, open source visual feedback widget that converts user feedback directly into GitHub Issues.
