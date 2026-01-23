@@ -12,6 +12,9 @@ const nextConfig = {
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   outputFileTracingRoot: process.cwd(), // Fix workspace root warning
+  // Disable the Next.js development indicator (floating "N" button)
+  // This prevents the FAB-style overlay that blocks content on mobile
+  devIndicators: false,
 }
 
 const withMDX = createMDX({

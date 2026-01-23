@@ -1,0 +1,46 @@
+name: Release to Production
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Link Vercel Project
+        run: vercel link --yes --project blog --scope jermwatts-projects --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Pull Vercel Project Settings
+        run: vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build with Vercel
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

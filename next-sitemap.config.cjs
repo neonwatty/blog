@@ -67,29 +67,29 @@ function getDynamicPaths() {
       console.warn('Failed to load tags for sitemap:', e.message)
     }
 
-    // Add all slideshows
-    try {
-      const slideshowsDir = path.join(process.cwd(), 'slideshows')
-      if (fs.existsSync(slideshowsDir)) {
-        const files = fs.readdirSync(slideshowsDir)
-        const slideshows = files
-          .filter(file => file.endsWith('.json'))
-          .map(file => {
-            const filePath = path.join(slideshowsDir, file)
-            const fileContent = fs.readFileSync(filePath, 'utf8')
-            const slideshow = JSON.parse(fileContent)
-            return slideshow
-          })
+    // Slideshow feature temporarily disabled
+    // try {
+    //   const slideshowsDir = path.join(process.cwd(), 'slideshows')
+    //   if (fs.existsSync(slideshowsDir)) {
+    //     const files = fs.readdirSync(slideshowsDir)
+    //     const slideshows = files
+    //       .filter(file => file.endsWith('.json'))
+    //       .map(file => {
+    //         const filePath = path.join(slideshowsDir, file)
+    //         const fileContent = fs.readFileSync(filePath, 'utf8')
+    //         const slideshow = JSON.parse(fileContent)
+    //         return slideshow
+    //       })
 
-        paths.push(...slideshows.map(show => ({
-          loc: `/slides/${show.id}/`,
-          lastmod: show.metadata.date,
-        })))
-        console.log(`✓ Added ${slideshows.length} slideshows to sitemap`)
-      }
-    } catch (e) {
-      console.warn('Failed to load slideshows for sitemap:', e.message)
-    }
+    //     paths.push(...slideshows.map(show => ({
+    //       loc: `/slides/${show.id}/`,
+    //       lastmod: show.metadata.date,
+    //     })))
+    //     console.log(`✓ Added ${slideshows.length} slideshows to sitemap`)
+    //   }
+    // } catch (e) {
+    //   console.warn('Failed to load slideshows for sitemap:', e.message)
+    // }
   } catch (error) {
     console.error('Error loading dynamic paths:', error)
   }
@@ -139,9 +139,10 @@ module.exports = {
     } else if (path.startsWith('/tags/')) {
       priority = 0.6
       changefreq = 'weekly'
-    } else if (path.startsWith('/slides/')) {
-      priority = 0.6
-      changefreq = 'monthly'
+    // Slideshow feature temporarily disabled
+    // } else if (path.startsWith('/slides/')) {
+    //   priority = 0.6
+    //   changefreq = 'monthly'
     } else if (path.startsWith('/projects') || path.startsWith('/about') || path.startsWith('/newsletter')) {
       priority = 0.7
       changefreq = 'weekly'

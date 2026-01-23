@@ -94,15 +94,16 @@ describe('Projects Library', () => {
       })
     })
 
-    test('ytgify project is first in the list', () => {
+    test('bugdrop project is first in the list', () => {
       const projects = getProjectsData()
-      expect(projects[0].id).toBe('ytgify')
+      expect(projects[0].id).toBe('bugdrop')
     })
 
     test('projects contain expected data', () => {
       const projects = getProjectsData()
       const projectIds = projects.map(p => p.id)
 
+      expect(projectIds).toContain('bugdrop')
       expect(projectIds).toContain('ytgify')
       expect(projectIds).toContain('qc')
       expect(projectIds).toContain('mybodyscans')

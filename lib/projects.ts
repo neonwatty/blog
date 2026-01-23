@@ -11,6 +11,16 @@ export interface ProjectData {
 
 const projects: ProjectData[] = [
   {
+    id: 'bugdrop',
+    title: 'BugDrop',
+    description: 'Open source visual feedback widget - screenshots to GitHub Issues',
+    image: '/images/projects/bugdrop.svg',
+    link: 'https://github.com/neonwatty/bugdrop',
+    type: 'github',
+    tags: ['Feedback', 'GitHub', 'Open Source', 'DevTools'],
+    lastUpdated: '2026-01-18'
+  },
+  {
     id: 'ytgify',
     title: 'YTGify',
     description: 'Create GIFs from YouTube videos instantly with this Chrome Extension',
@@ -18,7 +28,7 @@ const projects: ProjectData[] = [
     link: 'https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje',
     type: 'chrome',
     tags: ['Chrome Extension', 'YouTube', 'GIF'],
-    lastUpdated: '2025-09-26'
+    lastUpdated: '2026-01-18'
   },
   {
     id: 'qc',

@@ -32,22 +32,22 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
       />
       
-      <nav className="flex items-center space-x-2 text-sm mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2">
+      <nav className="flex items-center text-sm mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center flex-wrap">
           {items.map((item, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && (
-                <ChevronRightIcon className="w-4 h-4 mx-2 text-gray-400" aria-hidden="true" />
+                <ChevronRightIcon className="w-4 h-4 mx-1 text-gray-400 flex-shrink-0" aria-hidden="true" />
               )}
               {item.href && index < items.length - 1 ? (
                 <Link
                   href={item.href}
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 py-2 px-2 -mx-2 min-h-[44px] inline-flex items-center"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-gray-900 font-medium" aria-current="page">
+                <span className="text-gray-900 dark:text-gray-100 font-medium py-2 truncate max-w-[200px] sm:max-w-none" aria-current="page">
                   {item.label}
                 </span>
               )}

@@ -4,24 +4,24 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import BottomNav from '@/components/BottomNav'
+import MobileTabBar from '@/components/MobileTabBar'
 import Script from 'next/script'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter'
 })
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-poppins'
 })
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-jetbrains'
@@ -112,8 +112,8 @@ export default function RootLayout({
         )}
         <ThemeProvider>
           {children}
-          <BottomNav />
-          <Toaster 
+          <MobileTabBar />
+          <Toaster
             position="top-right"
             toastOptions={{
               duration: 3000,

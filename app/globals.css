@@ -1905,6 +1905,23 @@
 }
 
 /* ==========================================
+   iOS-STYLE BOTTOM TAB BAR
+   ========================================== */
+
+/* Add bottom padding on mobile to prevent content from being hidden behind tab bar */
+@media (max-width: 767px) {
+  body {
+    /* 49px tab bar height + safe area */
+    padding-bottom: calc(49px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Adjust scroll-to-top button position to be above tab bar */
+  .scroll-to-top {
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ==========================================
    MOBILE & TOUCH-FRIENDLY ENHANCEMENTS
    ========================================== */
 
@@ -1942,17 +1959,18 @@
   }
 }
 
-/* Improve tap targets for tag badges */
+/* Improve tap targets for tag badges - iOS requires 44pt minimum */
 .tag-badge {
-  min-height: 32px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
+  padding: 0.5rem 1rem;
 }
 
 @media (max-width: 640px) {
   .tag-badge {
-    min-height: 36px;
-    padding: 0.5rem 0.75rem;
+    min-height: 44px;
+    padding: 0.625rem 1rem;
   }
 }
 
