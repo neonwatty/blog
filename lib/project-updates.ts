@@ -109,8 +109,3 @@ export async function getProjectUpdateData(id: string): Promise<ProjectUpdateDat
     readingTime: readingTimeStats.text,
   }
 }
-
-export function getProjectUpdatesByProject(projectId: string): ProjectUpdateData[] {
-  const allUpdates = getSortedProjectUpdates()
-  return allUpdates.filter(update => update.projectId === projectId)
-}
