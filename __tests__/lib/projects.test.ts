@@ -114,14 +114,24 @@ describe('Projects Library', () => {
       expect(projectIds).toContain('todoq')
     })
 
-    test('projects are sorted by lastUpdated (newest first)', () => {
+    test('projects with videos come first, npm packages come last', () => {
       const projects = getProjectsData()
 
-      for (let i = 0; i < projects.length - 1; i++) {
-        const currentDate = new Date(projects[i].lastUpdated)
-        const nextDate = new Date(projects[i + 1].lastUpdated)
-        expect(currentDate.getTime()).toBeGreaterThanOrEqual(nextDate.getTime())
-      }
+      // Find indices
+      const videoProjects = projects.filter(p => p.youtubeId)
+      const npmProjects = projects.filter(p => p.type === 'npm')
+
+      // All video projects should be at the beginning
+      videoProjects.forEach(vp => {
+        const vpIndex = projects.findIndex(p => p.id === vp.id)
+        expect(vpIndex).toBeLessThan(projects.length - npmProjects.length)
+      })
+
+      // All npm projects should be at the end
+      npmProjects.forEach(np => {
+        const npIndex = projects.findIndex(p => p.id === np.id)
+        expect(npIndex).toBeGreaterThanOrEqual(projects.length - npmProjects.length)
+      })
     })
 
     test('all projects have lastUpdated field', () => {
