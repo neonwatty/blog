@@ -93,27 +93,6 @@ const projects: ProjectData[] = [
     type: 'live',
     tags: ['Web App', 'Relationships', 'Tools'],
     lastUpdated: '2025-09-20'
-  },
-  // NPM packages (bottom)
-  {
-    id: 'tfq',
-    title: 'TFQ',
-    description: 'Test Failure Queue - Claude Code powered test debugging without context overload',
-    image: '/images/projects/npm-icon.svg',
-    link: 'https://www.npmjs.com/package/tfq',
-    type: 'npm',
-    tags: ['CLI', 'Testing', 'Claude Code', 'DevTools'],
-    lastUpdated: '2025-09-16'
-  },
-  {
-    id: 'todoq',
-    title: 'TodoQ',
-    description: 'CLI task management for Claude Code without JSON overhead',
-    image: '/images/projects/npm-icon.svg',
-    link: 'https://www.npmjs.com/package/todoq',
-    type: 'npm',
-    tags: ['CLI', 'Task Management', 'Claude Code', 'Productivity'],
-    lastUpdated: '2025-09-16'
   }
 ]
 
