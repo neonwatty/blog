@@ -110,27 +110,25 @@ describe('Projects Library', () => {
       expect(projectIds).toContain('meme-search')
       expect(projectIds).toContain('polarize')
       expect(projectIds).toContain('bleep-that-sht')
-      expect(projectIds).toContain('tfq')
-      expect(projectIds).toContain('todoq')
     })
 
-    test('projects with videos come first, npm packages come last', () => {
+    test('projects with videos come first', () => {
       const projects = getProjectsData()
 
       // Find indices
       const videoProjects = projects.filter(p => p.youtubeId)
-      const npmProjects = projects.filter(p => p.type === 'npm')
+      const nonVideoProjects = projects.filter(p => !p.youtubeId)
 
       // All video projects should be at the beginning
       videoProjects.forEach(vp => {
         const vpIndex = projects.findIndex(p => p.id === vp.id)
-        expect(vpIndex).toBeLessThan(projects.length - npmProjects.length)
+        expect(vpIndex).toBeLessThan(videoProjects.length)
       })
 
-      // All npm projects should be at the end
-      npmProjects.forEach(np => {
+      // All non-video projects should be at the end
+      nonVideoProjects.forEach(np => {
         const npIndex = projects.findIndex(p => p.id === np.id)
-        expect(npIndex).toBeGreaterThanOrEqual(projects.length - npmProjects.length)
+        expect(npIndex).toBeGreaterThanOrEqual(videoProjects.length)
       })
     })
 
@@ -158,7 +156,7 @@ describe('Projects Library', () => {
     })
 
     test('finds all projects by id', () => {
-      const projectIds = ['ytgify', 'qc', 'mybodyscans', 'meme-search', 'polarize', 'bleep-that-sht', 'tfq', 'todoq']
+      const projectIds = ['bugdrop', 'ytgify', 'qc', 'mybodyscans', 'meme-search', 'polarize', 'bleep-that-sht']
 
       projectIds.forEach(id => {
         const project = getProjectById(id)
