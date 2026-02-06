@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "bash scripts/build-prod.sh",
+    "build:dev": "next build",
     "start": "next start",
     "lint": "eslint app components lib types --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint app components lib types --ext .js,.jsx,.ts,.tsx --fix",

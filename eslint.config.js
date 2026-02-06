@@ -43,6 +43,8 @@ export default [
       'react/no-unknown-property': ['error', { ignore: ['jsx'] }],
       'react-hooks/set-state-in-effect': 'off',
       'react-hooks/immutability': 'off',
+      // Maintainability
+      'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
     },
     settings: {
       react: {
