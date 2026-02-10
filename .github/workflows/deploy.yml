@@ -1,12 +1,10 @@
-name: Deploy Blog to GitHub Pages
+name: Deploy Blog
 
 on:
   push:
     branches: ["main"]
     paths-ignore:
       - 'README.md'
-      - '.github/workflows/*.yml'
-      - '.github/workflows/*.yaml'
   workflow_dispatch:
 
 permissions:
@@ -118,3 +116,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-vercel:
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Link Vercel Project
+        run: vercel link --yes --project blog --scope jermwatts-projects --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Pull Vercel Project Settings
+        run: vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build with Vercel
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
