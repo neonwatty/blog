@@ -20,6 +20,7 @@
 <url><loc>https://localhost:3000/posts/tfq-test-failure-management/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://localhost:3000/posts/todoq-task-management/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://localhost:3000/posts/vibe-coding-interview-hire-ai-developers/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://localhost:3000/posts/why-nobody-on-your-engineering-team-wants-to-use-claude-code/</loc><lastmod>2026-02-10T00:00:00.000Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://localhost:3000/posts/x-search-pro-launch/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://localhost:3000/posts/ytgify-launch/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://localhost:3000/posts/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -38,6 +39,7 @@
 <url><loc>https://localhost:3000/tags/cursor/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://localhost:3000/tags/customer%20service/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://localhost:3000/tags/developer%20tools/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://localhost:3000/tags/engineering%20management/</loc><lastmod>2026-02-10T00:00:00.000Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://localhost:3000/tags/development/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://localhost:3000/tags/devops/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://localhost:3000/tags/docker/</loc><lastmod>2026-01-23T22:25:17.539Z</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>

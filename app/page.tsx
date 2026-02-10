@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { format } from 'date-fns'
+import DevEditButton from '@/components/DevEditButton'
 
 export default function Home() {
   const allPostsData = getSortedPostsData()
@@ -142,12 +143,13 @@ export default function Home() {
                           <div className="flex-grow min-w-0">
                             <div className="flex items-start justify-between">
                               <div className="flex-grow pr-2 sm:pr-4 md:pr-6">
-                                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-all duration-300 group-hover:translate-x-1"
+                                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-all duration-300 group-hover:translate-x-1 flex items-center gap-2"
                                     style={{
                                       color: 'var(--color-text-primary)',
                                       letterSpacing: '-0.02em'
                                     }}>
                                   {post.title}
+                                  <DevEditButton href={`/admin/edit/${post.id}`} />
                                 </h3>
                                 <p className="text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 transition-all duration-300"
                                    style={{
