@@ -4,6 +4,7 @@ date: "2026-02-05"
 excerpt: "The real barriers to AI coding tool adoption aren't technical — they're management problems, employee problems, and human nature problems."
 tags: ["Claude Code", "AI", "Engineering Management", "Productivity", "Developer Tools"]
 featured: true
+image: "/images/posts/why-nobody-claude-code.png"
 author: "Jeremy Watt"
 seoTitle: "Why Nobody On Your Engineering Team Wants to Use Claude Code"
 metaDescription: "The common complaints about AI coding tools aren't the real barriers. The actual problems are more fundamental — and harder to solve."
@@ -11,7 +12,7 @@ metaDescription: "The common complaints about AI coding tools aren't the real ba
 
 # Why Nobody On Your Engineering Team Wants to Use Claude Code
 
-Many tech teams aren't adopting Claude Code, Codex, etc., nearly as fast as early adopters expected. For early adopters these tools felt like magic — abstracting away many of the miseries associated with software development (e.g., "spending all day looking for the missing comma") — leaving developers to focus on crucial technical, business, and creative decisions associated with building software.
+Outside the echo chamber of Twitter, many tech teams are adopting tools like Claude Code and Codex far slower than early adopters expected. For early adopters these tools felt like magic — abstracting away many of the miseries associated with software development (e.g., "spending all day looking for the missing comma") — leaving developers to focus on crucial technical, business, and creative decisions associated with building software.
 
 But many teams are not caught up in the zeitgeist. Most have tried the tools, and naysayers commonly complain that AI assistance produce slop, hallucinate code, create security risks, and fail to understand company codebases. Or they complain that it's just too hard to get security approval or budget at work.
 
