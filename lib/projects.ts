@@ -21,7 +21,7 @@ const projects: ProjectData[] = [
     link: 'https://github.com/neonwatty/bugdrop',
     type: 'github',
     tags: ['Feedback', 'GitHub', 'Open Source', 'DevTools'],
-    lastUpdated: '2026-01-18',
+    lastUpdated: '2026-02-23',
     youtubeId: 'VkLvP1xmRzo',
     youtubeIsShort: true
   },
@@ -42,10 +42,10 @@ const projects: ProjectData[] = [
     title: 'Bleep That Sht',
     description: 'Effortlessly bleep out words or phrases from audio and video',
     image: '/images/projects/bleep-that-sht.jpg',
-    link: 'https://neonwatty.github.io/bleep-that-shit/',
+    link: 'https://bleep-that-sht.com',
     type: 'live',
-    tags: ['Audio', 'Web App', 'Tools'],
-    lastUpdated: '2025-07-15',
+    tags: ['Audio', 'Web App', 'Tools', 'SaaS'],
+    lastUpdated: '2026-02-23',
     youtubeId: 'yL_IA-bQ1d0',
     youtubeIsShort: true
   },
@@ -87,12 +87,42 @@ const projects: ProjectData[] = [
   {
     id: 'qc',
     title: 'QC',
-    description: 'Simple tools to engineer a stronger relationship. (proof of concept)',
+    description: 'Simple tools to engineer a stronger relationship',
     image: '/images/projects/qc-logo.svg',
-    link: 'https://neonwatty.github.io/qc-app/',
+    link: 'https://tryqc.co',
     type: 'live',
-    tags: ['Web App', 'Relationships', 'Tools'],
-    lastUpdated: '2025-09-20'
+    tags: ['Web App', 'Relationships', 'Tools', 'iOS'],
+    lastUpdated: '2026-02-22'
+  },
+  {
+    id: 'seatify',
+    title: 'Seatify',
+    description: 'AI-powered seating arrangement optimization for weddings and events',
+    image: '/images/projects/seatify.svg',
+    link: 'https://seatify.app',
+    type: 'live',
+    tags: ['AI', 'SaaS', 'Web App', 'iOS'],
+    lastUpdated: '2026-02-23'
+  },
+  {
+    id: 'bullhorn',
+    title: 'Bullhorn',
+    description: 'Schedule social media posts across Twitter, LinkedIn, and Reddit',
+    image: '/images/projects/bullhorn.svg',
+    link: 'https://social-scheduler-dusky.vercel.app',
+    type: 'live',
+    tags: ['Social Media', 'SaaS', 'Web App'],
+    lastUpdated: '2026-02-21'
+  },
+  {
+    id: 'linkparty',
+    title: 'LinkParty',
+    description: 'YouTube party queue app - share videos at parties without the chaos',
+    image: '/images/projects/linkparty.svg',
+    link: 'https://party-queue-two.vercel.app',
+    type: 'live',
+    tags: ['YouTube', 'Web App', 'Social'],
+    lastUpdated: '2026-02-20'
   }
 ]
 
