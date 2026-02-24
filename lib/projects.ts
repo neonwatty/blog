@@ -41,7 +41,7 @@ const projects: ProjectData[] = [
     id: 'bleep-that-sht',
     title: 'Bleep That Sht',
     description: 'Effortlessly bleep out words or phrases from audio and video',
-    image: '/images/projects/bleep-that-sht.jpg',
+    image: '/images/projects/bleep-that-sht.png',
     link: 'https://bleep-that-sht.com',
     type: 'live',
     tags: ['Audio', 'Web App', 'Tools', 'SaaS'],
@@ -98,7 +98,7 @@ const projects: ProjectData[] = [
     id: 'seatify',
     title: 'Seatify',
     description: 'AI-powered seating arrangement optimization for weddings and events',
-    image: '/images/projects/seatify.svg',
+    image: '/images/projects/seatify.png',
     link: 'https://seatify.app',
     type: 'live',
     tags: ['AI', 'SaaS', 'Web App', 'iOS'],
@@ -127,7 +127,9 @@ const projects: ProjectData[] = [
 ]
 
 export function getProjectsData(): ProjectData[] {
-  return projects
+  return [...projects].sort((a, b) =>
+    new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime()
+  )
 }
 
 export function getProjectById(id: string): ProjectData | undefined {

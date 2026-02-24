@@ -94,9 +94,13 @@ describe('Projects Library', () => {
       })
     })
 
-    test('bugdrop project is first in the list', () => {
+    test('projects are sorted by lastUpdated descending', () => {
       const projects = getProjectsData()
-      expect(projects[0].id).toBe('bugdrop')
+      for (let i = 0; i < projects.length - 1; i++) {
+        const current = new Date(projects[i].lastUpdated).getTime()
+        const next = new Date(projects[i + 1].lastUpdated).getTime()
+        expect(current).toBeGreaterThanOrEqual(next)
+      }
     })
 
     test('projects contain expected data', () => {
@@ -110,26 +114,9 @@ describe('Projects Library', () => {
       expect(projectIds).toContain('meme-search')
       expect(projectIds).toContain('polarize')
       expect(projectIds).toContain('bleep-that-sht')
-    })
-
-    test('projects with videos come first', () => {
-      const projects = getProjectsData()
-
-      // Find indices
-      const videoProjects = projects.filter(p => p.youtubeId)
-      const nonVideoProjects = projects.filter(p => !p.youtubeId)
-
-      // All video projects should be at the beginning
-      videoProjects.forEach(vp => {
-        const vpIndex = projects.findIndex(p => p.id === vp.id)
-        expect(vpIndex).toBeLessThan(videoProjects.length)
-      })
-
-      // All non-video projects should be at the end
-      nonVideoProjects.forEach(np => {
-        const npIndex = projects.findIndex(p => p.id === np.id)
-        expect(npIndex).toBeGreaterThanOrEqual(videoProjects.length)
-      })
+      expect(projectIds).toContain('seatify')
+      expect(projectIds).toContain('bullhorn')
+      expect(projectIds).toContain('linkparty')
     })
 
     test('all projects have lastUpdated field', () => {
@@ -156,7 +143,7 @@ describe('Projects Library', () => {
     })
 
     test('finds all projects by id', () => {
-      const projectIds = ['bugdrop', 'ytgify', 'qc', 'mybodyscans', 'meme-search', 'polarize', 'bleep-that-sht']
+      const projectIds = ['bugdrop', 'ytgify', 'qc', 'mybodyscans', 'meme-search', 'polarize', 'bleep-that-sht', 'seatify', 'bullhorn', 'linkparty']
 
       projectIds.forEach(id => {
         const project = getProjectById(id)
