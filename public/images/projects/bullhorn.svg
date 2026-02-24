@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="12" fill="#0f172a"/>
+  <path d="M160 100 L260 80 L260 180 L160 160 Z" fill="#f59e0b" opacity="0.9"/>
+  <rect x="130" y="105" width="30" height="50" rx="4" fill="#f59e0b" opacity="0.9"/>
+  <rect x="138" y="155" width="14" height="30" rx="2" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="270" cy="100" r="6" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="285" cy="120" r="4" fill="#f59e0b" opacity="0.4"/>
+  <circle cx="280" cy="140" r="5" fill="#f59e0b" opacity="0.45"/>
+  <rect x="140" y="210" width="120" height="8" rx="4" fill="#f59e0b"/>
+  <text x="200" y="245" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">Bullhorn</text>
+  <text x="200" y="270" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="13">Social Media Scheduler</text>
+</svg>
