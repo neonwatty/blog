@@ -1,33 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .bug-body { fill: #e74c3c; }
-    .bug-head { fill: #c0392b; }
-    .bug-legs { stroke: #2c3e50; stroke-width: 3; stroke-linecap: round; fill: none; }
-    .bug-antenna { stroke: #2c3e50; stroke-width: 2; stroke-linecap: round; fill: none; }
-    .bug-spots { fill: #c0392b; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Concept 2: Bug inside a droplet shape — the "drop" is literal -->
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1b26"/>
+      <stop offset="100%" stop-color="#24283b"/>
+    </linearGradient>
+    <linearGradient id="drop2" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#7dcfff"/>
+      <stop offset="100%" stop-color="#bb9af7"/>
+    </linearGradient>
+    <linearGradient id="bug2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9e64"/>
+      <stop offset="100%" stop-color="#f7768e"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg2)"/>
+  <!-- Droplet shape -->
+  <path d="M100 28 C100 28, 148 80, 148 116 C148 142.5, 126.5 164, 100 164 C73.5 164, 52 142.5, 52 116 C52 80, 100 28, 100 28 Z" fill="url(#drop2)" opacity="0.2" stroke="url(#drop2)" stroke-width="2"/>
+  <!-- Bug body inside droplet -->
+  <ellipse cx="100" cy="112" rx="22" ry="28" fill="url(#bug2)"/>
+  <!-- Bug head -->
+  <circle cx="100" cy="82" r="13" fill="url(#bug2)"/>
+  <!-- Eyes -->
+  <circle cx="95" cy="80" r="3.5" fill="#1a1b26"/>
+  <circle cx="105" cy="80" r="3.5" fill="#1a1b26"/>
+  <circle cx="93.5" cy="78.5" r="1.2" fill="#c0caf5" opacity="0.8"/>
+  <circle cx="103.5" cy="78.5" r="1.2" fill="#c0caf5" opacity="0.8"/>
   <!-- Antennae -->
-  <path class="bug-antenna" d="M40 28 Q35 18 30 12"/>
-  <path class="bug-antenna" d="M60 28 Q65 18 70 12"/>
-  <circle cx="30" cy="12" r="3" fill="#2c3e50"/>
-  <circle cx="70" cy="12" r="3" fill="#2c3e50"/>
-  <!-- Head -->
-  <ellipse class="bug-head" cx="50" cy="32" rx="14" ry="12"/>
-  <!-- Body -->
-  <ellipse class="bug-body" cx="50" cy="62" rx="24" ry="30"/>
-  <!-- Center line -->
-  <line x1="50" y1="35" x2="50" y2="90" stroke="#c0392b" stroke-width="2"/>
-  <!-- Spots -->
-  <circle class="bug-spots" cx="38" cy="52" r="5"/>
-  <circle class="bug-spots" cx="62" cy="52" r="5"/>
-  <circle class="bug-spots" cx="38" cy="72" r="5"/>
-  <circle class="bug-spots" cx="62" cy="72" r="5"/>
+  <line x1="92" y1="72" x2="82" y2="58" stroke="#7dcfff" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="108" y1="72" x2="118" y2="58" stroke="#7dcfff" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="82" cy="58" r="2.5" fill="#7dcfff"/>
+  <circle cx="118" cy="58" r="2.5" fill="#7dcfff"/>
   <!-- Legs -->
-  <path class="bug-legs" d="M30 50 Q20 45 12 40"/>
-  <path class="bug-legs" d="M70 50 Q80 45 88 40"/>
-  <path class="bug-legs" d="M28 62 Q18 62 10 58"/>
-  <path class="bug-legs" d="M72 62 Q82 62 90 58"/>
-  <path class="bug-legs" d="M30 75 Q20 80 12 85"/>
-  <path class="bug-legs" d="M70 75 Q80 80 88 85"/>
+  <line x1="80" y1="102" x2="68" y2="96" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="114" x2="66" y2="116" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="82" y1="126" x2="70" y2="134" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="102" x2="132" y2="96" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="114" x2="134" y2="116" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="118" y1="126" x2="130" y2="134" stroke="#c0caf5" stroke-width="2" stroke-linecap="round"/>
 </svg>
