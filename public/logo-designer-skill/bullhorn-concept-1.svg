@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <g id="background">
+    <rect x="0" y="0" width="512" height="512" rx="80" ry="80" fill="#1f2937"/>
+  </g>
+
+  <!-- Drop Shadow -->
+  <g id="shadow">
+    <!-- Megaphone body shadow -->
+    <path d="M168 206 L330 156 L330 356 L168 306 Z" fill="#000" stroke="none" transform="translate(8, 8)"/>
+    <!-- Bell/flare shadow -->
+    <path d="M330 126 C410 126 410 386 330 386 L330 126 Z" fill="#000" stroke="none" transform="translate(8, 8)"/>
+    <!-- Rear cap shadow -->
+    <rect x="138" y="206" width="30" height="100" rx="6" fill="#000" stroke="none" transform="translate(8, 8)"/>
+    <!-- Handle shadow -->
+    <rect x="178" y="316" width="40" height="80" rx="10" fill="#000" stroke="none" transform="translate(8, 8)"/>
+    <!-- Handle grip shadow -->
+    <rect x="168" y="376" width="60" height="30" rx="8" fill="#000" stroke="none" transform="translate(8, 8)"/>
+  </g>
+
+  <!-- Megaphone -->
+  <g id="megaphone">
+    <!-- Megaphone cone body -->
+    <path d="M168 206 L330 156 L330 356 L168 306 Z" fill="#E53935" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Bell/flare of megaphone -->
+    <path d="M330 136 C420 136 420 376 330 376 L330 136 Z" fill="#FF5722" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Inner bell ring -->
+    <ellipse cx="358" cy="256" rx="28" ry="60" fill="none" stroke="#000" stroke-width="6" opacity="0.25"/>
+    <!-- Rear cap -->
+    <rect x="138" y="206" width="30" height="100" rx="6" fill="#C62828" stroke="#000" stroke-width="10"/>
+    <!-- Mouthpiece circle -->
+    <circle cx="153" cy="256" r="22" fill="#B71C1C" stroke="#000" stroke-width="8"/>
+    <!-- Mouthpiece inner -->
+    <circle cx="153" cy="256" r="10" fill="#1f2937" stroke="none"/>
+    <!-- Handle -->
+    <rect x="178" y="316" width="40" height="80" rx="10" fill="#455A64" stroke="#000" stroke-width="9"/>
+    <!-- Handle grip -->
+    <rect x="168" y="376" width="60" height="30" rx="8" fill="#37474F" stroke="#000" stroke-width="9"/>
+    <!-- Trigger button -->
+    <circle cx="198" cy="330" r="8" fill="#FFD600" stroke="#000" stroke-width="5"/>
+    <!-- Body highlight stripe -->
+    <path d="M190 220 L320 174 L320 188 L190 232 Z" fill="#FF8A80" stroke="none" opacity="0.5"/>
+  </g>
+
+  <!-- Sound Waves -->
+  <g id="sound-waves" fill="none" stroke="#FFD600" stroke-linecap="round">
+    <!-- Wave 1 (closest) -->
+    <path d="M400 196 C430 226 430 286 400 316" stroke-width="12"/>
+    <!-- Wave 2 (middle) -->
+    <path d="M424 166 C468 210 468 302 424 346" stroke-width="11"/>
+    <!-- Wave 3 (farthest) -->
+    <path d="M448 138 C506 194 506 318 448 374" stroke-width="10"/>
+  </g>
+</svg>

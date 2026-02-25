@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <g id="background">
+    <rect x="16" y="16" width="480" height="480" rx="80" fill="#8b5cf6" stroke="#000" stroke-width="10"/>
+  </g>
+  <g id="shadow">
+    <g transform="translate(8, 8)">
+      <g transform="translate(-10, -20) scale(1.08)">
+        <path d="M300 148 L380 108 C395 101 410 112 410 128 L410 320 C410 336 395 347 380 340 L300 300 Z" fill="#000"/>
+        <rect x="160" y="148" width="145" height="152" rx="16" fill="#000"/>
+        <rect x="108" y="180" width="60" height="88" rx="14" fill="#000"/>
+        <rect x="210" y="296" width="60" height="50" rx="10" fill="#000"/>
+        <rect x="200" y="338" width="80" height="32" rx="10" fill="#000"/>
+      </g>
+    </g>
+  </g>
+  <g id="megaphone" transform="translate(-10, -20) scale(1.08)">
+    <path d="M300 148 L380 108 C395 101 410 112 410 128 L410 320 C410 336 395 347 380 340 L300 300 Z" fill="#fff" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <rect x="160" y="148" width="145" height="152" rx="16" fill="#fff" stroke="#000" stroke-width="10"/>
+    <rect x="108" y="180" width="60" height="88" rx="14" fill="#fff" stroke="#000" stroke-width="10"/>
+    <path d="M420 190 Q448 224 420 258" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M442 168 Q482 224 442 280" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M464 146 Q516 224 464 302" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <rect x="210" y="296" width="60" height="50" rx="10" fill="#fff" stroke="#000" stroke-width="10"/>
+    <rect x="200" y="338" width="80" height="32" rx="10" fill="#fff" stroke="#000" stroke-width="10"/>
+  </g>
+</svg>
