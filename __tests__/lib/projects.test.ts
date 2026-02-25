@@ -110,7 +110,6 @@ describe('Projects Library', () => {
       expect(projectIds).toContain('bugdrop')
       expect(projectIds).toContain('ytgify')
       expect(projectIds).toContain('qc')
-      expect(projectIds).toContain('mybodyscans')
       expect(projectIds).toContain('meme-search')
       expect(projectIds).toContain('polarize')
       expect(projectIds).toContain('bleep-that-sht')
@@ -143,7 +142,7 @@ describe('Projects Library', () => {
     })
 
     test('finds all projects by id', () => {
-      const projectIds = ['bugdrop', 'ytgify', 'qc', 'mybodyscans', 'meme-search', 'polarize', 'bleep-that-sht', 'seatify', 'bullhorn', 'linkparty']
+      const projectIds = ['bugdrop', 'ytgify', 'qc', 'meme-search', 'polarize', 'bleep-that-sht', 'seatify', 'bullhorn', 'linkparty']
 
       projectIds.forEach(id => {
         const project = getProjectById(id)

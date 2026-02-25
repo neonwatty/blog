@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Cream background -->
+  <rect x="16" y="16" width="480" height="480" rx="80" ry="80" fill="#FAF5F0"/>
+
+  <!-- Table outline -->
+  <circle cx="256" cy="256" r="110" fill="none" stroke="#A67B52" stroke-width="8"/>
+
+  <!-- 8 seats evenly spaced around the table -->
+  <!-- Seat 1: 0 degrees (right) -->
+  <circle cx="406" cy="256" r="18" fill="#A67B52"/>
+  <!-- Seat 2: 45 degrees -->
+  <circle cx="362.07" cy="149.93" r="18" fill="#A67B52"/>
+  <!-- Seat 3: 90 degrees (top) -->
+  <circle cx="256" cy="106" r="18" fill="#A67B52"/>
+  <!-- Seat 4: 135 degrees -->
+  <circle cx="149.93" cy="149.93" r="18" fill="#A67B52"/>
+  <!-- Seat 5: 180 degrees (left) -->
+  <circle cx="106" cy="256" r="18" fill="#A67B52"/>
+  <!-- Seat 6: 225 degrees -->
+  <circle cx="149.93" cy="362.07" r="18" fill="#A67B52"/>
+  <!-- Seat 7: 270 degrees (bottom) -->
+  <circle cx="256" cy="406" r="18" fill="#A67B52"/>
+  <!-- Seat 8: 315 degrees -->
+  <circle cx="362.07" cy="362.07" r="18" fill="#A67B52"/>
+</svg>
