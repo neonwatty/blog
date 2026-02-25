@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <g id="background">
+    <circle cx="256" cy="256" r="230" fill="#FAF5F0" stroke="#C4956A" stroke-width="3"/>
+  </g>
+
+  <!-- Chiavari chair - elegant front-facing silhouette -->
+  <g id="chair" transform="translate(256,268)">
+    <!-- All coordinates relative to center of chair -->
+
+    <!-- Tall curved back frame -->
+    <path d="M-52,-160 C-54,-80 -52,-20 -56,10" fill="none" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M52,-160 C54,-80 52,-20 56,10" fill="none" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Elegant arched top rail connecting back posts -->
+    <path d="M-52,-160 C-40,-178 40,-178 52,-160" fill="none" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Decorative back slats - 3 elegant vertical spindles -->
+    <path d="M-26,-155 C-27,-90 -27,-30 -30,10" fill="none" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M0,-162 C0,-90 0,-30 0,10" fill="none" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M26,-155 C27,-90 27,-30 30,10" fill="none" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Seat surface -->
+    <path d="M-62,10 L62,10" fill="none" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M-62,18 L62,18" fill="none" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="-62" y1="10" x2="-62" y2="18" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="62" y1="10" x2="62" y2="18" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Front legs - slightly splayed outward -->
+    <line x1="-62" y1="18" x2="-72" y2="150" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="62" y1="18" x2="72" y2="150" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Back legs - slightly splayed outward -->
+    <line x1="-56" y1="18" x2="-66" y2="150" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="56" y1="18" x2="66" y2="150" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Cross stretcher between front legs -->
+    <line x1="-68" y1="100" x2="68" y2="100" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Leg bottom caps - small horizontal feet -->
+    <line x1="-76" y1="150" x2="-62" y2="150" stroke="#C4956A" stroke-width="3" stroke-linecap="round"/>
+    <line x1="62" y1="150" x2="76" y2="150" stroke="#C4956A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Subtle cushion accent -->
+    <path d="M-55,6 C-30,0 30,0 55,6" fill="none" stroke="#A67B52" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+  </g>
+</svg>

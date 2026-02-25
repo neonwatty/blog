@@ -1,0 +1,98 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Megaphone composite shape for sticker border and shadow reuse -->
+    <g id="megaphone-shape">
+      <!-- Handle grip -->
+      <rect x="-128" y="-20" width="58" height="40" rx="12"/>
+      <!-- Connector from handle to body -->
+      <rect x="-78" y="-24" width="30" height="48" rx="6"/>
+      <!-- Megaphone cone body -->
+      <path d="M -55 -30 L -55 30 L 120 72 C 132 75, 140 65, 140 52 L 140 -52 C 140 -65, 132 -75, 120 -72 Z"/>
+      <!-- Bell opening -->
+      <ellipse cx="145" cy="0" rx="50" ry="88"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <g id="background">
+    <rect width="512" height="512" rx="80" ry="80" fill="#8b5cf6"/>
+  </g>
+
+  <!-- Sticker border group: white die-cut outline + hard drop shadow -->
+  <g id="sticker-border" transform="translate(232, 272) rotate(-32)">
+    <!-- Hard drop shadow (solid black, offset down-right) -->
+    <g transform="translate(10, 10)">
+      <use href="#megaphone-shape" fill="#1a1a1a" opacity="0.4"/>
+    </g>
+    <!-- Thick white sticker border -->
+    <use href="#megaphone-shape" fill="white" stroke="white" stroke-width="28" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Main megaphone -->
+  <g id="megaphone" transform="translate(232, 272) rotate(-32)">
+    <!-- Black outline layer (thick) -->
+    <use href="#megaphone-shape" fill="none" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+
+    <!-- Handle grip - pink fill -->
+    <rect x="-128" y="-20" width="58" height="40" rx="12" fill="#ec4899" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- Handle button detail -->
+    <circle cx="-99" cy="0" r="9" fill="#FFD600" stroke="black" stroke-width="5"/>
+
+    <!-- Connector -->
+    <rect x="-78" y="-24" width="30" height="48" rx="6" fill="#ec4899" stroke="black" stroke-width="8"/>
+
+    <!-- Megaphone cone body - pink -->
+    <path d="M -55 -30 L -55 30 L 120 72 C 132 75, 140 65, 140 52 L 140 -52 C 140 -65, 132 -75, 120 -72 Z"
+      fill="#ec4899" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- Body highlight stripe -->
+    <path d="M -30 -6 L 100 -18 C 106 -19, 110 -14, 110 -8 L 110 8 C 110 14, 106 19, 100 18 L -30 6 C -36 5, -38 -1, -38 -1 Z"
+      fill="white" opacity="0.22" stroke="none"/>
+
+    <!-- Bell/opening - yellow -->
+    <ellipse cx="145" cy="0" rx="50" ry="88" fill="#FFD600" stroke="black" stroke-width="10"/>
+
+    <!-- Inner bell ring detail -->
+    <ellipse cx="152" cy="0" rx="30" ry="56" fill="none" stroke="black" stroke-width="5" opacity="0.18"/>
+
+    <!-- Bell highlight -->
+    <ellipse cx="138" cy="-20" rx="14" ry="32" fill="white" opacity="0.18" stroke="none"/>
+  </g>
+
+  <!-- Sound bursts - star/explosion shapes -->
+  <g id="sound-bursts">
+    <!-- Large star burst (top right) -->
+    <g transform="translate(398, 98)">
+      <polygon points="0,-38 10,-14 36,-22 19,0 36,22 10,14 0,38 -10,14 -36,22 -19,0 -36,-22 -10,-14"
+        fill="#FFD600" stroke="black" stroke-width="8" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Medium star burst (right) -->
+    <g transform="translate(438, 218)">
+      <polygon points="0,-28 7,-10 26,-16 14,0 26,16 7,10 0,28 -7,10 -26,16 -14,0 -26,-16 -7,-10"
+        fill="#FFD600" stroke="black" stroke-width="7" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Small star burst (upper right) -->
+    <g transform="translate(348, 60)">
+      <polygon points="0,-20 5,-8 19,-12 10,0 19,12 5,8 0,20 -5,8 -19,12 -10,0 -19,-12 -5,-8"
+        fill="white" stroke="black" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Tiny star burst (far right) -->
+    <g transform="translate(458, 148)">
+      <polygon points="0,-15 4,-6 14,-9 8,0 14,9 4,6 0,15 -4,6 -14,9 -8,0 -14,-9 -4,-6"
+        fill="white" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Accent dot (upper area) -->
+    <circle cx="310" cy="48" r="9" fill="#ec4899" stroke="black" stroke-width="5"/>
+
+    <!-- Accent dot (right lower) -->
+    <circle cx="462" cy="282" r="7" fill="#ec4899" stroke="black" stroke-width="4"/>
+
+    <!-- Accent dot (small, between stars) -->
+    <circle cx="448" cy="120" r="5" fill="white" stroke="black" stroke-width="3.5"/>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <g id="background">
+    <rect x="16" y="16" width="480" height="480" rx="80" fill="#ec4899" stroke="#000" stroke-width="10"/>
+  </g>
+
+  <!-- Drop shadow -->
+  <g id="shadow">
+    <!-- Megaphone shadow -->
+    <g transform="translate(8, 8)">
+      <!-- Bell/cone -->
+      <path d="M300 148 L380 108 C395 101 410 112 410 128 L410 320 C410 336 395 347 380 340 L300 300 Z" fill="#000"/>
+      <!-- Body -->
+      <rect x="160" y="148" width="145" height="152" rx="16" fill="#000"/>
+      <!-- Mouthpiece -->
+      <rect x="108" y="180" width="60" height="88" rx="14" fill="#000"/>
+      <!-- Handle base -->
+      <rect x="210" y="296" width="60" height="80" rx="10" fill="#000"/>
+      <!-- Handle grip -->
+      <rect x="200" y="368" width="80" height="32" rx="10" fill="#000"/>
+    </g>
+  </g>
+
+  <!-- Main megaphone -->
+  <g id="megaphone">
+    <!-- Bell/cone -->
+    <path d="M300 148 L380 108 C395 101 410 112 410 128 L410 320 C410 336 395 347 380 340 L300 300 Z" fill="#FFD600" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Body -->
+    <rect x="160" y="148" width="145" height="152" rx="16" fill="#FFD600" stroke="#000" stroke-width="10"/>
+    <!-- Mouthpiece -->
+    <rect x="108" y="180" width="60" height="88" rx="14" fill="#FFD600" stroke="#000" stroke-width="10"/>
+    <!-- Sound lines -->
+    <path d="M420 190 Q448 224 420 258" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <path d="M442 168 Q482 224 442 280" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <!-- Handle base -->
+    <rect x="210" y="296" width="60" height="80" rx="10" fill="#FFD600" stroke="#000" stroke-width="10"/>
+    <!-- Handle grip -->
+    <rect x="200" y="368" width="80" height="32" rx="10" fill="#FFD600" stroke="#000" stroke-width="10"/>
+  </g>
+
+  <!-- Clock element on the handle -->
+  <g id="clock-element" transform="translate(240, 340)">
+    <!-- Clock shadow -->
+    <circle cx="4" cy="4" r="32" fill="#000"/>
+    <!-- Clock face -->
+    <circle cx="0" cy="0" r="32" fill="#fff" stroke="#000" stroke-width="8"/>
+    <!-- Hour marks -->
+    <line x1="0" y1="-24" x2="0" y2="-20" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <line x1="24" y1="0" x2="20" y2="0" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <line x1="0" y1="24" x2="0" y2="20" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-24" y1="0" x2="-20" y2="0" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <!-- Hour hand -->
+    <line x1="0" y1="2" x2="10" y2="-10" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+    <!-- Minute hand -->
+    <line x1="0" y1="2" x2="0" y2="-18" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="3" fill="#ec4899"/>
+  </g>
+</svg>

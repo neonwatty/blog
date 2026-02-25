@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D4A574"/>
+      <stop offset="50%" stop-color="#C4956A"/>
+      <stop offset="100%" stop-color="#A67B52"/>
+    </linearGradient>
+    <linearGradient id="highlightGradient" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#D4A574" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#A67B52" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background: dark rounded rectangle -->
+  <g id="background">
+    <rect x="16" y="16" width="480" height="480" rx="80" ry="80" fill="#1A1A1A"/>
+    <!-- Subtle inner glow -->
+    <rect x="20" y="20" width="472" height="472" rx="77" ry="77" fill="none" stroke="#2A2A2A" stroke-width="1"/>
+  </g>
+
+  <!-- S Lettermark — elegant serif S with chair-like profile -->
+  <g id="lettermark">
+    <!--
+      The S is drawn as a large serif letterform where:
+      - The top terminal curves outward like the back of a chair
+      - The spine has confident, sweeping curves
+      - The bottom terminal grounds itself like chair legs
+      - Serifs at top and bottom suggest the flat seat surface
+    -->
+    <path
+      d="
+        M 310,128
+        C 310,128 298,108 268,98
+        C 238,88 206,90 180,100
+        C 154,110 134,130 126,152
+        C 118,174 120,198 134,216
+        C 148,234 170,244 196,250
+
+        L 280,272
+        C 310,279 336,290 352,308
+        C 368,326 374,350 368,374
+        C 362,398 344,418 318,430
+        C 292,442 260,446 232,440
+        C 204,434 182,420 168,404
+
+        C 168,404 158,390 156,384
+      "
+      fill="none"
+      stroke="url(#goldGradient)"
+      stroke-width="42"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Top serif/terminal — flat horizontal suggesting chair back -->
+    <path
+      d="
+        M 310,128
+        L 344,118
+        C 352,115 358,117 358,122
+        C 358,127 354,132 346,134
+        L 316,138
+      "
+      fill="url(#goldGradient)"
+    />
+
+    <!-- Top terminal decorative ball/finial — chair back knob -->
+    <circle cx="354" cy="118" r="10" fill="url(#goldGradient)"/>
+
+    <!-- Bottom serif/terminal — flat horizontal suggesting chair leg/base -->
+    <path
+      d="
+        M 156,384
+        L 122,394
+        C 114,397 108,395 108,390
+        C 108,385 112,380 120,378
+        L 150,374
+      "
+      fill="url(#goldGradient)"
+    />
+
+    <!-- Bottom terminal decorative ball/finial — chair foot -->
+    <circle cx="112" cy="394" r="10" fill="url(#goldGradient)"/>
+
+    <!-- Chair seat suggestion: subtle horizontal line through the S mid-section -->
+    <path
+      d="
+        M 186,260
+        C 186,260 220,254 256,260
+        C 292,266 310,274 310,274
+      "
+      fill="none"
+      stroke="#A67B52"
+      stroke-width="3"
+      stroke-opacity="0.35"
+      stroke-linecap="round"
+    />
+
+    <!-- Subtle chair back curve accent on upper S -->
+    <path
+      d="
+        M 148,160
+        C 148,140 164,118 192,108
+      "
+      fill="none"
+      stroke="#FAF5F0"
+      stroke-width="2.5"
+      stroke-opacity="0.12"
+      stroke-linecap="round"
+    />
+
+    <!-- Subtle highlight along the S spine -->
+    <path
+      d="
+        M 200,246
+        C 216,250 240,258 260,264
+        C 280,270 300,278 314,290
+      "
+      fill="none"
+      stroke="#FAF5F0"
+      stroke-width="2"
+      stroke-opacity="0.1"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

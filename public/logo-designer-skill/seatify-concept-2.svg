@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect id="background" width="512" height="512" rx="80" fill="#1A1A1A"/>
+
+  <!-- Table — gold circle outline, bird's eye view -->
+  <g id="table">
+    <circle cx="256" cy="256" r="110" fill="none" stroke="#C4956A" stroke-width="3"/>
+  </g>
+
+  <!-- Seats — 8 small solid gold circles evenly spaced around table -->
+  <g id="seats">
+    <!-- Seat 1: 0° (top) -->
+    <circle cx="256" cy="106" r="18" fill="#C4956A"/>
+    <!-- Seat 2: 45° -->
+    <circle cx="362.1" cy="149.9" r="18" fill="#C4956A"/>
+    <!-- Seat 3: 90° (right) -->
+    <circle cx="406" cy="256" r="18" fill="#C4956A"/>
+    <!-- Seat 4: 135° -->
+    <circle cx="362.1" cy="362.1" r="18" fill="#C4956A"/>
+    <!-- Seat 5: 180° (bottom) -->
+    <circle cx="256" cy="406" r="18" fill="#C4956A"/>
+    <!-- Seat 6: 225° -->
+    <circle cx="149.9" cy="362.1" r="18" fill="#C4956A"/>
+    <!-- Seat 7: 270° (left) -->
+    <circle cx="106" cy="256" r="18" fill="#C4956A"/>
+    <!-- Seat 8: 315° -->
+    <circle cx="149.9" cy="149.9" r="18" fill="#C4956A"/>
+  </g>
+</svg>

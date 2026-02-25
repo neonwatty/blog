@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <g id="background">
+    <rect x="16" y="16" width="480" height="480" rx="80" fill="#8b5cf6" stroke="#000" stroke-width="10"/>
+  </g>
+  <!-- Shift entire assembly left so waves stay inside the rounded rect -->
+  <g id="shadow">
+    <g transform="translate(-2, -12)">
+      <g transform="translate(8, 8)">
+        <path d="M280 148 L360 108 C375 101 390 112 390 128 L390 320 C390 336 375 347 360 340 L280 300 Z" fill="#000"/>
+        <rect x="140" y="148" width="145" height="152" rx="16" fill="#000"/>
+        <rect x="88" y="180" width="60" height="88" rx="14" fill="#000"/>
+        <rect x="190" y="296" width="60" height="50" rx="10" fill="#000"/>
+        <rect x="180" y="338" width="80" height="32" rx="10" fill="#000"/>
+      </g>
+    </g>
+  </g>
+  <g id="megaphone" transform="translate(-2, -12)">
+    <!-- Bell/cone -->
+    <path d="M280 148 L360 108 C375 101 390 112 390 128 L390 320 C390 336 375 347 360 340 L280 300 Z" fill="#fff" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+    <!-- Body -->
+    <rect x="140" y="148" width="145" height="152" rx="16" fill="#fff" stroke="#000" stroke-width="10"/>
+    <!-- Mouthpiece -->
+    <rect x="88" y="180" width="60" height="88" rx="14" fill="#fff" stroke="#000" stroke-width="10"/>
+    <!-- Sound wave 1 (closest) -->
+    <path d="M400 194 Q424 224 400 254" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <!-- Sound wave 2 (middle) -->
+    <path d="M420 174 Q452 224 420 274" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <!-- Sound wave 3 (outermost — stays within bg) -->
+    <path d="M440 154 Q478 224 440 294" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+    <!-- Handle base -->
+    <rect x="190" y="296" width="60" height="50" rx="10" fill="#fff" stroke="#000" stroke-width="10"/>
+    <!-- Handle grip -->
+    <rect x="180" y="338" width="80" height="32" rx="10" fill="#fff" stroke="#000" stroke-width="10"/>
+  </g>
+</svg>
