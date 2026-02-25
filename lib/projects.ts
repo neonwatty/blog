@@ -39,7 +39,7 @@ const projects: ProjectData[] = [
     title: 'Bullhorn',
     description: 'Schedule social media posts across Twitter, LinkedIn, and Reddit',
     image: '/images/projects/bullhorn.svg',
-    link: 'https://social-scheduler-dusky.vercel.app',
+    link: 'https://bullhorn.to',
     type: 'live',
     tags: ['Social Media', 'SaaS', 'Web App'],
     lastUpdated: '2026-02-23'
