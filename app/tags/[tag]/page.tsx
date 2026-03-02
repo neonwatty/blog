@@ -50,6 +50,9 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
       images: [`${siteUrl}/images/og-image.jpg`],
       creator: '@neonwatty',
     },
+    alternates: {
+      canonical: `${siteUrl}/tags/${tag}`,
+    },
   }
 }
 

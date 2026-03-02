@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.neonwatty.com"
+        }
+      ],
+      "destination": "https://neonwatty.com/:path",
+      "permanent": true
+    }
+  ]
+}

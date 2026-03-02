@@ -1,9 +1,18 @@
+import { Metadata } from 'next'
 import { getSortedPostsData } from '@/lib/posts'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import DevEditButton from '@/components/DevEditButton'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: siteUrl,
+  },
+}
 
 export default function Home() {
   const allPostsData = getSortedPostsData()
