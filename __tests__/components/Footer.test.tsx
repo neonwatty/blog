@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 // Mock Next.js navigation
 const mockPathname = jest.fn()
 jest.mock('next/navigation', () => ({
-  usePathname: () => mockPathname()
+  usePathname: () => mockPathname(),
 }))
 
 describe('Footer Component', () => {

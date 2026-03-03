@@ -17,12 +17,12 @@ export default function AdminPage() {
 
   useEffect(() => {
     fetch('/api/admin/posts')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setPosts(data.posts || [])
         setLoading(false)
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message)
         setLoading(false)
       })
@@ -47,16 +47,12 @@ export default function AdminPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-semibold text-[var(--color-text-primary)]">
-          Posts
-        </h1>
-        <span className="text-sm text-[var(--color-text-secondary)]">
-          {posts.length} posts
-        </span>
+        <h1 className="text-2xl font-semibold text-[var(--color-text-primary)]">Posts</h1>
+        <span className="text-sm text-[var(--color-text-secondary)]">{posts.length} posts</span>
       </div>
 
       <div className="space-y-2">
-        {posts.map(post => (
+        {posts.map((post) => (
           <a
             key={post.slug}
             href={`/admin/posts/${post.slug}`}
@@ -74,23 +70,15 @@ export default function AdminPage() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-[var(--color-text-secondary)] truncate">
-                  {post.excerpt}
-                </p>
+                <p className="text-sm text-[var(--color-text-secondary)] truncate">{post.excerpt}</p>
               </div>
-              <time className="text-sm text-[var(--color-text-tertiary)] shrink-0">
-                {post.date}
-              </time>
+              <time className="text-sm text-[var(--color-text-tertiary)] shrink-0">{post.date}</time>
             </div>
           </a>
         ))}
       </div>
 
-      {posts.length === 0 && (
-        <div className="text-center py-12 text-[var(--color-text-secondary)]">
-          No posts found
-        </div>
-      )}
+      {posts.length === 0 && <div className="text-center py-12 text-[var(--color-text-secondary)]">No posts found</div>}
     </div>
   )
 }

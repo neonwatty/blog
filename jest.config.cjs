@@ -16,13 +16,9 @@ const customJestConfig = {
   ],
   // Disable coverage threshold to focus on test execution
   coverageThreshold: {},
-  testPathIgnorePatterns: [
-    '<rootDir>/.next/',
-    '<rootDir>/node_modules/',
-    '<rootDir>/tests/e2e/',
-  ],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/tests/e2e/'],
   transformIgnorePatterns: [
-    'node_modules/(?!(remark|remark-html|remark-parse|remark-rehype|rehype-prism-plus|rehype-stringify|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-.*|hast-util-.*|unist-.*)/)'
+    'node_modules/(?!(remark|remark-html|remark-parse|remark-rehype|rehype-prism-plus|rehype-stringify|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-.*|hast-util-.*|unist-.*)/)',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',

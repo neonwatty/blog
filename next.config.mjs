@@ -9,7 +9,7 @@ const nextConfig = {
   assetPrefix: '',
   images: {
     unoptimized: true,
-    formats: ['image/webp', 'image/avif']
+    formats: ['image/webp', 'image/avif'],
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   outputFileTracingRoot: process.cwd(), // Fix workspace root warning
@@ -21,8 +21,8 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [],
-    rehypePlugins: []
-  }
+    rehypePlugins: [],
+  },
 })
 
 export default withMDX(nextConfig)

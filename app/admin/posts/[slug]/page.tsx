@@ -39,9 +39,7 @@ export default async function AdminPreviewPage({ params }: PreviewPageProps) {
               </svg>
             </Link>
             <span className="text-sm text-[var(--color-text-secondary)]">Preview</span>
-            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-medium">
-              Dev Only
-            </span>
+            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-medium">Dev Only</span>
           </div>
           <div className="flex items-center gap-3">
             <Link
@@ -98,10 +96,7 @@ export default async function AdminPreviewPage({ params }: PreviewPageProps) {
               {post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 sm:gap-3 mt-2 sm:mt-0">
                   {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="tag-badge"
-                    >
+                    <span key={tag} className="tag-badge">
                       {tag}
                     </span>
                   ))}

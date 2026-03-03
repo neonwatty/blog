@@ -18,7 +18,7 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         // Custom theme colors
-        'brand': {
+        brand: {
           50: 'var(--color-brand-50)',
           100: 'var(--color-brand-100)',
           200: 'var(--color-brand-200)',
@@ -34,12 +34,12 @@ export default {
           light: 'var(--color-brand-400)',
           dark: 'var(--color-brand-800)',
         },
-        'surface': {
+        surface: {
           primary: 'var(--color-surface-primary)',
           secondary: 'var(--color-surface-secondary)',
           tertiary: 'var(--color-surface-tertiary)',
         },
-        'border': {
+        border: {
           primary: 'var(--color-border-primary)',
           secondary: 'var(--color-border-secondary)',
           focus: 'var(--color-border-focus)',

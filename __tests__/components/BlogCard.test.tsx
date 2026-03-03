@@ -10,9 +10,9 @@ describe('BlogCard Component', () => {
       tags: ['test', 'blog', 'jest'],
       readingTime: '5 min read',
       featured: false,
-      author: 'Test Author'
+      author: 'Test Author',
     }
-    
+
     expect(mockPost.id).toBe('test-post')
     expect(mockPost.title).toBe('Test Blog Post')
     expect(mockPost.tags).toContain('test')
@@ -29,9 +29,9 @@ describe('BlogCard Component', () => {
       tags: ['featured', 'blog'],
       readingTime: '3 min read',
       featured: true,
-      author: 'Test Author'
+      author: 'Test Author',
     }
-    
+
     expect(mockFeaturedPost.featured).toBe(true)
     expect(mockFeaturedPost.title).toBe('Featured Blog Post')
   })

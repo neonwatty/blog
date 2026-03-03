@@ -11,26 +11,26 @@ import './globals.css'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter'
+  variable: '--font-inter',
 })
 
 const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins'
+  variable: '--font-poppins',
 })
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-jetbrains'
+  variable: '--font-jetbrains',
 })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Jeremy Watt\'s Blog',
-    template: '%s | Jeremy Watt\'s Blog'
+    default: "Jeremy Watt's Blog",
+    template: "%s | Jeremy Watt's Blog",
   },
   description: 'A modern, performant blog built with Next.js',
   keywords: ['blog', 'next.js', 'typescript', 'tailwind'],
@@ -41,21 +41,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com',
-    siteName: 'Jeremy Watt\'s Blog',
-    title: 'Jeremy Watt\'s Blog',
+    siteName: "Jeremy Watt's Blog",
+    title: "Jeremy Watt's Blog",
     description: 'A modern, performant blog built with Next.js',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jeremy Watt\'s Blog',
+        alt: "Jeremy Watt's Blog",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeremy Watt\'s Blog',
+    title: "Jeremy Watt's Blog",
     description: 'A modern, performant blog built with Next.js',
     images: ['/images/og-image.jpg'],
     creator: '@neonwatty',
@@ -77,11 +77,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -92,26 +88,30 @@ export default function RootLayout({
         <link rel="alternate" type="application/atom+xml" title="Jeremy Watt's Blog - Atom Feed" href="/atom.xml" />
         <link rel="alternate" type="application/json" title="Jeremy Watt's Blog - JSON Feed" href="/rss.json" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`} suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`}
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <AnalyticsProvider>
-          {children}
-          <MobileTabBar />
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              duration: 3000,
-              style: {
-                background: 'var(--color-surface-primary)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--color-border-primary)',
-              },
-            }}
-          />
-          <Analytics />
-          <SpeedInsights />
-          <script dangerouslySetInnerHTML={{
-            __html: `
+            {children}
+            <MobileTabBar />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 3000,
+                style: {
+                  background: 'var(--color-surface-primary)',
+                  color: 'var(--color-text-primary)',
+                  border: '1px solid var(--color-border-primary)',
+                },
+              }}
+            />
+            <Analytics />
+            <SpeedInsights />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
               // Add captions to liars-dice images
               document.addEventListener('DOMContentLoaded', function() {
                 const liarsDiceImages = document.querySelectorAll('img[src*="liars-dice"]');
@@ -130,12 +130,14 @@ export default function RootLayout({
                   }
                 });
               });
-            `
-          }} />
+            `,
+              }}
+            />
 
-          {/* Beehiiv UTM Parameter Forwarding */}
-          <script dangerouslySetInnerHTML={{
-            __html: `
+            {/* Beehiiv UTM Parameter Forwarding */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
               (function() {
                 const params = new URLSearchParams(window.location.search);
                 const utmParams = {};
@@ -161,8 +163,9 @@ export default function RootLayout({
                   });
                 }
               })();
-            `
-          }} />
+            `,
+              }}
+            />
           </AnalyticsProvider>
         </ThemeProvider>
       </body>

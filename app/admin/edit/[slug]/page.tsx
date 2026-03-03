@@ -29,16 +29,16 @@ export default function EditPostPage({ params }: PageProps) {
 
   useEffect(() => {
     fetch(`/api/admin/posts/${slug}`)
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error('Failed to load post')
         return res.json()
       })
-      .then(data => {
+      .then((data) => {
         setContent(data.raw)
         setOriginalContent(data.raw)
         setLoading(false)
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message)
         setLoading(false)
       })
@@ -126,13 +126,9 @@ export default function EditPostPage({ params }: PageProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </a>
-          <h1 className="text-lg font-medium text-[var(--color-text-primary)] truncate max-w-md">
-            {slug}
-          </h1>
+          <h1 className="text-lg font-medium text-[var(--color-text-primary)] truncate max-w-md">{slug}</h1>
           {hasChanges && (
-            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400">
-              Unsaved changes
-            </span>
+            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400">Unsaved changes</span>
           )}
         </div>
 
@@ -159,17 +155,12 @@ export default function EditPostPage({ params }: PageProps) {
 
       {/* Error banner */}
       {error && (
-        <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-          {error}
-        </div>
+        <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">{error}</div>
       )}
 
       {/* Editor */}
       <div className="rounded-lg border border-[var(--color-border-primary)] bg-[var(--color-surface-secondary)] overflow-hidden">
-        <RawEditor
-          value={content}
-          onChange={setContent}
-        />
+        <RawEditor value={content} onChange={setContent} />
       </div>
 
       {/* Help text */}

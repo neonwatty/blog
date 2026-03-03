@@ -1,11 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   // Dev-only gate: block access in production
   if (process.env.NODE_ENV !== 'development') {
     notFound()
@@ -19,9 +15,7 @@ export default function AdminLayout({
             <Link href="/admin" className="text-xl font-semibold text-[var(--color-text-primary)]">
               Admin
             </Link>
-            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-medium">
-              Dev Only
-            </span>
+            <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-medium">Dev Only</span>
           </div>
           <Link
             href="/"

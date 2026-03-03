@@ -1,3 +1,4 @@
+/* eslint-disable max-lines, max-lines-per-function */
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
@@ -59,7 +60,7 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
           resolve()
           return
         }
-        
+
         const script = document.createElement('script')
         script.src = src
         script.onload = () => resolve()
@@ -72,30 +73,30 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
       try {
         setIsLoading(true)
         setError(null)
-        
+
         // Load CSS files first
         await Promise.all([
           loadCSS('/reveal.js/reveal.css'),
           loadCSS(`/reveal.js/theme/${theme}.css`),
-          loadCSS('/reveal.js/plugin/highlight/monokai.css')
+          loadCSS('/reveal.js/plugin/highlight/monokai.css'),
         ])
-        
+
         // Load JavaScript files
         await loadScript('/reveal.js/reveal.js')
         await loadScript('/reveal.js/plugin/highlight/highlight.js')
         await loadScript('/reveal.js/plugin/notes/notes.js')
-        
+
         // Small delay to ensure scripts are loaded
-        await new Promise(resolve => setTimeout(resolve, 200))
-        
+        await new Promise((resolve) => setTimeout(resolve, 200))
+
         const Reveal = window.Reveal
         const RevealHighlight = window.RevealHighlight
         const RevealNotes = window.RevealNotes
-        
+
         if (!deckRef.current || !Reveal) {
           throw new Error('Reveal.js or deck reference not available')
         }
-        
+
         // Clean up any existing instance
         if (revealRef.current) {
           try {
@@ -104,7 +105,7 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
             console.warn('Error destroying previous instance:', e)
           }
         }
-        
+
         // Create new Reveal instance with responsive configuration
         revealRef.current = new Reveal(deckRef.current, {
           plugins: [RevealHighlight, RevealNotes].filter(Boolean),
@@ -127,15 +128,15 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
           // Responsive view settings
           disableLayout: false,
         })
-        
+
         await revealRef.current.initialize()
-        
+
         // Additional delay and layout refresh to fix vertical text issue
-        await new Promise(resolve => setTimeout(resolve, 100))
+        await new Promise((resolve) => setTimeout(resolve, 100))
         if (revealRef.current && revealRef.current.layout) {
           revealRef.current.layout()
         }
-        
+
         setIsLoading(false)
       } catch (err) {
         console.error('Failed to load slideshow:', err)
@@ -147,7 +148,7 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
 
     // Re-enable reveal.js with minimal config
     const timer = setTimeout(loadReveal, 500)
-    
+
     // Cleanup on unmount
     return () => {
       clearTimeout(timer)
@@ -173,7 +174,7 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
           aspectRatio: '960 / 700',
           maxHeight: '100vh',
           overflow: 'hidden',
-          position: 'relative'
+          position: 'relative',
         }}
       >
         <div className="slides">
@@ -185,8 +186,10 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
 
       {/* Show loading/error states as overlays */}
       {error && (
-        <div className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-red-100 text-red-800 px-4 py-8"
-             style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}>
+        <div
+          className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-red-100 text-red-800 px-4 py-8"
+          style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}
+        >
           <div className="text-center">
             <h2 className="text-xl sm:text-2xl font-bold mb-2">Error Loading Slideshow</h2>
             <p className="text-sm sm:text-base">{error}</p>
@@ -195,20 +198,24 @@ export default function Slideshow({ slideshow, theme = 'black' }: SlideshowProps
       )}
 
       {isLoading && !error && (
-        <div className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-gray-900 text-white px-4 py-8"
-             style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}>
+        <div
+          className="flex items-center justify-center w-full max-w-[960px] mx-auto bg-gray-900 text-white px-4 py-8"
+          style={{ aspectRatio: '960 / 700', maxHeight: '100vh' }}
+        >
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 sm:h-32 sm:w-32 border-b-2 border-white mb-4 mx-auto"></div>
             <p className="text-sm sm:text-base">Loading slideshow...</p>
           </div>
         </div>
       )}
-      
+
       {/* Debug info - remove this later */}
       {process.env.NODE_ENV === 'development' && (
         <div className="fixed top-4 right-4 bg-black/80 text-white p-2 text-xs font-mono z-50">
-          Loading: {isLoading ? 'true' : 'false'}<br/>
-          Error: {error ? 'true' : 'false'}<br/>
+          Loading: {isLoading ? 'true' : 'false'}
+          <br />
+          Error: {error ? 'true' : 'false'}
+          <br />
           Theme: {theme}
         </div>
       )}
@@ -221,42 +228,41 @@ interface SlideshowSlideProps {
 }
 
 function SlideshowSlide({ slide }: SlideshowSlideProps) {
-  
   if (slide.type === 'title') {
     return (
       <section>
-        <h1 style={{ 
-          fontSize: '2.5em', 
-          marginBottom: '0.5em',
-          lineHeight: '1.2',
-          textAlign: 'center',
-          wordWrap: 'break-word',
-          maxWidth: '90%',
-          margin: '0 auto 0.5em auto',
-          whiteSpace: 'normal',
-          wordBreak: 'normal',
-          display: 'block',
-          width: 'auto'
-        }}>
+        <h1
+          style={{
+            fontSize: '2.5em',
+            marginBottom: '0.5em',
+            lineHeight: '1.2',
+            textAlign: 'center',
+            wordWrap: 'break-word',
+            maxWidth: '90%',
+            margin: '0 auto 0.5em auto',
+            whiteSpace: 'normal',
+            wordBreak: 'normal',
+            display: 'block',
+            width: 'auto',
+          }}
+        >
           {slide.title}
         </h1>
         {slide.content && (
-          <p style={{ 
-            fontSize: '1.2em', 
-            color: '#ccc',
-            lineHeight: '1.4',
-            textAlign: 'center',
-            maxWidth: '80%',
-            margin: '0 auto'
-          }}>
+          <p
+            style={{
+              fontSize: '1.2em',
+              color: '#ccc',
+              lineHeight: '1.4',
+              textAlign: 'center',
+              maxWidth: '80%',
+              margin: '0 auto',
+            }}
+          >
             {slide.content}
           </p>
         )}
-        {slide.notes && (
-          <aside className="notes">
-            {slide.notes}
-          </aside>
-        )}
+        {slide.notes && <aside className="notes">{slide.notes}</aside>}
       </section>
     )
   }
@@ -270,11 +276,7 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
             {slide.code?.content}
           </code>
         </pre>
-        {slide.notes && (
-          <aside className="notes">
-            {slide.notes}
-          </aside>
-        )}
+        {slide.notes && <aside className="notes">{slide.notes}</aside>}
       </section>
     )
   }
@@ -284,42 +286,42 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
       <section>
         {slide.title && <h2 style={{ marginBottom: '1em', textAlign: 'center' }}>{slide.title}</h2>}
         {slide.image && (
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            height: '100%'
-          }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+            }}
+          >
             {slide.image.caption && (
-              <p style={{ 
-                fontSize: '1em', 
-                color: '#ccc', 
-                marginBottom: '1.5em',
-                textAlign: 'center',
-                maxWidth: '80%'
-              }}>
+              <p
+                style={{
+                  fontSize: '1em',
+                  color: '#ccc',
+                  marginBottom: '1.5em',
+                  textAlign: 'center',
+                  maxWidth: '80%',
+                }}
+              >
                 {slide.image.caption}
               </p>
             )}
-            <img 
-              src={slide.image.src} 
+            <img
+              src={slide.image.src}
               alt={slide.image.alt}
-              style={{ 
-                maxWidth: '80%', 
-                maxHeight: '50vh', 
+              style={{
+                maxWidth: '80%',
+                maxHeight: '50vh',
                 objectFit: 'contain',
                 display: 'block',
-                margin: '0 auto'
+                margin: '0 auto',
               }}
             />
           </div>
         )}
-        {slide.notes && (
-          <aside className="notes">
-            {slide.notes}
-          </aside>
-        )}
+        {slide.notes && <aside className="notes">{slide.notes}</aside>}
       </section>
     )
   }
@@ -329,24 +331,20 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
     <section>
       {slide.title && <h2 style={{ marginBottom: '1em', fontSize: '1.8em' }}>{slide.title}</h2>}
       {slide.content && (
-        <div 
-          style={{ 
-            fontSize: '1.1em', 
+        <div
+          style={{
+            fontSize: '1.1em',
             lineHeight: '1.6',
             textAlign: 'left',
             maxWidth: '90%',
-            margin: '0 auto'
+            margin: '0 auto',
           }}
-          dangerouslySetInnerHTML={{ 
-            __html: formatSlideContent(slide.content) 
+          dangerouslySetInnerHTML={{
+            __html: formatSlideContent(slide.content),
           }}
         />
       )}
-      {slide.notes && (
-        <aside className="notes">
-          {slide.notes}
-        </aside>
-      )}
+      {slide.notes && <aside className="notes">{slide.notes}</aside>}
     </section>
   )
 }
@@ -357,10 +355,13 @@ function SlideshowSlide({ slide }: SlideshowSlideProps) {
 function formatSlideContent(content: string): string {
   // First preserve existing HTML links (already formatted)
   let processedContent = content
-  
+
   // Convert markdown-style links to HTML
-  processedContent = processedContent.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #6366F1; text-decoration: underline;">$1</a>')
-  
+  processedContent = processedContent.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" style="color: #6366F1; text-decoration: underline;">$1</a>',
+  )
+
   // Convert markdown-style lists to HTML
   processedContent = processedContent
     .replace(/^- (.+)$/gm, '<li>$1</li>')
@@ -370,12 +371,15 @@ function formatSlideContent(content: string): string {
     // Convert italic text (but not if it's part of a bold marker)
     .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
     // Convert inline code
-    .replace(/`([^`]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.2em 0.4em; border-radius: 3px; font-family: monospace;">$1</code>')
-    
+    .replace(
+      /`([^`]+)`/g,
+      '<code style="background: rgba(255,255,255,0.1); padding: 0.2em 0.4em; border-radius: 3px; font-family: monospace;">$1</code>',
+    )
+
   // Convert paragraphs
   return processedContent
     .split('\n\n')
-    .filter(para => para.trim())
-    .map(para => `<p style="margin-bottom: 1em;">${para.trim()}</p>`)
+    .filter((para) => para.trim())
+    .map((para) => `<p style="margin-bottom: 1em;">${para.trim()}</p>`)
     .join('')
 }

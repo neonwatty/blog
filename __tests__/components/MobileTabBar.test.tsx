@@ -4,23 +4,19 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 
 // Mock Next.js router
 jest.mock('next/navigation', () => ({
-  usePathname: jest.fn(() => '/')
+  usePathname: jest.fn(() => '/'),
 }))
 
 import { usePathname } from 'next/navigation'
 
 // Helper function to render with ThemeProvider
 const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider>
-      {component}
-    </ThemeProvider>
-  )
+  return render(<ThemeProvider>{component}</ThemeProvider>)
 }
 
 describe('MobileTabBar Component', () => {
   beforeEach(() => {
-    (usePathname as jest.Mock).mockReturnValue('/')
+    ;(usePathname as jest.Mock).mockReturnValue('/')
   })
 
   test('renders mobile navigation', () => {
@@ -52,7 +48,7 @@ describe('MobileTabBar Component', () => {
   })
 
   test('marks Home as active on homepage', () => {
-    (usePathname as jest.Mock).mockReturnValue('/')
+    ;(usePathname as jest.Mock).mockReturnValue('/')
     renderWithTheme(<MobileTabBar />)
 
     const homeLink = screen.getByRole('link', { name: /home/i })
@@ -60,7 +56,7 @@ describe('MobileTabBar Component', () => {
   })
 
   test('marks Posts as active on posts page', () => {
-    (usePathname as jest.Mock).mockReturnValue('/posts')
+    ;(usePathname as jest.Mock).mockReturnValue('/posts')
     renderWithTheme(<MobileTabBar />)
 
     const postsLink = screen.getByRole('link', { name: /posts/i })
@@ -68,7 +64,7 @@ describe('MobileTabBar Component', () => {
   })
 
   test('marks Posts as active on individual post page', () => {
-    (usePathname as jest.Mock).mockReturnValue('/posts/some-post-slug')
+    ;(usePathname as jest.Mock).mockReturnValue('/posts/some-post-slug')
     renderWithTheme(<MobileTabBar />)
 
     const postsLink = screen.getByRole('link', { name: /posts/i })
@@ -76,7 +72,7 @@ describe('MobileTabBar Component', () => {
   })
 
   test('marks Projects as active on projects page', () => {
-    (usePathname as jest.Mock).mockReturnValue('/projects')
+    ;(usePathname as jest.Mock).mockReturnValue('/projects')
     renderWithTheme(<MobileTabBar />)
 
     const projectsLink = screen.getByRole('link', { name: /projects/i })
@@ -84,7 +80,7 @@ describe('MobileTabBar Component', () => {
   })
 
   test('marks About as active on about page', () => {
-    (usePathname as jest.Mock).mockReturnValue('/about')
+    ;(usePathname as jest.Mock).mockReturnValue('/about')
     renderWithTheme(<MobileTabBar />)
 
     const aboutLink = screen.getByRole('link', { name: /about/i })

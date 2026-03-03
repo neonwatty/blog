@@ -1,8 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": [
-    "scripts/**/*.{ts,tsx,js,jsx}"
-  ],
+  "entry": ["scripts/**/*.{ts,tsx,js,jsx}"],
   "project": [
     "**/*.{ts,tsx,js,jsx}",
     "!**/*.test.{ts,tsx,js,jsx}",
@@ -23,7 +21,8 @@
     "next-sitemap.config.cjs",
     "lib/slides.ts",
     "components/Slideshow.tsx",
-    "app/_slides-disabled/**"
+    "app/_slides-disabled/**",
+    "lib/rss.ts"
   ],
   "ignoreDependencies": [
     "reveal.js",
@@ -31,7 +30,8 @@
     "@types/testing-library__jest-dom",
     "eslint-config-next",
     "@jest/globals",
-    "@testing-library/user-event"
+    "@testing-library/user-event",
+    "feed"
   ],
   "ignoreExportsUsedInFile": true,
   "eslint": {

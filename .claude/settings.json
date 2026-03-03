@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(echo \"$TOOL_INPUT\" | grep -o '\"file_path\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' | sed 's/\"file_path\"[[:space:]]*:[[:space:]]*\"//;s/\"$//') && npx eslint --fix \"$FILE\" 2>/dev/null; true"
+          },
+          {
+            "type": "command",
+            "command": "FILE=$(echo \"$TOOL_INPUT\" | grep -o '\"file_path\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' | sed 's/\"file_path\"[[:space:]]*:[[:space:]]*\"//;s/\"$//') && npx prettier --write \"$FILE\" 2>/dev/null; true"
+          }
+        ]
+      }
+    ]
+  }
+}

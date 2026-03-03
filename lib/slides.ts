@@ -36,14 +36,14 @@ export interface SlideShow {
  */
 export function getAllSlideshows(): SlideShow[] {
   const slideshowsDir = path.join(process.cwd(), 'slideshows')
-  
+
   if (!fs.existsSync(slideshowsDir)) {
     return []
   }
-  
+
   const files = fs.readdirSync(slideshowsDir)
   const slideshows: SlideShow[] = []
-  
+
   for (const file of files) {
     if (file.endsWith('.json')) {
       try {
@@ -56,11 +56,9 @@ export function getAllSlideshows(): SlideShow[] {
       }
     }
   }
-  
+
   // Sort by date (most recent first)
-  return slideshows.sort((a, b) => 
-    new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
-  )
+  return slideshows.sort((a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime())
 }
 
 /**
@@ -69,11 +67,11 @@ export function getAllSlideshows(): SlideShow[] {
 export function getSlideshowById(id: string): SlideShow | null {
   const slideshowsDir = path.join(process.cwd(), 'slideshows')
   const filePath = path.join(slideshowsDir, `${id}.json`)
-  
+
   if (!fs.existsSync(filePath)) {
     return null
   }
-  
+
   try {
     const fileContent = fs.readFileSync(filePath, 'utf8')
     return JSON.parse(fileContent) as SlideShow
