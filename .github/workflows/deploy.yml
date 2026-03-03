@@ -144,6 +144,9 @@ jobs:
 
       - name: Build with Vercel
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NEXT_PUBLIC_GA_ID: ${{ secrets.GA_TRACKING_ID }}
+          NEXT_PUBLIC_SITE_URL: https://neonwatty.com
 
       - name: Deploy to Production
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

@@ -10,6 +10,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',
+  alternates: {
+    canonical: `${siteUrl}/projects`,
+  },
   openGraph: {
     title: 'Projects | Jeremy Watt\'s Blog',
     description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',

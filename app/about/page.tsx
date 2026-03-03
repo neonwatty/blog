@@ -3,9 +3,14 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
+
 export const metadata: Metadata = {
   title: 'About Jeremy',
   description: 'AI Engineer, HVAC certified technician, and Religious Studies BA passionate about building intelligent systems.',
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
 }
 
 export default function About() {

@@ -5,9 +5,14 @@ import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 import { getPopularTags, getAllTags } from '@/lib/posts'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
+
 export const metadata: Metadata = {
   title: 'Tags',
   description: 'Explore all topics and tags covered in our blog posts.',
+  alternates: {
+    canonical: `${siteUrl}/tags`,
+  },
 }
 
 export default function TagsPage() {
