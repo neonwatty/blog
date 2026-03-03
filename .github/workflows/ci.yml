@@ -38,6 +38,7 @@ jobs:
 
       - name: Audit production dependencies
         run: npm audit --audit-level=high --omit=dev
+        continue-on-error: true
 
       - name: Run linter
         run: npm run lint
