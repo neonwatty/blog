@@ -11,7 +11,7 @@ export default function RawEditor({ value, onChange }: RawEditorProps) {
       <textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full h-full min-h-[600px] p-6 bg-transparent text-[var(--color-text-primary)] font-mono text-sm leading-relaxed resize-none focus:outline-none"
+        className="w-full h-full min-h-[600px] p-6 bg-transparent text-[var(--color-text-primary)] font-mono text-sm leading-relaxed resize-none focus:outline-hidden"
         spellCheck={false}
         placeholder="---
 title: Your Post Title
