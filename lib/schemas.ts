@@ -27,8 +27,6 @@ export const ProjectUpdateFrontmatterSchema = z.object({
   tags: z.array(z.string()).default([]),
 })
 
-export type ProjectUpdateFrontmatter = z.infer<typeof ProjectUpdateFrontmatterSchema>
-
 /**
  * Validate frontmatter data against the post schema.
  * Returns parsed data on success, or null with a console warning on failure.
