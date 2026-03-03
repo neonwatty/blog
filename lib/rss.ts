@@ -3,7 +3,7 @@ import { getSortedPostsData } from './posts'
 
 export function generateRSSFeed() {
   const posts = getSortedPostsData()
-  const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
   
   const feed = new Feed({
     title: 'Jeremy Watt\'s Blog',

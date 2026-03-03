@@ -98,7 +98,7 @@ function getDynamicPaths() {
 }
 
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com',
   generateRobotsTxt: true,
   exclude: ['/404', '/500', '/icon.svg', '/manifest.json'],
   generateIndexSitemap: false,
@@ -112,7 +112,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/sitemap.xml`,
+      `${process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'}/sitemap.xml`,
     ],
   },
 

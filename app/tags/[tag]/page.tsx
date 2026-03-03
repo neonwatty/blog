@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
     t.toLowerCase() === decodedTag.toLowerCase()
   ) || decodedTag
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
   const description = `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`
 
   return {
