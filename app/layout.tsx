@@ -72,19 +72,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    types: {
-      'application/rss+xml': [
-        { url: '/rss.xml', title: "Jeremy Watt's Blog - RSS Feed" },
-      ],
-      'application/atom+xml': [
-        { url: '/atom.xml', title: "Jeremy Watt's Blog - Atom Feed" },
-      ],
-      'application/json': [
-        { url: '/rss.json', title: "Jeremy Watt's Blog - JSON Feed" },
-      ],
-    },
-  },
   verification: {
     google: process.env.GOOGLE_VERIFICATION_CODE,
   },
@@ -101,6 +88,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="alternate" type="application/rss+xml" title="Jeremy Watt's Blog - RSS Feed" href="/rss.xml" />
+        <link rel="alternate" type="application/atom+xml" title="Jeremy Watt's Blog - Atom Feed" href="/atom.xml" />
+        <link rel="alternate" type="application/json" title="Jeremy Watt's Blog - JSON Feed" href="/rss.json" />
       </head>
       <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`} suppressHydrationWarning>
         <ThemeProvider>
