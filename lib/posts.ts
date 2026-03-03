@@ -105,6 +105,7 @@ export interface PostData {
   tags: string[]
   readingTime: string
   featured?: boolean
+  draft?: boolean
   image?: string
   author?: string
   seoTitle?: string
@@ -140,6 +141,7 @@ export function getSortedPostsData(): PostData[] {
         tags: matterResult.data.tags || [],
         readingTime: readingTimeStats.text,
         featured: matterResult.data.featured || false,
+        draft: matterResult.data.draft || false,
         image: matterResult.data.image,
         author: matterResult.data.author || 'Blog Author',
         seoTitle: matterResult.data.seoTitle || matterResult.data.title,
@@ -150,7 +152,10 @@ export function getSortedPostsData(): PostData[] {
       }
     })
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+  const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+  const filtered = isDev ? allPostsData : allPostsData.filter((post) => !post.draft)
+
+  return filtered.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 // Get all post IDs for static generation
@@ -204,6 +209,14 @@ export async function getPostData(id: string): Promise<PostData | null> {
   contentHtml = enhanceCodeBlocks(contentHtml)
   const readingTimeStats = readingTime(matterResult.content)
 
+  const draft = matterResult.data.draft || false
+  const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+
+  // Hide drafts in production
+  if (draft && !isDev) {
+    return null
+  }
+
   return {
     id,
     title: matterResult.data.title,
@@ -213,6 +226,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     tags: matterResult.data.tags || [],
     readingTime: readingTimeStats.text,
     featured: matterResult.data.featured || false,
+    draft,
     image: matterResult.data.image,
     author: matterResult.data.author || 'Blog Author',
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,

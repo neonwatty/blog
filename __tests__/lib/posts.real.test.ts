@@ -141,6 +141,25 @@ describe('lib/posts - real module tests', () => {
       expect(posts[0].slideshow).toBe(false)
     })
 
+    it('includes draft posts in test environment', () => {
+      mockedFs.existsSync.mockReturnValue(true)
+      mockedFs.readdirSync.mockReturnValue(['published.md', 'draft.md'] as unknown as ReturnType<typeof fs.readdirSync>)
+      mockedFs.readFileSync.mockImplementation((filePath: fs.PathOrFileDescriptor) => {
+        const p = String(filePath)
+        if (p.includes('published')) return createMockPost({ title: 'Published', draft: 'false' })
+        if (p.includes('draft')) return createMockPost({ title: 'Draft', draft: 'true' })
+        return ''
+      })
+
+      const { getSortedPostsData } = require('@/lib/posts')
+      const posts = getSortedPostsData()
+
+      // In test env, drafts should be included
+      expect(posts).toHaveLength(2)
+      const draftPost = posts.find((p: { id: string }) => p.id === 'draft')
+      expect(draftPost.draft).toBe(true)
+    })
+
     it('sets seoTitle to title when not provided', () => {
       mockedFs.existsSync.mockReturnValue(true)
       mockedFs.readdirSync.mockReturnValue(['post.md'] as unknown as ReturnType<typeof fs.readdirSync>)

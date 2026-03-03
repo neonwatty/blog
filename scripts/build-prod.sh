@@ -48,4 +48,11 @@ if [ "$build_success" = false ]; then
   exit 1
 fi
 
+# Generate RSS feeds and sitemap after successful build
+echo "Generating RSS feeds..."
+npx tsx scripts/generate-rss.cjs || echo "Warning: RSS generation failed"
+
+echo "Generating sitemap..."
+npx next-sitemap --config next-sitemap.config.cjs || echo "Warning: Sitemap generation failed"
+
 echo "Build complete!"
