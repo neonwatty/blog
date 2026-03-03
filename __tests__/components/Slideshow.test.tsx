@@ -35,9 +35,9 @@ describe('Slideshow', () => {
   afterEach(() => {
     jest.clearAllTimers()
     mockAppendChild.mockClear()
-    delete (window as Record<string, unknown>).Reveal
-    delete (window as Record<string, unknown>).RevealHighlight
-    delete (window as Record<string, unknown>).RevealNotes
+    delete (window as unknown as Record<string, unknown>).Reveal
+    delete (window as unknown as Record<string, unknown>).RevealHighlight
+    delete (window as unknown as Record<string, unknown>).RevealNotes
   })
 
   it('renders the slideshow wrapper with correct id', () => {
@@ -115,9 +115,9 @@ describe('Slideshow', () => {
       layout: mockLayout,
       destroy: mockDestroy,
     }))
-    ;(window as Record<string, unknown>).Reveal = MockReveal
-    ;(window as Record<string, unknown>).RevealHighlight = jest.fn()
-    ;(window as Record<string, unknown>).RevealNotes = jest.fn()
+    ;(window as unknown as Record<string, unknown>).Reveal = MockReveal
+    ;(window as unknown as Record<string, unknown>).RevealHighlight = jest.fn()
+    ;(window as unknown as Record<string, unknown>).RevealNotes = jest.fn()
 
     render(<Slideshow slideshow={mockSlideshow} />)
 
@@ -133,10 +133,10 @@ describe('Slideshow', () => {
     const appendedNodes = mockAppendChild.mock.calls.map((c) => c[0]) as HTMLElement[]
     appendedNodes.forEach((node) => {
       if (node instanceof HTMLLinkElement && node.onload) {
-        ;(node.onload as () => void).call(node, new Event('load'))
+        node.onload(new Event('load'))
       }
       if (node instanceof HTMLScriptElement && node.onload) {
-        ;(node.onload as () => void).call(node, new Event('load'))
+        node.onload(new Event('load'))
       }
     })
 
@@ -155,7 +155,7 @@ describe('Slideshow', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation()
 
     // No Reveal on window
-    delete (window as Record<string, unknown>).Reveal
+    delete (window as unknown as Record<string, unknown>).Reveal
 
     render(<Slideshow slideshow={mockSlideshow} />)
 
@@ -167,10 +167,10 @@ describe('Slideshow', () => {
     const appendedNodes = mockAppendChild.mock.calls.map((c) => c[0]) as HTMLElement[]
     appendedNodes.forEach((node) => {
       if (node instanceof HTMLLinkElement && node.onload) {
-        ;(node.onload as () => void).call(node, new Event('load'))
+        node.onload(new Event('load'))
       }
       if (node instanceof HTMLScriptElement && node.onload) {
-        ;(node.onload as () => void).call(node, new Event('load'))
+        node.onload(new Event('load'))
       }
     })
 
