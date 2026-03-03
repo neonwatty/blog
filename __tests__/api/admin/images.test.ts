@@ -11,9 +11,15 @@ jest.mock('fs')
 const mockedFs = jest.mocked(fs)
 
 describe('POST /api/admin/images', () => {
+  const originalEnv = process.env.NODE_ENV
+
+  afterEach(() => {
+    Object.defineProperty(process.env, 'NODE_ENV', { value: originalEnv, writable: true })
+  })
+
   beforeEach(() => {
     jest.clearAllMocks()
-    process.env.NODE_ENV = 'development'
+    Object.defineProperty(process.env, 'NODE_ENV', { value: 'development', writable: true })
     mockedFs.existsSync.mockReturnValue(false)
     mockedFs.mkdirSync.mockReturnValue(undefined)
     mockedFs.writeFileSync.mockReturnValue(undefined)
@@ -92,7 +98,7 @@ describe('POST /api/admin/images', () => {
   })
 
   it('returns 404 in production', async () => {
-    process.env.NODE_ENV = 'production'
+    Object.defineProperty(process.env, 'NODE_ENV', { value: 'production', writable: true })
 
     const file = new File(['data'], 'img.png', { type: 'image/png' })
     const req = createRequest(file, 'my-post')

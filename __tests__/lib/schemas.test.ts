@@ -97,10 +97,7 @@ describe('lib/schemas', () => {
 
   describe('validatePostFrontmatter', () => {
     it('returns parsed data for valid frontmatter', () => {
-      const result = validatePostFrontmatter(
-        { title: 'Test', date: '2025-01-15' },
-        'test.md',
-      )
+      const result = validatePostFrontmatter({ title: 'Test', date: '2025-01-15' }, 'test.md')
 
       expect(result).not.toBeNull()
       expect(result!.title).toBe('Test')

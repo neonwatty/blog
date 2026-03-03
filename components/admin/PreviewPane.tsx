@@ -36,9 +36,7 @@ export default function PreviewPane({ raw }: PreviewPaneProps) {
       {title && (
         <div className="mb-6 pb-4 border-b border-[var(--color-border-primary)]">
           <div className="flex items-center gap-2 mb-2">
-            {draft && (
-              <span className="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">Draft</span>
-            )}
+            {draft && <span className="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">Draft</span>}
           </div>
           <h1 className="text-2xl font-bold text-[var(--color-text-primary)]">{title}</h1>
           {date && <p className="text-sm text-[var(--color-text-secondary)] mt-1">{date}</p>}

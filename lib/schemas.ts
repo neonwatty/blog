@@ -33,10 +33,7 @@ export type ProjectUpdateFrontmatter = z.infer<typeof ProjectUpdateFrontmatterSc
  * Validate frontmatter data against the post schema.
  * Returns parsed data on success, or null with a console warning on failure.
  */
-export function validatePostFrontmatter(
-  data: Record<string, unknown>,
-  filename: string,
-): PostFrontmatter | null {
+export function validatePostFrontmatter(data: Record<string, unknown>, filename: string): PostFrontmatter | null {
   const result = PostFrontmatterSchema.safeParse(data)
   if (result.success) {
     return result.data
