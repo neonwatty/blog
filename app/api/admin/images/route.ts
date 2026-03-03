@@ -5,6 +5,11 @@ import path from 'path'
 const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/gif', 'image/webp', 'image/svg+xml']
 const MAX_SIZE = 5 * 1024 * 1024 // 5MB
 
+// Prevent path traversal — slug must be a simple filename
+function isSafeSlug(slug: string): boolean {
+  return /^[a-zA-Z0-9_-]+$/.test(slug)
+}
+
 export async function POST(request: NextRequest) {
   // Dev-only gate
   if (process.env.NODE_ENV !== 'development') {
@@ -22,6 +27,10 @@ export async function POST(request: NextRequest) {
 
     if (!slug) {
       return NextResponse.json({ error: 'No slug provided' }, { status: 400 })
+    }
+
+    if (!isSafeSlug(slug)) {
+      return NextResponse.json({ error: 'Invalid slug' }, { status: 400 })
     }
 
     if (!ALLOWED_TYPES.includes(file.type)) {

@@ -3,6 +3,11 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+// Prevent path traversal — slug must be a simple filename
+function isSafeSlug(slug: string): boolean {
+  return /^[a-zA-Z0-9_-]+$/.test(slug)
+}
+
 export async function GET(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   // Dev-only gate
   if (process.env.NODE_ENV !== 'development') {
@@ -10,6 +15,11 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 
   const { slug } = await params
+
+  if (!isSafeSlug(slug)) {
+    return NextResponse.json({ error: 'Invalid slug' }, { status: 400 })
+  }
+
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fullPath = path.join(postsDirectory, `${slug}.md`)
 
@@ -35,6 +45,11 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
   }
 
   const { slug } = await params
+
+  if (!isSafeSlug(slug)) {
+    return NextResponse.json({ error: 'Invalid slug' }, { status: 400 })
+  }
+
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fullPath = path.join(postsDirectory, `${slug}.md`)
 
