@@ -11,11 +11,14 @@ interface VideoModalProps {
 }
 
 export default function VideoModal({ youtubeId, isOpen, onClose, isVertical = false }: VideoModalProps) {
-  const handleEscape = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose()
-    }
-  }, [onClose])
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose()
+      }
+    },
+    [onClose],
+  )
 
   useEffect(() => {
     if (isOpen) {
@@ -32,10 +35,7 @@ export default function VideoModal({ youtubeId, isOpen, onClose, isVertical = fa
   if (!isOpen) return null
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in" onClick={onClose}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/90" />
 
@@ -51,9 +51,7 @@ export default function VideoModal({ youtubeId, isOpen, onClose, isVertical = fa
       {/* Video container - vertical for shorts, horizontal for regular videos */}
       <div
         className={`relative mx-4 ${
-          isVertical
-            ? 'w-full max-w-sm aspect-[9/16] max-h-[85vh]'
-            : 'w-full max-w-4xl aspect-video'
+          isVertical ? 'w-full max-w-sm aspect-[9/16] max-h-[85vh]' : 'w-full max-w-4xl aspect-video'
         }`}
         onClick={(e) => e.stopPropagation()}
       >

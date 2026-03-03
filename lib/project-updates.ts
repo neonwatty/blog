@@ -30,7 +30,7 @@ export function getSortedProjectUpdates(): ProjectUpdateData[] {
 
   const fileNames = fs.readdirSync(projectUpdatesDirectory)
   const allUpdates = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, '')
       const fullPath = path.join(projectUpdatesDirectory, fileName)
@@ -61,11 +61,11 @@ export function getAllProjectUpdateIds() {
 
   const fileNames = fs.readdirSync(projectUpdatesDirectory)
   return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => ({
       params: {
-        id: fileName.replace(/\.md$/, '')
-      }
+        id: fileName.replace(/\.md$/, ''),
+      },
     }))
 }
 
@@ -89,7 +89,7 @@ export async function getProjectUpdateData(id: string): Promise<ProjectUpdateDat
     .use(rehypePrismPlus, {
       ignoreMissing: true,
       showLineNumbers: false,
-      inline: false
+      inline: false,
     })
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content)

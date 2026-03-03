@@ -6,9 +6,7 @@ const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml')
 
 function getPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => fileName.replace(/\.md$/, ''))
+  return fileNames.filter((fileName) => fileName.endsWith('.md')).map((fileName) => fileName.replace(/\.md$/, ''))
 }
 
 function getSitemapPostSlugs() {
@@ -40,10 +38,10 @@ function checkSitemap() {
   const sitemapSet = new Set(sitemapSlugs)
 
   // Find missing posts (in /posts/ but not in sitemap)
-  const missingFromSitemap = postSlugs.filter(slug => !sitemapSet.has(slug))
+  const missingFromSitemap = postSlugs.filter((slug) => !sitemapSet.has(slug))
 
   // Find stale entries (in sitemap but not in /posts/)
-  const staleInSitemap = sitemapSlugs.filter(slug => !postSet.has(slug))
+  const staleInSitemap = sitemapSlugs.filter((slug) => !postSet.has(slug))
 
   if (missingFromSitemap.length === 0 && staleInSitemap.length === 0) {
     console.log(`Sitemap is up to date (${postSlugs.length} posts)`)
@@ -54,13 +52,13 @@ function checkSitemap() {
 
   if (missingFromSitemap.length > 0) {
     console.error('Missing from sitemap:')
-    missingFromSitemap.forEach(slug => console.error(`  - ${slug}`))
+    missingFromSitemap.forEach((slug) => console.error(`  - ${slug}`))
     console.error('')
   }
 
   if (staleInSitemap.length > 0) {
     console.error('Stale entries in sitemap:')
-    staleInSitemap.forEach(slug => console.error(`  - ${slug}`))
+    staleInSitemap.forEach((slug) => console.error(`  - ${slug}`))
     console.error('')
   }
 

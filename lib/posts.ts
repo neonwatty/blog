@@ -15,27 +15,25 @@ const postsDirectory = isServer ? path.join(process.cwd(), 'posts') : ''
 // Function to enhance HTML code blocks with custom styling
 function enhanceCodeBlocks(html: string): string {
   // First, handle inline code elements (backtick-surrounded text)
-  html = html.replace(
-    /<code(?![^>]*class="[^"]*language-)([^>]*)>((?:(?!<\/code>).)*)<\/code>/g,
-    '<code$1>$2</code>'
-  )
-  
+  html = html.replace(/<code(?![^>]*class="[^"]*language-)([^>]*)>((?:(?!<\/code>).)*)<\/code>/g, '<code$1>$2</code>')
+
   // Handle rehype-prism-plus generated code blocks with line numbers
-  return html.replace(
-    /<div class="rehype-code-title"[^>]*>([\s\S]*?)<\/div>\s*<pre[^>]*><code class="[^"]*language-(\w+)[^"]*"[^>]*>([\s\S]*?)<\/code><\/pre>/g,
-    (match, title, language, code) => {
-      // Extract plain text for copy functionality
-      const plainText = code
-        .replace(/<span[^>]*>/g, '')
-        .replace(/<\/span>/g, '')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&')
-        .replace(/&quot;/g, '"')
-        .replace(/&#x27;/g, "'")
-        .trim()
-      
-      return `<div class="code-block-container">
+  return html
+    .replace(
+      /<div class="rehype-code-title"[^>]*>([\s\S]*?)<\/div>\s*<pre[^>]*><code class="[^"]*language-(\w+)[^"]*"[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+      (match, title, language, code) => {
+        // Extract plain text for copy functionality
+        const plainText = code
+          .replace(/<span[^>]*>/g, '')
+          .replace(/<\/span>/g, '')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#x27;/g, "'")
+          .trim()
+
+        return `<div class="code-block-container">
         <div class="code-block-header">
           <div class="flex items-center gap-2">
             <div class="flex gap-1.5">
@@ -56,23 +54,24 @@ function enhanceCodeBlocks(html: string): string {
           <pre class="code-pre"><code class="language-${language}">${code}</code></pre>
         </div>
       </div>`
-    }
-  ).replace(
-    // Handle regular code blocks without titles
-    /<pre[^>]*class="[^"]*language-(\w+)[^"]*"[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/g,
-    (match, language, code) => {
-      // Extract plain text for copy functionality
-      const plainText = code
-        .replace(/<span[^>]*>/g, '')
-        .replace(/<\/span>/g, '')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&')
-        .replace(/&quot;/g, '"')
-        .replace(/&#x27;/g, "'")
-        .trim()
-      
-      return `<div class="code-block-container">
+      },
+    )
+    .replace(
+      // Handle regular code blocks without titles
+      /<pre[^>]*class="[^"]*language-(\w+)[^"]*"[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+      (match, language, code) => {
+        // Extract plain text for copy functionality
+        const plainText = code
+          .replace(/<span[^>]*>/g, '')
+          .replace(/<\/span>/g, '')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#x27;/g, "'")
+          .trim()
+
+        return `<div class="code-block-container">
         <div class="code-block-header">
           <div class="flex items-center gap-2">
             <div class="flex gap-1.5">
@@ -93,8 +92,8 @@ function enhanceCodeBlocks(html: string): string {
           <pre class="code-pre"><code class="language-${language}">${code}</code></pre>
         </div>
       </div>`
-    }
-  )
+      },
+    )
 }
 
 export interface PostData {
@@ -124,7 +123,7 @@ export function getSortedPostsData(): PostData[] {
 
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, '')
       const fullPath = path.join(postsDirectory, fileName)
@@ -147,7 +146,7 @@ export function getSortedPostsData(): PostData[] {
         metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
         canonicalUrl: matterResult.data.canonicalUrl,
         relatedPosts: matterResult.data.relatedPosts || [],
-        slideshow: matterResult.data.slideshow || false
+        slideshow: matterResult.data.slideshow || false,
       }
     })
 
@@ -159,15 +158,15 @@ export function getAllPostIds() {
   if (!isServer || !fs.existsSync(postsDirectory)) {
     return []
   }
-  
+
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => {
       return {
         params: {
-          id: fileName.replace(/\.md$/, '')
-        }
+          id: fileName.replace(/\.md$/, ''),
+        },
       }
     })
 }
@@ -179,14 +178,14 @@ export async function getPostData(id: string): Promise<PostData | null> {
   }
 
   const fullPath = path.join(postsDirectory, `${id}.md`)
-  
+
   if (!fs.existsSync(fullPath)) {
     return null
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
-  
+
   // Process markdown content to HTML with syntax highlighting
   const processedContent = await remark()
     .use(remarkRehype, { allowDangerousHtml: true })
@@ -195,12 +194,12 @@ export async function getPostData(id: string): Promise<PostData | null> {
       ignoreMissing: true,
       showLineNumbers: false,
       // Only process code blocks, not inline code
-      inline: false
+      inline: false,
     })
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content)
   let contentHtml = processedContent.toString()
-  
+
   // Post-process to enhance code blocks
   contentHtml = enhanceCodeBlocks(contentHtml)
   const readingTimeStats = readingTime(matterResult.content)
@@ -220,16 +219,14 @@ export async function getPostData(id: string): Promise<PostData | null> {
     metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
     canonicalUrl: matterResult.data.canonicalUrl,
     relatedPosts: matterResult.data.relatedPosts || [],
-    slideshow: matterResult.data.slideshow || false
+    slideshow: matterResult.data.slideshow || false,
   }
 }
 
 // Get posts by tag
 export function getPostsByTag(tag: string): PostData[] {
   const allPosts = getSortedPostsData()
-  return allPosts.filter(post =>
-    post.tags.map(t => t.toLowerCase()).includes(tag.toLowerCase())
-  )
+  return allPosts.filter((post) => post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase()))
 }
 
 // Get all unique tags
@@ -237,8 +234,8 @@ export function getAllTags(): string[] {
   const allPosts = getSortedPostsData()
   const tagsSet = new Set<string>()
 
-  allPosts.forEach(post => {
-    post.tags.forEach(tag => tagsSet.add(tag))
+  allPosts.forEach((post) => {
+    post.tags.forEach((tag) => tagsSet.add(tag))
   })
 
   return Array.from(tagsSet).sort()
@@ -249,8 +246,8 @@ export function getPopularTags(limit = 10): { tag: string; count: number }[] {
   const allPosts = getSortedPostsData()
   const tagCounts: { [key: string]: number } = {}
 
-  allPosts.forEach(post => {
-    post.tags.forEach(tag => {
+  allPosts.forEach((post) => {
+    post.tags.forEach((tag) => {
       tagCounts[tag] = (tagCounts[tag] || 0) + 1
     })
   })

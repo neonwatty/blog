@@ -7,8 +7,8 @@ export interface ProjectData {
   type: 'live' | 'github' | 'chrome' | 'npm'
   tags: string[]
   lastUpdated: string
-  youtubeId?: string  // YouTube video ID (e.g., "dQw4w9WgXcQ")
-  youtubeIsShort?: boolean  // True if the video is a YouTube Short (vertical)
+  youtubeId?: string // YouTube video ID (e.g., "dQw4w9WgXcQ")
+  youtubeIsShort?: boolean // True if the video is a YouTube Short (vertical)
 }
 
 const projects: ProjectData[] = [
@@ -20,7 +20,7 @@ const projects: ProjectData[] = [
     link: 'https://seatify.app',
     type: 'live',
     tags: ['AI', 'SaaS', 'Web App', 'iOS'],
-    lastUpdated: '2026-02-23'
+    lastUpdated: '2026-02-23',
   },
   {
     id: 'bugdrop',
@@ -32,7 +32,7 @@ const projects: ProjectData[] = [
     tags: ['Feedback', 'GitHub', 'Open Source', 'DevTools'],
     lastUpdated: '2026-02-23',
     youtubeId: 'VkLvP1xmRzo',
-    youtubeIsShort: true
+    youtubeIsShort: true,
   },
   {
     id: 'bullhorn',
@@ -42,7 +42,7 @@ const projects: ProjectData[] = [
     link: 'https://bullhorn.to',
     type: 'live',
     tags: ['Social Media', 'SaaS', 'Web App'],
-    lastUpdated: '2026-02-23'
+    lastUpdated: '2026-02-23',
   },
   {
     id: 'bleep-that-sht',
@@ -54,7 +54,7 @@ const projects: ProjectData[] = [
     tags: ['Audio', 'Web App', 'Tools', 'SaaS'],
     lastUpdated: '2026-02-23',
     youtubeId: 'yL_IA-bQ1d0',
-    youtubeIsShort: true
+    youtubeIsShort: true,
   },
   {
     id: 'linkparty',
@@ -64,7 +64,7 @@ const projects: ProjectData[] = [
     link: 'https://party-queue-two.vercel.app',
     type: 'live',
     tags: ['YouTube', 'Web App', 'Social'],
-    lastUpdated: '2026-02-23'
+    lastUpdated: '2026-02-23',
   },
   {
     id: 'qc',
@@ -74,7 +74,7 @@ const projects: ProjectData[] = [
     link: 'https://tryqc.co',
     type: 'live',
     tags: ['Web App', 'Relationships', 'Tools', 'iOS'],
-    lastUpdated: '2026-02-22'
+    lastUpdated: '2026-02-22',
   },
   {
     id: 'ytgify',
@@ -86,7 +86,7 @@ const projects: ProjectData[] = [
     tags: ['Chrome Extension', 'YouTube', 'GIF'],
     lastUpdated: '2026-01-18',
     youtubeId: '6DncOTcm_xE',
-    youtubeIsShort: true
+    youtubeIsShort: true,
   },
   {
     id: 'meme-search',
@@ -97,7 +97,7 @@ const projects: ProjectData[] = [
     type: 'github',
     tags: ['AI', 'Search', 'Web App'],
     lastUpdated: '2025-06-15',
-    youtubeId: 'weL3IBHZpUs'
+    youtubeId: 'weL3IBHZpUs',
   },
   {
     id: 'polarize',
@@ -108,16 +108,14 @@ const projects: ProjectData[] = [
     type: 'github',
     tags: ['Education', 'YouTube', 'Open Source'],
     lastUpdated: '2025-05-20',
-    youtubeId: '4GJ-CJ7CXxk'
-  }
+    youtubeId: '4GJ-CJ7CXxk',
+  },
 ]
 
 export function getProjectsData(): ProjectData[] {
-  return [...projects].sort((a, b) =>
-    new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime()
-  )
+  return [...projects].sort((a, b) => new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime())
 }
 
 export function getProjectById(id: string): ProjectData | undefined {
-  return projects.find(project => project.id === id)
+  return projects.find((project) => project.id === id)
 }

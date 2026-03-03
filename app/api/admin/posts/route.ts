@@ -17,8 +17,8 @@ export async function GET() {
 
   const fileNames = fs.readdirSync(postsDirectory)
   const posts = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => {
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '')
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')

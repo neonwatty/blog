@@ -54,9 +54,8 @@ export default function CookieConsent({ onAccept, onDecline }: CookieConsentProp
             flex: '1 1 300px',
           }}
         >
-          This site uses cookies for analytics (Google Analytics and PostHog) to
-          help improve the experience. Vercel Analytics runs without cookies and
-          is always active.
+          This site uses cookies for analytics (Google Analytics and PostHog) to help improve the experience. Vercel
+          Analytics runs without cookies and is always active.
         </p>
         <div style={{ display: 'flex', gap: '0.75rem', flexShrink: 0 }}>
           <button

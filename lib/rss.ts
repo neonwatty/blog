@@ -4,9 +4,9 @@ import { getSortedPostsData } from './posts'
 export function generateRSSFeed() {
   const posts = getSortedPostsData()
   const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
-  
+
   const feed = new Feed({
-    title: 'Jeremy Watt\'s Blog',
+    title: "Jeremy Watt's Blog",
     description: 'A modern, performant blog built with Next.js',
     id: siteURL,
     link: siteURL,
@@ -18,13 +18,13 @@ export function generateRSSFeed() {
     feedLinks: {
       rss2: `${siteURL}/rss.xml`,
       json: `${siteURL}/rss.json`,
-      atom: `${siteURL}/atom.xml`
+      atom: `${siteURL}/atom.xml`,
     },
     author: {
       name: 'Blog Author',
       email: 'author@example.com',
-      link: siteURL
-    }
+      link: siteURL,
+    },
   })
 
   posts.forEach((post) => {
@@ -36,8 +36,8 @@ export function generateRSSFeed() {
       content: post.content,
       author: [{ name: post.author || 'Blog Author' }],
       date: new Date(post.date),
-      category: post.tags.map(tag => ({ name: tag })),
-      image: post.image ? `${siteURL}${post.image}` : undefined
+      category: post.tags.map((tag) => ({ name: tag })),
+      image: post.image ? `${siteURL}${post.image}` : undefined,
     })
   })
 
@@ -46,10 +46,10 @@ export function generateRSSFeed() {
 
 export function generateRSSFiles() {
   const feed = generateRSSFeed()
-  
+
   return {
     rss: feed.rss2(),
     json: feed.json1(),
-    atom: feed.atom1()
+    atom: feed.atom1(),
   }
 }

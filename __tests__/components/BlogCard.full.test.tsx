@@ -11,13 +11,13 @@ const mockPost: PostData = {
   tags: ['test', 'blog', 'jest'],
   readingTime: '5 min read',
   featured: false,
-  author: 'Test Author'
+  author: 'Test Author',
 }
 
 describe('BlogCard Component (Full Test)', () => {
   test('renders blog post correctly', () => {
     render(<BlogCard post={mockPost} />)
-    
+
     expect(screen.getByText('Test Blog Post')).toBeInTheDocument()
     expect(screen.getByText('This is a test excerpt for our blog post')).toBeInTheDocument()
     expect(screen.getByText('5 min read')).toBeInTheDocument()
@@ -26,7 +26,7 @@ describe('BlogCard Component (Full Test)', () => {
 
   test('has accessible link to post', () => {
     render(<BlogCard post={mockPost} />)
-    
+
     const titleLink = screen.getByRole('link', { name: /test blog post/i })
     expect(titleLink).toHaveAttribute('href', '/posts/test-post')
   })

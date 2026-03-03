@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const slideshows = getAllSlideshows()
-  
+
   return slideshows.map((slideshow) => ({
     slug: slideshow.id,
   }))
@@ -61,17 +61,12 @@ export default async function SlideshowPage({ params }: Props) {
             </svg>
             <span>Back to Slideshows</span>
           </Link>
-          
+
           <div className="flex items-center space-x-4 text-white text-sm">
-            <Link
-              href={`/posts/${slideshow.id}`}
-              className="hover:text-gray-300 transition-colors duration-200"
-            >
+            <Link href={`/posts/${slideshow.id}`} className="hover:text-gray-300 transition-colors duration-200">
               Read Original Post
             </Link>
-            <div className="text-gray-400">
-              {slideshow.metadata.totalSlides} slides
-            </div>
+            <div className="text-gray-400">{slideshow.metadata.totalSlides} slides</div>
           </div>
         </div>
       </nav>
@@ -85,8 +80,8 @@ export default async function SlideshowPage({ params }: Props) {
       <div className="absolute bottom-4 left-4 right-4 z-50">
         <div className="text-center text-white text-sm bg-black bg-opacity-50 rounded-lg p-3">
           <p>
-            Use arrow keys or space to navigate • Press <kbd className="bg-gray-700 px-2 py-1 rounded">ESC</kbd> for overview • 
-            Press <kbd className="bg-gray-700 px-2 py-1 rounded">S</kbd> for speaker notes
+            Use arrow keys or space to navigate • Press <kbd className="bg-gray-700 px-2 py-1 rounded">ESC</kbd> for
+            overview • Press <kbd className="bg-gray-700 px-2 py-1 rounded">S</kbd> for speaker notes
           </p>
         </div>
       </div>

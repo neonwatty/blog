@@ -27,10 +27,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     <>
       {analyticsEnabled && GA_TRACKING_ID && (
         <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="afterInteractive"
-          />
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="afterInteractive" />
           <Script id="google-analytics" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
@@ -45,9 +42,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
       )}
       <PostHogProvider enabled={analyticsEnabled} />
       {children}
-      {consent === 'pending' && (
-        <CookieConsent onAccept={handleAccept} onDecline={handleDecline} />
-      )}
+      {consent === 'pending' && <CookieConsent onAccept={handleAccept} onDecline={handleDecline} />}
     </>
   )
 }

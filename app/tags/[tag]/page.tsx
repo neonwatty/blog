@@ -18,16 +18,14 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
   const posts = getPostsByTag(decodedTag)
-  
+
   if (posts.length === 0) {
     return {
-      title: 'Tag Not Found'
+      title: 'Tag Not Found',
     }
   }
 
-  const tagName = posts[0]?.tags.find(t =>
-    t.toLowerCase() === decodedTag.toLowerCase()
-  ) || decodedTag
+  const tagName = posts[0]?.tags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) || decodedTag
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
   const description = `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`
@@ -59,9 +57,9 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
 // Generate static paths for all tags
 export async function generateStaticParams() {
   const tags = getAllTags()
-  
+
   return tags.map((tag) => ({
-    tag: encodeURIComponent(tag.toLowerCase())
+    tag: encodeURIComponent(tag.toLowerCase()),
   }))
 }
 
@@ -69,35 +67,27 @@ export default async function TagPage({ params }: TagPageProps) {
   const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
   const posts = getPostsByTag(decodedTag)
-  
+
   if (posts.length === 0) {
     notFound()
   }
 
   // Find the properly capitalized tag name from the posts
-  const tagName = posts[0]?.tags.find(t => 
-    t.toLowerCase() === decodedTag.toLowerCase()
-  ) || decodedTag
+  const tagName = posts[0]?.tags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) || decodedTag
 
   return (
     <>
       <StructuredData type="blog" />
-      
+
       <div className="min-h-screen flex flex-col">
         <Header />
-        
+
         <main id="main-content" className="flex-grow">
           {/* Breadcrumbs */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-            <Breadcrumbs 
-              items={[
-                { label: 'Home', href: '/' },
-                { label: 'Tags', href: '/tags' },
-                { label: tagName }
-              ]} 
-            />
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tags', href: '/tags' }, { label: tagName }]} />
           </div>
-          
+
           {/* Page Header */}
           <section className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-16">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,9 +95,7 @@ export default async function TagPage({ params }: TagPageProps) {
                 <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 mb-4">
                   Tag
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-                  {tagName}
-                </h1>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">{tagName}</h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                   {posts.length} article{posts.length !== 1 ? 's' : ''} tagged with "{tagName}"
                 </p>
@@ -126,7 +114,7 @@ export default async function TagPage({ params }: TagPageProps) {
             </div>
           </section>
         </main>
-        
+
         <Footer />
       </div>
     </>

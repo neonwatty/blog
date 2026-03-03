@@ -11,7 +11,7 @@ describe('ProjectCard Component', () => {
     link: 'https://example.com',
     type: 'live',
     tags: ['test', 'web app', 'demo'],
-    lastUpdated: '2025-09-01'
+    lastUpdated: '2025-09-01',
   }
 
   test('renders project title', () => {
@@ -91,10 +91,7 @@ describe('ProjectCard Component', () => {
       fireEvent.click(playButton)
 
       const iframe = screen.getByTitle('YouTube video')
-      expect(iframe).toHaveAttribute(
-        'src',
-        'https://www.youtube-nocookie.com/embed/abc123?autoplay=1&rel=0'
-      )
+      expect(iframe).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/abc123?autoplay=1&rel=0')
     })
 
     test('closes video modal when close button is clicked', () => {

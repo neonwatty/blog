@@ -4,21 +4,17 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 
 // Mock Next.js navigation
 jest.mock('next/navigation', () => ({
-  usePathname: () => '/'
+  usePathname: () => '/',
 }))
 
 // Mock the posts data
 jest.mock('@/lib/posts', () => ({
-  getSortedPostsData: () => []
+  getSortedPostsData: () => [],
 }))
 
 // Helper function to render with ThemeProvider
 const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider>
-      {component}
-    </ThemeProvider>
-  )
+  return render(<ThemeProvider>{component}</ThemeProvider>)
 }
 
 describe('Home Page', () => {

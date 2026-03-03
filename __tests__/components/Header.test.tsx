@@ -6,18 +6,14 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
     push: jest.fn(),
-    pathname: '/'
+    pathname: '/',
   }),
-  usePathname: () => '/'
+  usePathname: () => '/',
 }))
 
 // Helper function to render with ThemeProvider
 const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider>
-      {component}
-    </ThemeProvider>
-  )
+  return render(<ThemeProvider>{component}</ThemeProvider>)
 }
 
 describe('Header Component', () => {

@@ -38,8 +38,12 @@ test.describe('Mobile UX - Tap Targets', () => {
       const box = await link.boundingBox()
 
       if (box) {
-        expect(box.width, `Social icon ${i} width should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(MINIMUM_TAP_TARGET)
-        expect(box.height, `Social icon ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(MINIMUM_TAP_TARGET)
+        expect(box.width, `Social icon ${i} width should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(
+          MINIMUM_TAP_TARGET,
+        )
+        expect(box.height, `Social icon ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(
+          MINIMUM_TAP_TARGET,
+        )
       }
     }
   })
@@ -59,7 +63,9 @@ test.describe('Mobile UX - Tap Targets', () => {
       const box = await badge.boundingBox()
 
       if (box) {
-        expect(box.height, `Tag badge ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(MINIMUM_TAP_TARGET)
+        expect(box.height, `Tag badge ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(
+          MINIMUM_TAP_TARGET,
+        )
       }
     }
   })
@@ -85,7 +91,9 @@ test.describe('Mobile UX - Tap Targets', () => {
       const box = await link.boundingBox()
 
       if (box) {
-        expect(box.height, `Breadcrumb link ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(MINIMUM_TAP_TARGET)
+        expect(box.height, `Breadcrumb link ${i} height should be >= ${MINIMUM_TAP_TARGET}px`).toBeGreaterThanOrEqual(
+          MINIMUM_TAP_TARGET,
+        )
       }
     }
   })

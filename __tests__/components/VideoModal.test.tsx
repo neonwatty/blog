@@ -14,9 +14,7 @@ describe('VideoModal Component', () => {
   })
 
   test('renders nothing when isOpen is false', () => {
-    const { container } = render(
-      <VideoModal {...defaultProps} isOpen={false} />
-    )
+    const { container } = render(<VideoModal {...defaultProps} isOpen={false} />)
     expect(container.firstChild).toBeNull()
   })
 
@@ -28,10 +26,7 @@ describe('VideoModal Component', () => {
   test('renders YouTube iframe with correct src', () => {
     render(<VideoModal {...defaultProps} />)
     const iframe = screen.getByTitle('YouTube video')
-    expect(iframe).toHaveAttribute(
-      'src',
-      'https://www.youtube-nocookie.com/embed/test123?autoplay=1&rel=0'
-    )
+    expect(iframe).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/test123?autoplay=1&rel=0')
   })
 
   test('calls onClose when close button is clicked', () => {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/projects`,
   },
   openGraph: {
-    title: 'Projects | Jeremy Watt\'s Blog',
+    title: "Projects | Jeremy Watt's Blog",
     description: 'Explore my recent side projects - AI tools, web apps, and open source contributions.',
     type: 'website',
     url: `${siteUrl}/projects`,
@@ -43,14 +43,18 @@ export default function ProjectsPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             {/* Hero Section */}
             <div className="mb-10 sm:mb-14 text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 tracking-tight"
-                  style={{ color: 'var(--color-text-primary)' }}>
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 tracking-tight"
+                style={{ color: 'var(--color-text-primary)' }}
+              >
                 Things I've Built
               </h1>
-              <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-                 style={{ color: 'var(--color-text-secondary)' }}>
-                A collection of side projects, tools, and experiments.
-                From AI-powered apps to browser extensions and CLI tools.
+              <p
+                className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                A collection of side projects, tools, and experiments. From AI-powered apps to browser extensions and
+                CLI tools.
               </p>
             </div>
 

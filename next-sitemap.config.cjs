@@ -18,7 +18,7 @@ function getDynamicPaths() {
       if (fs.existsSync(postsDirectory)) {
         const fileNames = fs.readdirSync(postsDirectory)
         const posts = fileNames
-          .filter(fileName => fileName.endsWith('.md'))
+          .filter((fileName) => fileName.endsWith('.md'))
           .map((fileName) => {
             const id = fileName.replace(/\.md$/, '')
             const fullPath = path.join(postsDirectory, fileName)
@@ -26,14 +26,16 @@ function getDynamicPaths() {
             const matterResult = matter(fileContents)
             return {
               id,
-              date: matterResult.data.date
+              date: matterResult.data.date,
             }
           })
 
-        paths.push(...posts.map(post => ({
-          loc: `/posts/${post.id}/`,
-          lastmod: post.date,
-        })))
+        paths.push(
+          ...posts.map((post) => ({
+            loc: `/posts/${post.id}/`,
+            lastmod: post.date,
+          })),
+        )
         console.log(`✓ Added ${posts.length} blog posts to sitemap`)
       }
     } catch (e) {
@@ -48,19 +50,21 @@ function getDynamicPaths() {
         const tagsSet = new Set()
 
         fileNames
-          .filter(fileName => fileName.endsWith('.md'))
+          .filter((fileName) => fileName.endsWith('.md'))
           .forEach((fileName) => {
             const fullPath = path.join(postsDirectory, fileName)
             const fileContents = fs.readFileSync(fullPath, 'utf8')
             const matterResult = matter(fileContents)
             const tags = matterResult.data.tags || []
-            tags.forEach(tag => tagsSet.add(tag))
+            tags.forEach((tag) => tagsSet.add(tag))
           })
 
         const tags = Array.from(tagsSet)
-        paths.push(...tags.map(tag => ({
-          loc: `/tags/${encodeURIComponent(tag.toLowerCase())}/`,
-        })))
+        paths.push(
+          ...tags.map((tag) => ({
+            loc: `/tags/${encodeURIComponent(tag.toLowerCase())}/`,
+          })),
+        )
         console.log(`✓ Added ${tags.length} tag pages to sitemap`)
       }
     } catch (e) {
@@ -111,9 +115,7 @@ module.exports = {
         disallow: ['/404', '/500', '/_next/', '/api/'],
       },
     ],
-    additionalSitemaps: [
-      `${process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'}/sitemap.xml`,
-    ],
+    additionalSitemaps: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'}/sitemap.xml`],
   },
 
   // Note: additionalPaths removed - Next.js already generates all these pages
@@ -139,10 +141,10 @@ module.exports = {
     } else if (path.startsWith('/tags/')) {
       priority = 0.6
       changefreq = 'weekly'
-    // Slideshow feature temporarily disabled
-    // } else if (path.startsWith('/slides/')) {
-    //   priority = 0.6
-    //   changefreq = 'monthly'
+      // Slideshow feature temporarily disabled
+      // } else if (path.startsWith('/slides/')) {
+      //   priority = 0.6
+      //   changefreq = 'monthly'
     } else if (path.startsWith('/projects') || path.startsWith('/about') || path.startsWith('/newsletter')) {
       priority = 0.7
       changefreq = 'weekly'

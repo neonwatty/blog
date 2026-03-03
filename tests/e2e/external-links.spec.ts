@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test'
 
 // Domains that block automated requests (return 403/405 for bots)
-const BOT_BLOCKED_DOMAINS = [
-  'x.com',
-  'twitter.com',
-  'linkedin.com',
-]
+const BOT_BLOCKED_DOMAINS = ['x.com', 'twitter.com', 'linkedin.com']
 
 function isBlockedDomain(url: string): boolean {
-  return BOT_BLOCKED_DOMAINS.some(domain => url.includes(domain))
+  return BOT_BLOCKED_DOMAINS.some((domain) => url.includes(domain))
 }
 
 test.describe('External link validation', () => {
@@ -27,13 +23,13 @@ test.describe('External link validation', () => {
     }
 
     // Separate blocked domains from testable ones
-    const testableUrls = [...externalUrls].filter(url => !isBlockedDomain(url))
-    const skippedUrls = [...externalUrls].filter(url => isBlockedDomain(url))
+    const testableUrls = [...externalUrls].filter((url) => !isBlockedDomain(url))
+    const skippedUrls = [...externalUrls].filter((url) => isBlockedDomain(url))
 
     console.log(`Found ${externalUrls.size} external links`)
     console.log(`  Testing: ${testableUrls.length}`)
     console.log(`  Skipped (bot-blocked): ${skippedUrls.length}`)
-    skippedUrls.forEach(url => console.log(`    - ${url}`))
+    skippedUrls.forEach((url) => console.log(`    - ${url}`))
 
     const results: { url: string; status: number | string }[] = []
 
@@ -66,7 +62,7 @@ test.describe('External link validation', () => {
     }
 
     // Check for broken links (exclude acceptable statuses)
-    const brokenLinks = results.filter(r => {
+    const brokenLinks = results.filter((r) => {
       if (typeof r.status === 'string') return true // errors
       // Accept 200, 201, 301, 302, 303, 307, 308 (redirects are OK)
       return r.status >= 400
@@ -74,7 +70,7 @@ test.describe('External link validation', () => {
 
     if (brokenLinks.length > 0) {
       console.error('Broken links found:')
-      brokenLinks.forEach(link => console.error(`  ${link.status} - ${link.url}`))
+      brokenLinks.forEach((link) => console.error(`  ${link.status} - ${link.url}`))
     }
 
     expect(brokenLinks, `Found ${brokenLinks.length} broken external links`).toHaveLength(0)

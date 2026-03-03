@@ -37,13 +37,10 @@ export default function ProjectCard({ project, animationDelay = 0 }: ProjectCard
 
   return (
     <>
-      <article className={`glass-card glass-card-hover rounded-xl overflow-hidden stagger-animation ${delayClass} group h-full`}>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col h-full"
-        >
+      <article
+        className={`glass-card glass-card-hover rounded-xl overflow-hidden stagger-animation ${delayClass} group h-full`}
+      >
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
           {/* Image */}
           <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800 flex-shrink-0">
             <Image
@@ -63,9 +60,11 @@ export default function ProjectCard({ project, animationDelay = 0 }: ProjectCard
                            transition-opacity duration-300"
                 aria-label="Play video demo"
               >
-                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14
+                <div
+                  className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14
                                 bg-white/20 backdrop-blur-sm rounded-full
-                                shadow-lg hover:bg-white/30 transition-colors">
+                                shadow-lg hover:bg-white/30 transition-colors"
+                >
                   <PlayIcon className="w-6 h-6 md:w-7 md:h-7 text-white drop-shadow-lg ml-0.5" />
                 </div>
               </button>

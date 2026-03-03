@@ -5,13 +5,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
     // Log error to error reporting service
     console.error('Error boundary caught:', error)
@@ -30,25 +24,17 @@ export default function Error({
           <main className="flex-grow flex items-center justify-center">
             <div className="text-center max-w-md mx-auto px-4">
               <div className="mb-8">
-                <h1 className="text-6xl font-bold text-red-600 dark:text-red-500 mb-4">
-                  Oops!
-                </h1>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  Something went wrong
-                </h2>
+                <h1 className="text-6xl font-bold text-red-600 dark:text-red-500 mb-4">Oops!</h1>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Something went wrong</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-8">
                   We encountered an unexpected error. Don't worry, our team has been notified.
                 </p>
 
                 {process.env.NODE_ENV === 'development' && (
                   <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-left">
-                    <p className="text-sm font-mono text-red-800 dark:text-red-300 break-all">
-                      {error.message}
-                    </p>
+                    <p className="text-sm font-mono text-red-800 dark:text-red-300 break-all">{error.message}</p>
                     {error.digest && (
-                      <p className="text-xs text-red-600 dark:text-red-400 mt-2">
-                        Error ID: {error.digest}
-                      </p>
+                      <p className="text-xs text-red-600 dark:text-red-400 mt-2">Error ID: {error.digest}</p>
                     )}
                   </div>
                 )}

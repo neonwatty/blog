@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - 'README.md'
   workflow_dispatch:
@@ -132,4 +132,3 @@ jobs:
           name: static-export
           path: out/
           retention-days: 30
-

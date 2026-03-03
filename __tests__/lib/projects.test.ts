@@ -10,7 +10,7 @@ describe('Projects Library', () => {
       link: 'https://example.com',
       type: 'live',
       tags: ['test', 'web app'],
-      lastUpdated: '2025-09-01'
+      lastUpdated: '2025-09-01',
     }
 
     expect(mockProject.id).toBe('test-project')
@@ -32,7 +32,7 @@ describe('Projects Library', () => {
       link: 'https://example.com',
       type: 'live',
       tags: ['web'],
-      lastUpdated: '2025-09-01'
+      lastUpdated: '2025-09-01',
     }
 
     const githubProject: ProjectData = {
@@ -43,7 +43,7 @@ describe('Projects Library', () => {
       link: 'https://github.com/user/repo',
       type: 'github',
       tags: ['open source'],
-      lastUpdated: '2025-09-01'
+      lastUpdated: '2025-09-01',
     }
 
     const chromeProject: ProjectData = {
@@ -54,7 +54,7 @@ describe('Projects Library', () => {
       link: 'https://chrome.google.com/webstore',
       type: 'chrome',
       tags: ['extension'],
-      lastUpdated: '2025-09-01'
+      lastUpdated: '2025-09-01',
     }
 
     const npmProject: ProjectData = {
@@ -65,7 +65,7 @@ describe('Projects Library', () => {
       link: 'https://www.npmjs.com/package/example',
       type: 'npm',
       tags: ['cli'],
-      lastUpdated: '2025-09-01'
+      lastUpdated: '2025-09-01',
     }
 
     expect(liveProject.type).toBe('live')
@@ -83,7 +83,7 @@ describe('Projects Library', () => {
 
     test('all projects have required fields', () => {
       const projects = getProjectsData()
-      projects.forEach(project => {
+      projects.forEach((project) => {
         expect(project.id).toBeDefined()
         expect(project.title).toBeDefined()
         expect(project.description).toBeDefined()
@@ -105,7 +105,7 @@ describe('Projects Library', () => {
 
     test('projects contain expected data', () => {
       const projects = getProjectsData()
-      const projectIds = projects.map(p => p.id)
+      const projectIds = projects.map((p) => p.id)
 
       expect(projectIds).toContain('bugdrop')
       expect(projectIds).toContain('ytgify')
@@ -120,7 +120,7 @@ describe('Projects Library', () => {
 
     test('all projects have lastUpdated field', () => {
       const projects = getProjectsData()
-      projects.forEach(project => {
+      projects.forEach((project) => {
         expect(project.lastUpdated).toBeDefined()
         expect(typeof project.lastUpdated).toBe('string')
         expect(new Date(project.lastUpdated).toString()).not.toBe('Invalid Date')
@@ -142,9 +142,19 @@ describe('Projects Library', () => {
     })
 
     test('finds all projects by id', () => {
-      const projectIds = ['bugdrop', 'ytgify', 'qc', 'meme-search', 'polarize', 'bleep-that-sht', 'seatify', 'bullhorn', 'linkparty']
+      const projectIds = [
+        'bugdrop',
+        'ytgify',
+        'qc',
+        'meme-search',
+        'polarize',
+        'bleep-that-sht',
+        'seatify',
+        'bullhorn',
+        'linkparty',
+      ]
 
-      projectIds.forEach(id => {
+      projectIds.forEach((id) => {
         const project = getProjectById(id)
         expect(project).toBeDefined()
         expect(project?.id).toBe(id)

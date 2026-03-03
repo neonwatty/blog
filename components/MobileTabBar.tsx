@@ -2,13 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  HomeIcon,
-  DocumentTextIcon,
-  RocketLaunchIcon,
-  BoltIcon,
-  UserIcon,
-} from '@heroicons/react/24/outline'
+import { HomeIcon, DocumentTextIcon, RocketLaunchIcon, BoltIcon, UserIcon } from '@heroicons/react/24/outline'
 import {
   HomeIcon as HomeIconSolid,
   DocumentTextIcon as DocumentTextIconSolid,

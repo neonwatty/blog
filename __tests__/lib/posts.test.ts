@@ -10,7 +10,7 @@ const mockPosts: PostData[] = [
     content: 'This is content about React best practices and components.',
     tags: ['react', 'javascript', 'frontend'],
     readingTime: '5 min read',
-    featured: true
+    featured: true,
   },
   {
     id: 'post-2',
@@ -20,7 +20,7 @@ const mockPosts: PostData[] = [
     content: 'Advanced CSS techniques including grid, flexbox, and animations.',
     tags: ['css', 'frontend', 'web design'],
     readingTime: '8 min read',
-    featured: false
+    featured: false,
   },
   {
     id: 'post-3',
@@ -30,26 +30,27 @@ const mockPosts: PostData[] = [
     content: 'Performance optimization techniques for JavaScript applications.',
     tags: ['javascript', 'performance'],
     readingTime: '10 min read',
-    featured: false
-  }
+    featured: false,
+  },
 ]
 
 // Mock search function
 function searchPosts(query: string): PostData[] {
   const lowercaseQuery = query.toLowerCase()
-  return mockPosts.filter(post => 
-    post.title.toLowerCase().includes(lowercaseQuery) ||
-    post.excerpt.toLowerCase().includes(lowercaseQuery) ||
-    post.content.toLowerCase().includes(lowercaseQuery) ||
-    post.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+  return mockPosts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(lowercaseQuery) ||
+      post.excerpt.toLowerCase().includes(lowercaseQuery) ||
+      post.content.toLowerCase().includes(lowercaseQuery) ||
+      post.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery)),
   )
 }
 
 // Mock getAllTags function
 function getAllTags(): string[] {
   const tagsSet = new Set<string>()
-  mockPosts.forEach(post => {
-    post.tags.forEach(tag => tagsSet.add(tag))
+  mockPosts.forEach((post) => {
+    post.tags.forEach((tag) => tagsSet.add(tag))
   })
   return Array.from(tagsSet).sort()
 }
@@ -57,13 +58,13 @@ function getAllTags(): string[] {
 // Mock getPopularTags function
 function getPopularTags(limit = 10): { tag: string; count: number }[] {
   const tagCounts: { [key: string]: number } = {}
-  
-  mockPosts.forEach(post => {
-    post.tags.forEach(tag => {
+
+  mockPosts.forEach((post) => {
+    post.tags.forEach((tag) => {
       tagCounts[tag] = (tagCounts[tag] || 0) + 1
     })
   })
-  
+
   return Object.entries(tagCounts)
     .map(([tag, count]) => ({ tag, count }))
     .sort((a, b) => b.count - a.count)
@@ -81,9 +82,9 @@ describe('Posts Library', () => {
       tags: ['test'],
       readingTime: '5 min read',
       featured: false,
-      author: 'Test Author'
+      author: 'Test Author',
     }
-    
+
     expect(mockPost.id).toBe('test-post')
     expect(mockPost.title).toBe('Test Post')
     expect(mockPost.tags).toContain('test')
@@ -104,9 +105,9 @@ describe('Posts Library', () => {
       seoTitle: 'SEO Title',
       metaDescription: 'Meta description',
       canonicalUrl: 'https://example.com/test-post',
-      relatedPosts: ['related-post-1']
+      relatedPosts: ['related-post-1'],
     }
-    
+
     expect(mockPost.featured).toBe(true)
     expect(mockPost.image).toBe('/test-image.jpg')
     expect(mockPost.seoTitle).toBe('SEO Title')
@@ -123,9 +124,9 @@ describe('Posts Library', () => {
       excerpt: 'Minimal excerpt',
       content: 'Minimal content',
       tags: [],
-      readingTime: '1 min read'
+      readingTime: '1 min read',
     }
-    
+
     expect(mockPost.id).toBeDefined()
     expect(mockPost.title).toBeDefined()
     expect(mockPost.date).toBeDefined()
@@ -151,8 +152,8 @@ describe('Posts Library', () => {
     test('searches by tags', () => {
       const results = searchPosts('javascript')
       expect(results).toHaveLength(2)
-      expect(results.map(r => r.title)).toContain('React Best Practices')
-      expect(results.map(r => r.title)).toContain('JavaScript Performance')
+      expect(results.map((r) => r.title)).toContain('React Best Practices')
+      expect(results.map((r) => r.title)).toContain('JavaScript Performance')
     })
 
     test('returns empty array for no matches', () => {
@@ -190,8 +191,8 @@ describe('Posts Library', () => {
           { tag: 'react', count: 1 },
           { tag: 'css', count: 1 },
           { tag: 'web design', count: 1 },
-          { tag: 'performance', count: 1 }
-        ])
+          { tag: 'performance', count: 1 },
+        ]),
       )
     })
 

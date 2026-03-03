@@ -17,12 +17,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const breadcrumbStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': items.map((item, index) => ({
+    itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
-      'position': index + 1,
-      'name': item.label,
-      'item': item.href ? `${siteUrl}${item.href}` : undefined
-    }))
+      position: index + 1,
+      name: item.label,
+      item: item.href ? `${siteUrl}${item.href}` : undefined,
+    })),
   }
 
   return (
@@ -31,7 +31,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
       />
-      
+
       <nav className="flex items-center text-sm mb-6" aria-label="Breadcrumb">
         <ol className="flex items-center flex-wrap">
           {items.map((item, index) => (
@@ -47,7 +47,10 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-gray-900 dark:text-gray-100 font-medium py-2 truncate max-w-[200px] sm:max-w-none" aria-current="page">
+                <span
+                  className="text-gray-900 dark:text-gray-100 font-medium py-2 truncate max-w-[200px] sm:max-w-none"
+                  aria-current="page"
+                >
                   {item.label}
                 </span>
               )}
