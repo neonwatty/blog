@@ -38,3 +38,6 @@ yarn-error.log*
 
 # Lighthouse
 lighthouse-results.json
+
+# Git worktrees
+.worktrees/
