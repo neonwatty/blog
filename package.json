@@ -66,6 +66,8 @@
     "@jest/globals": "^30.2.0",
     "@next/eslint-plugin-next": "^16.1.1",
     "@playwright/test": "^1.55.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -87,6 +89,7 @@
     "knip": "^5.64.1",
     "postcss": "^8.5.6",
     "prettier": "^3.8.1",
+    "semantic-release": "^24.2.9",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.52.0"
