@@ -23,7 +23,7 @@ const customJestConfig = {
     '<rootDir>/.worktrees/',
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(remark|remark-html|remark-parse|remark-rehype|rehype-prism-plus|rehype-stringify|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-.*|hast-util-.*|unist-.*)/)',
+    'node_modules/(?!(feed|remark|remark-html|remark-parse|remark-rehype|rehype-prism-plus|rehype-stringify|unified|bail|is-plain-obj|trough|vfile|micromark|decode-named-character-reference|character-entities|mdast-util-.*|hast-util-.*|unist-.*)/)',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
