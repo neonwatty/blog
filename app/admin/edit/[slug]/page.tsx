@@ -160,7 +160,7 @@ export default function EditPostPage({ params }: PageProps) {
 
       {/* Editor */}
       <div className="rounded-lg border border-[var(--color-border-primary)] bg-[var(--color-surface-secondary)] overflow-hidden">
-        <MarkdownEditor value={content} onChange={setContent} />
+        <MarkdownEditor value={content} onChange={setContent} slug={slug} />
       </div>
 
       {/* Help text */}

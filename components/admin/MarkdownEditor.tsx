@@ -9,9 +9,10 @@ type ViewMode = 'edit' | 'preview' | 'split'
 interface MarkdownEditorProps {
   value: string
   onChange: (value: string) => void
+  slug?: string
 }
 
-export default function MarkdownEditor({ value, onChange }: MarkdownEditorProps) {
+export default function MarkdownEditor({ value, onChange, slug }: MarkdownEditorProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('split')
 
   return (
@@ -40,7 +41,7 @@ export default function MarkdownEditor({ value, onChange }: MarkdownEditorProps)
         {/* Editor pane */}
         {viewMode !== 'preview' && (
           <div className={viewMode === 'split' ? 'w-1/2 border-r border-[var(--color-border-primary)]' : 'w-full'}>
-            <RawEditor value={value} onChange={onChange} />
+            <RawEditor value={value} onChange={onChange} slug={slug} />
           </div>
         )}
 
