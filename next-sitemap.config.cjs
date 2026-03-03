@@ -27,8 +27,10 @@ function getDynamicPaths() {
             return {
               id,
               date: matterResult.data.date,
+              draft: matterResult.data.draft || false,
             }
           })
+          .filter((post) => !post.draft)
 
         paths.push(
           ...posts.map((post) => ({
@@ -55,6 +57,8 @@ function getDynamicPaths() {
             const fullPath = path.join(postsDirectory, fileName)
             const fileContents = fs.readFileSync(fullPath, 'utf8')
             const matterResult = matter(fileContents)
+            // Skip draft posts
+            if (matterResult.data.draft) return
             const tags = matterResult.data.tags || []
             tags.forEach((tag) => tagsSet.add(tag))
           })

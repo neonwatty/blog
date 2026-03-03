@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, use } from 'react'
 import dynamic from 'next/dynamic'
 
-const RawEditor = dynamic(() => import('@/components/admin/RawEditor'), {
+const MarkdownEditor = dynamic(() => import('@/components/admin/MarkdownEditor'), {
   ssr: false,
   loading: () => (
     <div className="h-[600px] flex items-center justify-center text-[var(--color-text-secondary)]">
@@ -160,7 +160,7 @@ export default function EditPostPage({ params }: PageProps) {
 
       {/* Editor */}
       <div className="rounded-lg border border-[var(--color-border-primary)] bg-[var(--color-surface-secondary)] overflow-hidden">
-        <RawEditor value={content} onChange={setContent} />
+        <MarkdownEditor value={content} onChange={setContent} slug={slug} />
       </div>
 
       {/* Help text */}

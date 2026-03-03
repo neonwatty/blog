@@ -7,6 +7,7 @@ import rehypePrismPlus from 'rehype-prism-plus'
 import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
 import readingTime from 'reading-time'
+import { validatePostFrontmatter } from './schemas'
 
 // Ensure we only use fs on server side
 const isServer = typeof window === 'undefined'
@@ -105,6 +106,7 @@ export interface PostData {
   tags: string[]
   readingTime: string
   featured?: boolean
+  draft?: boolean
   image?: string
   author?: string
   seoTitle?: string
@@ -129,28 +131,37 @@ export function getSortedPostsData(): PostData[] {
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const matterResult = matter(fileContents)
+
+      const validated = validatePostFrontmatter(matterResult.data, fileName)
+      if (!validated) return null
+
       const readingTimeStats = readingTime(matterResult.content)
 
       return {
         id,
-        title: matterResult.data.title,
-        date: matterResult.data.date,
-        excerpt: matterResult.data.excerpt,
+        title: validated.title,
+        date: validated.date,
+        excerpt: validated.excerpt,
         content: matterResult.content,
-        tags: matterResult.data.tags || [],
+        tags: validated.tags,
         readingTime: readingTimeStats.text,
-        featured: matterResult.data.featured || false,
-        image: matterResult.data.image,
-        author: matterResult.data.author || 'Blog Author',
-        seoTitle: matterResult.data.seoTitle || matterResult.data.title,
-        metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
-        canonicalUrl: matterResult.data.canonicalUrl,
-        relatedPosts: matterResult.data.relatedPosts || [],
-        slideshow: matterResult.data.slideshow || false,
+        featured: validated.featured,
+        draft: validated.draft,
+        image: validated.image,
+        author: validated.author,
+        seoTitle: validated.seoTitle || validated.title,
+        metaDescription: validated.metaDescription || validated.excerpt,
+        canonicalUrl: validated.canonicalUrl,
+        relatedPosts: validated.relatedPosts,
+        slideshow: validated.slideshow,
       }
     })
+    .filter((post): post is NonNullable<typeof post> => post !== null)
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+  const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+  const filtered = isDev ? allPostsData : allPostsData.filter((post) => !post.draft)
+
+  return filtered.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 // Get all post IDs for static generation
@@ -204,6 +215,14 @@ export async function getPostData(id: string): Promise<PostData | null> {
   contentHtml = enhanceCodeBlocks(contentHtml)
   const readingTimeStats = readingTime(matterResult.content)
 
+  const draft = matterResult.data.draft || false
+  const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+
+  // Hide drafts in production
+  if (draft && !isDev) {
+    return null
+  }
+
   return {
     id,
     title: matterResult.data.title,
@@ -213,6 +232,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     tags: matterResult.data.tags || [],
     readingTime: readingTimeStats.text,
     featured: matterResult.data.featured || false,
+    draft,
     image: matterResult.data.image,
     author: matterResult.data.author || 'Blog Author',
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,

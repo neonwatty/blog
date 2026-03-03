@@ -23,4 +23,23 @@ describe('RawEditor', () => {
     render(<RawEditor value="" onChange={jest.fn()} />)
     expect(screen.getByPlaceholderText(/title: Your Post Title/)).toBeInTheDocument()
   })
+
+  it('shows drag-over visual when dragging over textarea', () => {
+    render(<RawEditor value="" onChange={jest.fn()} slug="test" />)
+    const textarea = screen.getByRole('textbox')
+
+    fireEvent.dragOver(textarea)
+
+    expect(textarea.className).toContain('ring-2')
+  })
+
+  it('removes drag-over visual on drag leave', () => {
+    render(<RawEditor value="" onChange={jest.fn()} slug="test" />)
+    const textarea = screen.getByRole('textbox')
+
+    fireEvent.dragOver(textarea)
+    fireEvent.dragLeave(textarea)
+
+    expect(textarea.className).not.toContain('ring-2')
+  })
 })
