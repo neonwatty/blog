@@ -6,7 +6,7 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ post, type = 'website' }: StructuredDataProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
   
   const websiteStructuredData = {
     '@context': 'https://schema.org',

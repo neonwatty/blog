@@ -11,7 +11,7 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
   // Generate JSON-LD structured data for breadcrumbs
   const breadcrumbStructuredData = {

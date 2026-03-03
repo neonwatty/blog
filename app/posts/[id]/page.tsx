@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
   return {
     title: post.seoTitle || post.title,

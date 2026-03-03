@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 import { getSortedProjectUpdates } from '@/lib/project-updates'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
 export const metadata: Metadata = {
   title: 'Project Updates',

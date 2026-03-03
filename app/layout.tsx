@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import MobileTabBar from '@/components/MobileTabBar'
-import Script from 'next/script'
+import { AnalyticsProvider } from '@/components/AnalyticsProvider'
 import './globals.css'
 
 const inter = Inter({
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
   keywords: ['blog', 'next.js', 'typescript', 'tailwind'],
   authors: [{ name: 'Blog Author' }],
   creator: 'Blog Author',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com',
     siteName: 'Jeremy Watt\'s Blog',
     title: 'Jeremy Watt\'s Blog',
     description: 'A modern, performant blog built with Next.js',
@@ -72,6 +72,19 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        { url: '/rss.xml', title: "Jeremy Watt's Blog - RSS Feed" },
+      ],
+      'application/atom+xml': [
+        { url: '/atom.xml', title: "Jeremy Watt's Blog - Atom Feed" },
+      ],
+      'application/json': [
+        { url: '/rss.json', title: "Jeremy Watt's Blog - JSON Feed" },
+      ],
+    },
+  },
   verification: {
     google: process.env.GOOGLE_VERIFICATION_CODE,
   },
@@ -82,8 +95,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -92,25 +103,8 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`} suppressHydrationWarning>
-        {GA_TRACKING_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
         <ThemeProvider>
+          <AnalyticsProvider>
           {children}
           <MobileTabBar />
           <Toaster
@@ -179,6 +173,7 @@ export default function RootLayout({
               })();
             `
           }} />
+          </AnalyticsProvider>
         </ThemeProvider>
       </body>
     </html>

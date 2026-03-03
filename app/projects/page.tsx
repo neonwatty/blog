@@ -5,7 +5,7 @@ import ProjectsFilter from '@/components/ProjectsFilter'
 import StructuredData from '@/components/StructuredData'
 import { getProjectsData } from '@/lib/projects'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
 export const metadata: Metadata = {
   title: 'Projects',
