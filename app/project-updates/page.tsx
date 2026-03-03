@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { format } from 'date-fns'

@@ -1,7 +1,9 @@
 import nextPlugin from '@next/eslint-plugin-next'
 import reactPlugin from 'eslint-plugin-react'
 import hooksPlugin from 'eslint-plugin-react-hooks'
+import securityPlugin from 'eslint-plugin-security'
 import tseslint from 'typescript-eslint'
+import prettierConfig from 'eslint-config-prettier'
 
 export default [
   {
@@ -25,6 +27,7 @@ export default [
     ],
   },
   ...tseslint.configs.recommended,
+  securityPlugin.configs.recommended,
   {
     plugins: {
       react: reactPlugin,
@@ -44,7 +47,8 @@ export default [
       'react-hooks/set-state-in-effect': 'off',
       'react-hooks/immutability': 'off',
       // Maintainability
-      'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
+      'max-lines': ['error', { max: 300, skipBlankLines: true, skipComments: true }],
+      'max-lines-per-function': ['error', { max: 150, skipBlankLines: true, skipComments: true }],
     },
     settings: {
       react: {
@@ -52,4 +56,5 @@ export default [
       },
     },
   },
+  prettierConfig,
 ]
