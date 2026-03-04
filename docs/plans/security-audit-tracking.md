@@ -33,3 +33,24 @@ Automated OWASP-aligned security audit. 10 categories to cover.
 - [ ] 8. Error Handling (A09)
 - [ ] 9. CSRF/Session (A07)
 - [ ] 10. Data Exposure (A02)
+
+### Iteration 2 (2026-03-03)
+
+**Categories Audited:** Input Validation (#2), Error Handling (#8)
+**Findings:** 0 (0 HIGH, 0 MEDIUM)
+**Fixed:** 0
+**Deferred:** 0
+
+#### Analysis
+
+- **Input Validation (#2):** All user inputs properly validated. Slug parameters use regex `isSafeSlug()`. Frontmatter validated with Zod `PostFrontmatterSchema`. Image uploads enforce ALLOWED_TYPES whitelist and 5MB MAX_SIZE. Filenames sanitized with regex replacement. Markdown rendered with `rehype-sanitize` in PreviewPane. No raw string interpolation in queries.
+- **Error Handling (#8):** All API error responses return generic messages without stack traces or internal details. Try/catch blocks log errors server-side via `console.error` but return only `{ error: 'Failed to ...' }` to clients. Auth failures return generic 404 (not 401/403), preventing information leakage about endpoint existence.
+
+#### Categories Remaining
+
+- [ ] 3. Authorization & Row-Level Security (A01)
+- [ ] 5. Security Headers (A05)
+- [ ] 6. Dependency Vulnerabilities (A06)
+- [ ] 7. Rate Limiting (A04)
+- [ ] 9. CSRF/Session (A07)
+- [ ] 10. Data Exposure (A02)
