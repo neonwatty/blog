@@ -39,7 +39,7 @@ export default function ProjectsPage() {
       <div className="min-h-screen flex flex-col transition-colors" style={{ backgroundColor: 'transparent' }}>
         <Header />
 
-        <main className="flex-grow mb-10">
+        <main id="main-content" className="flex-grow mb-10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             {/* Hero Section */}
             <div className="mb-10 sm:mb-14 text-center">

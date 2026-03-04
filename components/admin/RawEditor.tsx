@@ -11,6 +11,7 @@ interface RawEditorProps {
 export default function RawEditor({ value, onChange, slug }: RawEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [uploading, setUploading] = useState(false)
+  const [uploadError, setUploadError] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
 
   const insertAtCursor = useCallback(
@@ -40,6 +41,7 @@ export default function RawEditor({ value, onChange, slug }: RawEditorProps) {
       if (!slug) return
 
       setUploading(true)
+      setUploadError(null)
       try {
         const formData = new FormData()
         formData.append('file', file)
@@ -52,13 +54,14 @@ export default function RawEditor({ value, onChange, slug }: RawEditorProps) {
 
         if (!res.ok) {
           const data = await res.json()
-          console.error('Upload failed:', data.error)
+          setUploadError(data.error || 'Upload failed')
           return
         }
 
         const data = await res.json()
         insertAtCursor(`\n![${file.name}](${data.path})\n`)
       } catch (err) {
+        setUploadError('Network error — could not upload image')
         console.error('Upload error:', err)
       } finally {
         setUploading(false)
@@ -123,6 +126,14 @@ Start writing your post..."
       {uploading && (
         <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded bg-indigo-600 text-white text-xs">
           Uploading image...
+        </div>
+      )}
+      {uploadError && (
+        <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded bg-red-600 text-white text-xs flex items-center gap-2">
+          {uploadError}
+          <button onClick={() => setUploadError(null)} className="hover:opacity-80" aria-label="Dismiss error">
+            ✕
+          </button>
         </div>
       )}
       <style jsx>{`

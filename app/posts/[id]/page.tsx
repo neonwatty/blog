@@ -82,7 +82,7 @@ export default async function PostPage({ params }: PostPageProps) {
       >
         <Header />
 
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           <article className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Breadcrumbs */}
             <Breadcrumbs

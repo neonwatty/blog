@@ -39,7 +39,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col transition-all duration-300" style={{ backgroundColor: 'transparent' }}>
       <Header />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Enhanced hero section */}
         <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="mb-10 sm:mb-14 md:mb-20">

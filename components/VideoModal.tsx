@@ -35,7 +35,13 @@ export default function VideoModal({ youtubeId, isOpen, onClose, isVertical = fa
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in" onClick={onClose}>
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video player"
+      className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in"
+      onClick={onClose}
+    >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/90" />
 

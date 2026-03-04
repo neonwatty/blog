@@ -38,6 +38,7 @@ export default function ProjectsFilter({ projects }: ProjectsFilterProps) {
             <button
               key={option.value}
               onClick={() => setActiveFilter(option.value)}
+              aria-pressed={isActive}
               className={`
                 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-sm font-medium
                 transition-all duration-200 ease-out

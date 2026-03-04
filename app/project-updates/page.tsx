@@ -55,7 +55,7 @@ export default function ProjectUpdatesPage() {
       <div className="min-h-screen flex flex-col transition-colors" style={{ backgroundColor: 'transparent' }}>
         <Header />
 
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Hero Section */}
             <div className="mb-10 sm:mb-14 md:mb-20">

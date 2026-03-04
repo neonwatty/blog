@@ -22,7 +22,7 @@ export default function About() {
       <div className="min-h-screen flex flex-col transition-colors" style={{ backgroundColor: 'transparent' }}>
         <Header />
 
-        <main className="mb-10">
+        <main id="main-content" className="mb-10">
           <div className="max-w-4xl mx-auto px-4 py-12">
             <div className="bg-indigo-500/[0.08] border border-indigo-500/20 shadow-md shadow-indigo-500/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10">
               <div className="mb-4 text-center">
