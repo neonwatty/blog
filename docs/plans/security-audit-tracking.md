@@ -77,3 +77,20 @@ Automated OWASP-aligned security audit. 10 categories to cover.
 - [ ] 7. Rate Limiting (A04)
 - [ ] 9. CSRF/Session (A07)
 - [ ] 10. Data Exposure (A02)
+
+### Iteration 4 (2026-03-03)
+
+**Categories Audited:** Authorization & Row-Level Security (#3), CSRF/Session (#9)
+**Findings:** 0 (0 HIGH, 0 MEDIUM)
+**Fixed:** 0
+**Deferred:** 0
+
+#### Analysis
+
+- **Authorization & RLS (#3):** Not applicable — no database exists. Posts are markdown files on disk. No multi-tenant architecture. Admin APIs gated by `NODE_ENV` check; in production static export (`output: 'export'`) eliminates API routes entirely. Single-author blog with no RBAC requirements.
+- **CSRF/Session (#9):** Not applicable — no HTTP cookies used for authentication. `CookieConsent` component uses `localStorage` (not cookies). No session tokens anywhere in the codebase. No `Set-Cookie` headers in API responses. Dev-only admin API calls use no credentials or CSRF tokens, acceptable since no auth cookies exist and APIs are local-only.
+
+#### Categories Remaining
+
+- [ ] 7. Rate Limiting (A04)
+- [ ] 10. Data Exposure (A02)
