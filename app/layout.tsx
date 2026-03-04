@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import MobileTabBar from '@/components/MobileTabBar'
 import { AnalyticsProvider } from '@/components/AnalyticsProvider'
+import SentryProvider from '@/components/SentryProvider'
 import './globals.css'
 
 const inter = Inter({
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans grid-pattern`}
         suppressHydrationWarning
       >
+        <SentryProvider />
         <ThemeProvider>
           <AnalyticsProvider>
             <a

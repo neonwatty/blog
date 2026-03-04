@@ -42,6 +42,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^16.1.1",
+    "@sentry/browser": "^10.42.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/reveal.js": "^5.2.0",
