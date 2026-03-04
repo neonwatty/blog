@@ -43,7 +43,7 @@ describe('PostHogProvider', () => {
       'phc_test123',
       expect.objectContaining({
         api_host: 'https://ph.example.com',
-        autocapture: true,
+        autocapture: false,
       }),
     )
   })

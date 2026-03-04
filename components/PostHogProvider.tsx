@@ -16,9 +16,9 @@ export default function PostHogProvider({ enabled }: PostHogProviderProps) {
 
     posthog.init(key, {
       api_host: host || 'https://us.i.posthog.com',
-      autocapture: true,
+      autocapture: false,
       capture_pageview: true,
-      capture_pageleave: true,
+      capture_pageleave: false,
       disable_session_recording: true,
       person_profiles: 'identified_only',
     })
