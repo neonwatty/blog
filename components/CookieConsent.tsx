@@ -21,6 +21,7 @@ export default function CookieConsent({ onAccept, onDecline }: CookieConsentProp
   return (
     <div
       role="dialog"
+      aria-modal="true"
       aria-label="Cookie consent"
       style={{
         position: 'fixed',

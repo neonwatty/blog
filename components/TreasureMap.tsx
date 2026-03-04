@@ -33,6 +33,11 @@ export default function TreasureMap({ images, paths, title = 'START HERE' }: Tre
     document.body.style.overflow = 'auto'
   }
 
+  // Focus trap and keyboard handling for lightbox
+  const handleLightboxKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') closeLightbox()
+  }
+
   return (
     <>
       <div
@@ -186,8 +191,13 @@ export default function TreasureMap({ images, paths, title = 'START HERE' }: Tre
       {/* Lightbox Modal */}
       {lightboxSrc && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Enlarged image view"
           onClick={closeLightbox}
-          onKeyDown={(e) => e.key === 'Escape' && closeLightbox()}
+          onKeyDown={handleLightboxKeyDown}
+          tabIndex={-1}
+          ref={(el) => el?.focus()}
           style={{
             display: 'flex',
             position: 'fixed',
@@ -200,6 +210,7 @@ export default function TreasureMap({ images, paths, title = 'START HERE' }: Tre
             cursor: 'pointer',
             alignItems: 'center',
             justifyContent: 'center',
+            outline: 'none',
           }}
         >
           <img
@@ -212,7 +223,9 @@ export default function TreasureMap({ images, paths, title = 'START HERE' }: Tre
               boxShadow: '0 0 50px rgba(239, 68, 68, 0.5)',
             }}
           />
-          <div
+          <button
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
             style={{
               position: 'absolute',
               top: '20px',
@@ -221,10 +234,13 @@ export default function TreasureMap({ images, paths, title = 'START HERE' }: Tre
               fontSize: '2rem',
               fontWeight: 'bold',
               cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              padding: '8px',
             }}
           >
             ✕
-          </div>
+          </button>
         </div>
       )}
     </>

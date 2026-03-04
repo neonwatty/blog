@@ -91,7 +91,6 @@ describe('RawEditor', () => {
   })
 
   it('handles upload failure gracefully', async () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation()
     mockFetch.mockResolvedValueOnce({
       ok: false,
       json: async () => ({ error: 'Invalid file type' }),
@@ -107,10 +106,8 @@ describe('RawEditor', () => {
     })
 
     await waitFor(() => {
-      expect(errorSpy).toHaveBeenCalledWith('Upload failed:', 'Invalid file type')
+      expect(screen.getByText('Invalid file type')).toBeInTheDocument()
     })
-
-    errorSpy.mockRestore()
   })
 
   it('handles paste with image', async () => {
