@@ -54,3 +54,26 @@ Automated OWASP-aligned security audit. 10 categories to cover.
 - [ ] 7. Rate Limiting (A04)
 - [ ] 9. CSRF/Session (A07)
 - [ ] 10. Data Exposure (A02)
+
+### Iteration 3 (2026-03-03)
+
+**Categories Audited:** Security Headers (#5), Dependency Vulnerabilities (#6)
+**Findings:** 3 (1 MEDIUM, 2 LOW)
+**Fixed:** 2
+**Deferred:** 1
+
+#### Fixed
+
+- [x] Missing security headers — added X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy to `vercel.json` (category: Security Headers, severity: MEDIUM)
+- [x] `ajv` <6.14.0 ReDoS vulnerability — fixed via `npm audit fix` (category: Dependency Vulnerabilities, severity: LOW)
+
+#### Deferred
+
+- [ ] `minimatch` ReDoS in `semantic-release` → `@semantic-release/npm` → `npm` → `minimatch` — dev-only transitive dependency, fix requires breaking `semantic-release` downgrade, no production risk (category: Dependency Vulnerabilities, severity: LOW)
+
+#### Categories Remaining
+
+- [ ] 3. Authorization & Row-Level Security (A01)
+- [ ] 7. Rate Limiting (A04)
+- [ ] 9. CSRF/Session (A07)
+- [ ] 10. Data Exposure (A02)
