@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
     id: 'linkparty',
     title: 'LinkParty',
     description: 'YouTube party queue app - share videos at parties without the chaos',
-    image: '/images/projects/linkparty.png',
+    image: '/images/projects/linkparty.svg',
     link: 'https://party-queue-two.vercel.app',
     type: 'live',
     tags: ['YouTube', 'Web App', 'Social'],
