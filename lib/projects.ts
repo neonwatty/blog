@@ -9,6 +9,7 @@ export interface ProjectData {
   lastUpdated: string
   youtubeId?: string // YouTube video ID (e.g., "dQw4w9WgXcQ")
   youtubeIsShort?: boolean // True if the video is a YouTube Short (vertical)
+  beta?: boolean
 }
 
 const projects: ProjectData[] = [
@@ -43,6 +44,7 @@ const projects: ProjectData[] = [
     type: 'live',
     tags: ['Social Media', 'SaaS', 'Web App'],
     lastUpdated: '2026-02-23',
+    beta: true,
   },
   {
     id: 'bleep-that-sht',
@@ -65,6 +67,7 @@ const projects: ProjectData[] = [
     type: 'live',
     tags: ['YouTube', 'Web App', 'Social'],
     lastUpdated: '2026-02-23',
+    beta: true,
   },
   {
     id: 'qc',
@@ -75,6 +78,7 @@ const projects: ProjectData[] = [
     type: 'live',
     tags: ['Web App', 'Relationships', 'Tools', 'iOS'],
     lastUpdated: '2026-02-22',
+    beta: true,
   },
   {
     id: 'ytgify',

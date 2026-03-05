@@ -78,6 +78,11 @@ export default function ProjectCard({ project, animationDelay = 0 }: ProjectCard
               {/* Title */}
               <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 line-clamp-2 group-hover:translate-x-1 transition-all duration-200">
                 {project.title}
+                {project.beta && (
+                  <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-500 dark:bg-amber-400/15 dark:text-amber-400 align-middle">
+                    Beta
+                  </span>
+                )}
               </h2>
 
               {/* Description */}
