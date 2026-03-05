@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <g id="background">
+    <circle cx="256" cy="256" r="248" fill="#1a1d2e"/>
+  </g>
+  <g id="broadcast-rings">
+    <circle id="ring-3" cx="256" cy="256" r="170" fill="none" stroke="#a8a4ce" stroke-width="10" stroke-opacity="0.35"/>
+    <circle id="ring-2" cx="256" cy="256" r="130" fill="none" stroke="#f4c95d" stroke-width="10" stroke-opacity="0.5"/>
+    <circle id="ring-1" cx="256" cy="256" r="90" fill="none" stroke="#ff8a5c" stroke-width="10" stroke-opacity="0.7"/>
+  </g>
+  <g id="spark-center">
+    <path id="spark" d="
+      M256,210
+      C262,240 272,244 302,256
+      C272,268 262,272 256,302
+      C250,272 240,268 210,256
+      C240,244 250,240 256,210
+      Z" fill="#ff8a5c"/>
+  </g>
+</svg>

@@ -47,14 +47,13 @@ export default function ProjectsPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 tracking-tight"
                 style={{ color: 'var(--color-text-primary)' }}
               >
-                Things I've Built
+                Projects
               </h1>
               <p
                 className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
-                A collection of side projects, tools, and experiments. From AI-powered apps to browser extensions and
-                CLI tools.
+                I build things to scratch my own itch. Here's what's live.
               </p>
             </div>
 
