@@ -1,0 +1,81 @@
+name: Claude Review Dependabot PR
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    # SECURITY: Only run for dependabot[bot] — do NOT relax this guard.
+    # pull_request_target runs with write permissions against the base repo.
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: claude-dependabot-${{ github.event.pull_request.number }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies (no lifecycle scripts for untrusted PR code)
+        run: npm ci --ignore-scripts
+
+      - name: Verify no suspicious lifecycle script changes
+        run: |
+          # Check if any package.json files in the diff contain lifecycle script modifications
+          # (postinstall, preinstall, install, prepare scripts can execute arbitrary code)
+          if git diff HEAD -- '*/package.json' 'package.json' | grep -qE '^\+.*"(postinstall|preinstall|install|prepare)"\s*:'; then
+            echo "::error::Suspicious lifecycle script additions detected in package.json diff"
+            exit 1
+          fi
+
+      - uses: anthropics/claude-code-action@v1
+        timeout-minutes: 15
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed_bots: "dependabot[bot]"
+          claude_args: |
+            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git add:*),Bash(git commit:*),Bash(git push origin HEAD),Bash(git diff:*),Bash(git log:*),Bash(git status),Read,Write,Edit,Glob,Grep"
+            --model claude-sonnet-4-5-20250929
+          prompt: |
+            You are reviewing a Dependabot dependency update PR.
+
+            STEPS:
+            1. Read AGENTS.md in the repo root for project context and conventions.
+            2. Read the PR description to understand what package is being updated
+               and from which version to which version.
+            3. Check the diff for any breaking changes.
+            4. Run `npm run lint` to check for lint errors.
+            5. Run `npm run type-check` to check for type errors.
+            6. Run `npm run test` to check for test failures.
+            7. If there are lint errors, type errors, or test failures caused by the
+               update, fix them and push the fix commits to the PR branch.
+            8. Post a review comment summarizing:
+               - What was updated
+               - Whether breaking changes were found
+               - What fixes you applied (if any)
+               - Whether CI checks pass after your fixes
+            9. Do NOT merge the PR. Leave it for the maintainer to merge.
+
+      - name: Handle timeout or failure
+        if: failure() || cancelled()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.pulls.createReview({
+              ...context.repo,
+              pull_number: ${{ github.event.pull_request.number }},
+              event: 'COMMENT',
+              body: '⏱️ Claude review timed out or encountered an error. A human should review this dependency update manually.'
+            });
