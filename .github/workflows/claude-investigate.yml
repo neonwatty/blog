@@ -39,12 +39,14 @@ jobs:
             --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git checkout -b claude/*),Bash(git add:*),Bash(git commit:*),Bash(git branch:*),Bash(git push origin HEAD),Bash(git diff:*),Bash(git log:*),Bash(git status),Bash(gh issue comment:*),Bash(gh issue edit:*),Bash(gh pr create:*),Bash(gh label:*),Read,Write,Edit,Glob,Grep"
             --model claude-sonnet-4-5-20250929
           prompt: |
-            You are investigating a bug or issue reported on this repository.
+            You are investigating issue #${{ github.event.issue.number }}: "${{ github.event.issue.title }}"
+
+            ISSUE BODY:
+            ${{ github.event.issue.body }}
 
             STEPS:
             1. Read AGENTS.md in the repo root for project context and conventions.
-            2. Read the issue title and body to understand the problem.
-            3. Investigate the codebase to identify the root cause.
+            2. Investigate the codebase to identify the root cause based on the issue above.
             4. Implement a fix with appropriate error handling.
             5. Run `npm run lint` to check for lint errors.
             6. Run `npm run type-check` to check for type errors.
