@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import ErrorBoundary from '@/components/admin/ErrorBoundary'
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   // Dev-only gate: block access in production
@@ -25,7 +26,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
         </div>
       </header>
-      <main>{children}</main>
+      <ErrorBoundary>
+        <main>{children}</main>
+      </ErrorBoundary>
     </div>
   )
 }
