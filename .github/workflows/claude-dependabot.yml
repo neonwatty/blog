@@ -50,7 +50,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           allowed_bots: "dependabot[bot]"
           claude_args: |
-            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git add:*),Bash(git commit:*),Bash(git push origin HEAD),Bash(git diff:*),Bash(git log:*),Bash(git status),Read,Write,Edit,Glob,Grep"
+            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git diff:*),Bash(git log:*),Bash(git status),Read,Write,Edit,Glob,Grep"
             --model claude-sonnet-4-5-20250929
           prompt: |
             You are reviewing a Dependabot dependency update PR.
