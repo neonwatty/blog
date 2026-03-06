@@ -1,0 +1,96 @@
+name: Claude Investigate Issue
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+
+jobs:
+  investigate:
+    if: github.event.label.name == 'claude-investigate'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: claude-investigate-${{ github.event.issue.number }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 20
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - uses: anthropics/claude-code-action@v1
+        timeout-minutes: 30
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          label_trigger: "claude-investigate"
+          claude_args: |
+            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git checkout -b claude/*),Bash(git add:*),Bash(git commit:*),Bash(git branch:*),Bash(git push origin HEAD),Bash(git diff:*),Bash(git log:*),Bash(git status),Read,Write,Edit,Glob,Grep"
+            --model claude-sonnet-4-5-20250929
+          prompt: |
+            You are investigating a bug or issue reported on this repository.
+
+            STEPS:
+            1. Read AGENTS.md in the repo root for project context and conventions.
+            2. Read the issue title and body to understand the problem.
+            3. Investigate the codebase to identify the root cause.
+            4. Implement a fix with appropriate error handling.
+            5. Run `npm run lint` to check for lint errors.
+            6. Run `npm run type-check` to check for type errors.
+            7. Run `npm run test` to check for test failures.
+            8. Create a branch named `claude/<short-description>` and push your fix.
+            9. Create a PR with:
+               - A clear title describing the fix
+               - The PR body MUST begin with "Fixes #<issue_number>" on the first line
+               - An explanation of the root cause and the fix
+            10. After creating the PR:
+                a. Label the PR itself with `claude-fix-pending`
+                b. Update the issue labels:
+                   - Remove `claude-investigate`
+                   - Add `claude-fix-pending`
+
+            IF YOU CANNOT IDENTIFY A FIX WITH CONFIDENCE:
+            - Do NOT create a PR
+            - Post a detailed comment on the issue with:
+              - Your analysis of the root cause (or best hypothesis)
+              - What you investigated (files, data)
+              - Suggested next steps for a human engineer
+            - Update the issue labels:
+              - Remove `claude-investigate`
+              - Add `needs-human-review`
+
+      - name: Handle timeout or failure
+        if: failure() || cancelled()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = ${{ github.event.issue.number }};
+            try {
+              await github.rest.issues.removeLabel({
+                ...context.repo,
+                issue_number: issueNumber,
+                name: 'claude-investigate'
+              });
+            } catch (e) {
+              // Label may already be removed
+            }
+            await github.rest.issues.addLabels({
+              ...context.repo,
+              issue_number: issueNumber,
+              labels: ['needs-human-review']
+            });
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: issueNumber,
+              body: '⏱️ Claude investigation timed out or encountered an error. Escalating to human review.'
+            });
