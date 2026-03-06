@@ -36,7 +36,7 @@ jobs:
           label_trigger: "claude-investigate"
           show_full_output: true
           claude_args: |
-            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git checkout -b claude/*),Bash(git add:*),Bash(git commit:*),Bash(git branch:*),Bash(git push origin HEAD),Bash(git diff:*),Bash(git log:*),Bash(git status),Bash(gh issue comment:*),Bash(gh issue edit:*),Bash(gh pr create:*),Bash(gh label:*),Read,Write,Edit,Glob,Grep"
+            --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git checkout -b claude/*),Bash(git add:*),Bash(git commit:*),Bash(git branch:*),Bash(git push:*),Bash(git diff:*),Bash(git log:*),Bash(git status),Bash(gh issue comment:*),Bash(gh issue edit:*),Bash(gh pr create:*),Bash(gh label:*),Read,Write,Edit,Glob,Grep"
             --model claude-sonnet-4-5-20250929
           prompt: |
             You are investigating issue #${{ github.event.issue.number }}: "${{ github.event.issue.title }}"
