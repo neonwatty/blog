@@ -49,9 +49,9 @@ export default {
         DEFAULT: {
           css: {
             maxWidth: '65ch',
-            color: '#374151',
+            color: 'var(--color-text-primary)',
             '[class~="lead"]': {
-              color: '#4b5563',
+              color: 'var(--color-text-secondary)',
             },
             a: {
               color: '#3b82f6',
@@ -59,7 +59,7 @@ export default {
               fontWeight: '500',
             },
             strong: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '600',
             },
             'ol[type="A"]': {
@@ -90,46 +90,46 @@ export default {
               '--list-counter-style': 'decimal',
             },
             'ul > li::marker': {
-              color: '#6b7280',
+              color: 'var(--color-text-tertiary)',
             },
             'ol > li::marker': {
-              color: '#6b7280',
+              color: 'var(--color-text-tertiary)',
             },
             hr: {
-              borderColor: '#e5e7eb',
+              borderColor: 'var(--color-border-primary)',
               marginTop: '3em',
               marginBottom: '3em',
             },
             blockquote: {
               fontWeight: '500',
               fontStyle: 'italic',
-              color: '#374151',
+              color: 'var(--color-text-secondary)',
               borderLeftWidth: '0.25rem',
-              borderLeftColor: '#e5e7eb',
+              borderLeftColor: 'var(--color-border-primary)',
               quotes: '"\\201C""\\201D""\\2018""\\2019"',
             },
             h1: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '800',
             },
             h2: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '700',
             },
             h3: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '600',
             },
             h4: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '600',
             },
             code: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '600',
             },
             'a code': {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
             },
             pre: {
               color: '#e5e7eb',
@@ -156,10 +156,10 @@ export default {
               lineHeight: '1.7142857',
             },
             thead: {
-              color: '#111827',
+              color: 'var(--color-text-heading)',
               fontWeight: '600',
               borderBottomWidth: '1px',
-              borderBottomColor: '#d1d5db',
+              borderBottomColor: 'var(--color-border-secondary)',
             },
             'thead th': {
               verticalAlign: 'bottom',
@@ -169,7 +169,7 @@ export default {
             },
             'tbody tr': {
               borderBottomWidth: '1px',
-              borderBottomColor: '#e5e7eb',
+              borderBottomColor: 'var(--color-border-primary)',
             },
             'tbody tr:last-child': {
               borderBottomWidth: '0',

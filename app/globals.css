@@ -410,6 +410,7 @@
     --color-background-elevated: #1f2937;
 
     /* Dark text hierarchy - light colors for dark background */
+    --color-text-heading: #ffffff;
     --color-text-primary: #f1f5f9;
     --color-text-secondary: #cbd5e1;
     --color-text-tertiary: #94a3b8;
@@ -466,6 +467,7 @@
     --color-background-elevated: #ffffff;
 
     /* Light text hierarchy */
+    --color-text-heading: #030712;
     --color-text-primary: #111827;
     --color-text-secondary: #374151;
     --color-text-tertiary: #6b7280;
@@ -501,6 +503,7 @@
     --color-background-tertiary: #374151;
     --color-background-elevated: #1f2937;
 
+    --color-text-heading: #ffffff;
     --color-text-primary: #f1f5f9;
     --color-text-secondary: #cbd5e1;
     --color-text-tertiary: #94a3b8;
