@@ -95,7 +95,7 @@ export default async function PostPage({ params }: PostPageProps) {
               <h1
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 leading-tight transition-all duration-300"
                 style={{
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--color-text-heading)',
                   letterSpacing: '-0.04em',
                   textShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
                 }}
@@ -155,7 +155,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <div
               className="prose prose-base sm:prose-lg md:prose-xl max-w-none mb-10 sm:mb-16 md:mb-20 prose-content"
               style={{
-                color: 'var(--color-text-secondary)',
+                color: 'var(--color-text-primary)',
                 lineHeight: '1.75',
               }}
             >

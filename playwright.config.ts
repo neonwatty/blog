@@ -38,7 +38,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'PORT=3003 npm run dev',
+    command: 'PORT=3003 npx next dev',
     url: 'http://localhost:3003',
     reuseExistingServer: true, // Always reuse to avoid port conflicts
     timeout: 120 * 1000, // 120 seconds timeout

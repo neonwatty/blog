@@ -33,6 +33,7 @@
     "@testing-library/user-event",
     "feed"
   ],
+  "ignoreBinaries": ["portless"],
   "ignoreExportsUsedInFile": true,
   "eslint": {
     "config": ["eslint.config.js", ".eslintrc.json"]

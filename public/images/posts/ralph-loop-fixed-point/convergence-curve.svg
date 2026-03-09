@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="'Inter', 'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="420" rx="12" fill="#0f172a"/>
+  <rect x="1" y="1" width="718" height="418" rx="11" fill="none" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="360" y="38" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" letter-spacing="0.02em">Convergence Toward the Fixed Point</text>
+
+  <!-- Chart area — shifted right for y-label, pulled in from right for fixed-point label -->
+  <g transform="translate(90, 60)">
+    <!-- Grid lines -->
+    <line x1="0" y1="0" x2="0" y2="280" stroke="#1e293b" stroke-width="1"/>
+    <line x1="0" y1="280" x2="520" y2="280" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Horizontal grid lines -->
+    <line x1="0" y1="70" x2="520" y2="70" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4,6"/>
+    <line x1="0" y1="140" x2="520" y2="140" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4,6"/>
+    <line x1="0" y1="210" x2="520" y2="210" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4,6"/>
+
+    <!-- Y-axis label -->
+    <text x="-50" y="140" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="500" transform="rotate(-90, -50, 140)">Gaps Found</text>
+
+    <!-- Y-axis tick labels -->
+    <text x="-12" y="284" text-anchor="end" fill="#64748b" font-size="10">0</text>
+    <text x="-12" y="214" text-anchor="end" fill="#64748b" font-size="10">few</text>
+    <text x="-12" y="74" text-anchor="end" fill="#64748b" font-size="10">many</text>
+
+    <!-- X-axis label -->
+    <text x="260" y="330" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="500">Iteration</text>
+
+    <!-- X-axis tick labels -->
+    <text x="0" y="300" text-anchor="middle" fill="#64748b" font-size="10">1</text>
+    <text x="74" y="300" text-anchor="middle" fill="#64748b" font-size="10">2</text>
+    <text x="148" y="300" text-anchor="middle" fill="#64748b" font-size="10">3</text>
+    <text x="222" y="300" text-anchor="middle" fill="#64748b" font-size="10">4</text>
+    <text x="296" y="300" text-anchor="middle" fill="#64748b" font-size="10">5</text>
+    <text x="370" y="300" text-anchor="middle" fill="#64748b" font-size="10">6</text>
+    <text x="444" y="300" text-anchor="middle" fill="#64748b" font-size="10">7</text>
+    <text x="520" y="300" text-anchor="middle" fill="#64748b" font-size="10">8</text>
+
+    <!-- Area fill under curve -->
+    <path d="M 0,30 C 35,50 55,85 74,105 C 95,125 125,158 148,175 C 170,190 198,218 222,230 C 245,240 272,254 296,260 C 318,265 345,270 370,273 C 395,275 420,277 444,278 C 465,279 495,279 520,279.5 L 520,280 L 0,280 Z"
+          fill="url(#areaGrad)"/>
+
+    <!-- Main curve -->
+    <path d="M 0,30 C 35,50 55,85 74,105 C 95,125 125,158 148,175 C 170,190 198,218 222,230 C 245,240 272,254 296,260 C 318,265 345,270 370,273 C 395,275 420,277 444,278 C 465,279 495,279 520,279.5"
+          fill="none" stroke="url(#curveGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+
+    <!-- Data points -->
+    <circle cx="0" cy="30" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="74" cy="105" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="148" cy="175" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="222" cy="230" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="296" cy="260" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="370" cy="273" r="4" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="444" cy="278" r="3.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="520" cy="279.5" r="3.5" fill="#818cf8" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Fixed point line -->
+    <line x1="0" y1="280" x2="520" y2="280" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+
+    <!-- Fixed point label — positioned inside the chart area -->
+    <g transform="translate(420, 248)">
+      <text x="0" y="0" fill="#22c55e" font-size="11" font-weight="600" opacity="0.85">fixed point</text>
+      <text x="0" y="14" fill="#22c55e" font-size="9" font-weight="400" opacity="0.6">(no gaps remain)</text>
+    </g>
+
+    <!-- Annotation: early iterations -->
+    <text x="40" y="18" fill="#c4b5fd" font-size="10" font-style="italic" opacity="0.8">large improvements early</text>
+
+    <!-- Annotation: convergence -->
+    <text x="220" y="255" fill="#94a3b8" font-size="10" font-style="italic" opacity="0.7">diminishing returns → closure</text>
+  </g>
+</svg>

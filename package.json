@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next dev",
+    "dev": "portless blog next dev",
     "build": "bash scripts/build-prod.sh",
     "build:dev": "next build",
     "start": "next start",
