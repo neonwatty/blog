@@ -1,12 +1,12 @@
 ---
-title: "The Ralph Loop is Now a Fixed-Point Process"
+title: "The Ralph Loop is Now Basically a Fixed-Point Process"
 date: "2026-03-09"
 excerpt: "The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges."
 tags: ["Claude Code", "AI", "Ralph Loop", "Fixed Point", "Plan Closure"]
 featured: false
 draft: false
 author: "Jeremy Watt"
-seoTitle: "The Ralph Loop is Now a Fixed-Point Process | Claude Code and Codex"
+seoTitle: "The Ralph Loop is Now Basically a Fixed-Point Process | Claude Code and Codex"
 metaDescription: "The Ralph Loop isn't brute force — it's convergence. How fixed-point mathematics explains why iterative AI loops work for plan refinement, prototyping, and implementation."
 ---
 
