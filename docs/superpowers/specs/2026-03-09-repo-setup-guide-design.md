@@ -18,7 +18,9 @@
 
 ## Opening
 
-Straightforward framing. Setting up a repo for AI agents means two things:
+**Simplicity framing:** There are many trending repos, posts, and tutorials about advanced, complex setups for Claude Code and Codex. In general, the simplest setups that keep the right things on rails are usually the best. Boris Cherny, the creator of Claude Code, posted his own setup to X ([link](https://x.com/bcherny/status/2007179832300581177)) and it went viral -- largely because people were surprised how vanilla it was. He doesn't over-customize. The tool works well out of the box; the repo infrastructure is what matters.
+
+**Dual purpose framing.** Setting up a repo for AI agents means two things:
 
 1. Giving the agent the context and tooling it needs to succeed
 2. Backing up every stochastic move the agent makes with something deterministic
@@ -28,6 +30,8 @@ Linting, type checking, CI, commit hooks -- these aren't new ideas. Developers h
 Brief note: CLAUDE.md is Claude Code, AGENTS.md is Codex/Copilot/Cursor -- same principles, different filenames.
 
 **"Give this URL to your agent" note:** Right after the intro, tell the reader the easiest way to digest this post is to give the URL to their agent (Claude Code, Codex, whatever) and talk it over together. Let the agent help implement each layer as they read.
+
+**Automation recommender shortcut:** Also mention upfront that if the reader already has an existing repo and just wants tailored recommendations, they can install the `claude-code-setup` plugin in Claude Code and run `/claude-automation-recommender`. It analyzes the codebase and suggests which hooks, skills, MCP servers, and plugins to add -- specific to that project. This is especially useful for repos that have been developed without AI agents and need to be retrofitted.
 
 ## The 8 Layers
 

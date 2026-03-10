@@ -48,7 +48,7 @@ jobs:
           # Bypass OIDC exchange for GitHub token — pull_request_target events
           # are rejected by Anthropic's OIDC endpoint (claude-code-action#713)
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          allowed_bots: "dependabot[bot]"
+          allowed_bots: 'dependabot[bot]'
           claude_args: |
             --allowedTools "Bash(npm run lint),Bash(npm run test),Bash(npm run type-check),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git diff:*),Bash(git log:*),Bash(git status),Read,Write,Edit,Glob,Grep"
             --model claude-sonnet-4-5-20250929
