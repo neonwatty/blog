@@ -677,6 +677,26 @@
     font-size: 1.75rem !important;
   }
 
+  /* Return-to-TOC arrow on section headings */
+  .heading-return-link {
+    font-size: 0.6em;
+    text-decoration: none !important;
+    color: var(--color-text-secondary);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: 0.3em;
+    vertical-align: super;
+  }
+
+  .prose h2:hover .heading-return-link {
+    opacity: 0.6;
+  }
+
+  .heading-return-link:hover {
+    opacity: 1 !important;
+    color: var(--color-accent-primary);
+  }
+
   .prose strong {
     color: var(--color-text-primary);
     font-weight: 600;

@@ -8,7 +8,38 @@ import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import readingTime from 'reading-time'
+import { visit } from 'unist-util-visit'
 import { validatePostFrontmatter } from './schemas'
+
+// Custom rehype plugin: adds a "↑" return-to-top link to h2 headings that have an id.
+// Only activates when the post contains a "table-of-contents" heading (set by rehype-slug).
+function rehypeReturnToTop() {
+  return (tree: Parameters<typeof visit>[0]) => {
+    let hasToc = false
+    visit(tree, 'element', (node: { tagName?: string; properties?: Record<string, unknown> }) => {
+      if (node.tagName === 'h2' && node.properties?.id === 'table-of-contents') {
+        hasToc = true
+      }
+    })
+    if (!hasToc) return
+
+    visit(tree, 'element', (node: { tagName?: string; properties?: Record<string, unknown>; children?: unknown[] }) => {
+      if (node.tagName === 'h2' && node.properties?.id && node.properties.id !== 'table-of-contents') {
+        node.children = node.children || []
+        node.children.push({
+          type: 'element',
+          tagName: 'a',
+          properties: {
+            href: '#table-of-contents',
+            className: ['heading-return-link'],
+            'aria-label': 'Back to table of contents',
+          },
+          children: [{ type: 'text', value: ' ↑' }],
+        })
+      }
+    })
+  }
+}
 
 // Ensure we only use fs on server side
 const isServer = typeof window === 'undefined'
@@ -203,6 +234,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeSlug)
+    .use(rehypeReturnToTop)
     .use(rehypePrismPlus, {
       ignoreMissing: true,
       showLineNumbers: false,
