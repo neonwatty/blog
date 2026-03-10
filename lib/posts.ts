@@ -5,6 +5,7 @@ import { remark } from 'remark'
 import remarkRehype from 'remark-rehype'
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypeRaw from 'rehype-raw'
+import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import readingTime from 'reading-time'
 import { validatePostFrontmatter } from './schemas'
@@ -201,6 +202,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
   const processedContent = await remark()
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(rehypeSlug)
     .use(rehypePrismPlus, {
       ignoreMissing: true,
       showLineNumbers: false,
