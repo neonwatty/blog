@@ -74,7 +74,7 @@ jobs:
 
       - name: Handle timeout or failure
         if: failure() || cancelled()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const issueNumber = ${{ github.event.issue.number }};
