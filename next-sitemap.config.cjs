@@ -142,6 +142,9 @@ module.exports = {
     } else if (path.startsWith('/posts/')) {
       priority = 0.8
       changefreq = 'monthly'
+    } else if (path.startsWith('/page/')) {
+      priority = 0.3
+      changefreq = 'weekly'
     } else if (path.startsWith('/tags/')) {
       priority = 0.6
       changefreq = 'weekly'
