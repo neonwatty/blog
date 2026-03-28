@@ -12,11 +12,11 @@ seoTitle: Liars Dice Probability Calculator for Apple Watch | watchOS App
 metaDescription: >-
   A native SwiftUI Apple Watch app that calculates dice probabilities in real
   time for Liars Dice. Open source watchOS project.
-image: /images/posts/og/liars-dice-apple-watch-app.png
 relatedPosts:
   - x-search-pro-launch
   - ytgify-launch
   - ai-logo-generator-claude-code
+ogImage: /images/posts/og/liars-dice-apple-watch-app.png
 ---
 
 I like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make an Apple Watch game app to help me cheat?

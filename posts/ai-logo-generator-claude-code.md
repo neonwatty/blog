@@ -15,11 +15,11 @@ metaDescription: >-
   Generate professional SVG logos using Claude Code and AI. Iterative design
   workflow: generate, curate, and evolve logos with natural language prompts.
   Free method.
-image: /images/posts/og/ai-logo-generator-claude-code.png
 relatedPosts:
   - x-search-pro-launch
   - ytgify-launch
   - liars-dice-apple-watch-app
+ogImage: /images/posts/og/ai-logo-generator-claude-code.png
 ---
 
 This morning I spent some time using Claude Code as an AI logo generator - creating SVG logos for a new Chrome extension I'm building called [ytgify](https://github.com/neonwatty/ytgify).  It's a simple YouTube to GIF converter that lets you create GIFs directly from YouTube videos with a simple in-player interface.  A quick demo video.

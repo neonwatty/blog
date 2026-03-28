@@ -15,11 +15,11 @@ metaDescription: >-
   Save and organize Twitter/X advanced searches with X Search Pro Chrome
   extension. Build a personal search library with auto-updating saved searches.
   Free.
-image: /images/posts/og/x-search-pro-launch.png
 relatedPosts:
   - ytgify-launch
   - ai-logo-generator-claude-code
   - liars-dice-apple-watch-app
+ogImage: /images/posts/og/x-search-pro-launch.png
 ---
 
 [X Search Pro](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) - a Twitter search Chrome extension - is now live in the Chrome Web Store!

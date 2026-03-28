@@ -19,10 +19,10 @@ metaDescription: >-
   The Ralph Loop isn't brute force — it's convergence. How fixed-point
   mathematics explains why iterative AI loops work for plan refinement,
   prototyping, and implementation.
-image: /images/posts/og/the-ralph-loop-is-a-fixed-point-process.png
 relatedPosts:
   - how-to-set-up-your-repo-for-claude-code-and-codex
   - claude-code-workflow-testing-mcp
+ogImage: /images/posts/og/the-ralph-loop-is-a-fixed-point-process.png
 ---
 
 When the Ralph Loop went viral back in January, it was framed primarily as a way to brute-force Claude Code through tough, complex feature implementations — just keep feeding the agent the same prompt until it bangs out the feature. With this framing the criticism from some was fair: it looked like a way of avoiding careful thinking, substituting token spend for judgment, and hoping the model would eventually stumble into correctness. And with the models available at the time, that criticism had teeth — they genuinely were too unreliable for this kind of unsupervised iteration to work consistently.

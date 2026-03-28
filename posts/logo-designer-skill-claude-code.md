@@ -18,10 +18,10 @@ metaDescription: >-
   Can Claude Code generate images? Yes — this reusable Claude Code skill
   generates SVG logos through conversation. Explore concepts, iterate designs,
   and export to PNG.
-image: /images/posts/og/logo-designer-skill-claude-code.png
 relatedPosts:
   - interview-skills-claude-code
   - socratic-interview-skills-claude-code
+ogImage: /images/posts/og/logo-designer-skill-claude-code.png
 ---
 
 A few months back I wrote about [using Claude Code as an ad-hoc logo generator](/posts/ai-logo-generator-claude-code/).  That worked well but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I turned it into a reusable [Claude Code skill](https://github.com/neonwatty/logo-designer-skill).

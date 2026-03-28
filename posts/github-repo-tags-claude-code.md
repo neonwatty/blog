@@ -15,10 +15,10 @@ seoTitle: 'Claude Code for SEO: Choosing Optimal GitHub Repo Topics'
 metaDescription: >-
   Use Claude Code for SEO: choose optimal GitHub repo topics using gh CLI and
   real volume data. Pick high-traffic vs niche tags strategically.
-image: /images/posts/og/github-repo-tags-claude-code.png
 relatedPosts:
   - keyword-research-claude-code
   - best-claude-code-seo-tools
+ogImage: /images/posts/og/github-repo-tags-claude-code.png
 ---
 
 GitHub repository topics are the tags that appear below your repo description - labels like `python`, `machine-learning`, or `cli-tool` that categorize your project.  They're crucial levers for visibility on GitHub, and hence the wider web.  But choosing them - let alone choosing them well - can be a time consuming chore that most just don't do.  You might not know which topics have high volume, which might be better niche opportunities, etc.,

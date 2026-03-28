@@ -14,11 +14,11 @@ metaDescription: >-
   Convert YouTube videos to GIFs instantly with ytgify. Free Chrome extension
   with no watermark, adjustable FPS, custom resolution, and text overlays. 1500+
   users.
-image: /images/posts/og/ytgify-launch.png
 relatedPosts:
   - x-search-pro-launch
   - ai-logo-generator-claude-code
   - liars-dice-apple-watch-app
+ogImage: /images/posts/og/ytgify-launch.png
 ---
 
 [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a YouTube to GIF converter with no watermark - is now live in the Chrome Web Store!

@@ -14,7 +14,6 @@ tags:
   - Cursor
 author: Jeremy Watt
 featured: false
-image: /images/posts/og/vibe-coding-interview-hire-ai-developers.png
 seoTitle: 'Vibe Coding Interview Questions: Framework for Hiring AI-Assisted Developers'
 metaDescription: >-
   How to interview agentic engineers. Portfolio screening, take-home
@@ -24,6 +23,7 @@ relatedPosts:
   - tdd-is-dead
   - why-nobody-on-your-engineering-team-wants-to-use-claude-code
   - a-claude-code-incubator
+ogImage: /images/posts/og/vibe-coding-interview-hire-ai-developers.png
 ---
 
 The hiring playbook for developers is changing rapidly. 
