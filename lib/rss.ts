@@ -7,7 +7,8 @@ export function generateRSSFeed() {
 
   const feed = new Feed({
     title: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     id: siteURL,
     link: siteURL,
     language: 'en',
@@ -21,8 +22,7 @@ export function generateRSSFeed() {
       atom: `${siteURL}/atom.xml`,
     },
     author: {
-      name: 'Blog Author',
-      email: 'author@example.com',
+      name: 'Jeremy Watt',
       link: siteURL,
     },
   })
@@ -34,7 +34,7 @@ export function generateRSSFeed() {
       link: `${siteURL}/posts/${post.id}`,
       description: post.excerpt,
       content: post.content,
-      author: [{ name: post.author || 'Blog Author' }],
+      author: [{ name: post.author || 'Jeremy Watt' }],
       date: new Date(post.date),
       category: post.tags.map((tag) => ({ name: tag })),
       image: post.image ? `${siteURL}${post.image}` : undefined,
