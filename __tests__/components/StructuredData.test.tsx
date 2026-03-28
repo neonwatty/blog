@@ -103,6 +103,6 @@ describe('StructuredData', () => {
     const script = container.querySelector('script[type="application/ld+json"]')
     const data = JSON.parse(script!.textContent!)
 
-    expect(data.author.name).toBe('Blog Author')
+    expect(data.author.name).toBe('Jeremy Watt')
   })
 })

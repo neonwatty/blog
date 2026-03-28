@@ -22,8 +22,7 @@ export function generateRSSFeed() {
       atom: `${siteURL}/atom.xml`,
     },
     author: {
-      name: 'Blog Author',
-      email: 'author@example.com',
+      name: 'Jeremy Watt',
       link: siteURL,
     },
   })
@@ -35,7 +34,7 @@ export function generateRSSFeed() {
       link: `${siteURL}/posts/${post.id}`,
       description: post.excerpt,
       content: post.content,
-      author: [{ name: post.author || 'Blog Author' }],
+      author: [{ name: post.author || 'Jeremy Watt' }],
       date: new Date(post.date),
       category: post.tags.map((tag) => ({ name: tag })),
       image: post.image ? `${siteURL}${post.image}` : undefined,

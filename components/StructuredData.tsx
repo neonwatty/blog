@@ -22,7 +22,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     },
     author: {
       '@type': 'Person',
-      name: 'Blog Author',
+      name: 'Jeremy Watt',
     },
     publisher: {
       '@type': 'Organization',
@@ -43,7 +43,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     url: siteUrl,
     author: {
       '@type': 'Person',
-      name: 'Blog Author',
+      name: 'Jeremy Watt',
     },
     publisher: {
       '@type': 'Organization',
@@ -66,7 +66,7 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
         dateModified: post.date,
         author: {
           '@type': 'Person',
-          name: post.author || 'Blog Author',
+          name: post.author || 'Jeremy Watt',
         },
         publisher: {
           '@type': 'Organization',

@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   description:
     'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
   keywords: ['blog', 'next.js', 'typescript', 'tailwind'],
-  authors: [{ name: 'Blog Author' }],
-  creator: 'Blog Author',
+  authors: [{ name: 'Jeremy Watt' }],
+  creator: 'Jeremy Watt',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'),
   openGraph: {
     type: 'website',

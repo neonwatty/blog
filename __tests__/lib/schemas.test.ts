@@ -18,7 +18,7 @@ describe('lib/schemas', () => {
       if (result.success) {
         expect(result.data.title).toBe('Test Post')
         expect(result.data.draft).toBe(false)
-        expect(result.data.author).toBe('Blog Author')
+        expect(result.data.author).toBe('Jeremy Watt')
       }
     })
 

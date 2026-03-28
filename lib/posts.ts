@@ -268,7 +268,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     featured: matterResult.data.featured || false,
     draft,
     image: matterResult.data.image,
-    author: matterResult.data.author || 'Blog Author',
+    author: matterResult.data.author || 'Jeremy Watt',
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,
     metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
     canonicalUrl: matterResult.data.canonicalUrl,
