@@ -1,13 +1,27 @@
 ---
-title: "Claude Code Skills Tutorial: AskUserQuestion for Better Prompts"
-date: "2026-01-15"
-excerpt: "Claude's default mode is eager compliance. These interview skills flip the script—using AskUserQuestion to force systematic questioning before any code gets written."
-tags: ["Claude Code", "AI", "Skills", "Prompt Engineering", "Development"]
-author: "Jeremy Watt"
+title: 'Claude Code Skills Tutorial: AskUserQuestion for Better Prompts'
+date: '2026-01-15'
+excerpt: >-
+  Claude's default mode is eager compliance. These interview skills flip the
+  script—using AskUserQuestion to force systematic questioning before any code
+  gets written.
+tags:
+  - Claude Code
+  - AI
+  - Skills
+  - Prompt Engineering
+  - Development
+author: Jeremy Watt
 featured: false
-image: "/images/posts/socratic-ios/01-ios-tab-bar-events.png"
-seoTitle: "Claude Code Skills Examples: Using AskUserQuestion for Multi-Round Interviews"
-metaDescription: "Learn how to build Claude Code skills that interview users before implementing features. Best practices for AskUserQuestion tool, prompt engineering, and workflow automation."
+image: /images/posts/socratic-ios/01-ios-tab-bar-events.png
+seoTitle: 'Claude Code Skills Examples: Using AskUserQuestion for Multi-Round Interviews'
+metaDescription: >-
+  Learn how to build Claude Code skills that interview users before implementing
+  features. Best practices for AskUserQuestion tool, prompt engineering, and
+  workflow automation.
+relatedPosts:
+  - socratic-interview-skills-claude-code
+  - logo-designer-skill-claude-code
 ---
 
 Whenever you're working on something new—a feature, a complex process, a workflow—you start with a single idea. But as soon as you start pulling the thread, everything gets complicated. Edge cases emerge. Requirements you hadn't considered surface. The simple thing becomes not-so-simple.

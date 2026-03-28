@@ -1,13 +1,28 @@
 ---
-title: "The Ralph Loop is Now Basically a Fixed-Point Process"
-date: "2026-03-09"
-excerpt: "The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges."
-tags: ["Claude Code", "AI", "Ralph Loop", "Fixed Point", "Plan Closure"]
+title: The Ralph Loop is Now Basically a Fixed-Point Process
+date: '2026-03-09'
+excerpt: >-
+  The brute-force framing misses the point. For well-defined closure tasks —
+  plan refinement, prototype validation, implementation verification — the Ralph
+  Loop doesn't stumble toward correctness. It converges.
+tags:
+  - Claude Code
+  - AI
+  - Ralph Loop
+  - Fixed Point
+  - Plan Closure
 featured: false
 draft: false
-author: "Jeremy Watt"
-seoTitle: "The Ralph Loop is Now Basically a Fixed-Point Process | Claude Code and Codex"
-metaDescription: "The Ralph Loop isn't brute force — it's convergence. How fixed-point mathematics explains why iterative AI loops work for plan refinement, prototyping, and implementation."
+author: Jeremy Watt
+seoTitle: The Ralph Loop is Now Basically a Fixed-Point Process | Claude Code and Codex
+metaDescription: >-
+  The Ralph Loop isn't brute force — it's convergence. How fixed-point
+  mathematics explains why iterative AI loops work for plan refinement,
+  prototyping, and implementation.
+image: /images/posts/og/the-ralph-loop-is-a-fixed-point-process.png
+relatedPosts:
+  - how-to-set-up-your-repo-for-claude-code-and-codex
+  - claude-code-workflow-testing-mcp
 ---
 
 When the Ralph Loop went viral back in January, it was framed primarily as a way to brute-force Claude Code through tough, complex feature implementations — just keep feeding the agent the same prompt until it bangs out the feature. With this framing the criticism from some was fair: it looked like a way of avoiding careful thinking, substituting token spend for judgment, and hoping the model would eventually stumble into correctness. And with the models available at the time, that criticism had teeth — they genuinely were too unreliable for this kind of unsupervised iteration to work consistently.

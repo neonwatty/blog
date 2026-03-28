@@ -5,6 +5,7 @@ import StructuredData from '@/components/StructuredData'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import RelatedPosts from '@/components/RelatedPosts'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.lastUpdated || post.date,
       authors: [post.author || 'Jeremy Watt'],
       tags: post.tags,
       images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/og-image.jpg`],
@@ -161,6 +163,9 @@ export default async function PostPage({ params }: PostPageProps) {
             >
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
+
+            {/* Related Posts */}
+            <RelatedPosts slugs={post.relatedPosts || []} />
           </article>
         </main>
 

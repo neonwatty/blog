@@ -1,13 +1,24 @@
 ---
-title: "Claude Code Helped Me Bring Quake to the Browser with HTTPS and Multiplayer"
-date: "2025-11-29"
-excerpt: "How AI pair programming helped me finally ship a stalled project"
-tags: ["Claude Code", "AI", "DevOps", "Kamal", "Docker"]
+title: Claude Code Helped Me Bring Quake to the Browser with HTTPS and Multiplayer
+date: '2025-11-29'
+excerpt: How AI pair programming helped me finally ship a stalled project
+tags:
+  - Claude Code
+  - AI
+  - DevOps
+  - Kamal
+  - Docker
 featured: true
-author: "Jeremy Watt"
-image: "https://github.com/jermwatt/readme_gifs/blob/main/kamal-quake-demo.webp?raw=true"
-seoTitle: "Claude Code Helped Me Bring Quake to the Browser with HTTPS and Multiplayer"
-metaDescription: "How AI pair programming with Claude Code helped finish a year-old project deploying Quake 3 to the browser with HTTPS and multiplayer support."
+author: Jeremy Watt
+image: >-
+  https://github.com/jermwatt/readme_gifs/blob/main/kamal-quake-demo.webp?raw=true
+seoTitle: Claude Code Helped Me Bring Quake to the Browser with HTTPS and Multiplayer
+metaDescription: >-
+  How AI pair programming with Claude Code helped finish a year-old project
+  deploying Quake 3 to the browser with HTTPS and multiplayer support.
+relatedPosts:
+  - storyboard-demo-videos
+  - godaddy-is-cancer
 ---
 
 I started this project almost a year ago and it sat 90% finished in my repo, collecting dust. The goal was simple: get [QuakeJS](https://github.com/inolen/quakejs) - the classic browser game port of Quake 3 Arena - running with HTTPS and working multiplayer using WebSocket Secure (WSS).

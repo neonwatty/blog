@@ -1,12 +1,24 @@
 ---
-title: "Pull Google Search Console Data with Claude Code"
-date: "2025-12-20"
-excerpt: "Use Claude Code to query your GSC data directly from the terminal. Find ranking opportunities, see what's working, skip the manual exports."
-tags: ["Claude Code", "SEO", "MCP", "Productivity"]
+title: Pull Google Search Console Data with Claude Code
+date: '2025-12-20'
+excerpt: >-
+  Use Claude Code to query your GSC data directly from the terminal. Find
+  ranking opportunities, see what's working, skip the manual exports.
+tags:
+  - Claude Code
+  - SEO
+  - MCP
+  - Productivity
 featured: true
-author: "Jeremy Watt"
-seoTitle: "Pull Google Search Console Data with Claude Code"
-metaDescription: "Query Google Search Console directly from Claude Code using the social-tools MCP server. Real examples, actual commands, no fluff."
+author: Jeremy Watt
+seoTitle: Pull Google Search Console Data with Claude Code
+metaDescription: >-
+  Query Google Search Console directly from Claude Code using the social-tools
+  MCP server. Real examples, actual commands, no fluff.
+image: /images/posts/og/best-claude-code-seo-tools.png
+relatedPosts:
+  - keyword-research-claude-code
+  - github-repo-tags-claude-code
 ---
 
 Exporting CSVs from Google Search Console is tedious. You click around the UI, filter, export, open in a spreadsheet, repeat. It's slow and annoying.

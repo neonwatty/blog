@@ -1,13 +1,27 @@
 ---
-title: "TDD Is Dead"
-date: "2026-03-04"
-excerpt: "Test Driven Development is dead. Quality control can be largely automated now. That frees you to focus on what actually matters: building things people want."
-tags: ["TDD", "AI", "Testing", "Claude Code", "Engineering"]
-author: "Jeremy Watt"
+title: TDD Is Dead
+date: '2026-03-04'
+excerpt: >-
+  Test Driven Development is dead. Quality control can be largely automated now.
+  That frees you to focus on what actually matters: building things people want.
+tags:
+  - TDD
+  - AI
+  - Testing
+  - Claude Code
+  - Engineering
+author: Jeremy Watt
 featured: false
-image: ""
-seoTitle: "TDD Is Dead: Why Test-Driven Development Is Obsolete in the AI Era"
-metaDescription: "TDD was always a compromise — rigor at the cost of speed. AI tools like Claude Code automate quality, freeing you to prototype fast and build what users actually want."
+image: /images/posts/og/tdd-is-dead.png
+seoTitle: 'TDD Is Dead: Why Test-Driven Development Is Obsolete in the AI Era'
+metaDescription: >-
+  TDD was always a compromise — rigor at the cost of speed. AI tools like Claude
+  Code automate quality, freeing you to prototype fast and build what users
+  actually want.
+relatedPosts:
+  - vibe-coding-interview-hire-ai-developers
+  - why-nobody-on-your-engineering-team-wants-to-use-claude-code
+  - a-claude-code-incubator
 ---
 
 > Testing is no longer something you front-load. It's something you run after a feature has proven it deserves to exist.

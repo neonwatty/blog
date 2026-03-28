@@ -1,13 +1,25 @@
 ---
-title: "Share Your Random Thoughts with the World Without Leaving Claude Code"
-date: "2025-12-14"
-excerpt: "CLI tools for posting to Twitter, LinkedIn, Reddit, and more—designed to work with Claude Code so you can capture and share ideas without context switching."
-tags: ["Claude Code", "CLI", "Social Media", "Productivity", "Developer Tools"]
+title: Share Your Random Thoughts with the World Without Leaving Claude Code
+date: '2025-12-14'
+excerpt: >-
+  CLI tools for posting to Twitter, LinkedIn, Reddit, and more—designed to work
+  with Claude Code so you can capture and share ideas without context switching.
+tags:
+  - Claude Code
+  - CLI
+  - Social Media
+  - Productivity
+  - Developer Tools
 featured: true
-author: "Jeremy Watt"
-image: "/images/social-starter-pack/social-posting-demo.png"
-seoTitle: "Share Random Thoughts Without Leaving Claude Code - Social Media CLI Tools"
-metaDescription: "CLI tools for posting to Twitter, LinkedIn, Reddit, and YouTube without leaving the terminal. Designed for Claude Code and AI coding assistants."
+author: Jeremy Watt
+image: /images/social-starter-pack/social-posting-demo.png
+seoTitle: Share Random Thoughts Without Leaving Claude Code - Social Media CLI Tools
+metaDescription: >-
+  CLI tools for posting to Twitter, LinkedIn, Reddit, and YouTube without
+  leaving the terminal. Designed for Claude Code and AI coding assistants.
+relatedPosts:
+  - tfq-test-failure-management
+  - todoq-task-management
 ---
 
 When I have a random thought to share - about something I'm working on or reading - sometimes I don't want to open Twitter or LinkedIn; its easy to get distracted, lose 20 minutes to the feed, and forget what I had to say. 

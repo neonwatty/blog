@@ -1,13 +1,27 @@
 ---
-title: "Let Claude Code Babysit Your CI: AI DevOps for GitHub Actions"
-date: "2025-11-30"
-excerpt: "How I stopped babysitting GitHub Actions and let Claude Code monitor, debug, and fix CI failures autonomously"
-tags: ["Claude Code", "GitHub Actions", "CI/CD", "DevOps", "AI", "Automation"]
+title: 'Let Claude Code Babysit Your CI: AI DevOps for GitHub Actions'
+date: '2025-11-30'
+excerpt: >-
+  How I stopped babysitting GitHub Actions and let Claude Code monitor, debug,
+  and fix CI failures autonomously
+tags:
+  - Claude Code
+  - GitHub Actions
+  - CI/CD
+  - DevOps
+  - AI
+  - Automation
 featured: true
-author: "Jeremy Watt"
-image: "https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true"
-seoTitle: "Let Claude Code Babysit Your CI: AI DevOps Agent for GitHub Actions Debugging"
-metaDescription: "Stop babysitting GitHub Actions. Let Claude Code autonomously monitor, debug, and fix CI failures using gh CLI. AI DevOps automation tutorial with examples."
+author: Jeremy Watt
+image: >-
+  https://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true
+seoTitle: 'Let Claude Code Babysit Your CI: AI DevOps Agent for GitHub Actions Debugging'
+metaDescription: >-
+  Stop babysitting GitHub Actions. Let Claude Code autonomously monitor, debug,
+  and fix CI failures using gh CLI. AI DevOps automation tutorial with examples.
+relatedPosts:
+  - claude-code-github-actions-example
+  - claude-code-cli-is-all-you-need
 ---
 
 # Manually Monitoring GitHub CI is a Pain

@@ -143,6 +143,7 @@ export interface PostData {
   author?: string
   seoTitle?: string
   metaDescription?: string
+  lastUpdated?: string
   canonicalUrl?: string
   relatedPosts?: string[]
   slideshow?: boolean
@@ -271,6 +272,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     author: matterResult.data.author || 'Jeremy Watt',
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,
     metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,
+    lastUpdated: matterResult.data.lastUpdated,
     canonicalUrl: matterResult.data.canonicalUrl,
     relatedPosts: matterResult.data.relatedPosts || [],
     slideshow: matterResult.data.slideshow || false,
