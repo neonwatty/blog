@@ -13,10 +13,15 @@ const HEIGHT = 630
 const fontBold = fs.readFileSync('/System/Library/Fonts/Supplemental/Arial Bold.ttf')
 const fontRegular = fs.readFileSync('/System/Library/Fonts/Supplemental/Arial.ttf')
 
-function createOgMarkup(title, tags) {
-  // Truncate title if too long
+function createOgMarkup(title, excerpt, tags) {
   const displayTitle = title.length > 80 ? title.slice(0, 77) + '...' : title
+  const displayExcerpt = excerpt.length > 120 ? excerpt.slice(0, 117) + '...' : excerpt
   const displayTags = tags.slice(0, 3).join('  ·  ')
+
+  // Adaptive font size based on title length
+  let titleSize = '56px'
+  if (displayTitle.length > 60) titleSize = '44px'
+  else if (displayTitle.length > 40) titleSize = '50px'
 
   return {
     type: 'div',
@@ -26,79 +31,53 @@ function createOgMarkup(title, tags) {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
-        padding: '60px 70px',
-        background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%)',
+        justifyContent: 'center',
+        padding: '0 80px',
+        background: '#0f0e17',
         fontFamily: 'Arial',
+        position: 'relative',
+        overflow: 'hidden',
       },
       children: [
-        // Top: site name
+        // Background accent: large faded circle top-right
         {
           type: 'div',
           props: {
             style: {
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
+              position: 'absolute',
+              top: '-200px',
+              right: '-200px',
+              width: '600px',
+              height: '600px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, #4338ca33 0%, transparent 70%)',
             },
-            children: [
-              {
-                type: 'div',
-                props: {
-                  style: {
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '50%',
-                    background: '#818cf8',
-                  },
-                },
-              },
-              {
-                type: 'span',
-                props: {
-                  style: {
-                    fontSize: '24px',
-                    color: '#a5b4fc',
-                    letterSpacing: '0.05em',
-                  },
-                  children: 'neonwatty.com',
-                },
-              },
-            ],
           },
         },
-        // Middle: title
+        // Background accent: small faded circle bottom-left
         {
           type: 'div',
           props: {
             style: {
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
+              position: 'absolute',
+              bottom: '-100px',
+              left: '-100px',
+              width: '350px',
+              height: '350px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, #6366f122 0%, transparent 70%)',
             },
-            children: [
-              {
-                type: 'h1',
-                props: {
-                  style: {
-                    fontSize: displayTitle.length > 60 ? '42px' : '52px',
-                    fontWeight: 700,
-                    color: '#ffffff',
-                    lineHeight: 1.2,
-                    margin: 0,
-                    letterSpacing: '-0.02em',
-                  },
-                  children: displayTitle,
-                },
-              },
-            ],
           },
         },
-        // Bottom: tags + reading time
+        // Top bar: site name + tags
         {
           type: 'div',
           props: {
             style: {
+              position: 'absolute',
+              top: '40px',
+              left: '80px',
+              right: '80px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -108,20 +87,114 @@ function createOgMarkup(title, tags) {
                 type: 'span',
                 props: {
                   style: {
-                    fontSize: '20px',
-                    color: '#c7d2fe',
+                    fontSize: '18px',
+                    color: '#818cf8',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
                   },
-                  children: displayTags,
+                  children: 'neonwatty.com',
                 },
               },
               {
                 type: 'span',
                 props: {
                   style: {
+                    fontSize: '16px',
+                    color: '#6366f1',
+                  },
+                  children: displayTags,
+                },
+              },
+            ],
+          },
+        },
+        // Accent line above title
+        {
+          type: 'div',
+          props: {
+            style: {
+              width: '60px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #818cf8, #6366f1)',
+              borderRadius: '2px',
+              marginBottom: '24px',
+            },
+          },
+        },
+        // Title
+        {
+          type: 'h1',
+          props: {
+            style: {
+              fontSize: titleSize,
+              fontWeight: 700,
+              color: '#fffffe',
+              lineHeight: 1.15,
+              margin: 0,
+              letterSpacing: '-0.03em',
+            },
+            children: displayTitle,
+          },
+        },
+        // Excerpt
+        {
+          type: 'p',
+          props: {
+            style: {
+              fontSize: '22px',
+              color: '#a7a9be',
+              lineHeight: 1.5,
+              marginTop: '20px',
+              margin: 0,
+              paddingTop: '20px',
+            },
+            children: displayExcerpt,
+          },
+        },
+        // Bottom bar: author
+        {
+          type: 'div',
+          props: {
+            style: {
+              position: 'absolute',
+              bottom: '40px',
+              left: '80px',
+              right: '80px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            },
+            children: [
+              {
+                type: 'span',
+                props: {
+                  style: {
                     fontSize: '18px',
-                    color: '#818cf8',
+                    color: '#a7a9be',
                   },
                   children: 'Jeremy Watt',
+                },
+              },
+              // Decorative dots
+              {
+                type: 'div',
+                props: {
+                  style: {
+                    display: 'flex',
+                    gap: '6px',
+                  },
+                  children: [1, 2, 3].map(() => ({
+                    type: 'div',
+                    props: {
+                      style: {
+                        width: '6px',
+                        height: '6px',
+                        borderRadius: '50%',
+                        background: '#4338ca',
+                      },
+                    },
+                  })),
                 },
               },
             ],
@@ -132,8 +205,8 @@ function createOgMarkup(title, tags) {
   }
 }
 
-async function generateOgImage(slug, title, tags) {
-  const markup = createOgMarkup(title, tags)
+async function generateOgImage(slug, title, excerpt, tags) {
+  const markup = createOgMarkup(title, excerpt, tags)
 
   const svg = await satori(markup, {
     width: WIDTH,
@@ -186,7 +259,7 @@ async function main() {
     }
 
     try {
-      await generateOgImage(slug, data.title, data.tags || [])
+      await generateOgImage(slug, data.title, data.excerpt || '', data.tags || [])
       generated++
       console.log(`  ✅ ${slug}`)
     } catch (err) {
