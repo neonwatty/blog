@@ -1,13 +1,30 @@
 ---
-title: "Claude Code Skills for iOS Human Interface Guidelines Testing"
-date: "2026-01-15"
-excerpt: "Claude's default mode is eager compliance—give it vague instructions and it'll happily make assumptions. These workflow skills force systematic iOS HIG verification, catching platform convention violations you'd never think to check."
-tags: ["Claude Code", "AI", "iOS", "Skills", "Human Interface Guidelines"]
-author: "Jeremy Watt"
+title: Claude Code Skills for iOS Human Interface Guidelines Testing
+date: '2026-01-15'
+excerpt: >-
+  Claude's default mode is eager compliance—give it vague instructions and it'll
+  happily make assumptions. These workflow skills force systematic iOS HIG
+  verification, catching platform convention violations you'd never think to
+  check.
+tags:
+  - Claude Code
+  - AI
+  - iOS
+  - Skills
+  - Human Interface Guidelines
+author: Jeremy Watt
 featured: true
-image: "/images/posts/socratic-ios/01-ios-tab-bar-events.png"
-seoTitle: "Claude Code Skills Tutorial: iOS Human Interface Guidelines (HIG) Workflow Testing"
-metaDescription: "Learn how to build Claude Code skills that test iOS apps against Human Interface Guidelines. Catch HIG violations like hamburger menus, FABs, and web-style dropdowns automatically."
+image: /images/posts/socratic-ios/01-ios-tab-bar-events.png
+seoTitle: >-
+  Claude Code Skills Tutorial: iOS Human Interface Guidelines (HIG) Workflow
+  Testing
+metaDescription: >-
+  Learn how to build Claude Code skills that test iOS apps against Human
+  Interface Guidelines. Catch HIG violations like hamburger menus, FABs, and
+  web-style dropdowns automatically.
+relatedPosts:
+  - interview-skills-claude-code
+  - logo-designer-skill-claude-code
 ---
 
 Whenever you're working on something new—a feature, a complex process, a workflow—you start with a single idea. But as soon as you start pulling the thread, everything gets complicated. Edge cases emerge. Requirements you hadn't considered surface. The simple thing becomes not-so-simple.

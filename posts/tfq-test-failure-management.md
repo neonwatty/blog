@@ -1,12 +1,24 @@
 ---
-title: "Claude Code Test Debugging Without Context Overload: TFQ CLI Tool"
-date: "2025-08-31"
-excerpt: "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions."
-tags: ["Testing", "Claude Code", "CLI"]
+title: 'Claude Code Test Debugging Without Context Overload: TFQ CLI Tool'
+date: '2025-08-31'
+excerpt: >-
+  How I use TFQ (Test Failure Queue) to avoid hitting context limits when
+  debugging test failures with Claude Code.  A simple CLI tool that queues
+  failing tests and fixes them one at a time in separate headless sessions.
+tags:
+  - Testing
+  - Claude Code
+  - CLI
 featured: true
-author: "Jeremy Watt"
-seoTitle: "TFQ: AI Code Testing CLI to Avoid Claude Code Context Window Limits"
-metaDescription: "Stop running out of context when debugging large test suites with Claude Code; use a queue and fix failing tests individually in separate headless sessions."
+author: Jeremy Watt
+seoTitle: 'TFQ: AI Code Testing CLI to Avoid Claude Code Context Window Limits'
+metaDescription: >-
+  Stop running out of context when debugging large test suites with Claude Code;
+  use a queue and fix failing tests individually in separate headless sessions.
+image: /images/posts/og/tfq-test-failure-management.png
+relatedPosts:
+  - todoq-task-management
+  - social-starter-pack-cli-tools
 ---
 
 Once a project gets some beef to it using Claude Code for AI code testing and test automation can get dicey; its easy to hit the context window limit once Claude gets noodling on dozens or hundreds of tests.

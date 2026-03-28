@@ -1,12 +1,25 @@
 ---
-title: "Create Video Storyboards with Claude Code and Playwright Screenshots"
-date: "2025-10-05"
-excerpt: "Automatically generate visual storyboards for demo videos using Claude Code and Playwright."
-tags: ["Claude Code", "Playwright", "Testing", "Automation"]
+title: Create Video Storyboards with Claude Code and Playwright Screenshots
+date: '2025-10-05'
+excerpt: >-
+  Automatically generate visual storyboards for demo videos using Claude Code
+  and Playwright.
+tags:
+  - Claude Code
+  - Playwright
+  - Testing
+  - Automation
 featured: true
-author: "Jeremy Watt"
-seoTitle: "Automated Video Storyboards with Playwright and Claude Code"
-metaDescription: "Generate video storyboards automatically using Playwright screenshots and Claude Code. Perfect for planning product demos, tutorials, and marketing videos."
+author: Jeremy Watt
+seoTitle: Automated Video Storyboards with Playwright and Claude Code
+metaDescription: >-
+  Generate video storyboards automatically using Playwright screenshots and
+  Claude Code. Perfect for planning product demos, tutorials, and marketing
+  videos.
+image: /images/posts/og/storyboard-demo-videos.png
+relatedPosts:
+  - claude-code-quake
+  - godaddy-is-cancer
 ---
 
 Before creating demo videos for [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a Chrome extension that lets you clip GIFs right from YouTube - I wanted to map out the user flow with real screenshots.

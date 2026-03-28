@@ -1,13 +1,27 @@
 ---
-title: "How to Set Up Your Repo for Claude Code and Codex"
-date: "2026-03-09"
-excerpt: "Nine layers of guardrails that make AI coding agents safe, predictable, and actually useful — from CLAUDE.md to CI pipelines to specialized review agents."
-tags: ["Claude Code", "Codex", "AI", "Developer Tools", "CI/CD"]
+title: How to Set Up Your Repo for Claude Code and Codex
+date: '2026-03-09'
+excerpt: >-
+  Nine layers of guardrails that make AI coding agents safe, predictable, and
+  actually useful — from CLAUDE.md to CI pipelines to specialized review agents.
+tags:
+  - Claude Code
+  - Codex
+  - AI
+  - Developer Tools
+  - CI/CD
 featured: true
 draft: false
-author: "Jeremy Watt"
-seoTitle: "How to Set Up Your Repo for Claude Code and Codex | Beginner's Guide"
-metaDescription: "A beginner's guide to setting up your repo for AI coding agents. Nine layers of guardrails — CLAUDE.md, linting, CI, hooks, plugins, skills, CLI tools, and MCP servers — that make Claude Code and Codex safe and productive."
+author: Jeremy Watt
+seoTitle: How to Set Up Your Repo for Claude Code and Codex | Beginner's Guide
+metaDescription: >-
+  A beginner's guide to setting up your repo for AI coding agents. Nine layers
+  of guardrails — CLAUDE.md, linting, CI, hooks, plugins, skills, CLI tools, and
+  MCP servers — that make Claude Code and Codex safe and productive.
+image: /images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png
+relatedPosts:
+  - claude-code-workflow-testing-mcp
+  - the-ralph-loop-is-a-fixed-point-process
 ---
 
 The simplest setups that keep the right things on rails are usually the best. Boris Cherny, the creator of Claude Code, [posted his own setup to X](https://x.com/bcherny/status/2007179832300581177) and it went viral — largely because people were surprised how vanilla it was. He doesn't over-customize. Peter Steinberger, the creator of OpenClaw, wrote a now-classic post called [Just Talk To It](https://steipete.me/posts/just-talk-to-it) that makes a similar point — the tool works well out of the box; what matters is how you set up the repo infrastructure around it.

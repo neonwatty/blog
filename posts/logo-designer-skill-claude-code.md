@@ -1,12 +1,27 @@
 ---
-title: "Claude Code SVG Logo Design: A Reusable Skill for Generating Logos"
-date: "2026-02-24"
-excerpt: "I built a Claude Code skill that turns logo design into a conversation. Point it at your repo, pick a direction, and iterate until you're happy — no design tools needed."
-tags: ["Claude Code", "Claude Code Skills", "Logo Design", "SVG", "Claude Code SVG"]
+title: 'Claude Code SVG Logo Design: A Reusable Skill for Generating Logos'
+date: '2026-02-24'
+excerpt: >-
+  I built a Claude Code skill that turns logo design into a conversation. Point
+  it at your repo, pick a direction, and iterate until you're happy — no design
+  tools needed.
+tags:
+  - Claude Code
+  - Claude Code Skills
+  - Logo Design
+  - SVG
+  - Claude Code SVG
 featured: true
-author: "Jeremy Watt"
-seoTitle: "Claude Code SVG Logo Design Skill: Generate Logos with AI"
-metaDescription: "Can Claude Code generate images? Yes — this reusable Claude Code skill generates SVG logos through conversation. Explore concepts, iterate designs, and export to PNG."
+author: Jeremy Watt
+seoTitle: 'Claude Code SVG Logo Design Skill: Generate Logos with AI'
+metaDescription: >-
+  Can Claude Code generate images? Yes — this reusable Claude Code skill
+  generates SVG logos through conversation. Explore concepts, iterate designs,
+  and export to PNG.
+image: /images/posts/og/logo-designer-skill-claude-code.png
+relatedPosts:
+  - interview-skills-claude-code
+  - socratic-interview-skills-claude-code
 ---
 
 A few months back I wrote about [using Claude Code as an ad-hoc logo generator](/posts/ai-logo-generator-claude-code/).  That worked well but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I turned it into a reusable [Claude Code skill](https://github.com/neonwatty/logo-designer-skill).

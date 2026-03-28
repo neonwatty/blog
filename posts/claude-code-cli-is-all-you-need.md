@@ -1,13 +1,26 @@
 ---
-title: "CLI is All You Need: Skip Custom Slash Commands with Claude Code"
-date: "2025-11-30"
-excerpt: "You don't need custom slash commands or skills—just point Claude Code at your CLI tools and describe what you want"
-tags: ["Claude Code", "CLI", "Productivity", "AI", "Developer Tools"]
+title: 'CLI is All You Need: Skip Custom Slash Commands with Claude Code'
+date: '2025-11-30'
+excerpt: >-
+  You don't need custom slash commands or skills—just point Claude Code at your
+  CLI tools and describe what you want
+tags:
+  - Claude Code
+  - CLI
+  - Productivity
+  - AI
+  - Developer Tools
 featured: true
-author: "Jeremy Watt"
-image: "https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true"
-seoTitle: "CLI is All You Need - Skip Custom Slash Commands with Claude Code"
-metaDescription: "Why natural language + CLI tools beats building custom slash commands, skills, and complex tooling with Claude Code."
+author: Jeremy Watt
+image: >-
+  https://github.com/neonwatty/readme_gifs/blob/main/create-blogpost.png?raw=true
+seoTitle: CLI is All You Need - Skip Custom Slash Commands with Claude Code
+metaDescription: >-
+  Why natural language + CLI tools beats building custom slash commands, skills,
+  and complex tooling with Claude Code.
+relatedPosts:
+  - claude-code-ci-babysitter
+  - claude-code-github-actions-example
 ---
 
 # The Temptation to Over-Engineer

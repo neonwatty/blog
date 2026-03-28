@@ -16,6 +16,7 @@
             "url": "https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise",
             "title": "I'll Build Your Whole \"AI Product\" for Only a Third of Your Total Raise",
             "summary": "It's 2026 and big checks are still being cut to pre-product AI companies. Here's my standard reply to the recruiters.",
+            "image": "https://neonwatty.com/images/posts/og/build-your-app-for-only-a-third-of-your-raise.png",
             "date_modified": "2026-03-18T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -36,6 +37,7 @@
             "url": "https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process",
             "title": "The Ralph Loop is Now Basically a Fixed-Point Process",
             "summary": "The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges.",
+            "image": "https://neonwatty.com/images/posts/og/the-ralph-loop-is-a-fixed-point-process.png",
             "date_modified": "2026-03-09T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -54,6 +56,7 @@
             "url": "https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex",
             "title": "How to Set Up Your Repo for Claude Code and Codex",
             "summary": "Nine layers of guardrails that make AI coding agents safe, predictable, and actually useful — from CLAUDE.md to CI pipelines to specialized review agents.",
+            "image": "https://neonwatty.com/images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png",
             "date_modified": "2026-03-09T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -72,6 +75,7 @@
             "url": "https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers",
             "title": "The Vibe Coding Interview: How to Hire AI-Assisted Developers",
             "summary": "The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools.",
+            "image": "https://neonwatty.com/images/posts/og/vibe-coding-interview-hire-ai-developers.png",
             "date_modified": "2026-03-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -91,6 +95,7 @@
             "url": "https://neonwatty.com/posts/tdd-is-dead",
             "title": "TDD Is Dead",
             "summary": "Test Driven Development is dead. Quality control can be largely automated now. That frees you to focus on what actually matters: building things people want.",
+            "image": "https://neonwatty.com/images/posts/og/tdd-is-dead.png",
             "date_modified": "2026-03-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -109,6 +114,7 @@
             "url": "https://neonwatty.com/posts/logo-designer-skill-claude-code",
             "title": "Claude Code SVG Logo Design: A Reusable Skill for Generating Logos",
             "summary": "I built a Claude Code skill that turns logo design into a conversation. Point it at your repo, pick a direction, and iterate until you're happy — no design tools needed.",
+            "image": "https://neonwatty.com/images/posts/og/logo-designer-skill-claude-code.png",
             "date_modified": "2026-02-24T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -203,6 +209,7 @@
             "url": "https://neonwatty.com/posts/claude-code-workflow-testing-mcp",
             "title": "Claude Code Browser Testing and iOS Automation with MCP Workflows",
             "summary": "Four Claude Code skills that generate and execute user workflow tests using Claude-in-Chrome and iOS Simulator MCPs. Catch bugs and edge cases while you're still building.",
+            "image": "https://neonwatty.com/images/posts/og/claude-code-workflow-testing-mcp.png",
             "date_modified": "2026-01-08T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -222,6 +229,7 @@
             "url": "https://neonwatty.com/posts/best-claude-code-seo-tools",
             "title": "Pull Google Search Console Data with Claude Code",
             "summary": "Use Claude Code to query your GSC data directly from the terminal. Find ranking opportunities, see what's working, skip the manual exports.",
+            "image": "https://neonwatty.com/images/posts/og/best-claude-code-seo-tools.png",
             "date_modified": "2025-12-20T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -258,6 +266,7 @@
             "url": "https://neonwatty.com/posts/github-repo-tags-claude-code",
             "title": "Claude Code for SEO: Choosing Optimal GitHub Repo Topics",
             "summary": "Use Claude Code and gh CLI to choose optimal GitHub repo topics with real volume data. Data-driven tag selection in 30 seconds.",
+            "image": "https://neonwatty.com/images/posts/og/github-repo-tags-claude-code.png",
             "date_modified": "2025-12-12T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -275,6 +284,7 @@
             "url": "https://neonwatty.com/posts/keyword-research-claude-code",
             "title": "SEO Keyword Research with Claude Code",
             "summary": "Use Claude Code with Google autocomplete for fast keyword research at an industrial scale - for blog SEO, product naming, or just understanding what people actually search for.",
+            "image": "https://neonwatty.com/images/posts/og/keyword-research-claude-code.png",
             "date_modified": "2025-12-02T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -370,6 +380,7 @@
             "url": "https://neonwatty.com/posts/ytgify-launch",
             "title": "ytgify: YouTube to GIF Converter Chrome Extension - No Watermark",
             "summary": "Turn your favorite YouTube moments into shareable GIFs.",
+            "image": "https://neonwatty.com/images/posts/og/ytgify-launch.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -387,6 +398,7 @@
             "url": "https://neonwatty.com/posts/x-search-pro-launch",
             "title": "X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches",
             "summary": "Build your personal X/Twitter search library. Save, categorize, and organize searches you use repeatedly.",
+            "image": "https://neonwatty.com/images/posts/og/x-search-pro-launch.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -399,10 +411,11 @@
         },
         {
             "id": "https://neonwatty.com/posts/storyboard-demo-videos",
-            "content_html": "\nBefore creating demo videos for [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a Chrome extension that lets you clip GIFs right from YouTube - I wanted to map out the user flow with real screenshots.\n\nI wondered if Claude Code could help me create a video storyboard generator using automated screenshots for demo video planning, so fed it this prompt:\n\n> \"I want to create a video walkthrough of this chrome extension app. But first, I want to create a storyboard with real images of it. Use playwright and run through the extension, taking screenshots of important moments in the standard user flow. Then create a storyboard from those screenshots. Each screenshot in the storyboard should be numbered, with a brief description of what each step is about.\"\n\nI then followed up a few times, telling Claude that I wanted the storyboard in html, and adjusted some of the vocabulary.  Not bad!\n\nHere's the resuling storyboard:\n\n<div style=\"width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin: 2rem 0;\">\n  <iframe src=\"/ytgify-storyboard.html\" style=\"width: 100%; height: 100%; border: none;\" title=\"YTgify Storyboard\"></iframe>\n</div>\n\nClaude Code used Playwright to navigate the extension, captured 11 screenshots of key moments, and generated a complete HTML storyboard with numbered steps, descriptions, visual flow summary, and navigation menu.\n\nI ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier!\n\n<div style=\"max-width: 800px; margin: 2rem auto;\">\n  <iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/hBBr8SluoQ8\" title=\"ytgify Demo\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen style=\"border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\"></iframe>\n</div>",
+            "content_html": "\nBefore creating demo videos for [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a Chrome extension that lets you clip GIFs right from YouTube - I wanted to map out the user flow with real screenshots.\n\nI wondered if Claude Code could help me create a video storyboard generator using automated screenshots for demo video planning, so fed it this prompt:\n\n> \"I want to create a video walkthrough of this chrome extension app. But first, I want to create a storyboard with real images of it. Use playwright and run through the extension, taking screenshots of important moments in the standard user flow. Then create a storyboard from those screenshots. Each screenshot in the storyboard should be numbered, with a brief description of what each step is about.\"\n\nI then followed up a few times, telling Claude that I wanted the storyboard in html, and adjusted some of the vocabulary.  Not bad!\n\nHere's the resuling storyboard:\n\n<div style=\"width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin: 2rem 0;\">\n  <iframe src=\"/ytgify-storyboard.html\" style=\"width: 100%; height: 100%; border: none;\" title=\"YTgify Storyboard\"></iframe>\n</div>\n\nClaude Code used Playwright to navigate the extension, captured 11 screenshots of key moments, and generated a complete HTML storyboard with numbered steps, descriptions, visual flow summary, and navigation menu.\n\nI ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier!\n\n<div style=\"max-width: 800px; margin: 2rem auto;\">\n  <iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/hBBr8SluoQ8\" title=\"ytgify Demo\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen style=\"border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\"></iframe>\n</div>\n",
             "url": "https://neonwatty.com/posts/storyboard-demo-videos",
             "title": "Create Video Storyboards with Claude Code and Playwright Screenshots",
             "summary": "Automatically generate visual storyboards for demo videos using Claude Code and Playwright.",
+            "image": "https://neonwatty.com/images/posts/og/storyboard-demo-videos.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -420,6 +433,7 @@
             "url": "https://neonwatty.com/posts/godaddy-is-cancer",
             "title": "Create an Interactive Image Gallery Treasure Map with Claude Code",
             "summary": "Turn any image sequence into an interactive treasure map using Claude Code",
+            "image": "https://neonwatty.com/images/posts/og/godaddy-is-cancer.png",
             "date_modified": "2025-10-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -436,6 +450,7 @@
             "url": "https://neonwatty.com/posts/ai-logo-generator-claude-code",
             "title": "AI Logo Generator: Generative SVG Logo Design with Claude Code",
             "summary": "Generate, evolve, and iterate on SVG logos using natural language and Claude Code.",
+            "image": "https://neonwatty.com/images/posts/og/ai-logo-generator-claude-code.png",
             "date_modified": "2025-09-13T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -452,6 +467,7 @@
             "url": "https://neonwatty.com/posts/todoq-task-management",
             "title": "Claude Code Task Management CLI: Skip the JSON Overhead",
             "summary": "Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks.",
+            "image": "https://neonwatty.com/images/posts/og/todoq-task-management.png",
             "date_modified": "2025-09-03T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -464,10 +480,11 @@
         },
         {
             "id": "https://neonwatty.com/posts/tfq-test-failure-management",
-            "content_html": "\nOnce a project gets some beef to it using Claude Code for AI code testing and test automation can get dicey; its easy to hit the context window limit once Claude gets noodling on dozens or hundreds of tests.\n\nIts a natural limitation of context in and of itself, and doesn't need \"solving\" on the model level.  It just needs good engineered guardrail solutioning on the agentic IDE / coding level - like running tests in headless mode.\n\nRight now I deal with limitation using a simple CLI queueing tool I used called [tfq](https://www.npmjs.com/package/tfq).  \n\n`tfq` (short for Test Failure Queue) is a simple CLI tool that lets you run your whole test suite and queue up failing tests, that you can then sequentially address using Claude Code.  Each failed test is individually fed (along its failure / traceback, imports, etc.,) into a separate headless Claude Code session for fixing.  \n\nThis little tool makes managing the context on a per-test level a breeze, fixes tests much faster, and severely cuts down on test confusion / lying (\"all tests look great and your app is now super production ready!!\").\n\n---\n\nHere's basically how you use it after installing it.  Say you had a simple javascript projec for a calculator app, consisting of a few files.\n\n1. Use the `tfq` `run-tests` command to run your full test suite (or your desired subset of it).  \n\n```bash\n# run your project's tests and store failures in the queue\n$ tfq run-tests --auto-detect\nAuto-detected: JavaScript project using Jest\nRunning: npm test\n=============================================\n  PASS  src/utils/validator.test.js\n  PASS  src/services/user.test.js\n  FAIL  src/utils/calculator.test.js\n  FAIL  src/api/auth.test.js\n  FAIL  src/components/Button.test.js\n=============================================\nTest Suites: 3 failed, 2 passed, 5 total\nTests:       8 failed, 15 passed, 23 total\n\n✗ 3 tests failed\n- src/utils/calculator.test.js\n- src/api/auth.test.js\n- src/components/Button.test.js\n```\n\nUse the flags `--auto-detect` to detect your setup (e.g., js / ts, python, ruby and the corresponding test framework your using), and `--auto-add` to add failing tests to your `tfq` queue.\n\nYou can see your failing tests as\n\n```bash\n# see all failed tests currently in the queue\n$ tfq list\nQueue contains 3 file(s):\n1. src/utils/calculator.test.js (1 failure)\n2. src/api/auth.test.js (1 failure)\n3. src/components/Button.test.js (1 failure)\n```\n\nThere are a host of CLI commands to `clear`, `resolve`, and `group` tests as well (see [the repo here for details](https://github.com/neonwatty/tfq)).\n\n\n2.  **Let CLaude Code fix a test**\n\nWhen ou install `tfq` it automatically finds loops in Claude Code for fixing individual tests in headless mode.  You'll see a config file on instnatiation of `tfq` that looks like this, porting over all of Claude Code's current options.\n\n```json\n{\n  \"claude\": {\n    // Basic\n    \"enabled\": true,\n    \"claudePath\": \"/path/to/claude\",\n\n    // Test params\n    \"maxIterations\": 10,\n    \"testTimeout\": 300000,\n\n    // Prompts\n    \"prompt\": \"Run the test file at {testFilePath} and debug any errors you encounter one at a time. Then run the test again to verify that your changes have fixed any errors.\",\n\n    \n    // Security & Permissions\n    \"dangerouslySkipPermissions\": true,\n    \"allowedTools\": [\"Edit\", \"Read\", \"Write\"],\n    ....\n  }\n}\n```\n\nYou can configure your (system) prompt, tools, etc., just like you would at the command line.\n\nIn the default prompt `testFilePath` is resolved automatically; its an absolute path to the next failed test in your `tfq` queue.\n\nYou can then have Claude fix the next test in your `tfq` queue\n\n```bash\n# fix your next failed test in the queue using headless claude code\ntfq fix-next\n```\n\nThis command\n\n- dequeues the next failed test in your `tfq` queue, and provides its absolute `testFilePath` to Claude along with your prompt and other configs\n- runs Claude Code in [headless mode](https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless) to fix the test\n- re-tests the test afterwards - if it fails, then its added back to your `tfq` queue\n\nYou can run the same operation sequentially on each failed test in your queue with\n\n```bash\n# fix each failed test in the queue sequentially using headless claude code\ntfq fix-all\n```\n\n---\n\nNothing magical here - just much needed structure for test fixing by managing context in an ordered fashion.",
+            "content_html": "\nOnce a project gets some beef to it using Claude Code for AI code testing and test automation can get dicey; its easy to hit the context window limit once Claude gets noodling on dozens or hundreds of tests.\n\nIts a natural limitation of context in and of itself, and doesn't need \"solving\" on the model level.  It just needs good engineered guardrail solutioning on the agentic IDE / coding level - like running tests in headless mode.\n\nRight now I deal with limitation using a simple CLI queueing tool I used called [tfq](https://www.npmjs.com/package/tfq).  \n\n`tfq` (short for Test Failure Queue) is a simple CLI tool that lets you run your whole test suite and queue up failing tests, that you can then sequentially address using Claude Code.  Each failed test is individually fed (along its failure / traceback, imports, etc.,) into a separate headless Claude Code session for fixing.  \n\nThis little tool makes managing the context on a per-test level a breeze, fixes tests much faster, and severely cuts down on test confusion / lying (\"all tests look great and your app is now super production ready!!\").\n\n---\n\nHere's basically how you use it after installing it.  Say you had a simple javascript projec for a calculator app, consisting of a few files.\n\n1. Use the `tfq` `run-tests` command to run your full test suite (or your desired subset of it).  \n\n```bash\n# run your project's tests and store failures in the queue\n$ tfq run-tests --auto-detect\nAuto-detected: JavaScript project using Jest\nRunning: npm test\n=============================================\n  PASS  src/utils/validator.test.js\n  PASS  src/services/user.test.js\n  FAIL  src/utils/calculator.test.js\n  FAIL  src/api/auth.test.js\n  FAIL  src/components/Button.test.js\n=============================================\nTest Suites: 3 failed, 2 passed, 5 total\nTests:       8 failed, 15 passed, 23 total\n\n✗ 3 tests failed\n- src/utils/calculator.test.js\n- src/api/auth.test.js\n- src/components/Button.test.js\n```\n\nUse the flags `--auto-detect` to detect your setup (e.g., js / ts, python, ruby and the corresponding test framework your using), and `--auto-add` to add failing tests to your `tfq` queue.\n\nYou can see your failing tests as\n\n```bash\n# see all failed tests currently in the queue\n$ tfq list\nQueue contains 3 file(s):\n1. src/utils/calculator.test.js (1 failure)\n2. src/api/auth.test.js (1 failure)\n3. src/components/Button.test.js (1 failure)\n```\n\nThere are a host of CLI commands to `clear`, `resolve`, and `group` tests as well (see [the repo here for details](https://github.com/neonwatty/tfq)).\n\n\n2.  **Let CLaude Code fix a test**\n\nWhen ou install `tfq` it automatically finds loops in Claude Code for fixing individual tests in headless mode.  You'll see a config file on instnatiation of `tfq` that looks like this, porting over all of Claude Code's current options.\n\n```json\n{\n  \"claude\": {\n    // Basic\n    \"enabled\": true,\n    \"claudePath\": \"/path/to/claude\",\n\n    // Test params\n    \"maxIterations\": 10,\n    \"testTimeout\": 300000,\n\n    // Prompts\n    \"prompt\": \"Run the test file at {testFilePath} and debug any errors you encounter one at a time. Then run the test again to verify that your changes have fixed any errors.\",\n\n    \n    // Security & Permissions\n    \"dangerouslySkipPermissions\": true,\n    \"allowedTools\": [\"Edit\", \"Read\", \"Write\"],\n    ....\n  }\n}\n```\n\nYou can configure your (system) prompt, tools, etc., just like you would at the command line.\n\nIn the default prompt `testFilePath` is resolved automatically; its an absolute path to the next failed test in your `tfq` queue.\n\nYou can then have Claude fix the next test in your `tfq` queue\n\n```bash\n# fix your next failed test in the queue using headless claude code\ntfq fix-next\n```\n\nThis command\n\n- dequeues the next failed test in your `tfq` queue, and provides its absolute `testFilePath` to Claude along with your prompt and other configs\n- runs Claude Code in [headless mode](https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless) to fix the test\n- re-tests the test afterwards - if it fails, then its added back to your `tfq` queue\n\nYou can run the same operation sequentially on each failed test in your queue with\n\n```bash\n# fix each failed test in the queue sequentially using headless claude code\ntfq fix-all\n```\n\n---\n\nNothing magical here - just much needed structure for test fixing by managing context in an ordered fashion.\n",
             "url": "https://neonwatty.com/posts/tfq-test-failure-management",
             "title": "Claude Code Test Debugging Without Context Overload: TFQ CLI Tool",
             "summary": "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions.",
+            "image": "https://neonwatty.com/images/posts/og/tfq-test-failure-management.png",
             "date_modified": "2025-08-31T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -480,10 +497,11 @@
         },
         {
             "id": "https://neonwatty.com/posts/liars-dice-apple-watch-app",
-            "content_html": "\nI like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make an Apple Watch game app to help me cheat?\n\nAnd here we go: [a native SwiftUI Apple Watch app](https://github.com/neonwatty/liars-dice) - a dice probability calculator that transforms gut instincts into more calculated decisions. \n\nWhats it do?  Liars dice is a game of probability and bluffing.  Everyone starts with a cup of dice.  Every round you all shake em up, and secretly look at your random scramble of die.  \n\nThen the bidding begins: someone starts off with a call.  A `count` and a `face falue` they propose exists on the table, if everyone were to show their die.\n\nThe person to their right can call bullshit on that bid.  In which case everyone shows their die and the bid is determined true or false.  If the original bid is present (say the original bid was 'six fours') then the person who called bullshit loses a die.  Otherwise the original bidder loses a die.\n\nAlternatively the next person can up the ante with their own bid: which needs to increase in either die value, die count, or both.\n\nThe game ends when only one person has die left.\n\nThis little Apple Watch app lets you discretely compute probabilities of the bid actually realizing - conditioned on the total number of die on the table, and the die in your own hand.  Makes decision making (bid or bullshit) a whole lot easier.\n\n![Main screen showing dice input and probability calculation](/images/liars-dice-1.png)\n\n![Bid configuration with count and face value selection](/images/liars-dice-2.png)\n\n![Results showing probability percentage for informed decisions](/images/liars-dice-3.png)\n\nMaking apps to help you cheat your friends and family's getting easier with each passing day.",
+            "content_html": "\nI like to play Liars Dice with friends and family, and since its getting easier and easier to scratch even minute software itches I thought: why not make an Apple Watch game app to help me cheat?\n\nAnd here we go: [a native SwiftUI Apple Watch app](https://github.com/neonwatty/liars-dice) - a dice probability calculator that transforms gut instincts into more calculated decisions. \n\nWhats it do?  Liars dice is a game of probability and bluffing.  Everyone starts with a cup of dice.  Every round you all shake em up, and secretly look at your random scramble of die.  \n\nThen the bidding begins: someone starts off with a call.  A `count` and a `face falue` they propose exists on the table, if everyone were to show their die.\n\nThe person to their right can call bullshit on that bid.  In which case everyone shows their die and the bid is determined true or false.  If the original bid is present (say the original bid was 'six fours') then the person who called bullshit loses a die.  Otherwise the original bidder loses a die.\n\nAlternatively the next person can up the ante with their own bid: which needs to increase in either die value, die count, or both.\n\nThe game ends when only one person has die left.\n\nThis little Apple Watch app lets you discretely compute probabilities of the bid actually realizing - conditioned on the total number of die on the table, and the die in your own hand.  Makes decision making (bid or bullshit) a whole lot easier.\n\n![Main screen showing dice input and probability calculation](/images/liars-dice-1.png)\n\n![Bid configuration with count and face value selection](/images/liars-dice-2.png)\n\n![Results showing probability percentage for informed decisions](/images/liars-dice-3.png)\n\nMaking apps to help you cheat your friends and family's getting easier with each passing day.\n",
             "url": "https://neonwatty.com/posts/liars-dice-apple-watch-app",
             "title": "A watchOS App for Liars Dice: Probability Calculator for Apple Watch",
             "summary": "A watchOS app to help you cheat at Liars Dice using math",
+            "image": "https://neonwatty.com/images/posts/og/liars-dice-apple-watch-app.png",
             "date_modified": "2025-08-31T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"

@@ -6,6 +6,7 @@ import BlogCard from '@/components/BlogCard'
 import StructuredData from '@/components/StructuredData'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { getPostsByTag, getAllTags } from '@/lib/posts'
+import { tagDescriptions } from '@/lib/tag-descriptions'
 
 interface TagPageProps {
   params: Promise<{
@@ -28,7 +29,10 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const tagName = posts[0]?.tags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) || decodedTag
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
-  const description = `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`
+  const customDescription = tagDescriptions[decodedTag.toLowerCase()]
+  const description =
+    customDescription ||
+    `Explore all blog posts tagged with "${tagName}". Discover ${posts.length} article${posts.length !== 1 ? 's' : ''} covering this topic.`
 
   return {
     title: `${tagName} Posts`,
@@ -74,6 +78,7 @@ export default async function TagPage({ params }: TagPageProps) {
 
   // Find the properly capitalized tag name from the posts
   const tagName = posts[0]?.tags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) || decodedTag
+  const customDescription = tagDescriptions[decodedTag.toLowerCase()]
 
   return (
     <>
@@ -97,7 +102,8 @@ export default async function TagPage({ params }: TagPageProps) {
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">{tagName}</h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                  {posts.length} article{posts.length !== 1 ? 's' : ''} tagged with "{tagName}"
+                  {customDescription ||
+                    `${posts.length} article${posts.length !== 1 ? 's' : ''} tagged with "${tagName}"`}
                 </p>
               </div>
             </div>

@@ -1,12 +1,25 @@
 ---
-title: "AI Logo Generator: Generative SVG Logo Design with Claude Code"
-date: "2025-09-13"
-excerpt: "Generate, evolve, and iterate on SVG logos using natural language and Claude Code."
-tags: ["Claude Code", "Logo Design", "Chrome Extension"]
+title: 'AI Logo Generator: Generative SVG Logo Design with Claude Code'
+date: '2025-09-13'
+excerpt: >-
+  Generate, evolve, and iterate on SVG logos using natural language and Claude
+  Code.
+tags:
+  - Claude Code
+  - Logo Design
+  - Chrome Extension
 featured: true
-author: "Jeremy Watt"
-seoTitle: "AI SVG Logo Generator: Create Logos with Claude Code"
-metaDescription: "Generate professional SVG logos using Claude Code and AI. Iterative design workflow: generate, curate, and evolve logos with natural language prompts. Free method."
+author: Jeremy Watt
+seoTitle: 'AI SVG Logo Generator: Create Logos with Claude Code'
+metaDescription: >-
+  Generate professional SVG logos using Claude Code and AI. Iterative design
+  workflow: generate, curate, and evolve logos with natural language prompts.
+  Free method.
+image: /images/posts/og/ai-logo-generator-claude-code.png
+relatedPosts:
+  - x-search-pro-launch
+  - ytgify-launch
+  - liars-dice-apple-watch-app
 ---
 
 This morning I spent some time using Claude Code as an AI logo generator - creating SVG logos for a new Chrome extension I'm building called [ytgify](https://github.com/neonwatty/ytgify).  It's a simple YouTube to GIF converter that lets you create GIFs directly from YouTube videos with a simple in-player interface.  A quick demo video.

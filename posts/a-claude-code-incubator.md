@@ -1,13 +1,26 @@
 ---
-title: "A Claude Code Incubator"
-date: "2026-02-14"
-excerpt: "Anthropic just raised $30B. A small fraction could fund the Claude Code showcase the ecosystem actually needs."
-tags: ["Claude Code", "AI", "Startups", "Anthropic", "Incubator"]
+title: A Claude Code Incubator
+date: '2026-02-14'
+excerpt: >-
+  Anthropic just raised $30B. A small fraction could fund the Claude Code
+  showcase the ecosystem actually needs.
+tags:
+  - Claude Code
+  - AI
+  - Startups
+  - Anthropic
+  - Incubator
 featured: true
-image: "/images/posts/claude-code-incubator.png"
-author: "Jeremy Watt"
-seoTitle: "A Claude Code Incubator: Why Anthropic Should Supercharge Early Builders"
-metaDescription: "Anthropic raised $30B. Here's why a lightweight Claude Code incubator for solo devs and small teams would do more for adoption than any benchmark."
+image: /images/posts/claude-code-incubator.png
+author: Jeremy Watt
+seoTitle: 'A Claude Code Incubator: Why Anthropic Should Supercharge Early Builders'
+metaDescription: >-
+  Anthropic raised $30B. Here's why a lightweight Claude Code incubator for solo
+  devs and small teams would do more for adoption than any benchmark.
+relatedPosts:
+  - tdd-is-dead
+  - vibe-coding-interview-hire-ai-developers
+  - why-nobody-on-your-engineering-team-wants-to-use-claude-code
 ---
 
 # A Claude Code Incubator

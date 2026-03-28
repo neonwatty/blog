@@ -1,13 +1,26 @@
 ---
-title: "Why Nobody On Your Engineering Team Wants to Use Claude Code"
-date: "2026-02-05"
-excerpt: "The real barriers to AI coding tool adoption aren't technical — they're management problems, employee problems, and human nature problems."
-tags: ["Claude Code", "AI", "Engineering Management", "Productivity", "Developer Tools"]
+title: Why Nobody On Your Engineering Team Wants to Use Claude Code
+date: '2026-02-05'
+excerpt: >-
+  The real barriers to AI coding tool adoption aren't technical — they're
+  management problems, employee problems, and human nature problems.
+tags:
+  - Claude Code
+  - AI
+  - Engineering Management
+  - Productivity
+  - Developer Tools
 featured: true
-image: "/images/posts/why-nobody-claude-code.png"
-author: "Jeremy Watt"
-seoTitle: "Why Nobody On Your Engineering Team Wants to Use Claude Code"
-metaDescription: "The common complaints about AI coding tools aren't the real barriers. The actual problems are more fundamental — and harder to solve."
+image: /images/posts/why-nobody-claude-code.png
+author: Jeremy Watt
+seoTitle: Why Nobody On Your Engineering Team Wants to Use Claude Code
+metaDescription: >-
+  The common complaints about AI coding tools aren't the real barriers. The
+  actual problems are more fundamental — and harder to solve.
+relatedPosts:
+  - tdd-is-dead
+  - vibe-coding-interview-hire-ai-developers
+  - a-claude-code-incubator
 ---
 
 # Why Nobody On Your Engineering Team Wants to Use Claude Code

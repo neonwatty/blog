@@ -1,12 +1,25 @@
 ---
-title: "X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches"
-date: "2025-10-05"
-excerpt: "Build your personal X/Twitter search library. Save, categorize, and organize searches you use repeatedly."
-tags: ["Scratch your own itch", "Chrome Extension", "Twitter"]
+title: 'X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches'
+date: '2025-10-05'
+excerpt: >-
+  Build your personal X/Twitter search library. Save, categorize, and organize
+  searches you use repeatedly.
+tags:
+  - Scratch your own itch
+  - Chrome Extension
+  - Twitter
 featured: true
-author: "Jeremy Watt"
-seoTitle: "X Search Pro: Save Twitter Advanced Searches - Chrome Extension"
-metaDescription: "Save and organize Twitter/X advanced searches with X Search Pro Chrome extension. Build a personal search library with auto-updating saved searches. Free."
+author: Jeremy Watt
+seoTitle: 'X Search Pro: Save Twitter Advanced Searches - Chrome Extension'
+metaDescription: >-
+  Save and organize Twitter/X advanced searches with X Search Pro Chrome
+  extension. Build a personal search library with auto-updating saved searches.
+  Free.
+image: /images/posts/og/x-search-pro-launch.png
+relatedPosts:
+  - ytgify-launch
+  - ai-logo-generator-claude-code
+  - liars-dice-apple-watch-app
 ---
 
 [X Search Pro](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) - a Twitter search Chrome extension - is now live in the Chrome Web Store!

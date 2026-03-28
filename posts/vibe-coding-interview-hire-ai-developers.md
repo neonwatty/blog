@@ -1,13 +1,29 @@
 ---
-title: "The Vibe Coding Interview: How to Hire AI-Assisted Developers"
-date: "2026-03-04"
-excerpt: "The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools."
-tags: ["Vibe Coding", "AI", "Hiring", "Interview", "Claude Code", "Cursor"]
-author: "Jeremy Watt"
+title: 'The Vibe Coding Interview: How to Hire AI-Assisted Developers'
+date: '2026-03-04'
+excerpt: >-
+  The old question was 'can you code?' The new question is 'can you build and
+  ship?' A framework for evaluating engineers who use Claude Code, Cursor, and
+  other AI-assisted coding tools.
+tags:
+  - Vibe Coding
+  - AI
+  - Hiring
+  - Interview
+  - Claude Code
+  - Cursor
+author: Jeremy Watt
 featured: false
-image: ""
-seoTitle: "Vibe Coding Interview Questions: Framework for Hiring AI-Assisted Developers"
-metaDescription: "How to interview agentic engineers. Portfolio screening, take-home assignments, live coding sessions, and session history review for AI-assisted developers using Claude Code, Cursor, and Copilot."
+image: /images/posts/og/vibe-coding-interview-hire-ai-developers.png
+seoTitle: 'Vibe Coding Interview Questions: Framework for Hiring AI-Assisted Developers'
+metaDescription: >-
+  How to interview agentic engineers. Portfolio screening, take-home
+  assignments, live coding sessions, and session history review for AI-assisted
+  developers using Claude Code, Cursor, and Copilot.
+relatedPosts:
+  - tdd-is-dead
+  - why-nobody-on-your-engineering-team-wants-to-use-claude-code
+  - a-claude-code-incubator
 ---
 
 The hiring playbook for developers is changing rapidly. 

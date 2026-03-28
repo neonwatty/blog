@@ -11,6 +11,7 @@ export const PostFrontmatterSchema = z.object({
   author: z.string().default('Jeremy Watt'),
   seoTitle: z.string().optional(),
   metaDescription: z.string().optional(),
+  lastUpdated: z.string().optional(),
   canonicalUrl: z.string().url().optional().or(z.literal('')),
   relatedPosts: z.array(z.string()).default([]),
   slideshow: z.boolean().default(false),
