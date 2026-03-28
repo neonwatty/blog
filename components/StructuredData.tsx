@@ -55,7 +55,8 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
-        image: post.image ? `${siteUrl}${post.image}` : `${siteUrl}/images/og-image.jpg`,
+        image:
+          post.ogImage || post.image ? `${siteUrl}${post.ogImage || post.image}` : `${siteUrl}/images/og-image.jpg`,
         datePublished: post.date,
         dateModified: post.lastUpdated || post.date,
         author: {

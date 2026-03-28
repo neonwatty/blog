@@ -41,13 +41,15 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       modifiedTime: post.lastUpdated || post.date,
       authors: [post.author || 'Jeremy Watt'],
       tags: post.tags,
-      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/og-image.jpg`],
+      images:
+        post.ogImage || post.image ? [`${siteUrl}${post.ogImage || post.image}`] : [`${siteUrl}/images/og-image.jpg`],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [`${siteUrl}${post.image}`] : [`${siteUrl}/images/og-image.jpg`],
+      images:
+        post.ogImage || post.image ? [`${siteUrl}${post.ogImage || post.image}`] : [`${siteUrl}/images/og-image.jpg`],
       creator: '@neonwatty',
     },
     alternates: {
