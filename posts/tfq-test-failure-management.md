@@ -15,10 +15,10 @@ seoTitle: 'TFQ: AI Code Testing CLI to Avoid Claude Code Context Window Limits'
 metaDescription: >-
   Stop running out of context when debugging large test suites with Claude Code;
   use a queue and fix failing tests individually in separate headless sessions.
-image: /images/posts/og/tfq-test-failure-management.png
 relatedPosts:
   - todoq-task-management
   - social-starter-pack-cli-tools
+ogImage: /images/posts/og/tfq-test-failure-management.png
 ---
 
 Once a project gets some beef to it using Claude Code for AI code testing and test automation can get dicey; its easy to hit the context window limit once Claude gets noodling on dozens or hundreds of tests.

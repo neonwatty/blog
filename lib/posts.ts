@@ -140,6 +140,7 @@ export interface PostData {
   featured?: boolean
   draft?: boolean
   image?: string
+  ogImage?: string
   author?: string
   seoTitle?: string
   metaDescription?: string
@@ -181,6 +182,7 @@ export function getSortedPostsData(): PostData[] {
         featured: validated.featured,
         draft: validated.draft,
         image: validated.image,
+        ogImage: validated.ogImage,
         author: validated.author,
         seoTitle: validated.seoTitle || validated.title,
         metaDescription: validated.metaDescription || validated.excerpt,
@@ -269,6 +271,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     featured: matterResult.data.featured || false,
     draft,
     image: matterResult.data.image,
+    ogImage: matterResult.data.ogImage,
     author: matterResult.data.author || 'Jeremy Watt',
     seoTitle: matterResult.data.seoTitle || matterResult.data.title,
     metaDescription: matterResult.data.metaDescription || matterResult.data.excerpt,

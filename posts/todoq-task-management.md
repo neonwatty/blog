@@ -16,10 +16,10 @@ metaDescription: >-
   JSON task management wastes context and causes errors in Claude Code. Learn
   how todoq's CLI approach loads only specific tasks, preventing corruption and
   maximizing context efficiency.
-image: /images/posts/og/todoq-task-management.png
 relatedPosts:
   - tfq-test-failure-management
   - social-starter-pack-cli-tools
+ogImage: /images/posts/og/todoq-task-management.png
 ---
 
 Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach.

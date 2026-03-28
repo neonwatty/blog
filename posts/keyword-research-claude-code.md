@@ -18,10 +18,10 @@ metaDescription: >-
   How to use Claude Code for SEO keyword research. Automate Google autocomplete
   analysis at scale, discover long-tail keywords, and find what people actually
   search for.
-image: /images/posts/og/keyword-research-claude-code.png
 relatedPosts:
   - best-claude-code-seo-tools
   - github-repo-tags-claude-code
+ogImage: /images/posts/og/keyword-research-claude-code.png
 ---
 
 Getting your keywords right is the whole enchilada when it comes to helping users find your stuff - your blog, product, whatever.  There are a ton of dedicated tools for this - like Ahrefs and SEMrush - but each has a learning curve, and using them to get your keywords right still requires a lot of manual work.

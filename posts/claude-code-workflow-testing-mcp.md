@@ -19,10 +19,10 @@ metaDescription: >-
   Use Claude Code for automated browser testing and iOS simulator automation.
   Generate user workflows from your codebase, execute them with MCP, catch bugs
   early.
-image: /images/posts/og/claude-code-workflow-testing-mcp.png
 relatedPosts:
   - how-to-set-up-your-repo-for-claude-code-and-codex
   - the-ralph-loop-is-a-fixed-point-process
+ogImage: /images/posts/og/claude-code-workflow-testing-mcp.png
 ---
 
 MCP connections to browsers (via [Claude-in-Chrome](https://github.com/anthropics/claude-in-chrome), currently in beta) and iOS Simulators have gotten exponentially better in the last few months.  So much so that Claude Code can now power through user workflow tests for both browser / mobile - and really close the loop in terms of being able to verify the fundamentals of your app, edge cases you didn't find / think of, etc.,.  I've been manually driving Claude Code through user workflows bespoke-ly using these MCP connections for a while, so much so that made sense to save them as skills and make them re-usable across projects.

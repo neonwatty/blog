@@ -12,7 +12,6 @@ tags:
   - Engineering
 author: Jeremy Watt
 featured: false
-image: /images/posts/og/tdd-is-dead.png
 seoTitle: 'TDD Is Dead: Why Test-Driven Development Is Obsolete in the AI Era'
 metaDescription: >-
   TDD was always a compromise — rigor at the cost of speed. AI tools like Claude
@@ -22,6 +21,7 @@ relatedPosts:
   - vibe-coding-interview-hire-ai-developers
   - why-nobody-on-your-engineering-team-wants-to-use-claude-code
   - a-claude-code-incubator
+ogImage: /images/posts/og/tdd-is-dead.png
 ---
 
 > Testing is no longer something you front-load. It's something you run after a feature has proven it deserves to exist.

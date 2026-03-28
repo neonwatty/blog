@@ -252,8 +252,8 @@ async function main() {
     }
 
     // Skip posts that already have a non-OG-generated image
-    const existingImage = data.image || ''
-    if (existingImage && !existingImage.startsWith('/images/posts/og/')) {
+    const existingOg = data.ogImage || ''
+    if (existingOg && !existingOg.startsWith('/images/posts/og/')) {
       skipped++
       continue
     }

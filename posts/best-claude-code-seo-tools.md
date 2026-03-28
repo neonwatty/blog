@@ -15,10 +15,10 @@ seoTitle: Pull Google Search Console Data with Claude Code
 metaDescription: >-
   Query Google Search Console directly from Claude Code using the social-tools
   MCP server. Real examples, actual commands, no fluff.
-image: /images/posts/og/best-claude-code-seo-tools.png
 relatedPosts:
   - keyword-research-claude-code
   - github-repo-tags-claude-code
+ogImage: /images/posts/og/best-claude-code-seo-tools.png
 ---
 
 Exporting CSVs from Google Search Console is tedious. You click around the UI, filter, export, open in a spreadsheet, repeat. It's slow and annoying.

@@ -20,11 +20,11 @@ metaDescription: >-
   Pre-revenue, pre-product AI startups are still raising millions. One solo
   developer's standing offer: I'll build your whole MVP in 2-3 months for a
   third of your raise.
-image: /images/posts/og/build-your-app-for-only-a-third-of-your-raise.png
 relatedPosts:
   - tdd-is-dead
   - vibe-coding-interview-hire-ai-developers
   - why-nobody-on-your-engineering-team-wants-to-use-claude-code
+ogImage: /images/posts/og/build-your-app-for-only-a-third-of-your-raise.png
 ---
 
 It's 2026 and big checks are still being cut to pre-product "AI product companies." I get cold emails weekly about roles at these places — sitting on ~$5M raises with nothing built.

@@ -16,10 +16,10 @@ metaDescription: >-
   Generate video storyboards automatically using Playwright screenshots and
   Claude Code. Perfect for planning product demos, tutorials, and marketing
   videos.
-image: /images/posts/og/storyboard-demo-videos.png
 relatedPosts:
   - claude-code-quake
   - godaddy-is-cancer
+ogImage: /images/posts/og/storyboard-demo-videos.png
 ---
 
 Before creating demo videos for [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a Chrome extension that lets you clip GIFs right from YouTube - I wanted to map out the user flow with real screenshots.
