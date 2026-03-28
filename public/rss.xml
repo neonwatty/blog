@@ -3,8 +3,8 @@
     <channel>
         <title>Jeremy Watt's Blog</title>
         <link>https://neonwatty.com</link>
-        <description>A modern, performant blog built with Next.js</description>
-        <lastBuildDate>Tue, 24 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <description>Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.</description>
+        <lastBuildDate>Wed, 18 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -14,6 +14,563 @@
             <link>https://neonwatty.com</link>
         </image>
         <copyright>All rights reserved 2026</copyright>
+        <item>
+            <title><![CDATA[I'll Build Your Whole "AI Product" for Only a Third of Your Total Raise]]></title>
+            <link>https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise</guid>
+            <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[It's 2026 and big checks are still being cut to pre-product AI companies. Here's my standard reply to the recruiters.]]></description>
+            <content:encoded><![CDATA[
+It's 2026 and big checks are still being cut to pre-product "AI product companies." I get cold emails weekly about roles at these places — sitting on ~$5M raises with nothing built.
+
+![A typical cold email: pre-revenue, pre-product, just raised $4.5M](/images/posts/build-your-app-for-only-a-third-of-your-raise/cold-email.png)
+
+Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3 months for only a third of your raise."**
+
+![My standard reply](/images/posts/build-your-app-for-only-a-third-of-your-raise/my-reply.png)
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>AI</category>
+            <category>Claude Code</category>
+            <category>Vibe Coding</category>
+            <category>Solo Founder</category>
+            <category>AI Startup Funding</category>
+            <category>Build MVP with AI</category>
+            <category>Solopreneur</category>
+        </item>
+        <item>
+            <title><![CDATA[The Ralph Loop is Now Basically a Fixed-Point Process]]></title>
+            <link>https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process</guid>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges.]]></description>
+            <content:encoded><![CDATA[
+When the Ralph Loop went viral back in January, it was framed primarily as a way to brute-force Claude Code through tough, complex feature implementations — just keep feeding the agent the same prompt until it bangs out the feature. With this framing the criticism from some was fair: it looked like a way of avoiding careful thinking, substituting token spend for judgment, and hoping the model would eventually stumble into correctness. And with the models available at the time, that criticism had teeth — they genuinely were too unreliable for this kind of unsupervised iteration to work consistently.
+
+But models have gotten meaningfully stronger since January. Today, for moderate feature complexity, the Ralph Loop does generally work. But it's actually much easier to see it working — and to trust it — when you apply the same iterative pattern to simpler, more on-rails tasks like plan refinement, prototype validation, and implementation verification. These are far less token-heavy and converge far more reliably.
+
+For well-defined tasks like these — the kind with a clear reference and a clear completion condition — current agents are powerful enough to function as genuine fixed-point operators, even with their native stochasticity. And the Ralph Loop — roughly speaking — has become a fixed-point process.
+
+-----
+
+The clearest and fastest place to see this is not in feature implementation, but in **plan refinement**.
+
+Anyone who has used Claude Code's plan mode knows the experience: you describe a feature, Claude elaborates it, and somewhere in that conversation an edge case surfaces that you hadn't considered. The plan gets richer. Then the session ends.
+
+But think of that as just the N=1 iteration. If you haven't tried running the same kind of pass two, three, even five or ten times manually — you should. In my experience, each successive pass continues to squeeze out value: missed edge cases, implicit assumptions, gaps you couldn't see until the previous round's fixes revealed them. The benefits taper off eventually, but not as quickly as you'd expect.
+
+And with a little guidance — a consistent prompt directing the agent to look for gaps, coverage misses, and edge cases — an agent like Claude can perform this iteration on its own.
+
+The Ralph Loop automates exactly this. Each iteration, the agent reads the current plan and a prompt asking it to find gaps, logical inconsistencies, and unconsidered edge cases. It makes improvements, records what changed, and exits. The next iteration finds what the previous one missed — not because the agent failed, but because at iteration *n*, the *n−1* preceding refinements have been made, and new gaps are now visible that weren't before. The stochasticity of the model, combined with the accumulating context of prior work, reliably surfaces things a single pass would not.
+
+The loop terminates when a full pass finds nothing to improve. That is the fixed point — a plan that is internally complete, consistent, and closed against the original intent. And it is cheap: no code, no running system, just a document converging toward completeness before a single line is written.
+
+![Convergence toward the fixed point — each iteration finds fewer gaps until closure is reached](/images/posts/ralph-loop-fixed-point/convergence-curve.svg)
+
+-----
+
+This is one stage of a broader pipeline. A closed plan becomes the invariant for the next stage — building a prototype — where the loop checks that every design element and feature of the plan is faithfully present in the prototype. A closed prototype becomes the invariant for implementation. At each stage, the same fixed-point structure applies: a stable reference, a repeated checking rule, and a semantic completion condition.
+
+For these kinds of well-defined, on-rails tasks, agents like Claude and Codex are now functioning as fixed-point operators — stochastic as they remain for open-ended work, they are reliable enough for structured closure tasks to converge. Define your invariants, apply the operator recursively, and after enough iterations you reach a mathematical closure — a state where a full pass produces nothing new.
+
+![The closure pipeline — each stage's output becomes the next stage's fixed reference](/images/posts/ralph-loop-fixed-point/pipeline-diagram.svg)
+
+-----
+
+This pattern — a fixed reference, a repeated checking process, convergence toward completeness — has a very clean analog in mathematics. Understanding it clarifies not just why the Ralph Loop works in these scenarios, but when it will and won't converge, and how to structure the inputs so that it does.
+
+-----
+
+A **fixed point** is a state that a process leaves unchanged — apply the rule, and you get back what you started with. **Closure** is the state you converge toward by repeatedly applying a rule until nothing new is produced. 
+
+A classic example: given the rule *"if A knows B and B knows C, then A knows C"* — start with Alice → Bob, Bob → Carol. Apply the rule: Alice now knows Carol. Apply it again: nothing new. The system has reached closure — the smallest complete state reachable by repeated application of the rule. Every chain has been followed. Nothing remains unresolved.
+
+This structure appears wherever you have a reference and want to ensure something else fully corresponds to it. A plan and a prototype. A prototype and an implementation. A specification and a test suite. In each case, the reference is the invariant, the checking rule is applied repeatedly, and the process terminates when a full pass produces nothing new — when closure is reached.
+
+-----
+
+In each of the practical Ralph Loop closure scenarios above, the invariants are different:
+
+1. **Plan refinement**: The invariant is the prompt itself — a directive to find gaps, inconsistencies, and unconsidered edge cases. It operates on an initial plan, building it out iteration by iteration until a full pass finds nothing to improve.
+2. **Plan → prototype**: The invariants are both the prompt and the completed plan. They don't change. The prototype is the thing converging — assembled step by step until it faithfully represents every element of the plan.
+3. **Prototype → implementation**: The invariants are the prompt and the completed prototype. The implementation converges toward it in the same way.
+
+At each stage the agent acts as a semantic closure operator — stochastic, yes, but powerful enough to repeatedly compare work against a fixed reference and close the gaps it finds.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Claude Code</category>
+            <category>AI</category>
+            <category>Ralph Loop</category>
+            <category>Fixed Point</category>
+            <category>Plan Closure</category>
+        </item>
+        <item>
+            <title><![CDATA[How to Set Up Your Repo for Claude Code and Codex]]></title>
+            <link>https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex</guid>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nine layers of guardrails that make AI coding agents safe, predictable, and actually useful — from CLAUDE.md to CI pipelines to specialized review agents.]]></description>
+            <content:encoded><![CDATA[
+The simplest setups that keep the right things on rails are usually the best. Boris Cherny, the creator of Claude Code, [posted his own setup to X](https://x.com/bcherny/status/2007179832300581177) and it went viral — largely because people were surprised how vanilla it was. He doesn't over-customize. Peter Steinberger, the creator of OpenClaw, wrote a now-classic post called [Just Talk To It](https://steipete.me/posts/just-talk-to-it) that makes a similar point — the tool works well out of the box; what matters is how you set up the repo infrastructure around it.
+
+If you've been writing software for a while, agentic engineering is going to force you to zoom out. Linting, type checking, CI, commit discipline — maybe you always meant to set these up properly but never got around to it because you were deep in the code. Working with agents changes the level of abstraction. You're no longer just writing code; you're managing the behavior of something that writes code for you. The surprising part is how easy most of this is to set up, and how much it matters — for both the agent and for you.
+
+Setting up a repo for AI agents means two things:
+
+1. **Giving the agent the context and tooling it needs to succeed** — so it doesn't waste tokens searching for things you could just tell it
+2. **Backing up every stochastic move with something deterministic** — linting, CI, hooks, commit gates that catch problems regardless of what the agent does
+
+These aren't new ideas. Developers have always needed them. AI agents just make the case undeniable, because agents move fast and don't second-guess themselves. Once it's in place, it works for humans and agents alike.
+
+## Table of Contents
+
+- [Before You Start](#before-you-start)
+- [Layer 1: CLAUDE.md / AGENTS.md — Give the Agent Context Upfront](#layer-1-claudemd--agentsmd--give-the-agent-context-upfront)
+- [Layer 2: CLI Tools — Your Agent Already Has Access](#layer-2-cli-tools--your-agent-already-has-access)
+- [Layer 3: Linting + Formatting with AI-Specific Rules](#layer-3-linting--formatting-with-ai-specific-rules)
+- [Layer 4: CI Pipeline as a Gate](#layer-4-ci-pipeline-as-a-gate)
+- [Layer 5: Commit and PR Discipline](#layer-5-commit-and-pr-discipline)
+- [Layer 6: Agent Hooks — Deterministic Checks on Every Action](#layer-6-agent-hooks--deterministic-checks-on-every-action)
+- [Layer 7: Plugins for Review and Automation](#layer-7-plugins-for-review-and-automation)
+- [Layer 8: Skills as Process Guardrails](#layer-8-skills-as-process-guardrails)
+- [Layer 9: MCP Servers](#layer-9-mcp-servers)
+- [Start Building](#start-building)
+- [Keep Experimenting](#keep-experimenting)
+
+## Before You Start
+
+**Naming:** Claude Code reads a `CLAUDE.md` file for project context. Codex, Copilot, and Cursor read `AGENTS.md`. The principles are identical — the filenames differ. This post covers both.
+
+**Where agent config lives:** Claude Code uses a `.claude/` directory at your project root for hooks, agent definitions, skills, and settings. Codex uses `.agents/` (or `.codex/`) for similar purposes. Commit these directories to your repo — they're project configuration, not personal preferences.
+
+**The easiest way to use this post:** give the URL to your agent of choice — Claude Code, Codex, whatever — and talk it over together. Let the agent help you implement each layer in your own repo as you go.
+
+**Already have a repo?** If you're retrofitting an existing project, install the `claude-code-setup` plugin in Claude Code and run `/claude-automation-recommender`. It analyzes your codebase and suggests which hooks, skills, MCP servers, and plugins to add — specific to your project. It's the fastest way to get a tailored starting point.
+
+-----
+
+## Layer 1: CLAUDE.md / AGENTS.md — Give the Agent Context Upfront
+
+Your agent shouldn't have to search through your codebase to figure out what stack you're using, what your conventions are, or how to run your tests. There's a faster, cheaper way. Every file the agent reads to orient itself costs tokens and fills the context window — and since context window *is* agent performance, you want to be efficient from the start.
+
+Start by running `/init` in your project root. Both Claude Code and Codex support this command — Claude Code generates a `CLAUDE.md` file, Codex generates an `AGENTS.md` file. Either way, `/init` scans your codebase and scaffolds a starter context file with your project's structure, dependencies, and conventions already filled in.
+
+The generated file is a starting point, not the finished product. Review it and trim aggressively — the model doesn't need boilerplate, it needs the things it would get wrong without being told. Make sure it includes:
+
+- **One-line project description** — what this project is and does
+- **Tech stack with versions** — so the agent never guesses or uses outdated APIs
+- **Architecture rules** — e.g., "server components by default," "never mix Supabase client types"
+- **Naming conventions** — file naming, variable naming, import patterns
+- **Exact commands** — how to build, test, lint, and deploy
+
+Keep it under 200 lines. Commit this file to the repo so the whole team benefits.
+
+**One thing to verify before your agent starts working:** make sure `.env`, credentials, API keys, and any other secrets are in your `.gitignore`. An agent that accidentally commits secrets is a real risk — and one that's trivial to prevent.
+
+**Talk to your agent:** After running `/init`, ask your agent to review the generated file — what's redundant, what's missing, what conventions it can't infer from the code alone. Let it help you refine.
+
+-----
+
+## Layer 2: CLI Tools — Your Agent Already Has Access
+
+This layer is free — there's nothing to set up. The CLI tools you already use — `bash`, `gh`, `npm`, `git`, `curl`, `docker` — are fully available to Claude Code and Codex. The agent can run your test suite, check CI status with `gh`, create PRs, inspect your git history, install dependencies, and run arbitrary shell commands with the same tools you use every day. You don't need a special integration for most of what you already do in the terminal.
+
+This is worth understanding early because many developers don't realize the agent has access to these tools. You can ask it to `gh pr list`, `npm outdated`, `git log --oneline -20`, or anything else you'd type yourself. The terminal is the agent's native environment.
+
+While CLI access is available out of the box, you can control what the agent is allowed to do through each platform's settings file. In Claude Code, `.claude/settings.json` lets you define `allow`, `deny`, and `ask` rules for specific tools and commands — commit it to your repo so the whole team shares the same permissions. In Codex, `.codex/config.toml` controls sandbox mode and approval policy, and Starlark `.rules` files give you fine-grained command filtering. You don't need to configure these on day one, but they're there when you want tighter control.
+
+**Talk to your agent:** Ask your agent what CLI tools it can already use — the answer will probably surprise you.
+
+-----
+
+## Layer 3: Linting + Formatting with AI-Specific Rules
+
+Left to their own devices, agents build very long files — harder for humans to review, and expensive for the agent to re-read later, since every line loaded into context is a line not spent on reasoning. You want to keep files focused.
+
+Set up ESLint + Prettier (or your stack's equivalent). The standard rules help, but the key AI-specific additions are:
+
+- **`max-lines: 300`** per file — as an ESLint error, not a warning
+- **`max-lines-per-function: 150`** — forces the agent to decompose instead of generating monoliths
+- **`eslint-plugin-security`** — catches common security anti-patterns automatically
+
+These rules force the agent to write modular, reviewable code. The agent hits the limit, breaks the file into smaller pieces, and your codebase stays manageable.
+
+**Talk to your agent:** Ask your agent what linting rules make sense for your stack and what file size limits feel right for your project.
+
+-----
+
+## Layer 4: CI Pipeline as a Gate
+
+With an agent, you're moving at a velocity that makes CI more important than ever. Nail it down early. As a single developer or small team, you may never have had the bandwidth to build out a full pipeline. With an agent, you can. Ask it to draft one and you'll have it in minutes.
+
+Set up a CI pipeline that runs on every PR. A solid starting point is four jobs:
+
+1. **Lint + typecheck** — catches style violations and type errors instantly. Include `npm audit` (or equivalent) here for dependency vulnerability scanning.
+2. **Unit tests** — verifies the logic works
+3. **E2E tests** — verifies the app actually runs
+4. **Dead code detection** — tools like [Knip](https://knip.dev/) catch unused exports, files, and dependencies that accumulate fast when an agent is generating code
+
+Nothing merges unless CI is green.
+
+**Talk to your agent:** Ask your agent to draft a CI workflow for your stack. Have it explain each job and what it catches.
+
+-----
+
+## Layer 5: Commit and PR Discipline
+
+Without guardrails, agents write commit messages like "update code" or "fix things." This makes your git history useless and makes it harder to review what actually changed.
+
+The fix is to enforce structured commit messages. The most common approach is [conventional commits](https://www.conventionalcommits.org/) — every commit gets a type prefix like `feat:`, `fix:`, `refactor:`, `docs:`, or `test:`. You can enforce this with git hooks (e.g., Husky + commitlint in the JS ecosystem), or simply by instructing your agent in CLAUDE.md / AGENTS.md to always use conventional commit format. Either way, your git history becomes structured data instead of freeform text — useful for changelogs, release notes, and understanding what changed when.
+
+The same discipline applies to PRs. Claude Code has a first-party [`commit-commands`](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/commit-commands) plugin available in the marketplace. It gives you:
+
+- **`/commit`** — analyzes your changes, matches your repo's commit style, and creates the commit
+- **`/commit-push-pr`** — the full cycle: creates a branch, commits, pushes, opens a PR with a summary and test plan, and gives you the PR URL
+
+It requires the [GitHub CLI (`gh`)](https://cli.github.com/) to be installed and authenticated — which is worth doing regardless, since your agent can use `gh` for all kinds of GitHub operations (see Layer 2).
+
+**Talk to your agent:** Ask your agent to set up commit message conventions for your project. In Claude Code, try `/commit-push-pr` on your next feature — it handles the whole loop.
+
+-----
+
+## Layer 6: Agent Hooks — Deterministic Checks on Every Action
+
+Some files should never be touched by an agent — `.env`, lock files, auto-generated files. And formatting should happen automatically, not when you remember to ask.
+
+Agent hooks are different from git hooks. Git hooks run at commit time. Agent hooks run on *every single tool use* — every file edit, every bash command — in real time. They're the most direct way to back up stochastic agent behavior with deterministic checks.
+
+Claude Code has a mature [hook system](https://code.claude.com/docs/en/hooks) with PreToolUse hooks (block actions before they happen) and PostToolUse hooks (run cleanup after). Codex doesn't have a full equivalent yet, but you can achieve similar protection through AGENTS.md instructions and sandbox configuration.
+
+Two hooks cover most needs in Claude Code:
+
+- **PreToolUse** — blocks edits to sensitive files like `.env*` and `package-lock.json`. Exit code 2 means hard-block.
+- **PostToolUse** — auto-formats every file the agent edits (`eslint --fix`, `prettier --write`).
+
+**Talk to your agent:** Ask your agent what files in your repo should be protected, and have it write the hook script.
+
+-----
+
+## Layer 7: Plugins for Review and Automation
+
+A general-purpose agent reviewing its own code is like grading your own homework. Specialized review plugins solve this by running focused, opinionated checks that the coding agent wasn't thinking about — security, style, dead code — with a fresh set of eyes.
+
+You don't need to build these yourself. Both Claude Code and Codex have plugin/skill ecosystems with installable packages for common needs:
+
+- **Security review** — audits your code for auth bypass, key exposure, injection vulnerabilities, and common OWASP issues
+- **Code review** — multi-angle review with confidence-scored findings that only surfaces issues it's confident about
+- **PR creation with CI monitoring** — creates a PR, watches CI, and auto-fixes failures until green
+- **Automation recommender** — analyzes your codebase and suggests which hooks, skills, and MCP servers to add
+
+In Claude Code, run [`/plugins`](https://code.claude.com/docs/en/plugins) to browse and install from the marketplace. In Codex, use [`$skill-installer`](https://developers.openai.com/codex/skills/) to install skills from the catalog or check them into `.codex/skills/` in your repo. Separation of concerns applies to AI just as much as it applies to code.
+
+**Talk to your agent:** Ask your agent what plugins or skills are available and which ones address your biggest risks.
+
+-----
+
+## Layer 8: Skills as Process Guardrails
+
+Even with good linting and CI, the agent can still skip straight to coding without understanding the problem, or try random fixes instead of investigating root causes. Skills enforce process at these moments.
+
+Skills are reusable instruction bundles — markdown files that define a workflow the agent must follow step by step. They're different from plugins: plugins do a job for you; skills constrain how the agent works.
+
+A good starting point is the [Superpowers](https://github.com/obra/superpowers) plugin (available in the Claude Code marketplace), which includes battle-tested skills for:
+
+- **`/brainstorming`** — explores requirements and design before any code is written
+- **`/systematic-debugging`** — root cause investigation before fixes; hard stop after 3 failed attempts
+- **`/test-driven-development`** — no production code without a failing test first
+
+In Codex, skills live in `.codex/skills/` and are invoked with `$skill-name`. The [Codex skills catalog](https://github.com/openai/skills) has similar workflow skills available.
+
+**Talk to your agent:** Ask your agent what skills it supports and which ones would help your workflow.
+
+-----
+
+## Layer 9: MCP Servers
+
+AI agents work from training data that may be months stale. They'll use deprecated APIs, outdated patterns, wrong syntax. MCP servers give the agent live, current context.
+
+- **Documentation servers** — [Context7](https://context7.com/) gives the agent current docs for your dependencies, so it uses the right API instead of guessing from training data
+- **Database servers** — [Supabase MCP](https://supabase.com/docs/guides/getting-started/mcp) lets the agent query your actual schema instead of inventing table structures
+- **LSP integration** — lets the agent use go-to-definition and find-references instead of grep, giving it precise navigation through your codebase
+
+**Talk to your agent:** Ask your agent what MCP servers exist for your dependencies.
+
+-----
+
+## Start Building
+
+Nine layers sounds like a lot — but each one is simple to set up, and that's the point. Here's the full stack at a glance:
+
+| Layer | What it does | What it prevents |
+|-------|-------------|-----------------|
+| **1. CLAUDE.md / AGENTS.md** | Gives the agent project context upfront | Wasted tokens re-discovering your stack |
+| **2. CLI Tools** | Leverages tools the agent already has | Building integrations you don't need |
+| **3. Linting + Formatting** | Enforces file size and code style | 500-line monolith files |
+| **4. CI Pipeline** | Blocks broken code from merging | Regressions, type errors, dead code |
+| **5. Commit + PR Discipline** | Structures git history and PRs | "update code" commit messages |
+| **6. Agent Hooks** | Deterministic checks on every action | Edits to `.env`, unformatted code |
+| **7. Plugins** | Specialized review from fresh eyes | Self-graded homework |
+| **8. Skills** | Enforces process (TDD, debugging) | Skipping straight to code |
+| **9. MCP Servers** | Gives the agent live, current data | Outdated APIs and invented schemas |
+
+The feedback loop is the key: when CI fails on an agent's PR, the agent — or a PR-creator plugin — can read the failure, fix the code, and push again. The guardrails aren't just catching errors. They're enabling the agent to self-correct within safe boundaries.
+
+Start with Layer 1 today. Add one layer at a time. Each one compounds with the others. And remember — your agent is the best collaborator for setting up its own guardrails. It knows what it needs. Talk to it.
+
+These principles apply regardless of which agent you're using. The agent changes. The guardrails don't.
+
+-----
+
+## Keep Experimenting
+
+The models and harnesses are evolving fast. Patterns that don't work this month — like the [Ralph Loop](/posts/the-ralph-loop-is-a-fixed-point-process) when it first appeared — can work the next, after a round of model improvements, harness updates, and use case refinement. The layers in this post are stable foundations, but the workflows you build on top of them will keep shifting.
+
+Keep trying things, keep reevaluating what works, and don't write off a pattern permanently just because it failed once. Stay curious.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Claude Code</category>
+            <category>Codex</category>
+            <category>AI</category>
+            <category>Developer Tools</category>
+            <category>CI/CD</category>
+        </item>
+        <item>
+            <title><![CDATA[The Vibe Coding Interview: How to Hire AI-Assisted Developers]]></title>
+            <link>https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers</guid>
+            <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools.]]></description>
+            <content:encoded><![CDATA[
+The hiring playbook for developers is changing rapidly. 
+
+If you're hiring AI-enabled developers in 2026, you need an agentic engineering interview framework that actually evaluates how people work today.
+
+Here's a framework.
+
+---
+
+## The Agentic Engineering Interview Framework (TL;DR)
+
+**The old question:** "Can you write code well?"
+
+**The new question:** "Can you read and edit code well? Can you build safe and smart? Can you ship?"
+
+<table class="post-table">
+  <thead>
+    <tr><th>Stage</th><th>What You're Evaluating</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Portfolio Review</strong></td><td>Do they have launched apps? Active GitHub? Evidence of shipping?</td></tr>
+    <tr><td><strong>Take-Home Assignment</strong></td><td>Speed + quality. Full CI/CD. Tests that test something. Then review it together.</td></tr>
+    <tr><td><strong>Live Coding Session</strong></td><td>Can they scope, build, and ship a feature in an hour using AI tools?</td></tr>
+    <tr><td><strong>Session History Review</strong></td><td>Judgment, architecture decisions, evidence they direct (not just accept) AI output</td></tr>
+  </tbody>
+</table>
+
+<style>
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.post-table th, .post-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-primary, #e5e7eb);
+}
+.post-table th {
+  background: var(--color-bg-secondary, #f9fafb);
+  font-weight: 600;
+}
+</style>
+
+The bar has moved. Coding ability is table stakes. Building and shipping is the skill.
+
+---
+
+## Before You Talk: Read Their Work
+
+The high water mark—which is becoming more and more common—is the portfolio. At the very least, it reflects someone's curiosity and interest in the tools of the times. It's becoming easier and easier to ship more complete products. That's what the best "vibe coders" should be doing in their free time.
+
+**GitHub activity.** Not just green squares—actual projects. Do they have repos that are more than tutorial clones? Have they shipped anything end-to-end? Just as telling: look at their contributions to other people's code. Merged PRs into open source projects show they can navigate an unfamiliar codebase, follow existing conventions, and collaborate. Even thoughtful issues or discussions signal someone who engages with the ecosystem beyond their own work.
+
+**Launched apps.** This is easier than ever and is a huge signal. A candidate with a deployed side project or two (even small ones) has demonstrated they can take something from idea to production. An app that's gone through rounds with actual users-even better.
+
+**What to look for:**
+- Deployed, working applications (not just code in a repo)
+- Evidence of iteration (v2, bug fixes, feature additions)
+- Automated best practices for keeping a project on rails: linting, knip, test coverage
+- Setup and evidence of hooks and skills for their agentic platform of choice
+- CI/CD pipelines
+- Real users, even if it's just "my friends use this"
+
+---
+
+## What You're Evaluating
+
+Whether candidates are using Cursor, Claude Code, Copilot, or Windsurf, here's what separates good AI-assisted developers from the rest. These criteria apply regardless of which interview format you choose.
+
+**Architectural thinking.** When AI handles the boilerplate, what does the candidate focus on? Do they make good design decisions? Do they structure the codebase in a way that makes sense? Do they integrate best practices for engineering in general—which now matter even more when you're shipping PRs every day?
+
+**Scoping.** Do they understand what they can achieve in a given timeframe? Trying to do too much at once and shipping a bunch of untested features is a sign of someone who doesn't know how to think clearly in an age where they can move from individual contributor to manager of a fleet of agents.
+
+**Speed AND quality.** The old tradeoff is dead. AI-assisted coding should deliver both. If someone takes four hours and ships obviously buggy code, they're not using the tools well. If they ship fast but the tests are garbage, same problem.
+
+**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number?
+
+**Communication and prompting.** The best agentic engineers communicate clearly—with their tools, not just their teammates. In Claude Code, strong developers use plan mode to scope before writing a line of code, and AskUserQuestion to pull out edge cases they'd otherwise miss. In Cursor, they write focused, incremental prompts rather than vague "build me X" requests. The quality of someone's prompts is a direct reflection of how clearly they think.
+
+**Evidence of review.** You want someone who treats AI output as a first draft, not gospel. Look for signs they pushed back, refactored, or improved what the AI gave them.
+
+### Red Flags
+
+**Shallow tests.** Tests exist, they pass, but they're testing the happy path only. This screams "I told the AI to add tests and shipped whatever it wrote." Just having unit tests—which were the easiest thing to generate even before AI—really isn't enough. Integration and end-to-end testing can be automated using Playwright, Claude in Chrome, and similar tools. Look for candidates who go beyond the basics.
+
+**Over-engineering.** Three layers of abstraction for a feature that needed one function. AI tools will happily build you an enterprise architecture for a weekend project if you let them. Good developers know when to say "this is too much."
+
+**Inconsistent patterns.** Different parts of the codebase feel like they were written by different people (because they were—different AI sessions with no human coherence).
+
+**Vague prompting.** Session history full of "fix this," "make it work," or "add a feature for X" with no context, no constraints, no acceptance criteria. If someone can't communicate clearly with an LLM, they can't communicate clearly with their team either. The best engineers treat their AI tools like a junior developer who needs specific, well-scoped instructions.
+
+---
+
+## The Interview
+
+There's no single right way to interview agentic engineers. The best format depends on your constraints—your tooling policy, time budget, and what you're optimizing for. Here are three approaches that work, each with different tradeoffs.
+
+### Option A: The Take-Home Assignment
+
+Give them something real. Not a LeetCode problem, not a toy todo app. A mini product with 2-3 features that takes 4-8 hours.
+
+The bar isn't "can you code?" It's "can you ship?" You're looking for:
+
+- Full CI/CD pipeline (tests, linting, type checking, build)
+- Features that work, not just compile
+- Documentation that you and your agents can learn from
+- Bonus: integration with observability tools like Sentry
+
+The real value comes when you **review the take-home together**. Walk through their code, their decisions, their test strategy. Even better: run their submission through your own AI agents before the review. Let your tools audit the code, flag patterns, and surface questions. Then bring those questions to the conversation.
+
+**When to use this:** You have candidates who can dedicate 4-8 hours. You want a standardized, fair comparison across candidates. You want time to review with your own AI tools before the conversation.
+
+### Option B: The Live 1-Hour Session
+
+Build something together. Give the candidate a boilerplate app in whatever framework you use, and ask them to add a feature in 60 minutes.
+
+What you can observe in this format depends heavily on one thing: **what tools the candidate is allowed to use.**
+
+**If candidates use their own tools (Claude Code, Cursor, etc.):** This is the gold standard. You see the actual skill you're hiring for—how they direct agents, scope work, review output, catch mistakes, and iterate. You see their real workflow, not a performance. Pay attention to how they communicate with their tools: do they start in plan mode to scope the work? Do they ask clarifying questions before diving in? Do they break the problem down or try to do everything in one prompt?
+
+**If candidates are constrained to an interview platform (CoderPad, HackerRank, etc.):** You're more limited. These platforms don't support Claude Code or Cursor yet, so you're evaluating a different skill—closer to the traditional coding interview. You can still learn about their fundamentals and communication, but you won't see how they actually work day-to-day.
+
+> **Example setup:** A Next.js boilerplate with auth already wired up. Ask them to add a feature—say, a user settings page with profile editing and email preferences. In 60 minutes with their own tools, a strong candidate will ship working code with tests, proper form validation, and maybe even error handling with security (e.g., Sentry) planned or integrated. You'll see them scope the work, direct their AI, review the output, and make architectural decisions in real time.
+
+**When to use this:** You want to see the candidate's real-time workflow. Best when you can let them use their own tools. Less effective when constrained to a platform.
+
+### Option C: Session History Review
+
+Ask candidates to bring the session history from a project they built using AI-enabled tools.
+
+Claude Code keeps session logs. Cursor has history. Whatever tool they used—the transcript of their conversation with the AI is the artifact you want to review.
+
+Walk through it together. Here are the questions that actually reveal skill:
+
+- "Tell me about this architecture decision here"
+- "I see you asked about three different libraries—why'd you pick this one?"
+- "Walk me through your testing approach"
+- "This refactor is interesting—what prompted it?"
+- "I notice you rejected the AI's suggestion here—why?"
+
+The candidate can search their history to answer questions. That's fine—that's the workflow. You're not testing memorization, you're testing judgment.
+
+**Two ways to source the session history:**
+
+**Personal project.** The candidate picks a project they're proud of. You see what they choose to build on their own time, how they approach something they care about. The downside: no controlled comparison across candidates, and you can't verify the context or constraints they were working under.
+
+**Take-home assignment.** You give them the take-home (Option A), then review their session history from completing it. Same task across all candidates means fair comparison. You know the scope and constraints because you set them. The downside: it's more artificial, and you might miss seeing what they build when they're genuinely curious.
+
+**When to use this:** You want deep insight into how someone actually works with AI. Works especially well as a complement to the take-home. Also a strong alternative when a live session isn't practical.
+
+### Mixing and Matching
+
+These formats aren't mutually exclusive. The strongest signal often comes from combining them. Take-home + session history review is a natural pairing: you get standardized output to compare, plus a window into how they actually built it. A live session after a take-home lets you probe decisions in real time. Pick the combination that fits your hiring timeline and candidate pool.
+
+### A Note on Candidate Experience
+
+This cuts both ways. Candidates are evaluating your engineering culture just as much as you're evaluating their skills. If your interview process still looks like whiteboard algorithms and trick questions, strong AI-native developers will self-select out. The interview format you choose signals what kind of engineering org you are. Letting candidates use their real tools, reviewing their real work, and having a real technical conversation—that's how you attract the people who are actually shipping.
+
+---
+
+## Tool-Specific Session Review Tips
+
+Different AI-assisted coding tools surface history differently. Here's what to look for:
+
+**Claude Code**
+- Session transcripts in `~/.claude/` show the full back-and-forth
+- Look for: Use of plan mode before implementation, AskUserQuestion for clarifying requirements, multi-turn refinement, rejected suggestions, architectural discussions
+- Ask: "How did you decide to use plan mode here?" or "Walk me through how AskUserQuestion surfaced that edge case"
+- Green flag: Structured workflow (plan → clarify → implement → review). Red flag: Single prompt → ship.
+
+**Cursor**
+- Composer history shows multi-file changes and the prompts that generated them
+- Look for: How they scope requests, whether they review diffs before accepting
+- Green flag: Incremental, focused prompts. Red flag: "Build me an entire app" prompts.
+
+**Copilot, Windsurf, and Others**
+- Chat history varies—Copilot Chat shows reasoning, but inline completions don't leave a trail. Windsurf and similar tools surface cascading changes and the prompts behind them.
+- If no chat history exists, ask them to walk through their workflow verbally. Focus on: "How do you decide what to accept vs. reject?"
+
+The goal isn't to judge *which* tool they use. It's to understand *how* they use it.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Vibe Coding</category>
+            <category>AI</category>
+            <category>Hiring</category>
+            <category>Interview</category>
+            <category>Claude Code</category>
+            <category>Cursor</category>
+        </item>
+        <item>
+            <title><![CDATA[TDD Is Dead]]></title>
+            <link>https://neonwatty.com/posts/tdd-is-dead</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/tdd-is-dead</guid>
+            <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Test Driven Development is dead. Quality control can be largely automated now. That frees you to focus on what actually matters: building things people want.]]></description>
+            <content:encoded><![CDATA[
+> Testing is no longer something you front-load. It's something you run after a feature has proven it deserves to exist.
+
+Steve Jobs liked to say that people don't know what they want until you show it to them. But the showing part was always expensive. Building was slow. Testing was slower. You had to commit early to a path because you couldn't afford to explore five.
+
+That was in the "before times." Before Claude Code, Codex, Cursor, etc. Now you can prototype five approaches to a feature, kill four, try five more variations on the survivor, over and over again—all before lunch. You can build something, use it yourself, notice what feels wrong, rebuild it, and iterate until it clicks. Then put it in front of users and see what resonates. Feature evolution on steroids.
+
+This is the creative work that actually determines whether anyone uses what you ship. And it's only possible because the drudgery side—quality control—can be largely automated now.
+
+---
+
+## How Testing Changed
+
+Claude Code, Codex, and similar tools can sweep a codebase and generate unit, integration, and e2e tests systematically—every branch, every error path. They find gaps you wouldn't have thought to cover by hand. It takes minutes, not hours, and the coverage is broader and deeper than what most developers produce manually.
+
+Build with basic coverage. Validate the idea. Then sweep for deep coverage once it's earned its place. Harden what matters. Skip what doesn't.
+
+---
+
+## Why TDD Is Dead
+
+Test Driven Development was always a compromise. You traded speed for rigor—writing tests before code so you'd catch mistakes early. That made sense when building was slow and iteration was costly.
+
+It doesn't anymore. TDD front-loaded engineering rigor on features that might get cut next sprint—prioritizing correctness for code that hadn't earned it yet. The inverse of what you actually want: the freedom to explore fast and harden later.
+
+The engineers who thrive now are the ones who automate quality and spend their freed-up time on the hard problem—figuring out what's worth building in the first place.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>TDD</category>
+            <category>AI</category>
+            <category>Testing</category>
+            <category>Claude Code</category>
+            <category>Engineering</category>
+        </item>
         <item>
             <title><![CDATA[Claude Code SVG Logo Design: A Reusable Skill for Generating Logos]]></title>
             <link>https://neonwatty.com/posts/logo-designer-skill-claude-code</link>
@@ -145,6 +702,7 @@ You can see the full iteration history for the first logo I designed with it (37
 
 To use it, clone the repo and point Claude Code at the SKILL.md file, or install it as a plugin.  Then just say "design a logo for my app" and let the conversation guide you.
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>Claude Code Skills</category>
             <category>Logo Design</category>
@@ -204,6 +762,7 @@ The capabilities are there. The early adopters are there. The mainstream awarene
 
 The early adopters are already out there grinding. Just pour some fuel on that fire.
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>AI</category>
             <category>Startups</category>
@@ -258,183 +817,13 @@ Here are a few ideas I've gathered speaking with folks across the software indus
 
 None of these problems are unsolvable — but none of them are technical problems either. They're organizational, cultural, and deeply human. Teams that treat AI adoption as a tooling rollout will keep getting the same lackluster results. The teams that get this right will be the ones whose leaders treat it as a change management problem: aligning incentives, leading by example, creating space to learn, and meeting people where they are.
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>AI</category>
             <category>Engineering Management</category>
             <category>Productivity</category>
             <category>Developer Tools</category>
             <enclosure url="https://neonwatty.com/images/posts/why-nobody-claude-code.png" length="0" type="image/png"/>
-        </item>
-        <item>
-            <title><![CDATA[The Vibe Coding Interview: How to Hire AI-Assisted Developers]]></title>
-            <link>https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers</link>
-            <guid isPermaLink="false">https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers</guid>
-            <pubDate>Fri, 16 Jan 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools.]]></description>
-            <content:encoded><![CDATA[
-The hiring playbook for developers is changing. When your best candidates are shipping features 3x faster using Claude Code, Cursor, or Copilot, the old whiteboard algorithm grind starts to feel disconnected from reality.
-
-If you're hiring AI developers in 2026, you need a vibe coding interview framework that actually evaluates how people work today.
-
-Here's what's working.
-
----
-
-## The Vibe Coding Interview Framework (TL;DR)
-
-**The old question:** "Can you code?"
-
-**The new question:** "Can you build? Can you ship?"
-
-<table class="post-table">
-  <thead>
-    <tr><th>Stage</th><th>What You're Evaluating</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><strong>Portfolio Review</strong></td><td>Do they have launched apps? Active GitHub? Evidence of shipping?</td></tr>
-    <tr><td><strong>Take-Home Assignment</strong></td><td>Speed + quality. Full CI/CD. Tests that test something.</td></tr>
-    <tr><td><strong>Session History Review</strong></td><td>Judgment, architecture decisions, evidence they direct (not just accept) AI output</td></tr>
-  </tbody>
-</table>
-
-<style>
-.post-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-}
-.post-table th, .post-table td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-border-primary, #e5e7eb);
-}
-.post-table th {
-  background: var(--color-bg-secondary, #f9fafb);
-  font-weight: 600;
-}
-</style>
-
-The bar has moved. Coding ability is table stakes. Building and shipping is the skill.
-
----
-
-## Start With the Portfolio
-
-Before you even send a take-home, look at what they've already shipped.
-
-**GitHub activity.** Not just green squares—actual projects. Do they have repos that are more than tutorial clones? Have they shipped anything end-to-end?
-
-**Launched apps.** This is easier than ever to create and is a huge signal. A candidate with three deployed side projects (even small ones) has demonstrated they can take something from idea to production. That's the skill you're hiring for.
-
-**What to look for:**
-- Deployed, working applications (not just code in a repo)
-- Evidence of iteration (v2, bug fixes, feature additions)
-- CI/CD setup in their projects
-- Real users, even if it's just "my friends use this"
-
-In the vibe coding era, there's no excuse for an empty portfolio. The tools make building and shipping faster than ever. If someone says they're a great AI-assisted developer but has nothing deployed, that's a red flag.
-
-## The Take-Home Coding Assignment
-
-Give them something real. Not a LeetCode problem, not a toy todo app. A mini product with 2-3 features that takes 4-8 hours.
-
-The bar isn't "can you code?" It's "can you ship?"
-
-**Requirements:**
-- Full CI/CD pipeline (tests, linting, type checking, build)
-- Deployment preview (Vercel, Netlify, whatever)
-- Working features that actually work
-
-**What you don't require:** Documentation about their AI-assisted coding tools or workflow. The code speaks for itself. If they used Claude to scaffold the entire thing and it's well-architected with comprehensive tests—great. That's the skill you're hiring for.
-
-## Vibe Coding Best Practices: What You're Evaluating
-
-Whether candidates are using Cursor, Claude Code, Copilot, or Windsurf, here's what separates good AI-assisted developers from the rest:
-
-**Speed AND quality.** The old tradeoff is dead. AI-assisted coding should deliver both. If someone takes 8 hours and ships buggy code, they're not using the tools well. If they ship fast but the tests are garbage, same problem.
-
-**Architectural thinking.** When AI handles the boilerplate, what does the candidate focus on? Do they make good design decisions? Do they structure the codebase in a way that makes sense?
-
-**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number?
-
-**Evidence of review.** You want someone who treats AI output as a first draft, not gospel. Look for signs they pushed back, refactored, or improved what the AI gave them.
-
-## Red Flags in AI-Assisted Coding
-
-**Shallow tests.** Tests exist, they pass, but they're testing the happy path only. This screams "I told the AI to add tests and shipped whatever it wrote."
-
-**Over-engineering.** Three layers of abstraction for a feature that needed one function. AI-assisted coding tools will happily build you an enterprise architecture for a weekend project if you let them. Good developers know when to say "this is too much."
-
-**Inconsistent patterns.** Different parts of the codebase feel like they were written by different people (because they were—different AI sessions with no human coherence).
-
-## Vibe Coding Interview Questions: The Follow-Up
-
-Here's where the AI-assisted coding interview gets interesting. Ask candidates to bring their session history.
-
-Claude Code keeps session logs. Cursor has history. Whatever tool they used—the transcript of their conversation with the AI is the artifact you want to review.
-
-Walk through it together. Here are the vibe coding interview questions that actually reveal skill:
-
-- "Tell me about this architecture decision here"
-- "I see you asked about three different libraries—why'd you pick this one?"
-- "Walk me through your testing approach"
-- "This refactor is interesting—what prompted it?"
-- "I notice you rejected the AI's suggestion here—why?"
-
-The candidate can search their history to answer questions. That's fine. That's the workflow. You're not testing memorization, you're testing judgment.
-
-What you're looking for: Do they understand what they built? Can they explain the tradeoffs? Did they make intentional decisions or just accept whatever the AI suggested?
-
-## Tool-Specific Session Review Tips
-
-Different AI-assisted coding tools surface history differently. Here's what to look for:
-
-**Claude Code**
-- Session transcripts in `~/.claude/` show the full back-and-forth
-- Look for: Multi-turn refinement, rejected suggestions, architectural discussions
-- Green flag: Long sessions with iteration. Red flag: Single prompt → ship.
-
-**Cursor**
-- Composer history shows multi-file changes and the prompts that generated them
-- Look for: How they scope requests, whether they review diffs before accepting
-- Green flag: Incremental, focused prompts. Red flag: "Build me an entire app" prompts.
-
-**GitHub Copilot**
-- Chat history (if using Copilot Chat) shows reasoning
-- Harder to review since inline completions don't leave a trail
-- Ask them to walk through their workflow verbally if no chat history exists
-
-**Windsurf / Others**
-- Similar to Cursor—look for the cascade of changes and how they directed it
-- Ask about their review process: "How do you decide what to accept vs. reject?"
-
-The goal isn't to judge *which* tool they use. It's to understand *how* they use it.
-
-## On AI Independence
-
-Should candidates be able to code without AI-assisted coding tools?
-
-Somewhat. They should understand fundamentals—what a closure is, how async works, basic data structures. You don't want someone who's helpless if the API is down.
-
-But an AI-first workflow is totally acceptable. If their natural mode is to pair with Claude Code or Cursor on everything, that's not a weakness. That's probably how your team works too.
-
-The question isn't "can you code without AI?" It's "can you effectively direct AI to build what needs to be built?"
-
-## The Mindset Shift
-
-Traditional interviews optimize for "can this person solve problems alone under pressure?"
-
-The vibe coding interview optimizes for "can this person build and ship quality software quickly using modern AI-assisted coding tools?"
-
-Different question. Different evaluation. Different hires.
-]]></content:encoded>
-            <category>Vibe Coding</category>
-            <category>AI</category>
-            <category>Hiring</category>
-            <category>Interview</category>
-            <category>Claude Code</category>
-            <category>Cursor</category>
         </item>
         <item>
             <title><![CDATA[Claude Code Skills for iOS Human Interface Guidelines Testing]]></title>
@@ -717,6 +1106,7 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
 - [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>AI</category>
             <category>iOS</category>
@@ -862,6 +1252,7 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 - [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>AI</category>
             <category>Skills</category>
@@ -959,6 +1350,7 @@ The MCP integrations mean Claude sees exactly what users see. No mocking.
 
 That's it. Generate workflows from your codebase, execute them on real browsers and simulators, catch issues early.
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>Testing</category>
             <category>MCP</category>
@@ -1046,6 +1438,7 @@ You don't need to remember the syntax. Just describe what you want.
 
 That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time.
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>SEO</category>
             <category>MCP</category>
@@ -1185,6 +1578,7 @@ If you're the kind of person who lives in the terminal and occasionally has thou
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats building custom slash commands
 - [Keyword Research with Claude Code](/posts/keyword-research-claude-code) - Using autocomplete tools for SEO research
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>CLI</category>
             <category>Social Media</category>
@@ -1302,6 +1696,7 @@ $ gh repo edit --remove-topic tailwindcss,react,mdx
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
 - [SEO Keyword Research with Claude Code](/posts/keyword-research-claude-code) - Similar workflow for keyword research
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>GitHub</category>
             <category>CLI</category>
@@ -1379,10 +1774,12 @@ You can watch the output to confirm it's running the queries you want.  Once don
 
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>SEO</category>
             <category>CLI</category>
             <category>Productivity</category>
+            <category>Keyword Research</category>
         </item>
         <item>
             <title><![CDATA[Debug Github CI with Natural Language and Claude Code]]></title>
@@ -1445,6 +1842,7 @@ Claude Code keeps checking until everything passes.  If something breaks, it rea
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
 - [Let Claude Code Babysit Your CI](/posts/claude-code-ci-babysitter) - Autonomous CI monitoring with Claude Code
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>GitHub Actions</category>
             <category>CI/CD</category>
@@ -1507,6 +1905,7 @@ Claude Code - with its access to tools like `gh` - can figure out the boring stu
 - [Claude Code GitHub Actions Example](/posts/claude-code-github-actions-example) - A hands-on example of debugging CI failures with `gh` commands
 - [Let Claude Code Babysit Your CI](/posts/claude-code-ci-babysitter) - Autonomous CI monitoring with Claude Code
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>CLI</category>
             <category>Productivity</category>
@@ -1568,6 +1967,7 @@ Stop babysitting CI. Let Claude Code do it.
 - [Claude Code GitHub Actions Example](/posts/claude-code-github-actions-example) - Step-by-step walkthrough of the `gh` commands Claude Code executes
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>GitHub Actions</category>
             <category>CI/CD</category>
@@ -1619,6 +2019,7 @@ The back-and-forth debugging with Claude Code was exactly what this project need
 - [quakejs-https-docker](https://github.com/neonwatty/quakejs-https-docker) - Docker container with HTTPS/WSS support
 - [Live Demo](https://kamal-quake.xyz)
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>AI</category>
             <category>DevOps</category>
@@ -1649,6 +2050,7 @@ Within the first week of sharing it out, we have over 1500 users!
 
 [Get it on Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) →
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Chrome Extension</category>
             <category>YouTube</category>
             <category>GIF</category>
@@ -1675,6 +2077,7 @@ So I built this simple Chrome extension.  X Search Pro solves this with smart sa
 
 [Get it on Chrome Web Store](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) →
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Scratch your own itch</category>
             <category>Chrome Extension</category>
             <category>Twitter</category>
@@ -1707,6 +2110,7 @@ I ended up following most of this in the final video walkthrough - made creating
 <div style="max-width: 800px; margin: 2rem auto;">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
 </div>]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>Playwright</category>
             <category>Testing</category>
@@ -1890,9 +2294,10 @@ Note this 'treasure map' aesthetic only makes sense on desktop, since you want z
   });
 </script>
 ]]></content:encoded>
-            <category>claude code</category>
-            <category>customer service</category>
-            <category>cancer</category>
+            <author>Jeremy Watt</author>
+            <category>Claude Code</category>
+            <category>Interactive Gallery</category>
+            <category>SVG</category>
         </item>
         <item>
             <title><![CDATA[AI Logo Generator: Generative SVG Logo Design with Claude Code]]></title>
@@ -1990,6 +2395,7 @@ These ranged from "on the nose" logos (that literally said 'gif' or 'youtube'), 
 
 I ended up going with the first option shown in the gallery.  I think it represents the concept of the app well (slicing / clipping youtube videos into GIFs, which generally have a range of uses), it's simple, and can be easily recognized when small (a requirement for a chrome extension, you need to be able to easily recognize the tiny version of the logo in the navbar).
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>Logo Design</category>
             <category>Chrome Extension</category>
@@ -2165,6 +2571,7 @@ If you choose to use Claude Code / `work-next`, here's my recommended flow:
 
 This keeps prompts, limits, and permissions consistent while letting Claude focus tightly on the current task. 
 ]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>Task Management</category>
             <category>Productivity</category>
@@ -2283,6 +2690,7 @@ tfq fix-all
 ---
 
 Nothing magical here - just much needed structure for test fixing by managing context in an ordered fashion.]]></content:encoded>
+            <author>Jeremy Watt</author>
             <category>Testing</category>
             <category>Claude Code</category>
             <category>CLI</category>
@@ -2317,9 +2725,10 @@ This little Apple Watch app lets you discretely compute probabilities of the bid
 ![Results showing probability percentage for informed decisions](/images/liars-dice-3.png)
 
 Making apps to help you cheat your friends and family's getting easier with each passing day.]]></content:encoded>
-            <category>apple watch</category>
-            <category>swift</category>
-            <category>gaming</category>
+            <author>Jeremy Watt</author>
+            <category>Apple Watch</category>
+            <category>Swift</category>
+            <category>Gaming</category>
         </item>
     </channel>
 </rss>
