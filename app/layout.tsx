@@ -33,7 +33,8 @@ export const metadata: Metadata = {
     default: "Jeremy Watt's Blog",
     template: "%s | Jeremy Watt's Blog",
   },
-  description: 'A modern, performant blog built with Next.js',
+  description:
+    'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
   keywords: ['blog', 'next.js', 'typescript', 'tailwind'],
   authors: [{ name: 'Blog Author' }],
   creator: 'Blog Author',
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com',
     siteName: "Jeremy Watt's Blog",
     title: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -57,7 +59,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     images: ['/images/og-image.jpg'],
     creator: '@neonwatty',
     site: '@neonwatty',

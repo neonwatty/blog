@@ -12,7 +12,8 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     '@context': 'https://schema.org',
     '@type': 'Website',
     name: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',
@@ -37,7 +38,8 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     url: siteUrl,
     author: {
       '@type': 'Person',

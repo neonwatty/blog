@@ -7,7 +7,8 @@ export function generateRSSFeed() {
 
   const feed = new Feed({
     title: "Jeremy Watt's Blog",
-    description: 'A modern, performant blog built with Next.js',
+    description:
+      'Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.',
     id: siteURL,
     link: siteURL,
     language: 'en',
