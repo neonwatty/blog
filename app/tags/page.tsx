@@ -9,7 +9,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
 export const metadata: Metadata = {
   title: 'Tags',
-  description: 'Explore all topics and tags covered in our blog posts.',
+  description:
+    'Browse all topics I write about — from Claude Code and AI developer tools to testing, CI/CD, and solo product development.',
   alternates: {
     canonical: `${siteUrl}/tags`,
   },
@@ -32,7 +33,8 @@ export default function TagsPage() {
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Browse by Tags</h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Discover content organized by topics and technologies. Click on any tag to explore related posts.
+                Browse all the topics I cover — from Claude Code and AI developer tools to testing, CI/CD, and solo
+                product development.
               </p>
             </div>
 

@@ -37,7 +37,6 @@ Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3
             <category>AI Startup Funding</category>
             <category>Build MVP with AI</category>
             <category>Solopreneur</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/build-your-app-for-only-a-third-of-your-raise.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[The Ralph Loop is Now Basically a Fixed-Point Process]]></title>
@@ -104,7 +103,6 @@ At each stage the agent acts as a semantic closure operator — stochastic, yes,
             <category>Ralph Loop</category>
             <category>Fixed Point</category>
             <category>Plan Closure</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/the-ralph-loop-is-a-fixed-point-process.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[How to Set Up Your Repo for Claude Code and Codex]]></title>
@@ -334,8 +332,7 @@ Keep trying things, keep reevaluating what works, and don't write off a pattern 
             <category>Codex</category>
             <category>AI</category>
             <category>Developer Tools</category>
-            <category>CI/CD</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png" length="0" type="image/png"/>
+            <category>CI-CD</category>
         </item>
         <item>
             <title><![CDATA[The Vibe Coding Interview: How to Hire AI-Assisted Developers]]></title>
@@ -533,7 +530,6 @@ The goal isn't to judge *which* tool they use. It's to understand *how* they use
             <category>Interview</category>
             <category>Claude Code</category>
             <category>Cursor</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/vibe-coding-interview-hire-ai-developers.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[TDD Is Dead]]></title>
@@ -574,7 +570,6 @@ The engineers who thrive now are the ones who automate quality and spend their f
             <category>Testing</category>
             <category>Claude Code</category>
             <category>Engineering</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/tdd-is-dead.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Claude Code SVG Logo Design: A Reusable Skill for Generating Logos]]></title>
@@ -713,7 +708,6 @@ To use it, clone the repo and point Claude Code at the SKILL.md file, or install
             <category>Logo Design</category>
             <category>SVG</category>
             <category>Claude Code SVG</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/logo-designer-skill-claude-code.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[A Claude Code Incubator]]></title>
@@ -1363,7 +1357,6 @@ That's it. Generate workflows from your codebase, execute them on real browsers 
             <category>iOS</category>
             <category>Browser Automation</category>
             <category>AI</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/claude-code-workflow-testing-mcp.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Pull Google Search Console Data with Claude Code]]></title>
@@ -1450,7 +1443,6 @@ That's it. Install the MCP server, authenticate once, then query your search dat
             <category>SEO</category>
             <category>MCP</category>
             <category>Productivity</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/best-claude-code-seo-tools.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Share Your Random Thoughts with the World Without Leaving Claude Code]]></title>
@@ -1709,7 +1701,6 @@ $ gh repo edit --remove-topic tailwindcss,react,mdx
             <category>GitHub</category>
             <category>CLI</category>
             <category>Productivity</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/github-repo-tags-claude-code.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[SEO Keyword Research with Claude Code]]></title>
@@ -1789,7 +1780,6 @@ You can watch the output to confirm it's running the queries you want.  Once don
             <category>CLI</category>
             <category>Productivity</category>
             <category>Keyword Research</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/keyword-research-claude-code.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Debug Github CI with Natural Language and Claude Code]]></title>
@@ -1855,7 +1845,7 @@ Claude Code keeps checking until everything passes.  If something breaks, it rea
             <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>GitHub Actions</category>
-            <category>CI/CD</category>
+            <category>CI-CD</category>
             <category>gh CLI</category>
             <category>Developer Tools</category>
             <enclosure url="https://neonwatty.comhttps://github.com/neonwatty/readme_gifs/blob/main/how-it-works-succeed.png?raw=true" length="0" type="image/png"/>
@@ -1980,7 +1970,7 @@ Stop babysitting CI. Let Claude Code do it.
             <author>Jeremy Watt</author>
             <category>Claude Code</category>
             <category>GitHub Actions</category>
-            <category>CI/CD</category>
+            <category>CI-CD</category>
             <category>DevOps</category>
             <category>AI</category>
             <category>Automation</category>
@@ -2065,7 +2055,6 @@ Within the first week of sharing it out, we have over 1500 users!
             <category>YouTube</category>
             <category>GIF</category>
             <category>Launch</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/ytgify-launch.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches]]></title>
@@ -2092,7 +2081,6 @@ So I built this simple Chrome extension.  X Search Pro solves this with smart sa
             <category>Scratch your own itch</category>
             <category>Chrome Extension</category>
             <category>Twitter</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/x-search-pro-launch.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Create Video Storyboards with Claude Code and Playwright Screenshots]]></title>
@@ -2128,7 +2116,6 @@ I ended up following most of this in the final video walkthrough - made creating
             <category>Playwright</category>
             <category>Testing</category>
             <category>Automation</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/storyboard-demo-videos.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Create an Interactive Image Gallery Treasure Map with Claude Code]]></title>
@@ -2312,7 +2299,6 @@ Note this 'treasure map' aesthetic only makes sense on desktop, since you want z
             <category>Claude Code</category>
             <category>Interactive Gallery</category>
             <category>SVG</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/godaddy-is-cancer.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[AI Logo Generator: Generative SVG Logo Design with Claude Code]]></title>
@@ -2414,7 +2400,6 @@ I ended up going with the first option shown in the gallery.  I think it represe
             <category>Claude Code</category>
             <category>Logo Design</category>
             <category>Chrome Extension</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/ai-logo-generator-claude-code.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Claude Code Task Management CLI: Skip the JSON Overhead]]></title>
@@ -2591,7 +2576,6 @@ This keeps prompts, limits, and permissions consistent while letting Claude focu
             <category>Claude Code</category>
             <category>Task Management</category>
             <category>Productivity</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/todoq-task-management.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Claude Code Test Debugging Without Context Overload: TFQ CLI Tool]]></title>
@@ -2712,7 +2696,6 @@ Nothing magical here - just much needed structure for test fixing by managing co
             <category>Testing</category>
             <category>Claude Code</category>
             <category>CLI</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/tfq-test-failure-management.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[A watchOS App for Liars Dice: Probability Calculator for Apple Watch]]></title>
@@ -2749,7 +2732,6 @@ Making apps to help you cheat your friends and family's getting easier with each
             <category>Apple Watch</category>
             <category>Swift</category>
             <category>Gaming</category>
-            <enclosure url="https://neonwatty.com/images/posts/og/liars-dice-apple-watch-app.png" length="0" type="image/png"/>
         </item>
     </channel>
 </rss>

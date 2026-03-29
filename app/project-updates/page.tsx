@@ -12,6 +12,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 export const metadata: Metadata = {
   title: 'Project Updates',
   description: 'Follow along with progress updates on my side projects, tools, and experiments.',
+  alternates: {
+    canonical: `${siteUrl}/project-updates`,
+  },
   openGraph: {
     title: "Project Updates | Jeremy Watt's Blog",
     description: 'Follow along with progress updates on my side projects, tools, and experiments.',

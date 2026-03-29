@@ -22,6 +22,7 @@ metaDescription: >-
 relatedPosts:
   - how-to-set-up-your-repo-for-claude-code-and-codex
   - claude-code-workflow-testing-mcp
+  - tdd-is-dead
 ogImage: /images/posts/og/the-ralph-loop-is-a-fixed-point-process.png
 ---
 

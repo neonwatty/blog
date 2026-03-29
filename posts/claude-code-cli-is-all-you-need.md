@@ -21,6 +21,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-ci-babysitter
   - claude-code-github-actions-example
+  - social-starter-pack-cli-tools
 ---
 
 # The Temptation to Over-Engineer

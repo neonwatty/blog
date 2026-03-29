@@ -7,102 +7,24 @@ const matter = require('gray-matter')
 // Track seen URLs to prevent duplicates
 const seenUrls = new Set()
 
-// Function to read posts directly from the posts directory
-function getDynamicPaths() {
-  const paths = []
-
-  try {
-    // Add all blog posts
-    try {
-      const postsDirectory = path.join(process.cwd(), 'posts')
-      if (fs.existsSync(postsDirectory)) {
-        const fileNames = fs.readdirSync(postsDirectory)
-        const posts = fileNames
-          .filter((fileName) => fileName.endsWith('.md'))
-          .map((fileName) => {
-            const id = fileName.replace(/\.md$/, '')
-            const fullPath = path.join(postsDirectory, fileName)
-            const fileContents = fs.readFileSync(fullPath, 'utf8')
-            const matterResult = matter(fileContents)
-            return {
-              id,
-              date: matterResult.data.date,
-              draft: matterResult.data.draft || false,
-            }
-          })
-          .filter((post) => !post.draft)
-
-        paths.push(
-          ...posts.map((post) => ({
-            loc: `/posts/${post.id}/`,
-            lastmod: post.date,
-          })),
-        )
-        console.log(`✓ Added ${posts.length} blog posts to sitemap`)
-      }
-    } catch (e) {
-      console.warn('Failed to load posts for sitemap:', e.message)
-    }
-
-    // Add all tag pages
-    try {
-      const postsDirectory = path.join(process.cwd(), 'posts')
-      if (fs.existsSync(postsDirectory)) {
-        const fileNames = fs.readdirSync(postsDirectory)
-        const tagsSet = new Set()
-
-        fileNames
-          .filter((fileName) => fileName.endsWith('.md'))
-          .forEach((fileName) => {
-            const fullPath = path.join(postsDirectory, fileName)
-            const fileContents = fs.readFileSync(fullPath, 'utf8')
-            const matterResult = matter(fileContents)
-            // Skip draft posts
-            if (matterResult.data.draft) return
-            const tags = matterResult.data.tags || []
-            tags.forEach((tag) => tagsSet.add(tag))
-          })
-
-        const tags = Array.from(tagsSet)
-        paths.push(
-          ...tags.map((tag) => ({
-            loc: `/tags/${encodeURIComponent(tag.toLowerCase())}/`,
-          })),
-        )
-        console.log(`✓ Added ${tags.length} tag pages to sitemap`)
-      }
-    } catch (e) {
-      console.warn('Failed to load tags for sitemap:', e.message)
-    }
-
-    // Slideshow feature temporarily disabled
-    // try {
-    //   const slideshowsDir = path.join(process.cwd(), 'slideshows')
-    //   if (fs.existsSync(slideshowsDir)) {
-    //     const files = fs.readdirSync(slideshowsDir)
-    //     const slideshows = files
-    //       .filter(file => file.endsWith('.json'))
-    //       .map(file => {
-    //         const filePath = path.join(slideshowsDir, file)
-    //         const fileContent = fs.readFileSync(filePath, 'utf8')
-    //         const slideshow = JSON.parse(fileContent)
-    //         return slideshow
-    //       })
-
-    //     paths.push(...slideshows.map(show => ({
-    //       loc: `/slides/${show.id}/`,
-    //       lastmod: show.metadata.date,
-    //     })))
-    //     console.log(`✓ Added ${slideshows.length} slideshows to sitemap`)
-    //   }
-    // } catch (e) {
-    //   console.warn('Failed to load slideshows for sitemap:', e.message)
-    // }
-  } catch (error) {
-    console.error('Error loading dynamic paths:', error)
+// Build a lookup map of post slug → date for accurate lastmod values
+const postDates = {}
+try {
+  const postsDirectory = path.join(process.cwd(), 'posts')
+  if (fs.existsSync(postsDirectory)) {
+    fs.readdirSync(postsDirectory)
+      .filter((f) => f.endsWith('.md'))
+      .forEach((fileName) => {
+        const id = fileName.replace(/\.md$/, '')
+        const fileContents = fs.readFileSync(path.join(postsDirectory, fileName), 'utf8')
+        const data = matter(fileContents).data
+        if (!data.draft) {
+          postDates[`/posts/${id}/`] = data.lastUpdated || data.date
+        }
+      })
   }
-
-  return paths
+} catch (e) {
+  console.warn('Failed to load post dates for sitemap:', e.message)
 }
 
 module.exports = {
@@ -160,11 +82,21 @@ module.exports = {
       changefreq = 'never'
     }
 
+    // Use per-post date if available, otherwise fall back to build time
+    // Handle both /posts/slug and /posts/slug/ formats
+    const normalizedPath = path.endsWith('/') ? path : `${path}/`
+    const postDate = postDates[normalizedPath] || postDates[path]
+    const lastmod = postDate
+      ? new Date(postDate).toISOString()
+      : config.autoLastmod
+        ? new Date().toISOString()
+        : undefined
+
     return {
       loc: path,
       changefreq,
       priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      lastmod,
     }
   },
 }

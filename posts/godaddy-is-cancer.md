@@ -15,6 +15,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-quake
   - storyboard-demo-videos
+  - ai-logo-generator-claude-code
 ogImage: /images/posts/og/godaddy-is-cancer.png
 ---
 

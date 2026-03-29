@@ -19,6 +19,7 @@ metaDescription: >-
 relatedPosts:
   - storyboard-demo-videos
   - godaddy-is-cancer
+  - ai-logo-generator-claude-code
 ---
 
 I started this project almost a year ago and it sat 90% finished in my repo, collecting dust. The goal was simple: get [QuakeJS](https://github.com/inolen/quakejs) - the classic browser game port of Quake 3 Arena - running with HTTPS and working multiplayer using WebSocket Secure (WSS).

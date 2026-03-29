@@ -19,6 +19,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-quake
   - godaddy-is-cancer
+  - claude-code-workflow-testing-mcp
 ogImage: /images/posts/og/storyboard-demo-videos.png
 ---
 

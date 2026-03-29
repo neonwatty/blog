@@ -20,6 +20,7 @@ metaDescription: >-
 relatedPosts:
   - tfq-test-failure-management
   - todoq-task-management
+  - claude-code-cli-is-all-you-need
 ---
 
 When I have a random thought to share - about something I'm working on or reading - sometimes I don't want to open Twitter or LinkedIn; its easy to get distracted, lose 20 minutes to the feed, and forget what I had to say. 

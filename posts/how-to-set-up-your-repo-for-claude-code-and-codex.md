@@ -9,7 +9,7 @@ tags:
   - Codex
   - AI
   - Developer Tools
-  - CI/CD
+  - CI-CD
 featured: true
 draft: false
 author: Jeremy Watt
@@ -21,6 +21,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-workflow-testing-mcp
   - the-ralph-loop-is-a-fixed-point-process
+  - claude-code-ci-babysitter
 ogImage: /images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png
 ---
 

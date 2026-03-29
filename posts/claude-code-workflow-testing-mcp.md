@@ -22,6 +22,7 @@ metaDescription: >-
 relatedPosts:
   - how-to-set-up-your-repo-for-claude-code-and-codex
   - the-ralph-loop-is-a-fixed-point-process
+  - socratic-interview-skills-claude-code
 ogImage: /images/posts/og/claude-code-workflow-testing-mcp.png
 ---
 

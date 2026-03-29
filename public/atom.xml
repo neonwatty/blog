@@ -18,7 +18,6 @@
         <title type="html"><![CDATA[I'll Build Your Whole "AI Product" for Only a Third of Your Total Raise]]></title>
         <id>https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise</id>
         <link href="https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/build-your-app-for-only-a-third-of-your-raise.png" type="image/png"/>
         <updated>2026-03-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[It's 2026 and big checks are still being cut to pre-product AI companies. Here's my standard reply to the recruiters.]]></summary>
         <content type="html"><![CDATA[
@@ -45,7 +44,6 @@ Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3
         <title type="html"><![CDATA[The Ralph Loop is Now Basically a Fixed-Point Process]]></title>
         <id>https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process</id>
         <link href="https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/the-ralph-loop-is-a-fixed-point-process.png" type="image/png"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges.]]></summary>
         <content type="html"><![CDATA[
@@ -114,7 +112,6 @@ At each stage the agent acts as a semantic closure operator — stochastic, yes,
         <title type="html"><![CDATA[How to Set Up Your Repo for Claude Code and Codex]]></title>
         <id>https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex</id>
         <link href="https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png" type="image/png"/>
         <updated>2026-03-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Nine layers of guardrails that make AI coding agents safe, predictable, and actually useful — from CLAUDE.md to CI pipelines to specialized review agents.]]></summary>
         <content type="html"><![CDATA[
@@ -341,13 +338,12 @@ Keep trying things, keep reevaluating what works, and don't write off a pattern 
         <category label="Codex"/>
         <category label="AI"/>
         <category label="Developer Tools"/>
-        <category label="CI/CD"/>
+        <category label="CI-CD"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[The Vibe Coding Interview: How to Hire AI-Assisted Developers]]></title>
         <id>https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers</id>
         <link href="https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/vibe-coding-interview-hire-ai-developers.png" type="image/png"/>
         <updated>2026-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools.]]></summary>
         <content type="html"><![CDATA[
@@ -547,7 +543,6 @@ The goal isn't to judge *which* tool they use. It's to understand *how* they use
         <title type="html"><![CDATA[TDD Is Dead]]></title>
         <id>https://neonwatty.com/posts/tdd-is-dead</id>
         <link href="https://neonwatty.com/posts/tdd-is-dead"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/tdd-is-dead.png" type="image/png"/>
         <updated>2026-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Test Driven Development is dead. Quality control can be largely automated now. That frees you to focus on what actually matters: building things people want.]]></summary>
         <content type="html"><![CDATA[
@@ -590,7 +585,6 @@ The engineers who thrive now are the ones who automate quality and spend their f
         <title type="html"><![CDATA[Claude Code SVG Logo Design: A Reusable Skill for Generating Logos]]></title>
         <id>https://neonwatty.com/posts/logo-designer-skill-claude-code</id>
         <link href="https://neonwatty.com/posts/logo-designer-skill-claude-code"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/logo-designer-skill-claude-code.png" type="image/png"/>
         <updated>2026-02-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[I built a Claude Code skill that turns logo design into a conversation. Point it at your repo, pick a direction, and iterate until you're happy — no design tools needed.]]></summary>
         <content type="html"><![CDATA[
@@ -1290,7 +1284,6 @@ The insight: Claude is excellent at systematic work when given explicit criteria
         <title type="html"><![CDATA[Claude Code Browser Testing and iOS Automation with MCP Workflows]]></title>
         <id>https://neonwatty.com/posts/claude-code-workflow-testing-mcp</id>
         <link href="https://neonwatty.com/posts/claude-code-workflow-testing-mcp"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/claude-code-workflow-testing-mcp.png" type="image/png"/>
         <updated>2026-01-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Four Claude Code skills that generate and execute user workflow tests using Claude-in-Chrome and iOS Simulator MCPs. Catch bugs and edge cases while you're still building.]]></summary>
         <content type="html"><![CDATA[
@@ -1391,7 +1384,6 @@ That's it. Generate workflows from your codebase, execute them on real browsers 
         <title type="html"><![CDATA[Pull Google Search Console Data with Claude Code]]></title>
         <id>https://neonwatty.com/posts/best-claude-code-seo-tools</id>
         <link href="https://neonwatty.com/posts/best-claude-code-seo-tools"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/best-claude-code-seo-tools.png" type="image/png"/>
         <updated>2025-12-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Use Claude Code to query your GSC data directly from the terminal. Find ranking opportunities, see what's working, skip the manual exports.]]></summary>
         <content type="html"><![CDATA[
@@ -1624,7 +1616,6 @@ If you're the kind of person who lives in the terminal and occasionally has thou
         <title type="html"><![CDATA[Claude Code for SEO: Choosing Optimal GitHub Repo Topics]]></title>
         <id>https://neonwatty.com/posts/github-repo-tags-claude-code</id>
         <link href="https://neonwatty.com/posts/github-repo-tags-claude-code"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/github-repo-tags-claude-code.png" type="image/png"/>
         <updated>2025-12-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Use Claude Code and gh CLI to choose optimal GitHub repo topics with real volume data. Data-driven tag selection in 30 seconds.]]></summary>
         <content type="html"><![CDATA[
@@ -1743,7 +1734,6 @@ $ gh repo edit --remove-topic tailwindcss,react,mdx
         <title type="html"><![CDATA[SEO Keyword Research with Claude Code]]></title>
         <id>https://neonwatty.com/posts/keyword-research-claude-code</id>
         <link href="https://neonwatty.com/posts/keyword-research-claude-code"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/keyword-research-claude-code.png" type="image/png"/>
         <updated>2025-12-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Use Claude Code with Google autocomplete for fast keyword research at an industrial scale - for blog SEO, product naming, or just understanding what people actually search for.]]></summary>
         <content type="html"><![CDATA[
@@ -1888,7 +1878,7 @@ Claude Code keeps checking until everything passes.  If something breaks, it rea
         </author>
         <category label="Claude Code"/>
         <category label="GitHub Actions"/>
-        <category label="CI/CD"/>
+        <category label="CI-CD"/>
         <category label="gh CLI"/>
         <category label="Developer Tools"/>
     </entry>
@@ -2017,7 +2007,7 @@ Stop babysitting CI. Let Claude Code do it.
         </author>
         <category label="Claude Code"/>
         <category label="GitHub Actions"/>
-        <category label="CI/CD"/>
+        <category label="CI-CD"/>
         <category label="DevOps"/>
         <category label="AI"/>
         <category label="Automation"/>
@@ -2079,7 +2069,6 @@ The back-and-forth debugging with Claude Code was exactly what this project need
         <title type="html"><![CDATA[ytgify: YouTube to GIF Converter Chrome Extension - No Watermark]]></title>
         <id>https://neonwatty.com/posts/ytgify-launch</id>
         <link href="https://neonwatty.com/posts/ytgify-launch"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/ytgify-launch.png" type="image/png"/>
         <updated>2025-10-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Turn your favorite YouTube moments into shareable GIFs.]]></summary>
         <content type="html"><![CDATA[
@@ -2111,7 +2100,6 @@ Within the first week of sharing it out, we have over 1500 users!
         <title type="html"><![CDATA[X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches]]></title>
         <id>https://neonwatty.com/posts/x-search-pro-launch</id>
         <link href="https://neonwatty.com/posts/x-search-pro-launch"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/x-search-pro-launch.png" type="image/png"/>
         <updated>2025-10-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Build your personal X/Twitter search library. Save, categorize, and organize searches you use repeatedly.]]></summary>
         <content type="html"><![CDATA[
@@ -2140,7 +2128,6 @@ So I built this simple Chrome extension.  X Search Pro solves this with smart sa
         <title type="html"><![CDATA[Create Video Storyboards with Claude Code and Playwright Screenshots]]></title>
         <id>https://neonwatty.com/posts/storyboard-demo-videos</id>
         <link href="https://neonwatty.com/posts/storyboard-demo-videos"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/storyboard-demo-videos.png" type="image/png"/>
         <updated>2025-10-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Automatically generate visual storyboards for demo videos using Claude Code and Playwright.]]></summary>
         <content type="html"><![CDATA[
@@ -2178,7 +2165,6 @@ I ended up following most of this in the final video walkthrough - made creating
         <title type="html"><![CDATA[Create an Interactive Image Gallery Treasure Map with Claude Code]]></title>
         <id>https://neonwatty.com/posts/godaddy-is-cancer</id>
         <link href="https://neonwatty.com/posts/godaddy-is-cancer"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/godaddy-is-cancer.png" type="image/png"/>
         <updated>2025-10-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Turn any image sequence into an interactive treasure map using Claude Code]]></summary>
         <content type="html"><![CDATA[
@@ -2364,7 +2350,6 @@ Note this 'treasure map' aesthetic only makes sense on desktop, since you want z
         <title type="html"><![CDATA[AI Logo Generator: Generative SVG Logo Design with Claude Code]]></title>
         <id>https://neonwatty.com/posts/ai-logo-generator-claude-code</id>
         <link href="https://neonwatty.com/posts/ai-logo-generator-claude-code"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/ai-logo-generator-claude-code.png" type="image/png"/>
         <updated>2025-09-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Generate, evolve, and iterate on SVG logos using natural language and Claude Code.]]></summary>
         <content type="html"><![CDATA[
@@ -2468,7 +2453,6 @@ I ended up going with the first option shown in the gallery.  I think it represe
         <title type="html"><![CDATA[Claude Code Task Management CLI: Skip the JSON Overhead]]></title>
         <id>https://neonwatty.com/posts/todoq-task-management</id>
         <link href="https://neonwatty.com/posts/todoq-task-management"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/todoq-task-management.png" type="image/png"/>
         <updated>2025-09-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks.]]></summary>
         <content type="html"><![CDATA[
@@ -2647,7 +2631,6 @@ This keeps prompts, limits, and permissions consistent while letting Claude focu
         <title type="html"><![CDATA[Claude Code Test Debugging Without Context Overload: TFQ CLI Tool]]></title>
         <id>https://neonwatty.com/posts/tfq-test-failure-management</id>
         <link href="https://neonwatty.com/posts/tfq-test-failure-management"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/tfq-test-failure-management.png" type="image/png"/>
         <updated>2025-08-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions.]]></summary>
         <content type="html"><![CDATA[
@@ -2770,7 +2753,6 @@ Nothing magical here - just much needed structure for test fixing by managing co
         <title type="html"><![CDATA[A watchOS App for Liars Dice: Probability Calculator for Apple Watch]]></title>
         <id>https://neonwatty.com/posts/liars-dice-apple-watch-app</id>
         <link href="https://neonwatty.com/posts/liars-dice-apple-watch-app"/>
-        <link rel="enclosure" href="https://neonwatty.com/images/posts/og/liars-dice-apple-watch-app.png" type="image/png"/>
         <updated>2025-08-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A watchOS app to help you cheat at Liars Dice using math]]></summary>
         <content type="html"><![CDATA[

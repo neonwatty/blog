@@ -1,7 +1,7 @@
 {
   "name": "Jeremy Watt's Blog",
-  "short_name": "ModernBlog",
-  "description": "A modern, performant blog built with Next.js",
+  "short_name": "Jeremy Watt",
+  "description": "Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

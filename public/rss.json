@@ -16,7 +16,6 @@
             "url": "https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise",
             "title": "I'll Build Your Whole \"AI Product\" for Only a Third of Your Total Raise",
             "summary": "It's 2026 and big checks are still being cut to pre-product AI companies. Here's my standard reply to the recruiters.",
-            "image": "https://neonwatty.com/images/posts/og/build-your-app-for-only-a-third-of-your-raise.png",
             "date_modified": "2026-03-18T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -37,7 +36,6 @@
             "url": "https://neonwatty.com/posts/the-ralph-loop-is-a-fixed-point-process",
             "title": "The Ralph Loop is Now Basically a Fixed-Point Process",
             "summary": "The brute-force framing misses the point. For well-defined closure tasks — plan refinement, prototype validation, implementation verification — the Ralph Loop doesn't stumble toward correctness. It converges.",
-            "image": "https://neonwatty.com/images/posts/og/the-ralph-loop-is-a-fixed-point-process.png",
             "date_modified": "2026-03-09T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -56,7 +54,6 @@
             "url": "https://neonwatty.com/posts/how-to-set-up-your-repo-for-claude-code-and-codex",
             "title": "How to Set Up Your Repo for Claude Code and Codex",
             "summary": "Nine layers of guardrails that make AI coding agents safe, predictable, and actually useful — from CLAUDE.md to CI pipelines to specialized review agents.",
-            "image": "https://neonwatty.com/images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png",
             "date_modified": "2026-03-09T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -66,7 +63,7 @@
                 "Codex",
                 "AI",
                 "Developer Tools",
-                "CI/CD"
+                "CI-CD"
             ]
         },
         {
@@ -75,7 +72,6 @@
             "url": "https://neonwatty.com/posts/vibe-coding-interview-hire-ai-developers",
             "title": "The Vibe Coding Interview: How to Hire AI-Assisted Developers",
             "summary": "The old question was 'can you code?' The new question is 'can you build and ship?' A framework for evaluating engineers who use Claude Code, Cursor, and other AI-assisted coding tools.",
-            "image": "https://neonwatty.com/images/posts/og/vibe-coding-interview-hire-ai-developers.png",
             "date_modified": "2026-03-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -95,7 +91,6 @@
             "url": "https://neonwatty.com/posts/tdd-is-dead",
             "title": "TDD Is Dead",
             "summary": "Test Driven Development is dead. Quality control can be largely automated now. That frees you to focus on what actually matters: building things people want.",
-            "image": "https://neonwatty.com/images/posts/og/tdd-is-dead.png",
             "date_modified": "2026-03-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -114,7 +109,6 @@
             "url": "https://neonwatty.com/posts/logo-designer-skill-claude-code",
             "title": "Claude Code SVG Logo Design: A Reusable Skill for Generating Logos",
             "summary": "I built a Claude Code skill that turns logo design into a conversation. Point it at your repo, pick a direction, and iterate until you're happy — no design tools needed.",
-            "image": "https://neonwatty.com/images/posts/og/logo-designer-skill-claude-code.png",
             "date_modified": "2026-02-24T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -209,7 +203,6 @@
             "url": "https://neonwatty.com/posts/claude-code-workflow-testing-mcp",
             "title": "Claude Code Browser Testing and iOS Automation with MCP Workflows",
             "summary": "Four Claude Code skills that generate and execute user workflow tests using Claude-in-Chrome and iOS Simulator MCPs. Catch bugs and edge cases while you're still building.",
-            "image": "https://neonwatty.com/images/posts/og/claude-code-workflow-testing-mcp.png",
             "date_modified": "2026-01-08T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -229,7 +222,6 @@
             "url": "https://neonwatty.com/posts/best-claude-code-seo-tools",
             "title": "Pull Google Search Console Data with Claude Code",
             "summary": "Use Claude Code to query your GSC data directly from the terminal. Find ranking opportunities, see what's working, skip the manual exports.",
-            "image": "https://neonwatty.com/images/posts/og/best-claude-code-seo-tools.png",
             "date_modified": "2025-12-20T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -266,7 +258,6 @@
             "url": "https://neonwatty.com/posts/github-repo-tags-claude-code",
             "title": "Claude Code for SEO: Choosing Optimal GitHub Repo Topics",
             "summary": "Use Claude Code and gh CLI to choose optimal GitHub repo topics with real volume data. Data-driven tag selection in 30 seconds.",
-            "image": "https://neonwatty.com/images/posts/og/github-repo-tags-claude-code.png",
             "date_modified": "2025-12-12T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -284,7 +275,6 @@
             "url": "https://neonwatty.com/posts/keyword-research-claude-code",
             "title": "SEO Keyword Research with Claude Code",
             "summary": "Use Claude Code with Google autocomplete for fast keyword research at an industrial scale - for blog SEO, product naming, or just understanding what people actually search for.",
-            "image": "https://neonwatty.com/images/posts/og/keyword-research-claude-code.png",
             "date_modified": "2025-12-02T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -311,7 +301,7 @@
             "tags": [
                 "Claude Code",
                 "GitHub Actions",
-                "CI/CD",
+                "CI-CD",
                 "gh CLI",
                 "Developer Tools"
             ]
@@ -349,7 +339,7 @@
             "tags": [
                 "Claude Code",
                 "GitHub Actions",
-                "CI/CD",
+                "CI-CD",
                 "DevOps",
                 "AI",
                 "Automation"
@@ -380,7 +370,6 @@
             "url": "https://neonwatty.com/posts/ytgify-launch",
             "title": "ytgify: YouTube to GIF Converter Chrome Extension - No Watermark",
             "summary": "Turn your favorite YouTube moments into shareable GIFs.",
-            "image": "https://neonwatty.com/images/posts/og/ytgify-launch.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -398,7 +387,6 @@
             "url": "https://neonwatty.com/posts/x-search-pro-launch",
             "title": "X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches",
             "summary": "Build your personal X/Twitter search library. Save, categorize, and organize searches you use repeatedly.",
-            "image": "https://neonwatty.com/images/posts/og/x-search-pro-launch.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -415,7 +403,6 @@
             "url": "https://neonwatty.com/posts/storyboard-demo-videos",
             "title": "Create Video Storyboards with Claude Code and Playwright Screenshots",
             "summary": "Automatically generate visual storyboards for demo videos using Claude Code and Playwright.",
-            "image": "https://neonwatty.com/images/posts/og/storyboard-demo-videos.png",
             "date_modified": "2025-10-05T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -433,7 +420,6 @@
             "url": "https://neonwatty.com/posts/godaddy-is-cancer",
             "title": "Create an Interactive Image Gallery Treasure Map with Claude Code",
             "summary": "Turn any image sequence into an interactive treasure map using Claude Code",
-            "image": "https://neonwatty.com/images/posts/og/godaddy-is-cancer.png",
             "date_modified": "2025-10-04T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -450,7 +436,6 @@
             "url": "https://neonwatty.com/posts/ai-logo-generator-claude-code",
             "title": "AI Logo Generator: Generative SVG Logo Design with Claude Code",
             "summary": "Generate, evolve, and iterate on SVG logos using natural language and Claude Code.",
-            "image": "https://neonwatty.com/images/posts/og/ai-logo-generator-claude-code.png",
             "date_modified": "2025-09-13T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -467,7 +452,6 @@
             "url": "https://neonwatty.com/posts/todoq-task-management",
             "title": "Claude Code Task Management CLI: Skip the JSON Overhead",
             "summary": "Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks.",
-            "image": "https://neonwatty.com/images/posts/og/todoq-task-management.png",
             "date_modified": "2025-09-03T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -484,7 +468,6 @@
             "url": "https://neonwatty.com/posts/tfq-test-failure-management",
             "title": "Claude Code Test Debugging Without Context Overload: TFQ CLI Tool",
             "summary": "How I use TFQ (Test Failure Queue) to avoid hitting context limits when debugging test failures with Claude Code.  A simple CLI tool that queues failing tests and fixes them one at a time in separate headless sessions.",
-            "image": "https://neonwatty.com/images/posts/og/tfq-test-failure-management.png",
             "date_modified": "2025-08-31T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
@@ -501,7 +484,6 @@
             "url": "https://neonwatty.com/posts/liars-dice-apple-watch-app",
             "title": "A watchOS App for Liars Dice: Probability Calculator for Apple Watch",
             "summary": "A watchOS app to help you cheat at Liars Dice using math",
-            "image": "https://neonwatty.com/images/posts/og/liars-dice-apple-watch-app.png",
             "date_modified": "2025-08-31T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
