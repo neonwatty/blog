@@ -1,6 +1,7 @@
 ---
 title: 'Claude Code Test Debugging Without Context Overload: TFQ CLI Tool'
 date: '2025-08-31'
+lastUpdated: '2025-10-04'
 excerpt: >-
   How I use TFQ (Test Failure Queue) to avoid hitting context limits when
   debugging test failures with Claude Code.  A simple CLI tool that queues
@@ -128,4 +129,4 @@ tfq fix-all
 
 ---
 
-Nothing magical here - just much needed structure for test fixing by managing context in an ordered fashion.
+Nothing magical here - just much needed structure for test fixing by managing context in an ordered fashion. For a similar approach to task management (not just tests), check out [todoq](/posts/todoq-task-management) — same philosophy of CLI-driven queues that keep Claude Code's context lean.

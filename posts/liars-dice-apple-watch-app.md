@@ -1,6 +1,7 @@
 ---
 title: 'A watchOS App for Liars Dice: Probability Calculator for Apple Watch'
 date: '2025-08-31'
+lastUpdated: '2025-10-04'
 excerpt: A watchOS app to help you cheat at Liars Dice using math
 tags:
   - Apple Watch
@@ -41,4 +42,4 @@ This little Apple Watch app lets you discretely compute probabilities of the bid
 
 ![Results showing probability percentage for informed decisions](/images/liars-dice-3.png)
 
-Making apps to help you cheat your friends and family's getting easier with each passing day.
+Making apps to help you cheat your friends and family's getting easier with each passing day. If you're building iOS apps with Claude Code, the [iOS HIG testing skills](/posts/socratic-interview-skills-claude-code) can catch platform convention violations you'd otherwise miss.

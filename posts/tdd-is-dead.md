@@ -36,7 +36,7 @@ This is the creative work that actually determines whether anyone uses what you 
 
 ## How Testing Changed
 
-Claude Code, Codex, and similar tools can sweep a codebase and generate unit, integration, and e2e tests systematically—every branch, every error path. They find gaps you wouldn't have thought to cover by hand. It takes minutes, not hours, and the coverage is broader and deeper than what most developers produce manually.
+Claude Code, Codex, and similar tools can sweep a codebase and generate unit, integration, and e2e tests systematically—every branch, every error path. They find gaps you wouldn't have thought to cover by hand. It takes minutes, not hours, and the coverage is broader and deeper than what most developers produce manually. Tools like [TFQ](/posts/tfq-test-failure-management) let you queue up failing tests and fix them one at a time in isolated headless sessions, keeping context clean.
 
 Build with basic coverage. Validate the idea. Then sweep for deep coverage once it's earned its place. Harden what matters. Skip what doesn't.
 
@@ -48,4 +48,4 @@ Test Driven Development was always a compromise. You traded speed for rigor—wr
 
 It doesn't anymore. TDD front-loaded engineering rigor on features that might get cut next sprint—prioritizing correctness for code that hadn't earned it yet. The inverse of what you actually want: the freedom to explore fast and harden later.
 
-The engineers who thrive now are the ones who automate quality and spend their freed-up time on the hard problem—figuring out what's worth building in the first place.
+The engineers who thrive now are the ones who automate quality and spend their freed-up time on the hard problem—figuring out what's worth building in the first place. If you're [hiring for this new world](/posts/vibe-coding-interview-hire-ai-developers), the interview framework has to change too.

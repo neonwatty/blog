@@ -1,6 +1,7 @@
 ---
 title: 'CLI is All You Need: Skip Custom Slash Commands with Claude Code'
 date: '2025-11-30'
+lastUpdated: '2025-12-02'
 excerpt: >-
   You don't need custom slash commands or skills—just point Claude Code at your
   CLI tools and describe what you want

@@ -40,7 +40,7 @@ Anyone who has used Claude Code's plan mode knows the experience: you describe a
 
 But think of that as just the N=1 iteration. If you haven't tried running the same kind of pass two, three, even five or ten times manually — you should. In my experience, each successive pass continues to squeeze out value: missed edge cases, implicit assumptions, gaps you couldn't see until the previous round's fixes revealed them. The benefits taper off eventually, but not as quickly as you'd expect.
 
-And with a little guidance — a consistent prompt directing the agent to look for gaps, coverage misses, and edge cases — an agent like Claude can perform this iteration on its own.
+And with a little guidance — a consistent prompt directing the agent to look for gaps, coverage misses, and edge cases — an agent like Claude can perform this iteration on its own. Setting up your repo with the right [guardrails and context layers](/posts/how-to-set-up-your-repo-for-claude-code-and-codex) makes these iterations more reliable.
 
 The Ralph Loop automates exactly this. Each iteration, the agent reads the current plan and a prompt asking it to find gaps, logical inconsistencies, and unconsidered edge cases. It makes improvements, records what changed, and exits. The next iteration finds what the previous one missed — not because the agent failed, but because at iteration *n*, the *n−1* preceding refinements have been made, and new gaps are now visible that weren't before. The stochasticity of the model, combined with the accumulating context of prior work, reliably surfaces things a single pass would not.
 
@@ -52,7 +52,7 @@ The loop terminates when a full pass finds nothing to improve. That is the fixed
 
 This is one stage of a broader pipeline. A closed plan becomes the invariant for the next stage — building a prototype — where the loop checks that every design element and feature of the plan is faithfully present in the prototype. A closed prototype becomes the invariant for implementation. At each stage, the same fixed-point structure applies: a stable reference, a repeated checking rule, and a semantic completion condition.
 
-For these kinds of well-defined, on-rails tasks, agents like Claude and Codex are now functioning as fixed-point operators — stochastic as they remain for open-ended work, they are reliable enough for structured closure tasks to converge. Define your invariants, apply the operator recursively, and after enough iterations you reach a mathematical closure — a state where a full pass produces nothing new.
+For these kinds of well-defined, on-rails tasks, agents like Claude and Codex are now functioning as fixed-point operators — stochastic as they remain for open-ended work, they are reliable enough for structured closure tasks to converge. Define your invariants, apply the operator recursively, and after enough iterations you reach a mathematical closure — a state where a full pass produces nothing new. In practice, [browser and iOS workflow testing with MCP](/posts/claude-code-workflow-testing-mcp) is one concrete way to apply this kind of iterative verification to a prototype.
 
 ![The closure pipeline — each stage's output becomes the next stage's fixed reference](/images/posts/ralph-loop-fixed-point/pipeline-diagram.svg)
 

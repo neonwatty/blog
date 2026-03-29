@@ -1,6 +1,7 @@
 ---
 title: Why Nobody On Your Engineering Team Wants to Use Claude Code
 date: '2026-02-05'
+lastUpdated: '2026-02-10'
 excerpt: >-
   The real barriers to AI coding tool adoption aren't technical — they're
   management problems, employee problems, and human nature problems.
@@ -41,7 +42,7 @@ Here are a few ideas I've gathered speaking with folks across the software indus
 
 2. **Culture.** Leadership is telling engineering teams to adopt these tools but isn't using them themselves. But these tools aren't just for writing code — they're useful for PMs, designers, marketers, and anyone involved in building basically anything. Instead of leading by example, many leaders are depending on their technical teams to figure it out first and spread that knowledge upward — a difficult ask given the incentive problem mentioned above. Leaders need to use these tools themselves, set aside time to learn, and share what they discover. Engineers are under enormous pressure to deliver and need the cultural precedent from leadership that it's okay to stop and learn. Cultural change starts at the top.
 
-3. **Framing.** Managers want more efficiency, more throughput — and they're absolutely within their rights to want this. But don't confuse what *they* want with what developers want. They're not the same. You have to sell (some) developers on the idea. Frame the tools as solving real pain points they actually feel on a daily basis. Sit with your team, have an honest conversation about what's painful in their workflows, and introduce agentic engineering as a way to deal with those problems faster. That's a much easier sell than "use this tool because I want you to."
+3. **Framing.** Managers want more efficiency, more throughput — and they're absolutely within their rights to want this. But don't confuse what *they* want with what developers want. They're not the same. You have to sell (some) developers on the idea. Frame the tools as solving real pain points they actually feel on a daily basis. Things like [letting Claude Code babysit CI](/posts/claude-code-ci-babysitter) instead of manually watching GitHub Actions — that's a concrete pain point everyone feels. Sit with your team, have an honest conversation about what's painful in their workflows, and introduce agentic engineering as a way to deal with those problems faster. That's a much easier sell than "use this tool because I want you to."
 
 ## Employee problems
 
@@ -61,4 +62,4 @@ Here are a few ideas I've gathered speaking with folks across the software indus
 
 ***
 
-None of these problems are unsolvable — but none of them are technical problems either. They're organizational, cultural, and deeply human. Teams that treat AI adoption as a tooling rollout will keep getting the same lackluster results. The teams that get this right will be the ones whose leaders treat it as a change management problem: aligning incentives, leading by example, creating space to learn, and meeting people where they are.
+None of these problems are unsolvable — but none of them are technical problems either. They're organizational, cultural, and deeply human. Teams that treat AI adoption as a tooling rollout will keep getting the same lackluster results. The teams that get this right will be the ones whose leaders treat it as a change management problem: aligning incentives, leading by example, creating space to learn, and meeting people where they are. And once adoption does take hold, [how you interview and evaluate](/posts/vibe-coding-interview-hire-ai-developers) these developers has to evolve too.

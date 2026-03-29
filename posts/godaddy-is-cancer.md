@@ -1,6 +1,7 @@
 ---
 title: Create an Interactive Image Gallery Treasure Map with Claude Code
 date: '2025-10-04'
+lastUpdated: '2025-10-05'
 excerpt: Turn any image sequence into an interactive treasure map using Claude Code
 tags:
   - Claude Code
@@ -19,7 +20,7 @@ relatedPosts:
 ogImage: /images/posts/og/godaddy-is-cancer.png
 ---
 
-Claude Code can turn any sequence of related images into an interactive image gallery treasure map with minimal effort - complete with SVG path arrows, lightbox zoom, and responsive design. 
+Claude Code can turn any sequence of related images into an interactive image gallery treasure map with minimal effort - complete with SVG path arrows, lightbox zoom, and responsive design. (Claude Code is also great for generating [SVG logos](/posts/ai-logo-generator-claude-code) using the same iterative design approach.) 
 
 Here's how.
 

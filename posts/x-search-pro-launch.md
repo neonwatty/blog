@@ -1,6 +1,7 @@
 ---
 title: 'X Search Pro Chrome Extension: Save and Organize Twitter Advanced Searches'
 date: '2025-10-05'
+lastUpdated: '2025-10-09'
 excerpt: >-
   Build your personal X/Twitter search library. Save, categorize, and organize
   searches you use repeatedly.
@@ -32,6 +33,6 @@ Even after pruning my X / Twitter feed of unwanted clickbait posts (e.g., politi
 
 I first tried using X's Twitter advanced search features to make regular queries for topics I'm interested in (e.g., "Claude Code", "Hugging Face"), but found myself clicking around all the time to re-create / update the time window on these queries. I needed a better way to manage saved searches.
 
-So I built this simple Chrome extension.  X Search Pro solves this with smart saved searches that automatically update their time ranges.  Set it once, use it forever.  You can categorize and color-code your saved searches, and - if you so desire - they can always be within reach in a nice sidebar that's always accessible on x.com.
+So I built this simple Chrome extension.  X Search Pro solves this with smart saved searches that automatically update their time ranges.  Set it once, use it forever.  You can categorize and color-code your saved searches, and - if you so desire - they can always be within reach in a nice sidebar that's always accessible on x.com. For quick capture without leaving the terminal, I also built [CLI tools for social media posting](/posts/social-starter-pack-cli-tools) that work with Claude Code.
 
 [Get it on Chrome Web Store](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) →

@@ -29,7 +29,7 @@ It's a free GIF maker Chrome extension that lets you easily clip GIFs right from
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
 </div>
 
-Before making the extension, clipping GIFs off of YouTube was a slow and painful process, involving multiple apps to download the YouTube video, bring it into an editor, clip it, export as a GIF, etc. Now it's a breeze.
+Before making the extension, clipping GIFs off of YouTube was a slow and painful process, involving multiple apps to download the YouTube video, bring it into an editor, clip it, export as a GIF, etc. Now it's a breeze. I used Claude Code to [generate the SVG logo](/posts/ai-logo-generator-claude-code) and create [video storyboards with Playwright](/posts/storyboard-demo-videos) for the demo walkthrough.
 
 Shared this out and was happy to see others liked it too - the extension got solid traction on Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1ntgjnn/a_youtubetogif_chrome_extension/), [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ntgb1c/youtube_gif_chrome_extension_built_with_claude/)) before launch.
 

@@ -31,6 +31,6 @@ It's 2026 and big checks are still being cut to pre-product "AI product companie
 
 ![A typical cold email: pre-revenue, pre-product, just raised $4.5M](/images/posts/build-your-app-for-only-a-third-of-your-raise/cold-email.png)
 
-Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3 months for only a third of your raise."**
+Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3 months for only a third of your raise."** The tooling is there — [TDD is dead](/posts/tdd-is-dead), quality control is automatable, and a solo dev with Claude Code can ship what used to take a team.
 
 ![My standard reply](/images/posts/build-your-app-for-only-a-third-of-your-raise/my-reply.png)
