@@ -7,7 +7,7 @@ excerpt: >-
 tags:
   - Claude Code
   - GitHub Actions
-  - CI/CD
+  - CI-CD
   - DevOps
   - AI
   - Automation
@@ -22,6 +22,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-github-actions-example
   - claude-code-cli-is-all-you-need
+  - how-to-set-up-your-repo-for-claude-code-and-codex
 ---
 
 # Manually Monitoring GitHub CI is a Pain

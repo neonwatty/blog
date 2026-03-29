@@ -7,7 +7,7 @@ excerpt: >-
 tags:
   - Claude Code
   - GitHub Actions
-  - CI/CD
+  - CI-CD
   - gh CLI
   - Developer Tools
 featured: true
@@ -22,6 +22,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-ci-babysitter
   - claude-code-cli-is-all-you-need
+  - how-to-set-up-your-repo-for-claude-code-and-codex
 ---
 
 

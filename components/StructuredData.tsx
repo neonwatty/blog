@@ -16,7 +16,12 @@ export default function StructuredData({ post, type = 'website' }: StructuredDat
     name: 'Jeremy Watt',
     url: `${siteUrl}/about`,
     jobTitle: 'AI Engineer',
-    sameAs: ['https://x.com/neonwatty', 'https://github.com/neonwatty'],
+    sameAs: [
+      'https://x.com/neonwatty',
+      'https://github.com/neonwatty',
+      'https://www.linkedin.com/in/jeremy-watt/',
+      'https://discord.gg/7xsxU4ZG6A',
+    ],
     knowsAbout: ['Claude Code', 'AI developer tools', 'machine learning', 'developer productivity'],
   }
 

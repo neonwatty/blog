@@ -18,6 +18,7 @@ metaDescription: >-
 relatedPosts:
   - todoq-task-management
   - social-starter-pack-cli-tools
+  - tdd-is-dead
 ogImage: /images/posts/og/tfq-test-failure-management.png
 ---
 

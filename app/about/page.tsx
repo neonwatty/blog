@@ -24,7 +24,12 @@ export default function About() {
     image: `${siteUrl}/images/jeremy-watt-headshot.jpg`,
     jobTitle: 'AI Engineer',
     description: 'AI Engineer writing about Claude Code, developer productivity, and building products with AI tools.',
-    sameAs: ['https://x.com/neonwatty', 'https://github.com/neonwatty'],
+    sameAs: [
+      'https://x.com/neonwatty',
+      'https://github.com/neonwatty',
+      'https://www.linkedin.com/in/jeremy-watt/',
+      'https://discord.gg/7xsxU4ZG6A',
+    ],
     knowsAbout: ['Claude Code', 'AI developer tools', 'machine learning', 'developer productivity', 'CI/CD automation'],
   }
 

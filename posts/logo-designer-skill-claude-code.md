@@ -21,6 +21,7 @@ metaDescription: >-
 relatedPosts:
   - interview-skills-claude-code
   - socratic-interview-skills-claude-code
+  - ai-logo-generator-claude-code
 ogImage: /images/posts/og/logo-designer-skill-claude-code.png
 ---
 

@@ -18,6 +18,7 @@ metaDescription: >-
 relatedPosts:
   - keyword-research-claude-code
   - github-repo-tags-claude-code
+  - claude-code-cli-is-all-you-need
 ogImage: /images/posts/og/best-claude-code-seo-tools.png
 ---
 
