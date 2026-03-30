@@ -30,7 +30,7 @@ MCP connections to browsers (via [Claude-in-Chrome](https://github.com/anthropic
 
 ## The Skills
 
-To make these re-usable across projects you want to be able to generate workflows first.  These are generated via the following two skills, each of which uses the `AskUserQuestion` tool recursively to help Claude squeeze out all the ideas from your brain as it can.
+To make these re-usable across projects you want to be able to generate workflows first.  These are generated via the following two skills, each of which uses the `AskUserQuestion` tool recursively to help Claude squeeze out all the ideas from your brain as it can. (I wrote more about the [AskUserQuestion interview pattern](/posts/interview-skills-claude-code) and how it applies to features, bugs, and workflow generation.)
 
 **Generators** — explore your codebase and create workflow files:
 - `browser-workflow-generator` — discovers routes, components, and interactions in web apps, outputs `/workflows/browser-workflows.md`
@@ -107,4 +107,4 @@ The MCP integrations mean Claude sees exactly what users see. No mocking.
 
 ---
 
-That's it. Generate workflows from your codebase, execute them on real browsers and simulators, catch issues early.
+That's it. Generate workflows from your codebase, execute them on real browsers and simulators, catch issues early. For a deeper look at how workflow testing catches iOS-specific HIG violations, see the [iOS Human Interface Guidelines testing post](/posts/socratic-interview-skills-claude-code).

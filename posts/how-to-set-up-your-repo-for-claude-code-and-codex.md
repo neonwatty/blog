@@ -1,6 +1,7 @@
 ---
 title: How to Set Up Your Repo for Claude Code and Codex
 date: '2026-03-09'
+lastUpdated: '2026-03-10'
 excerpt: >-
   Nine layers of guardrails that make AI coding agents safe, predictable, and
   actually useful — from CLAUDE.md to CI pipelines to specialized review agents.

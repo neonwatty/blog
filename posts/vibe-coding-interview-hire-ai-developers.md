@@ -86,7 +86,7 @@ The high water mark—which is becoming more and more common—is the portfolio.
 - Deployed, working applications (not just code in a repo)
 - Evidence of iteration (v2, bug fixes, feature additions)
 - Automated best practices for keeping a project on rails: linting, knip, test coverage
-- Setup and evidence of hooks and skills for their agentic platform of choice
+- Setup and evidence of hooks and skills for their agentic platform of choice (see [how to set up a repo for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex) for what good looks like)
 - CI/CD pipelines
 - Real users, even if it's just "my friends use this"
 
@@ -102,7 +102,7 @@ Whether candidates are using Cursor, Claude Code, Copilot, or Windsurf, here's w
 
 **Speed AND quality.** The old tradeoff is dead. AI-assisted coding should deliver both. If someone takes four hours and ships obviously buggy code, they're not using the tools well. If they ship fast but the tests are garbage, same problem.
 
-**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number?
+**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number? (The old TDD rigor is [obsolete in the AI era](/posts/tdd-is-dead), but testing discipline is more important than ever.)
 
 **Communication and prompting.** The best agentic engineers communicate clearly—with their tools, not just their teammates. In Claude Code, strong developers use plan mode to scope before writing a line of code, and AskUserQuestion to pull out edge cases they'd otherwise miss. In Cursor, they write focused, incremental prompts rather than vague "build me X" requests. The quality of someone's prompts is a direct reflection of how clearly they think.
 

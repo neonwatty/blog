@@ -1,6 +1,7 @@
 ---
 title: A Claude Code Incubator
 date: '2026-02-14'
+lastUpdated: '2026-02-23'
 excerpt: >-
   Anthropic just raised $30B. A small fraction could fund the Claude Code
   showcase the ecosystem actually needs.
@@ -53,7 +54,7 @@ Not a VC fund. Not an API credits program. Something more targeted:
 - **Full Claude Code access** and some mentorship from people who know what these tools can do.
 - **An official "Built with Claude Code" portfolio** that showcases what comes out the other end — a living, growing answer to the visibility problem.
 
-The early adopters are already out there. They're building apps, shipping products, grinding through the learning curve. Many of them don't have VC backing and aren't going to get it anytime soon — they're solo founders, two-person teams, engineers with day jobs and side projects. These are exactly the people who would benefit most from a small check and a signal boost.
+The early adopters are already out there. They're building apps, shipping products, grinding through the learning curve. Many of them don't have VC backing and aren't going to get it anytime soon — they're solo founders, two-person teams, engineers with day jobs and side projects. A solo dev can [build an entire MVP](/posts/build-your-app-for-only-a-third-of-your-raise) for a fraction of what funded startups spend. These are exactly the people who would benefit most from a small check and a signal boost.
 
 ## Why it matters
 
@@ -61,7 +62,7 @@ The point wouldn't be financial returns on the portfolio. The ROI is something m
 
 Every potential enterprise customer, every developer evaluating Claude Code vs. Codex vs. Cursor, every engineering leader trying to justify the budget — they're all asking the same question: *what can I actually build with this?* Benchmarks don't answer that. Blog posts don't answer that. Fifty shipped products do.
 
-Dario himself predicted we'll see the first billion-dollar business started by a single person as soon as 2026. A Claude Code incubator would be a direct bet on making that happen — and making sure everyone sees it when it does.
+Dario himself predicted we'll see the first billion-dollar business started by a single person as soon as 2026. The [barriers to adoption aren't technical](/posts/why-nobody-on-your-engineering-team-wants-to-use-claude-code) — they're organizational and cultural. A Claude Code incubator would be a direct bet on making that happen — and making sure everyone sees it when it does.
 
 ## The bottom line
 

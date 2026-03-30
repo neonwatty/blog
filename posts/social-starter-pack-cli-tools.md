@@ -1,6 +1,7 @@
 ---
 title: Share Your Random Thoughts with the World Without Leaving Claude Code
 date: '2025-12-14'
+lastUpdated: '2025-12-15'
 excerpt: >-
   CLI tools for posting to Twitter, LinkedIn, Reddit, and more—designed to work
   with Claude Code so you can capture and share ideas without context switching.

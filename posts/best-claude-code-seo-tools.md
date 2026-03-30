@@ -93,4 +93,4 @@ You don't need to remember the syntax. Just describe what you want.
 
 ---
 
-That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time.
+That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time. For the other half of SEO — finding what people actually search for — check out [keyword research with Claude Code](/posts/keyword-research-claude-code).

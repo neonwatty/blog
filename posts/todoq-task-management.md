@@ -1,6 +1,7 @@
 ---
 title: 'Claude Code Task Management CLI: Skip the JSON Overhead'
 date: '2025-09-03'
+lastUpdated: '2025-10-04'
 excerpt: >-
   Why JSON task management wastes context and corrupts data in Claude Code
   sessions, and how todoq's CLI approach solves both problems with targeted
@@ -23,7 +24,7 @@ relatedPosts:
 ogImage: /images/posts/og/todoq-task-management.png
 ---
 
-Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach.
+Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach. (I built a similar tool for test failures — [TFQ](/posts/tfq-test-failure-management) — using the same CLI queue philosophy.)
 
 Two core problems here: every task operation loads the entire JSON into context, wasting your context window, and JSON updates are error-prone since Claude Code (and other agnetic IDEs) must locate exact positions in complex nested structures.  These issues cause Claude Code to misformat JSON, accidentally delete fields, or corrupt entire task lists.
 

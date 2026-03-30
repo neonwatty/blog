@@ -1,6 +1,7 @@
 ---
 title: 'Let Claude Code Babysit Your CI: AI DevOps for GitHub Actions'
 date: '2025-11-30'
+lastUpdated: '2025-12-02'
 excerpt: >-
   How I stopped babysitting GitHub Actions and let Claude Code monitor, debug,
   and fix CI failures autonomously

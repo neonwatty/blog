@@ -46,7 +46,7 @@ I described the problem to [Claude Code](https://claude.ai/claude-code) and with
 3. **Got environment variables working** - The game port wasn't being passed through correctly
 4. **Deployed with Kamal 2** - Set up the full deploy.yml with proper port mappings and SSL configuration
 
-The back-and-forth debugging with Claude Code was exactly what this project needed. Instead of context-switching between docs, Stack Overflow, and trial-and-error deploys, I had a pair programmer who could hold the entire problem in context.
+The back-and-forth debugging with Claude Code was exactly what this project needed. Instead of context-switching between docs, Stack Overflow, and trial-and-error deploys, I had a pair programmer who could hold the entire problem in context. This is the same reason [CLI tools are all you need](/posts/claude-code-cli-is-all-you-need) — just describe the problem in natural language and let Claude Code work with the tools already available.
 
 ## The Result
 

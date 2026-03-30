@@ -39,7 +39,7 @@ Here's the resuling storyboard:
 
 Claude Code used Playwright to navigate the extension, captured 11 screenshots of key moments, and generated a complete HTML storyboard with numbered steps, descriptions, visual flow summary, and navigation menu.
 
-I ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier!
+I ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier! You can also use Claude Code with Playwright for more structured [browser workflow testing with MCP](/posts/claude-code-workflow-testing-mcp).
 
 <div style="max-width: 800px; margin: 2rem auto;">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
