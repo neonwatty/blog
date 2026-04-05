@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://neonwatty.com</id>
     <title>Jeremy Watt's Blog</title>
-    <updated>2026-03-18T00:00:00.000Z</updated>
+    <updated>2026-04-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Jeremy Watt</name>
@@ -15,6 +15,235 @@
     <icon>https://neonwatty.com/favicon.ico</icon>
     <rights>All rights reserved 2026</rights>
     <entry>
+        <title type="html"><![CDATA[How to File Your Taxes with AI in 2026]]></title>
+        <id>https://neonwatty.com/posts/how-to-file-taxes-with-ai-2026</id>
+        <link href="https://neonwatty.com/posts/how-to-file-taxes-with-ai-2026"/>
+        <updated>2026-04-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A step-by-step guide to using Claude or ChatGPT for AI tax filing. Collect your documents, redact sensitive info, clean up the noise, and let AI help you fill out every form — without uploading your SSN to the cloud.]]></summary>
+        <content type="html"><![CDATA[
+It's tax season. You have a pile of W-2s, 1099s, investment statements, and last year's return open in seventeen tabs. You know AI can help — but you're not about to paste your social security number into a chatbot.
+
+Good news: you don't have to. AI tax preparation works best when you treat it like working with a smart assistant who has no memory and no access to your filing system. You hand them clean, redacted context. They help you figure out what goes where. You stay in control.
+
+Here's how to use AI to file your taxes in 2026.
+
+## Step 1: Collect All Your Documents
+
+Before you touch any AI tool, gather everything in one place. You need the full picture before you start asking questions.
+
+**Income documents:**
+
+- W-2s from every employer
+- 1099-NEC or 1099-MISC for freelance/contract income
+- 1099-INT for bank interest
+- 1099-DIV for dividends
+- 1099-B for stock/crypto sales
+- K-1s if you're part of a partnership or S-corp
+
+**Deduction and credit documents:**
+
+- 1098 for mortgage interest
+- 1098-T for tuition
+- Property tax statements
+- Charitable donation receipts
+- Health insurance (1095-A/B/C)
+- Childcare expenses (if applicable)
+
+**Context from last year:**
+
+- Your 2024 tax return (1040 + all schedules you filed)
+- Any carryforward amounts (capital losses, etc.)
+
+Put them all in a single folder. PDF is ideal — most of these come as PDFs anyway.
+
+## Step 2: Redact Sensitive Information
+
+This is the step most "use AI for taxes" guides skip. Don't skip it.
+
+AI chatbots like Claude and ChatGPT process your input on remote servers. Even with strong privacy policies, there's no reason to send your social security number, bank account numbers, or full legal name through a chat interface when you don't need to.
+
+**What to redact:**
+
+- Social security numbers
+- Bank account and routing numbers
+- Full names (replace with initials or "Taxpayer 1" / "Taxpayer 2")
+- Full addresses (keep the state for tax residency purposes)
+- Employer EINs (optional — low risk, but not needed for most questions)
+
+**How to redact on macOS:** Open each PDF in Preview, use the rectangle annotation tool, set the fill to black, and drag it over the sensitive fields. It takes about 30 seconds per document.
+
+![Example of a redacted tax form using macOS Preview — name and SSN blacked out](/images/posts/how-to-file-taxes-with-ai-2026/redacted-tax-form-preview.png)
+
+The result doesn't need to be forensically perfect. You're not publishing these — you're just keeping PII out of your chat history. The numbers that matter for tax calculation (income amounts, withholding, deductions) stay visible.
+
+## Step 3: Clean Up the Noise
+
+Tax documents are full of filler that wastes AI context. Before you paste or upload anything, strip it down to the signal.
+
+**Remove or skip:**
+
+- "This page intentionally left blank"
+- Multi-page fine print and legal disclosures
+- Instructions pages (the AI already knows tax rules better than those inserts)
+- Duplicate copies (you don't need Copy B, Copy C, and Copy 2 of the same W-2)
+- Header/footer boilerplate that repeats on every page
+
+**Keep:**
+
+- All dollar amounts and box numbers
+- Form numbers and tax year
+- Any state-specific forms
+- Notes about carryforwards or amended returns
+
+If you're working with PDFs, delete the junk pages in Preview before uploading to your AI tool. For last year's return, the key pages are your 1040, any schedules (A, B, C, D, SE, etc.), and the summary — not the 20 pages of instructions the IRS stapled on.
+
+## Step 4: Set Up Your Tax App and Start Filing with AI
+
+Now for the actual filing. Here's the workflow:
+
+1. **Open your tax software.** FreeTaxUSA, TurboTax, H&R Block — whatever you use. Start a new return and get to the first input screen.
+
+2. **Open Claude or ChatGPT in a separate window.** Upload your redacted documents (or paste the relevant numbers). Start with something like:
+
+   > Here are my tax documents for 2025. I'm using [tax software] to file. Walk me through what I need to enter, form by form. Ask me for any information you need.
+
+3. **Work through it section by section.** The AI will map your documents to the fields in your tax software. When your software asks "Did you receive any 1099-INT forms?" — you already know the answer because you collected everything in Step 1, and the AI can tell you exactly what numbers to enter where.
+
+4. **Use AI for the confusing parts.** The real value isn't data entry — it's the questions you'd normally Google. "Do I need Schedule SE?" "Can I deduct my home office if I'm W-2?" "What's the difference between standard and itemized for my situation?" These are the questions where AI tax preparation genuinely saves hours.
+
+5. **Review before you file.** Have the AI double-check your return against your source documents. Ask it to verify that every income document is accounted for and that your total income, deductions, and credits look reasonable.
+
+## What AI Can and Can't Do for Taxes
+
+**AI is great at:**
+
+- Explaining which forms and schedules you need
+- Mapping box numbers on your documents to fields in tax software
+- Answering "should I itemize or take the standard deduction" with your actual numbers
+- Catching things you might miss ("you have capital losses you can carry forward")
+- Explaining tax concepts in plain English
+
+**AI is not a replacement for:**
+
+- A CPA, if you have a genuinely complex situation (business ownership, multi-state, international income)
+- Actually filing — you still need tax software or a preparer to submit
+- Legal tax advice — AI can explain the rules, but it's not your accountant
+
+For most people with W-2 income, a few 1099s, and standard deductions, this workflow handles 90% of the thinking. The 10% that's left is the stuff that's always been worth a professional's time.
+
+## The Privacy-First Approach
+
+The whole point of the redaction step is that you get AI tax help without the privacy tradeoff. You're not uploading raw tax documents to a cloud service. You're not pasting your SSN into a chat window. You're giving the AI exactly the context it needs — dollar amounts, form numbers, and your questions — and keeping everything else local.
+
+Your taxes are one of the most sensitive documents you produce every year. Treat them that way, and AI becomes a tool you can actually trust with the process.
+]]></content>
+        <author>
+            <name>Jeremy Watt</name>
+        </author>
+        <category label="AI"/>
+        <category label="Taxes"/>
+        <category label="Claude Code"/>
+        <category label="ChatGPT"/>
+        <category label="Productivity"/>
+        <category label="How-To"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Playwright MCP Save Session: Keep Logged In Across Claude Code Sessions with storageState]]></title>
+        <id>https://neonwatty.com/posts/playwright-profiles-claude-code-plugin</id>
+        <link href="https://neonwatty.com/posts/playwright-profiles-claude-code-plugin"/>
+        <updated>2026-03-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Stop re-authenticating every Playwright MCP session. This Claude Code plugin saves storageState authentication profiles per user role — log in once, keep your session persistent across sessions.]]></summary>
+        <content type="html"><![CDATA[
+Every Playwright MCP session starts unauthenticated. If your app requires login, you're manually signing in before any real browser automation work begins — every single time. I built a Claude Code plugin that uses Playwright's `storageState` to save your authentication cookies and keep you logged in across sessions. Log in once per user role, and the plugin restores your persistent session automatically in future Claude Code sessions.
+
+## How to Save and Reuse Playwright MCP Login State
+
+[`playwright-profiles`](https://github.com/neonwatty/playwright-profiles) has two components:
+
+- **`/setup-profiles`** — interactive slash command to save authenticated browser sessions via Playwright's `storageState`
+- **`use-profiles` skill** — auto-loads the right saved profile when Claude does browser work
+
+**Setup** — run `/setup-profiles` in any project. Claude asks what user roles you need, opens a headed Playwright browser to your login page, and waits while you authenticate manually (works with password login, Google OAuth, SSO, MFA — anything). After you confirm, it captures `storageState` and saves it:
+
+```
+.playwright/
+  profiles.json          # committed — role names + login URLs
+  profiles/
+    admin.json           # gitignored — storageState cookies/tokens
+    user.json            # gitignored
+```
+
+![profiles.json config showing three user roles](/images/posts/playwright-profiles/profiles-json.png)
+
+**Usage** — just mention a role when asking Claude to do browser work. "Test the admin dashboard" or "browse the site as a planner." Claude loads the right profile's cookies via `addCookies()` and navigates directly to the target page — already authenticated.
+
+## Playwright storageState: Save Auth Cookies and Restore Them
+
+Under the hood, the plugin uses `browser_run_code` with Playwright's context API:
+
+```javascript
+// Capture — saves cookies, localStorage, sessionStorage
+async (page) => { return await page.context().storageState(); }
+
+// Restore — loads saved cookies before navigating
+async (page) => {
+  const state = SAVED_STATE_JSON;
+  await page.context().addCookies(state.cookies);
+}
+```
+
+**A gotcha with client-side auth libraries:** don't navigate to the app's origin to restore localStorage before going to the target page. Apps using Supabase (and similar) will detect the restored session cookies during client-side initialization and clear them. Skip localStorage restoration (it's usually analytics state) and just set cookies + navigate directly.
+
+## Playwright MCP Authentication with Multiple User Roles
+
+For apps with multiple user types, each gets its own persistent profile:
+
+```json
+{
+  "profiles": {
+    "admin": {
+      "loginUrl": "https://deck-check.com/auth/login",
+      "description": "Full permissions, manages users and settings"
+    },
+    "planner": {
+      "loginUrl": "https://deck-check.com/auth/login",
+      "description": "Creates and manages event decks"
+    },
+    "speaker": {
+      "loginUrl": "https://deck-check.com/auth/login",
+      "description": "Views and responds to assigned decks"
+    }
+  }
+}
+```
+
+Claude matches profile names to conversation context automatically. The config file is safe to commit — it contains only role names and URLs. The actual `storageState` files with session cookies are gitignored. On a fresh clone, Claude sees the missing auth files and suggests running `/setup-profiles` to re-authenticate.
+
+## Get It
+
+```bash
+gh repo clone neonwatty/playwright-profiles ~/.claude/plugins/playwright-profiles
+```
+
+Then in any project: `/setup-profiles`
+
+Sessions expire (Supabase tokens last about an hour, other apps vary). Run `/setup-profiles` again to refresh.
+
+Plugin: [github.com/neonwatty/playwright-profiles](https://github.com/neonwatty/playwright-profiles)
+]]></content>
+        <author>
+            <name>Jeremy Watt</name>
+        </author>
+        <category label="Claude Code"/>
+        <category label="Playwright"/>
+        <category label="MCP"/>
+        <category label="storageState"/>
+        <category label="Browser Automation"/>
+        <category label="Authentication"/>
+        <category label="Persistent Session"/>
+        <category label="AI"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[I'll Build Your Whole "AI Product" for Only a Third of Your Total Raise]]></title>
         <id>https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise</id>
         <link href="https://neonwatty.com/posts/build-your-app-for-only-a-third-of-your-raise"/>
@@ -25,7 +254,7 @@ It's 2026 and big checks are still being cut to pre-product "AI product companie
 
 ![A typical cold email: pre-revenue, pre-product, just raised $4.5M](/images/posts/build-your-app-for-only-a-third-of-your-raise/cold-email.png)
 
-Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3 months for only a third of your raise."**
+Still hoping one bites on my standard reply: **"I'll build your whole app in 2-3 months for only a third of your raise."** The tooling is there — [TDD is dead](/posts/tdd-is-dead), quality control is automatable, and a solo dev with Claude Code can ship what used to take a team.
 
 ![My standard reply](/images/posts/build-your-app-for-only-a-third-of-your-raise/my-reply.png)
 ]]></content>
@@ -61,7 +290,7 @@ Anyone who has used Claude Code's plan mode knows the experience: you describe a
 
 But think of that as just the N=1 iteration. If you haven't tried running the same kind of pass two, three, even five or ten times manually — you should. In my experience, each successive pass continues to squeeze out value: missed edge cases, implicit assumptions, gaps you couldn't see until the previous round's fixes revealed them. The benefits taper off eventually, but not as quickly as you'd expect.
 
-And with a little guidance — a consistent prompt directing the agent to look for gaps, coverage misses, and edge cases — an agent like Claude can perform this iteration on its own.
+And with a little guidance — a consistent prompt directing the agent to look for gaps, coverage misses, and edge cases — an agent like Claude can perform this iteration on its own. Setting up your repo with the right [guardrails and context layers](/posts/how-to-set-up-your-repo-for-claude-code-and-codex) makes these iterations more reliable.
 
 The Ralph Loop automates exactly this. Each iteration, the agent reads the current plan and a prompt asking it to find gaps, logical inconsistencies, and unconsidered edge cases. It makes improvements, records what changed, and exits. The next iteration finds what the previous one missed — not because the agent failed, but because at iteration *n*, the *n−1* preceding refinements have been made, and new gaps are now visible that weren't before. The stochasticity of the model, combined with the accumulating context of prior work, reliably surfaces things a single pass would not.
 
@@ -73,7 +302,7 @@ The loop terminates when a full pass finds nothing to improve. That is the fixed
 
 This is one stage of a broader pipeline. A closed plan becomes the invariant for the next stage — building a prototype — where the loop checks that every design element and feature of the plan is faithfully present in the prototype. A closed prototype becomes the invariant for implementation. At each stage, the same fixed-point structure applies: a stable reference, a repeated checking rule, and a semantic completion condition.
 
-For these kinds of well-defined, on-rails tasks, agents like Claude and Codex are now functioning as fixed-point operators — stochastic as they remain for open-ended work, they are reliable enough for structured closure tasks to converge. Define your invariants, apply the operator recursively, and after enough iterations you reach a mathematical closure — a state where a full pass produces nothing new.
+For these kinds of well-defined, on-rails tasks, agents like Claude and Codex are now functioning as fixed-point operators — stochastic as they remain for open-ended work, they are reliable enough for structured closure tasks to converge. Define your invariants, apply the operator recursively, and after enough iterations you reach a mathematical closure — a state where a full pass produces nothing new. In practice, [browser and iOS workflow testing with MCP](/posts/claude-code-workflow-testing-mcp) is one concrete way to apply this kind of iterative verification to a prototype.
 
 ![The closure pipeline — each stage's output becomes the next stage's fixed reference](/images/posts/ralph-loop-fixed-point/pipeline-diagram.svg)
 
@@ -407,7 +636,7 @@ The high water mark—which is becoming more and more common—is the portfolio.
 - Deployed, working applications (not just code in a repo)
 - Evidence of iteration (v2, bug fixes, feature additions)
 - Automated best practices for keeping a project on rails: linting, knip, test coverage
-- Setup and evidence of hooks and skills for their agentic platform of choice
+- Setup and evidence of hooks and skills for their agentic platform of choice (see [how to set up a repo for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex) for what good looks like)
 - CI/CD pipelines
 - Real users, even if it's just "my friends use this"
 
@@ -423,7 +652,7 @@ Whether candidates are using Cursor, Claude Code, Copilot, or Windsurf, here's w
 
 **Speed AND quality.** The old tradeoff is dead. AI-assisted coding should deliver both. If someone takes four hours and ships obviously buggy code, they're not using the tools well. If they ship fast but the tests are garbage, same problem.
 
-**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number?
+**Testing discipline.** This is huge. Anyone can tell Claude to "add tests." The question is: do the tests actually test anything? Do they cover edge cases? Error states? Or are they just checking that `1 + 1 = 2` to hit a coverage number? (The old TDD rigor is [obsolete in the AI era](/posts/tdd-is-dead), but testing discipline is more important than ever.)
 
 **Communication and prompting.** The best agentic engineers communicate clearly—with their tools, not just their teammates. In Claude Code, strong developers use plan mode to scope before writing a line of code, and AskUserQuestion to pull out edge cases they'd otherwise miss. In Cursor, they write focused, incremental prompts rather than vague "build me X" requests. The quality of someone's prompts is a direct reflection of how clearly they think.
 
@@ -558,7 +787,7 @@ This is the creative work that actually determines whether anyone uses what you 
 
 ## How Testing Changed
 
-Claude Code, Codex, and similar tools can sweep a codebase and generate unit, integration, and e2e tests systematically—every branch, every error path. They find gaps you wouldn't have thought to cover by hand. It takes minutes, not hours, and the coverage is broader and deeper than what most developers produce manually.
+Claude Code, Codex, and similar tools can sweep a codebase and generate unit, integration, and e2e tests systematically—every branch, every error path. They find gaps you wouldn't have thought to cover by hand. It takes minutes, not hours, and the coverage is broader and deeper than what most developers produce manually. Tools like [TFQ](/posts/tfq-test-failure-management) let you queue up failing tests and fix them one at a time in isolated headless sessions, keeping context clean.
 
 Build with basic coverage. Validate the idea. Then sweep for deep coverage once it's earned its place. Harden what matters. Skip what doesn't.
 
@@ -570,7 +799,7 @@ Test Driven Development was always a compromise. You traded speed for rigor—wr
 
 It doesn't anymore. TDD front-loaded engineering rigor on features that might get cut next sprint—prioritizing correctness for code that hadn't earned it yet. The inverse of what you actually want: the freedom to explore fast and harden later.
 
-The engineers who thrive now are the ones who automate quality and spend their freed-up time on the hard problem—figuring out what's worth building in the first place.
+The engineers who thrive now are the ones who automate quality and spend their freed-up time on the hard problem—figuring out what's worth building in the first place. If you're [hiring for this new world](/posts/vibe-coding-interview-hire-ai-developers), the interview framework has to change too.
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
@@ -759,7 +988,7 @@ Not a VC fund. Not an API credits program. Something more targeted:
 - **Full Claude Code access** and some mentorship from people who know what these tools can do.
 - **An official "Built with Claude Code" portfolio** that showcases what comes out the other end — a living, growing answer to the visibility problem.
 
-The early adopters are already out there. They're building apps, shipping products, grinding through the learning curve. Many of them don't have VC backing and aren't going to get it anytime soon — they're solo founders, two-person teams, engineers with day jobs and side projects. These are exactly the people who would benefit most from a small check and a signal boost.
+The early adopters are already out there. They're building apps, shipping products, grinding through the learning curve. Many of them don't have VC backing and aren't going to get it anytime soon — they're solo founders, two-person teams, engineers with day jobs and side projects. A solo dev can [build an entire MVP](/posts/build-your-app-for-only-a-third-of-your-raise) for a fraction of what funded startups spend. These are exactly the people who would benefit most from a small check and a signal boost.
 
 ## Why it matters
 
@@ -767,7 +996,7 @@ The point wouldn't be financial returns on the portfolio. The ROI is something m
 
 Every potential enterprise customer, every developer evaluating Claude Code vs. Codex vs. Cursor, every engineering leader trying to justify the budget — they're all asking the same question: *what can I actually build with this?* Benchmarks don't answer that. Blog posts don't answer that. Fifty shipped products do.
 
-Dario himself predicted we'll see the first billion-dollar business started by a single person as soon as 2026. A Claude Code incubator would be a direct bet on making that happen — and making sure everyone sees it when it does.
+Dario himself predicted we'll see the first billion-dollar business started by a single person as soon as 2026. The [barriers to adoption aren't technical](/posts/why-nobody-on-your-engineering-team-wants-to-use-claude-code) — they're organizational and cultural. A Claude Code incubator would be a direct bet on making that happen — and making sure everyone sees it when it does.
 
 ## The bottom line
 
@@ -810,7 +1039,7 @@ Here are a few ideas I've gathered speaking with folks across the software indus
 
 2. **Culture.** Leadership is telling engineering teams to adopt these tools but isn't using them themselves. But these tools aren't just for writing code — they're useful for PMs, designers, marketers, and anyone involved in building basically anything. Instead of leading by example, many leaders are depending on their technical teams to figure it out first and spread that knowledge upward — a difficult ask given the incentive problem mentioned above. Leaders need to use these tools themselves, set aside time to learn, and share what they discover. Engineers are under enormous pressure to deliver and need the cultural precedent from leadership that it's okay to stop and learn. Cultural change starts at the top.
 
-3. **Framing.** Managers want more efficiency, more throughput — and they're absolutely within their rights to want this. But don't confuse what *they* want with what developers want. They're not the same. You have to sell (some) developers on the idea. Frame the tools as solving real pain points they actually feel on a daily basis. Sit with your team, have an honest conversation about what's painful in their workflows, and introduce agentic engineering as a way to deal with those problems faster. That's a much easier sell than "use this tool because I want you to."
+3. **Framing.** Managers want more efficiency, more throughput — and they're absolutely within their rights to want this. But don't confuse what *they* want with what developers want. They're not the same. You have to sell (some) developers on the idea. Frame the tools as solving real pain points they actually feel on a daily basis. Things like [letting Claude Code babysit CI](/posts/claude-code-ci-babysitter) instead of manually watching GitHub Actions — that's a concrete pain point everyone feels. Sit with your team, have an honest conversation about what's painful in their workflows, and introduce agentic engineering as a way to deal with those problems faster. That's a much easier sell than "use this tool because I want you to."
 
 ## Employee problems
 
@@ -830,7 +1059,7 @@ Here are a few ideas I've gathered speaking with folks across the software indus
 
 ***
 
-None of these problems are unsolvable — but none of them are technical problems either. They're organizational, cultural, and deeply human. Teams that treat AI adoption as a tooling rollout will keep getting the same lackluster results. The teams that get this right will be the ones whose leaders treat it as a change management problem: aligning incentives, leading by example, creating space to learn, and meeting people where they are.
+None of these problems are unsolvable — but none of them are technical problems either. They're organizational, cultural, and deeply human. Teams that treat AI adoption as a tooling rollout will keep getting the same lackluster results. The teams that get this right will be the ones whose leaders treat it as a change management problem: aligning incentives, leading by example, creating space to learn, and meeting people where they are. And once adoption does take hold, [how you interview and evaluate](/posts/vibe-coding-interview-hire-ai-developers) these developers has to evolve too.
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
@@ -1291,7 +1520,7 @@ MCP connections to browsers (via [Claude-in-Chrome](https://github.com/anthropic
 
 ## The Skills
 
-To make these re-usable across projects you want to be able to generate workflows first.  These are generated via the following two skills, each of which uses the `AskUserQuestion` tool recursively to help Claude squeeze out all the ideas from your brain as it can.
+To make these re-usable across projects you want to be able to generate workflows first.  These are generated via the following two skills, each of which uses the `AskUserQuestion` tool recursively to help Claude squeeze out all the ideas from your brain as it can. (I wrote more about the [AskUserQuestion interview pattern](/posts/interview-skills-claude-code) and how it applies to features, bugs, and workflow generation.)
 
 **Generators** — explore your codebase and create workflow files:
 - `browser-workflow-generator` — discovers routes, components, and interactions in web apps, outputs `/workflows/browser-workflows.md`
@@ -1368,7 +1597,7 @@ The MCP integrations mean Claude sees exactly what users see. No mocking.
 
 ---
 
-That's it. Generate workflows from your codebase, execute them on real browsers and simulators, catch issues early.
+That's it. Generate workflows from your codebase, execute them on real browsers and simulators, catch issues early. For a deeper look at how workflow testing catches iOS-specific HIG violations, see the [iOS Human Interface Guidelines testing post](/posts/socratic-interview-skills-claude-code).
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
@@ -1458,7 +1687,7 @@ You don't need to remember the syntax. Just describe what you want.
 
 ---
 
-That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time.
+That's it. Install the MCP server, authenticate once, then query your search data with plain English. Beats clicking around the GSC UI every time. For the other half of SEO — finding what people actually search for — check out [keyword research with Claude Code](/posts/keyword-research-claude-code).
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
@@ -2044,7 +2273,7 @@ I described the problem to [Claude Code](https://claude.ai/claude-code) and with
 3. **Got environment variables working** - The game port wasn't being passed through correctly
 4. **Deployed with Kamal 2** - Set up the full deploy.yml with proper port mappings and SSL configuration
 
-The back-and-forth debugging with Claude Code was exactly what this project needed. Instead of context-switching between docs, Stack Overflow, and trial-and-error deploys, I had a pair programmer who could hold the entire problem in context.
+The back-and-forth debugging with Claude Code was exactly what this project needed. Instead of context-switching between docs, Stack Overflow, and trial-and-error deploys, I had a pair programmer who could hold the entire problem in context. This is the same reason [CLI tools are all you need](/posts/claude-code-cli-is-all-you-need) — just describe the problem in natural language and let Claude Code work with the tools already available.
 
 ## The Result
 
@@ -2080,7 +2309,7 @@ It's a free GIF maker Chrome extension that lets you easily clip GIFs right from
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
 </div>
 
-Before making the extension, clipping GIFs off of YouTube was a slow and painful process, involving multiple apps to download the YouTube video, bring it into an editor, clip it, export as a GIF, etc. Now it's a breeze.
+Before making the extension, clipping GIFs off of YouTube was a slow and painful process, involving multiple apps to download the YouTube video, bring it into an editor, clip it, export as a GIF, etc. Now it's a breeze. I used Claude Code to [generate the SVG logo](/posts/ai-logo-generator-claude-code) and create [video storyboards with Playwright](/posts/storyboard-demo-videos) for the demo walkthrough.
 
 Shared this out and was happy to see others liked it too - the extension got solid traction on Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1ntgjnn/a_youtubetogif_chrome_extension/), [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ntgb1c/youtube_gif_chrome_extension_built_with_claude/)) before launch.
 
@@ -2113,7 +2342,7 @@ Even after pruning my X / Twitter feed of unwanted clickbait posts (e.g., politi
 
 I first tried using X's Twitter advanced search features to make regular queries for topics I'm interested in (e.g., "Claude Code", "Hugging Face"), but found myself clicking around all the time to re-create / update the time window on these queries. I needed a better way to manage saved searches.
 
-So I built this simple Chrome extension.  X Search Pro solves this with smart saved searches that automatically update their time ranges.  Set it once, use it forever.  You can categorize and color-code your saved searches, and - if you so desire - they can always be within reach in a nice sidebar that's always accessible on x.com.
+So I built this simple Chrome extension.  X Search Pro solves this with smart saved searches that automatically update their time ranges.  Set it once, use it forever.  You can categorize and color-code your saved searches, and - if you so desire - they can always be within reach in a nice sidebar that's always accessible on x.com. For quick capture without leaving the terminal, I also built [CLI tools for social media posting](/posts/social-starter-pack-cli-tools) that work with Claude Code.
 
 [Get it on Chrome Web Store](https://chromewebstore.google.com/detail/x-search-pro/belfofaehpmgnifoddppdfgofflnkoja) →
 ]]></content>
@@ -2147,7 +2376,7 @@ Here's the resuling storyboard:
 
 Claude Code used Playwright to navigate the extension, captured 11 screenshots of key moments, and generated a complete HTML storyboard with numbered steps, descriptions, visual flow summary, and navigation menu.
 
-I ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier!
+I ended up following most of this in the final video walkthrough - made creating the demo walkthrough a lot easier! You can also use Claude Code with Playwright for more structured [browser workflow testing with MCP](/posts/claude-code-workflow-testing-mcp).
 
 <div style="max-width: 800px; margin: 2rem auto;">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
@@ -2168,7 +2397,7 @@ I ended up following most of this in the final video walkthrough - made creating
         <updated>2025-10-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Turn any image sequence into an interactive treasure map using Claude Code]]></summary>
         <content type="html"><![CDATA[
-Claude Code can turn any sequence of related images into an interactive image gallery treasure map with minimal effort - complete with SVG path arrows, lightbox zoom, and responsive design. 
+Claude Code can turn any sequence of related images into an interactive image gallery treasure map with minimal effort - complete with SVG path arrows, lightbox zoom, and responsive design. (Claude Code is also great for generating [SVG logos](/posts/ai-logo-generator-claude-code) using the same iterative design approach.) 
 
 Here's how.
 
@@ -2362,7 +2591,7 @@ This morning I spent some time using Claude Code as an AI logo generator - creat
   </video>
 </div>
 
-Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
+Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.  (I later turned this workflow into a [reusable Claude Code skill for logo design](/posts/logo-designer-skill-claude-code).)
 
 Here's a short gallery of my favorites.  Ended up using the first (for reasons detailed below).
 
@@ -2456,7 +2685,7 @@ I ended up going with the first option shown in the gallery.  I think it represe
         <updated>2025-09-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Why JSON task management wastes context and corrupts data in Claude Code sessions, and how todoq's CLI approach solves both problems with targeted commands that only load individual tasks.]]></summary>
         <content type="html"><![CDATA[
-Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach.
+Managing tasks through JSON files works fine for small projects, but quickly becomes context-inefficient and error-prone as task lists grow. For AI task management and developer productivity, there's a better approach. (I built a similar tool for test failures — [TFQ](/posts/tfq-test-failure-management) — using the same CLI queue philosophy.)
 
 Two core problems here: every task operation loads the entire JSON into context, wasting your context window, and JSON updates are error-prone since Claude Code (and other agnetic IDEs) must locate exact positions in complex nested structures.  These issues cause Claude Code to misformat JSON, accidentally delete fields, or corrupt entire task lists.
 
@@ -2740,7 +2969,7 @@ tfq fix-all
 
 ---
 
-Nothing magical here - just much needed structure for test fixing by managing context in an ordered fashion.
+Nothing magical here - just much needed structure for test fixing by managing context in an ordered fashion. For a similar approach to task management (not just tests), check out [todoq](/posts/todoq-task-management) — same philosophy of CLI-driven queues that keep Claude Code's context lean.
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
@@ -2778,7 +3007,7 @@ This little Apple Watch app lets you discretely compute probabilities of the bid
 
 ![Results showing probability percentage for informed decisions](/images/liars-dice-3.png)
 
-Making apps to help you cheat your friends and family's getting easier with each passing day.
+Making apps to help you cheat your friends and family's getting easier with each passing day. If you're building iOS apps with Claude Code, the [iOS HIG testing skills](/posts/socratic-interview-skills-claude-code) can catch platform convention violations you'd otherwise miss.
 ]]></content>
         <author>
             <name>Jeremy Watt</name>
