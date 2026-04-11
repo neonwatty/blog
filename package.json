@@ -68,7 +68,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-rehype": "^11.1.2",
-    "reveal.js": "^5.2.1",
+    "reveal.js": "^6.0.1",
     "tailwindcss": "^4.2.1",
     "unist-util-visit": "^5.1.0",
     "zod": "^4.3.6"
