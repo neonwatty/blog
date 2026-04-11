@@ -50,7 +50,6 @@ describe('lib/schemas', () => {
         expect(result.data.featured).toBe(false)
         expect(result.data.draft).toBe(false)
         expect(result.data.relatedPosts).toEqual([])
-        expect(result.data.slideshow).toBe(false)
       }
     })
 

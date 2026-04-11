@@ -70,10 +70,6 @@ module.exports = {
     } else if (path.startsWith('/tags/')) {
       priority = 0.6
       changefreq = 'weekly'
-      // Slideshow feature temporarily disabled
-      // } else if (path.startsWith('/slides/')) {
-      //   priority = 0.6
-      //   changefreq = 'monthly'
     } else if (path.startsWith('/projects') || path.startsWith('/about') || path.startsWith('/newsletter')) {
       priority = 0.7
       changefreq = 'weekly'

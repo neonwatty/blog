@@ -138,7 +138,6 @@ describe('lib/posts - real module tests', () => {
       expect(posts[0].featured).toBe(false)
       expect(posts[0].author).toBe('Test Author')
       expect(posts[0].relatedPosts).toEqual([])
-      expect(posts[0].slideshow).toBe(false)
     })
 
     it('includes draft posts in test environment', () => {
