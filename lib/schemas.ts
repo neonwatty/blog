@@ -15,7 +15,6 @@ export const PostFrontmatterSchema = z.object({
   lastUpdated: z.string().optional(),
   canonicalUrl: z.string().url().optional().or(z.literal('')),
   relatedPosts: z.array(z.string()).default([]),
-  slideshow: z.boolean().default(false),
 })
 
 export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>

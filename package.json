@@ -25,7 +25,6 @@
     "check:sitemap": "node scripts/check-sitemap.cjs",
     "validate": "npm run format:check && npm run lint && npm run type-check && npm run check:sitemap && npm run test",
     "new:post": "node scripts/new-post.cjs",
-    "generate:slideshow": "node scripts/generate-slideshow.cjs",
     "analyze": "ANALYZE=true npm run build",
     "dev:clean": "rm -rf .next && npm run dev",
     "knip": "knip",
@@ -46,7 +45,6 @@
     "@sentry/browser": "^10.42.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/reveal.js": "^5.2.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "date-fns": "^4.1.0",
@@ -68,7 +66,6 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-rehype": "^11.1.2",
-    "reveal.js": "^5.2.1",
     "tailwindcss": "^4.2.1",
     "unist-util-visit": "^5.1.0",
     "zod": "^4.3.6"

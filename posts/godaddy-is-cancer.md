@@ -7,7 +7,6 @@ tags:
   - Claude Code
   - Interactive Gallery
   - SVG
-slideshow: true
 author: Jeremy Watt
 seoTitle: Create an Interactive Image Gallery Treasure Map with Claude Code
 metaDescription: >-

@@ -7,7 +7,6 @@ tags:
   - Apple Watch
   - Swift
   - Gaming
-slideshow: true
 author: Jeremy Watt
 seoTitle: Liars Dice Probability Calculator for Apple Watch | watchOS App
 metaDescription: >-

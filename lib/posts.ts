@@ -147,7 +147,6 @@ export interface PostData {
   lastUpdated?: string
   canonicalUrl?: string
   relatedPosts?: string[]
-  slideshow?: boolean
 }
 
 // Enhanced post retrieval with SEO data
@@ -188,7 +187,6 @@ export function getSortedPostsData(): PostData[] {
         metaDescription: validated.metaDescription || validated.excerpt,
         canonicalUrl: validated.canonicalUrl,
         relatedPosts: validated.relatedPosts,
-        slideshow: validated.slideshow,
       }
     })
     .filter((post): post is NonNullable<typeof post> => post !== null)
@@ -278,7 +276,6 @@ export async function getPostData(id: string): Promise<PostData | null> {
     lastUpdated: matterResult.data.lastUpdated,
     canonicalUrl: matterResult.data.canonicalUrl,
     relatedPosts: matterResult.data.relatedPosts || [],
-    slideshow: matterResult.data.slideshow || false,
   }
 }
 
