@@ -78,7 +78,9 @@ Motivation: I was curious to track my increasing development velocity as I learn
 
 It can use live GitHub data, falls back to sample data, and now has connection state, chart bins, hover tooltips, refresh behavior, and repo filtering.
 
-![PR Menu Bar app screenshot](/images/posts/weekly-vibes-2026-05-03/pr-menu-bar-app.png)
+<video controls muted playsinline style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/images/posts/weekly-vibes-2026-05-03/pr-menu.mp4" type="video/mp4" />
+</video>
 
 ## BugDrop
 
