@@ -13,7 +13,7 @@ tags:
   - Codex
   - Developer Tools
 featured: false
-draft: true
+draft: false
 author: Jeremy Watt
 image: /images/posts/weekly-vibes-2026-05-03/session-search-results.png
 metaDescription: >-
@@ -81,6 +81,8 @@ It can use live GitHub data, falls back to sample data, and now has connection s
 <video controls muted playsinline style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
   <source src="/images/posts/weekly-vibes-2026-05-03/pr-menu.mp4" type="video/mp4" />
 </video>
+
+Links: [homepage](https://neonwatty.github.io/pr-menu-bar-test/), [GitHub](https://github.com/neonwatty/pr-menu-bar-test).
 
 ## BugDrop
 
