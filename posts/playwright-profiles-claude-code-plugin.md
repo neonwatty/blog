@@ -24,7 +24,7 @@ metaDescription: >-
 relatedPosts:
   - claude-code-workflow-testing-mcp
   - how-to-set-up-your-repo-for-claude-code-and-codex
-ogImage: /images/posts/og/playwright-profiles-claude-code-plugin.png
+ogImage: /images/posts/og/claude-code-workflow-testing-mcp.png
 ---
 
 Every Playwright MCP session starts unauthenticated. If your app requires login, you're manually signing in before any real browser automation work begins — every single time. I built a Claude Code plugin that uses Playwright's `storageState` to save your authentication cookies and keep you logged in across sessions. Log in once per user role, and the plugin restores your persistent session automatically in future Claude Code sessions.

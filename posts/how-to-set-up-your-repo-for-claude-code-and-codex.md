@@ -20,6 +20,8 @@ metaDescription: >-
   of guardrails — CLAUDE.md, linting, CI, hooks, plugins, skills, CLI tools, and
   MCP servers — that make Claude Code and Codex safe and productive.
 relatedPosts:
+  - claude-code-skills-guide
+  - askuserquestion-claude-code-skill
   - claude-code-workflow-testing-mcp
   - the-ralph-loop-is-a-fixed-point-process
   - claude-code-ci-babysitter
@@ -197,6 +199,8 @@ A good starting point is the [Superpowers](https://github.com/obra/superpowers) 
 In Codex, skills live in `.codex/skills/` and are invoked with `$skill-name`. The [Codex skills catalog](https://github.com/openai/skills) has similar workflow skills available.
 
 **Talk to your agent:** Ask your agent what skills it supports and which ones would help your workflow.
+
+For concrete examples, I keep a [Claude Code skills guide](/posts/claude-code-skills-guide/) with reusable workflows for interviewing, logo design, UI review, SEO research, and repo guardrails. The most important primitive in many of those skills is [`AskUserQuestion`](/posts/askuserquestion-claude-code-skill/), because it gives the agent a clean way to stop and ask for a decision instead of guessing.
 
 -----
 
