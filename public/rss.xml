@@ -4,7 +4,7 @@
         <title>Jeremy Watt's Blog</title>
         <link>https://neonwatty.com</link>
         <description>Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.</description>
-        <lastBuildDate>Sun, 05 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -14,6 +14,561 @@
             <link>https://neonwatty.com</link>
         </image>
         <copyright>All rights reserved 2026</copyright>
+        <item>
+            <title><![CDATA[YouTube to GIF Converter - No Watermark]]></title>
+            <link>https://neonwatty.com/posts/youtube-to-gif-no-watermark</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/youtube-to-gif-no-watermark</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Convert a YouTube video clip into a GIF without adding a watermark using the ytgify Chrome extension.]]></description>
+            <content:encoded><![CDATA[
+If you want a YouTube to GIF converter with no watermark, [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is the Chrome extension I built for exactly that workflow. It adds a GIF clipper directly to the YouTube player so you can pick a start time, duration, FPS, and resolution without downloading the video into a separate editor.
+
+The output is a clean GIF. No watermark, no branding overlay, no multi-app export chain.
+
+## When No Watermark Actually Matters
+
+Watermarks are not always a problem. If you are making a quick throwaway reaction GIF for a private chat, any converter might be fine. They become a problem when the GIF is part of something you own or publish.
+
+Clean output matters for:
+
+- Product documentation where a watermark makes the screenshot feel unofficial
+- Support replies where the GIF should focus attention on the exact UI behavior
+- Blog posts where third-party branding distracts from the article
+- Social clips where the visual should stand on its own
+- Demo walkthroughs where the clip represents your product or tutorial
+
+For those cases, the GIF should show the content and nothing else.
+
+## No-Watermark Workflow
+
+1. Install [ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje).
+2. Open the YouTube video you want to clip.
+3. Use the ytgify controls in the player to choose the start time.
+4. Set the GIF duration, FPS, and resolution.
+5. Add optional text if the GIF needs a caption.
+6. Export the GIF.
+
+The main advantage is staying on YouTube while you work. You do not need to copy the video URL into another site, download a file, re-upload it, trim it, and then export.
+
+## What to Check Before Export
+
+Before exporting, check three things:
+
+- **Composition** — the subject should be visible without relying on surrounding page context
+- **Duration** — shorter clips loop better and are easier to share
+- **Text readability** — if the YouTube clip contains UI text, use a high enough resolution to keep it readable
+
+If the GIF is for documentation or a support reply, I usually choose clarity over tiny file size. If it is for chat or social, I use a shorter duration and lower resolution.
+
+## How This Differs From Online Converters
+
+Most online converters make you leave YouTube, paste the URL into another site, wait for processing, then export through that site's constraints. Some are fine. Some add watermarks, compress too hard, or make you fight the trimming UI.
+
+ytgify is narrower: it is built for clipping a YouTube moment while you are already watching the video. That is the whole job.
+
+## Related ytgify Guides
+
+For the broader launch story, see [the ytgify launch post](/posts/ytgify-launch/). For a more Chrome-extension-specific workflow, see [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/). For a step-by-step clipping walkthrough, see [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/).
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Chrome Extension</category>
+            <category>YouTube</category>
+            <category>GIF</category>
+            <category>ytgify</category>
+        </item>
+        <item>
+            <title><![CDATA[YouTube GIF Maker Chrome Extension]]></title>
+            <link>https://neonwatty.com/posts/youtube-gif-maker-chrome-extension</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/youtube-gif-maker-chrome-extension</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[ytgify is a Chrome extension that turns YouTube moments into GIFs directly inside the YouTube player.]]></description>
+            <content:encoded><![CDATA[
+[ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is a YouTube GIF maker Chrome extension. It puts the GIF workflow where the video already is: inside the YouTube player.
+
+That matters because most YouTube-to-GIF workflows are clunky. You copy a link, open another site, wait for the video to load, trim the clip, export, and then deal with whatever watermark or size limits the tool adds. ytgify keeps the workflow local to the video page.
+
+This page focuses on the extension workflow: why it belongs in the browser, what controls it adds, and how it fits into repeated GIF-making.
+
+## What The Extension Does
+
+ytgify lets you:
+
+- Clip a moment from a YouTube video
+- Choose GIF duration
+- Adjust FPS
+- Set output resolution
+- Add text overlays
+- Export without a watermark
+
+It is designed for short, shareable clips: product demos, funny moments, tutorial snippets, and quick visual replies.
+
+## Why Build This as a Chrome Extension?
+
+The browser extension approach makes the interaction faster. You already know where the moment is because you are watching the video. The extension lets you mark that moment directly instead of re-creating the context in another tool.
+
+It also makes repeat use less annoying. If you make GIFs regularly, shaving off the copy-paste-upload-export loop adds up quickly.
+
+## Extension Workflow
+
+The extension workflow is built around staying in context:
+
+1. Watch the video normally.
+2. Pause near the moment you want.
+3. Open the GIF controls from the YouTube page.
+4. Tune the clip settings.
+5. Export and continue watching.
+
+That matters most when you are making several GIFs from the same source video. You can move through the video, clip moments as you find them, and avoid rebuilding the same setup in another tab for every export.
+
+## Good Use Cases
+
+The extension is most useful for:
+
+- Product builders clipping demo moments from walkthrough videos
+- Writers adding motion examples to posts
+- Support teams showing a short interaction
+- Creators pulling a quick reaction or visual reference
+- Anyone who wants a no-watermark GIF without opening a full editor
+
+If you only make one GIF a year, an online converter may be enough. If you make GIFs repeatedly, keeping the tool inside YouTube is the smoother workflow.
+
+## Try It
+
+Install [ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje), then open a YouTube video and clip a short moment.
+
+For more detail, read the [ytgify launch post](/posts/ytgify-launch/) or the focused guide on making a [YouTube GIF with no watermark](/posts/youtube-to-gif-no-watermark/).
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Chrome Extension</category>
+            <category>YouTube</category>
+            <category>GIF</category>
+            <category>ytgify</category>
+        </item>
+        <item>
+            <title><![CDATA[Convert a YouTube Clip to GIF]]></title>
+            <link>https://neonwatty.com/posts/convert-youtube-clip-to-gif</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/convert-youtube-clip-to-gif</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[A short workflow for converting part of a YouTube video into a GIF with ytgify.]]></description>
+            <content:encoded><![CDATA[
+The fastest way to convert a YouTube clip to GIF is to trim the moment while you are still watching the video. That is the workflow behind [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje), a Chrome extension that adds GIF controls directly to YouTube.
+
+This page is the practical clipping guide: how to choose the moment, what settings to start with, and what to fix when the output does not look right.
+
+## Clip-to-GIF Workflow
+
+1. Open the YouTube video in Chrome.
+2. Scrub to the moment you want to turn into a GIF.
+3. Open the ytgify controls.
+4. Set the clip start time.
+5. Choose a short duration.
+6. Pick the FPS and resolution.
+7. Add text if the clip needs context.
+8. Export the GIF.
+
+Short clips usually work best. A focused 2-6 second GIF is easier to share, loads faster, and communicates the moment more clearly than a long clip.
+
+## Choosing the Right Clip
+
+The best GIFs have a clear start and end. Before exporting, watch the moment once and identify:
+
+- The first frame where the action becomes understandable
+- The last frame before the loop starts to feel stale
+- Whether the clip needs text to make sense outside the video
+- Whether UI text or small details need a higher resolution
+
+If the GIF feels confusing without the YouTube title or surrounding narration, add a short text overlay or choose a more self-contained moment.
+
+## Settings I Usually Start With
+
+For quick sharing:
+
+- Duration: 3-5 seconds
+- FPS: 10-15
+- Resolution: medium
+
+For product demos:
+
+- Duration: as short as possible while still showing the action
+- FPS: high enough to preserve the interaction
+- Resolution: high enough for text to remain readable
+
+## Troubleshooting
+
+If the GIF is too large:
+
+- Shorten the duration first
+- Lower the resolution second
+- Lower FPS last if motion still needs to feel smooth
+
+If the GIF looks blurry:
+
+- Increase resolution
+- Avoid clipping tiny UI details from a low-resolution source video
+- Keep text overlays short and high contrast
+
+If the loop feels awkward:
+
+- Move the start time forward slightly
+- Trim dead time at the end
+- Use a shorter clip that captures only the action
+
+## More ytgify Notes
+
+The main [ytgify launch post](/posts/ytgify-launch/) has the background and demo video. If your main requirement is clean output, read [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/). If you want the extension-specific overview, read [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/).
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Chrome Extension</category>
+            <category>YouTube</category>
+            <category>GIF</category>
+            <category>ytgify</category>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code Skills Guide]]></title>
+            <link>https://neonwatty.com/posts/claude-code-skills-guide</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/claude-code-skills-guide</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[A practical index of Claude Code skill workflows: questioning, logo design, UI review, SEO research, and repo guardrails.]]></description>
+            <content:encoded><![CDATA[
+Claude Code skills are reusable workflow instructions. A good skill does not just tell the agent what output to produce. It tells the agent how to think through the work, when to ask questions, what evidence to gather, and when to stop.
+
+This page is a practical index of the Claude Code skill patterns I keep coming back to. It is organized by the kind of failure the skill prevents, because that is the useful way to think about skills: they are not decorations around a prompt, they are process guardrails.
+
+## Start Here
+
+- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill/) — how to use structured questions before an agent commits to a direction
+- [Claude Code Logo Generator: SVG Logo Design Skill](/posts/logo-designer-skill-claude-code/) — a full design workflow encoded as a reusable skill
+- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code/) — broader interview skill patterns for features, bugs, and workflows
+- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code/) — using skill-driven questioning for UI review
+
+## Skill Types
+
+| Skill type | Use it when | Example |
+| --- | --- | --- |
+| Interview skill | The user has a rough idea but not a complete spec | Feature planning, bug diagnosis, product decisions |
+| Generation skill | The agent needs to produce multiple candidate artifacts | Logos, storyboards, UI concepts |
+| Review skill | The agent needs to compare work against standards | iOS HIG checks, accessibility review, code review |
+| Research skill | The agent needs external data before acting | Keyword research, Search Console analysis |
+| Guardrail skill | The agent needs a repeatable safety process | TDD, systematic debugging, release checks |
+
+The same skill can combine several of these. The logo skill, for example, is both an interview skill and a generation skill: it asks structured questions before it generates SVG concepts.
+
+## What Belongs in a Good Skill
+
+A useful skill usually includes:
+
+- **Trigger criteria** — when the skill should run
+- **Context gathering rules** — which files, docs, or tools to inspect first
+- **Decision points** — where to use `AskUserQuestion` instead of guessing
+- **Output criteria** — what a finished artifact must include
+- **Stop conditions** — when to pause, ask, or refuse to continue
+
+The stop conditions are underrated. Agents are good at continuing. Skills are where you encode when continuing would be the wrong move.
+
+## Repo and Agent Setup
+
+Skills work best when the repo around them has guardrails. Start with [How to Set Up Your Repo for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) if you are adding agents to an existing project.
+
+That setup post covers the boring pieces that make skills safer:
+
+- `CLAUDE.md` / `AGENTS.md`
+- CLI tools
+- linting and formatting
+- CI
+- hooks
+- plugins
+- MCP servers
+
+## SEO and Research Workflows
+
+Claude Code is also useful for search and content workflows when it has access to real data.
+
+- [SEO Keyword Research with Claude Code](/posts/keyword-research-claude-code/) — use autocomplete data to find search demand
+- [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools/) — query GSC data directly instead of clicking through exports
+
+## The Pattern
+
+The skills that work best tend to share the same shape:
+
+1. Gather real context.
+2. Ask targeted questions when user intent matters.
+3. Generate several options.
+4. Compare the options against explicit criteria.
+5. Refine the strongest direction.
+6. Produce a concrete artifact.
+
+That pattern shows up in feature planning, debugging, logo design, testing workflows, and SEO research. The domain changes. The process discipline is the useful part.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Claude Code</category>
+            <category>Claude Code Skills</category>
+            <category>AI</category>
+            <category>Development</category>
+        </item>
+        <item>
+            <title><![CDATA[AskUserQuestion in Claude Code: Clarifying Questions for Skills]]></title>
+            <link>https://neonwatty.com/posts/askuserquestion-claude-code-skill</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/askuserquestion-claude-code-skill</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[AskUserQuestion is the Claude Code tool that turns vague requests into structured decisions. Use it inside skills to force clarification before an agent writes code.]]></description>
+            <content:encoded><![CDATA[
+`AskUserQuestion` is the Claude Code tool I reach for when an agent needs a decision before it should continue. It lets a skill ask a structured question, present concrete choices, and wait for the user to pick one. That sounds small, but it changes the shape of agent work.
+
+Without a clarification step, Claude Code tends to fill in missing requirements. Sometimes that is useful. Sometimes it means the agent quietly chooses the wrong product behavior, the wrong test strategy, or the wrong design direction. `AskUserQuestion` gives you a clean interruption point: ask, decide, then proceed.
+
+I use it heavily in [Claude Code interview skills](/posts/interview-skills-claude-code/) and in the [Claude Code SVG logo design skill](/posts/logo-designer-skill-claude-code/). In both cases, the point is the same: force important decisions into the conversation before implementation starts.
+
+## What AskUserQuestion Is For
+
+Use `AskUserQuestion` when the next step depends on user intent and guessing would create rework.
+
+Good uses:
+
+- Picking a feature scope before planning implementation
+- Choosing between UX directions
+- Confirming reproduction details before debugging
+- Selecting a logo style before generating variations
+- Approving a test workflow before writing it to the repo
+- Deciding between a small fix and a broader refactor
+
+Bad uses:
+
+- Asking questions the codebase can answer
+- Asking for permission on every obvious step
+- Turning a focused task into a survey
+- Asking open-ended questions when two or three concrete choices would work
+
+The best `AskUserQuestion` calls are not generic. They compress the decision the user actually needs to make.
+
+## A Skill Pattern That Works
+
+This is the core pattern I use in Claude Code skills:
+
+```markdown
+1. Read enough context to understand the situation.
+2. Identify the decision that blocks progress.
+3. Ask one structured question with 2-3 strong options.
+4. Explain the tradeoff for each option.
+5. Continue only after the user chooses.
+```
+
+The context step matters. If the skill asks before reading the repo, it asks lazy questions. If it reads first, it can ask something sharper:
+
+```markdown
+Use AskUserQuestion to choose the implementation scope.
+
+Ask one question:
+- "Should this be a narrow patch or a reusable component?"
+
+Options:
+- "Narrow patch" — fastest, touches only the current screen.
+- "Reusable component" — more work now, useful if this pattern appears elsewhere.
+- "Investigate first" — inspect similar screens before deciding.
+```
+
+That question is useful because it frames a real tradeoff. The user is not being asked to restate the task. They are being asked to make the decision the agent should not invent.
+
+## Example: Feature Interview
+
+For a feature planning skill, `AskUserQuestion` can prevent the agent from sprinting into implementation with a half-formed spec.
+
+```markdown
+Before writing code, run 5-10 rounds of targeted questions.
+
+Each question should reveal one of:
+- A hidden assumption
+- An edge case
+- A user role or permission boundary
+- A data lifecycle decision
+- A failure mode
+
+Do not ask obvious styling or naming questions unless they block the feature.
+```
+
+The point is not to make the process slow. The point is to surface the questions that would otherwise appear halfway through the implementation.
+
+## Example: Logo Design Skill
+
+In the logo skill, `AskUserQuestion` keeps the design process concrete.
+
+Instead of asking:
+
+> What kind of logo do you want?
+
+The skill can ask:
+
+```markdown
+Which direction should the first concept batch explore?
+
+Options:
+- "Literal product metaphor" — clearer at small sizes, less abstract.
+- "Abstract brand mark" — more flexible, may need more refinement.
+- "Lettermark" — compact and favicon-friendly, less descriptive.
+```
+
+That gives the user a meaningful decision. It also gives Claude Code enough direction to generate better SVG concepts.
+
+## How to Keep Questions Useful
+
+I follow a few rules:
+
+- Ask one question at a time unless the choices are tightly related.
+- Put the recommended option first only when there is a real recommendation.
+- Make every option mutually exclusive.
+- Include the consequence of each choice.
+- Avoid "Other" as a written option if the UI already allows free-form input.
+- Continue immediately after the answer.
+
+The highest-value questions are usually about scope, risk, or intent. The lowest-value questions are usually about details the agent can infer.
+
+## Where It Fits in a Claude Code Setup
+
+`AskUserQuestion` is one piece of a broader agent setup. I usually combine it with:
+
+- [Repo setup guardrails for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/)
+- [Reusable Claude Code skills](/posts/claude-code-skills-guide/)
+- [Socratic skill workflows for UI testing](/posts/socratic-interview-skills-claude-code/)
+- [Claude Code logo generation](/posts/logo-designer-skill-claude-code/)
+
+The broader lesson is simple: if the agent should not decide something alone, encode that pause into the skill. `AskUserQuestion` is the tool that makes the pause explicit.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Claude Code</category>
+            <category>Claude Code Skills</category>
+            <category>AskUserQuestion</category>
+            <category>Prompt Engineering</category>
+            <category>Development</category>
+        </item>
+        <item>
+            <title><![CDATA[Weekly Side-Vibes for the Week of May 3, 2026]]></title>
+            <link>https://neonwatty.com/posts/weekly-side-vibes-2026-05-03</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/weekly-side-vibes-2026-05-03</guid>
+            <pubDate>Sun, 03 May 2026 19:00:00 GMT</pubDate>
+            <description><![CDATA[Dogfooding notes from a week of Mac menu bar apps, iOS workflows, BugDrop, issuectl, and small agent-powered developer tools.]]></description>
+            <content:encoded><![CDATA[
+This week was mostly dogfooding: small Mac menu bar apps, iOS workflow experiments, and developer tools that remove little bits of friction from my day.
+
+The common pattern: if I keep checking a dashboard, hunting through terminal history, or pasting the same rough issue description into five places, I eventually try to turn that workflow into a local tool.
+
+## Session Search
+
+[Session Search](https://github.com/neonwatty/session-search) is a macOS menu bar app for full-text search across Claude Code and Codex session history.
+
+Motivation: the built-in session search in Claude Code and Codex does not index enough of the actual conversation to be optimally useful. I wanted a local index over the full transcript, plus the convenience of opening it from the menu bar.
+
+It indexes local transcripts, shows matching snippets, and resumes the selected session in Terminal, iTerm2, or Ghostty.
+
+![Session Search results](/images/posts/weekly-vibes-2026-05-03/session-search-results.png)
+
+<video controls muted playsinline style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/images/posts/weekly-vibes-2026-05-03/session-search-demo.mp4" type="video/mp4" />
+</video>
+
+Links: [GitHub](https://github.com/neonwatty/session-search), [homepage](https://neonwatty.github.io/session-search/), latest release `v1.9.0`.
+
+## CCSwitcher Codex
+
+I forked [CCSwitcher](https://github.com/XueshiQiao/CCSwitcher) to add Codex usage alongside Claude Code usage.
+
+Motivation: I use Claude Code and Codex at the same time often, and wanted the same at-a-glance menu bar view of account state, quota usage, local activity, and rough API-equivalent cost estimates for both.
+
+I posted the Codex direction upstream in [XueshiQiao/CCSwitcher#12](https://github.com/XueshiQiao/CCSwitcher/issues/12).
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+  <img src="/images/posts/weekly-vibes-2026-05-03/ccswitcher-codex-usage-1.png" alt="CCSwitcher Codex usage screenshot" style="width: 100%; border-radius: 8px;" />
+  <img src="/images/posts/weekly-vibes-2026-05-03/ccswitcher-codex-usage-2.png" alt="CCSwitcher Codex account screenshot" style="width: 100%; border-radius: 8px;" />
+</div>
+
+Link: [CCSwitcher Codex fork](https://github.com/neonwatty/CCSwitcher-Codex).
+
+## SpaceLabeler
+
+[SpaceLabeler](https://github.com/neonwatty/space-labeler) is a tiny menu bar utility for naming and color-coding macOS Spaces.
+
+Motivation: I want "Writing", "Builds", "Browser QA", etc. in my menu bar instead of trying to remember which numbered Space is which.
+
+![SpaceLabeler landing page](/images/posts/weekly-vibes-2026-05-03/space-labeler-home.png)
+
+Links: [GitHub](https://github.com/neonwatty/space-labeler), [homepage](https://neonwatty.github.io/space-labeler/).
+
+## PR Menu Bar
+
+PR Menu Bar is a menu bar prototype for tracking pull request activity over a configurable time window.
+
+Motivation: I was curious to track my increasing development velocity as I learn how to harness agents to create apps faster and more efficiently. It also feels right for this to live in the menu bar instead of another GitHub tab.
+
+It can use live GitHub data, falls back to sample data, and now has connection state, chart bins, hover tooltips, refresh behavior, and repo filtering.
+
+<video controls muted playsinline style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/images/posts/weekly-vibes-2026-05-03/pr-menu.mp4" type="video/mp4" />
+</video>
+
+Links: [homepage](https://neonwatty.github.io/pr-menu-bar-test/), [GitHub](https://github.com/neonwatty/pr-menu-bar-test).
+
+## BugDrop
+
+[BugDrop](https://bugdrop.dev/) turns in-app feedback into GitHub Issues with screenshots and annotations.
+
+Motivation: I am working on a variety of different projects and needed something that helps me dogfood them myself, while also letting alpha and beta users send useful feedback for quick iteration. I am also thinking about extending this kind of feedback loop to agent users.
+
+<div style="max-width: 800px; margin: 1.5rem auto;">
+  <iframe width="100%" height="450" src="https://www.youtube.com/embed/VkLvP1xmRzo" title="BugDrop Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe>
+</div>
+
+Recent work tightened real-world embedding: runtime theme APIs, auto-following OS theme, self-hosting docs, and smaller UI polish.
+
+Links: [homepage](https://bugdrop.dev/), [GitHub](https://github.com/mean-weasel/bugdrop), [live demo](https://bugdrop-widget-test.vercel.app), [video demo](https://www.youtube.com/embed/VkLvP1xmRzo), latest release `v1.28.0`.
+
+## issuectl and iOS
+
+[issuectl](https://github.com/mean-weasel/issuectl) is a cross-repo GitHub issue command center with Claude Code and Codex launch integration.
+
+Motivation: I wanted a faster path from rough product/dev thought to agent-ready issue. The main flow I have been dogfooding: paste in a rough description, let issuectl parse it into tasks and todo lists, choose Claude Code or Codex, and launch immediately with the issue context already wired up.
+
+![issuectl parse to launch flow](/images/posts/weekly-vibes-2026-05-03/issuectl-parse-launch-flow.png)
+
+I also built out the iOS path: browse repos, issues, PRs, and sessions; quick-create issues; comment/close issues; review or merge PRs; and launch sessions from mobile.
+
+Latest release: `v0.46.0`.
+
+## Fleet
+
+[Fleet](https://github.com/neonwatty/fleet) distributes Claude Code sessions across a local Mac fleet.
+
+Motivation: I have a variety of Mac minis and other Macs on my home network, and I distribute app development tasks across them. I needed a handy way to keep track of where Claude Code and Codex sessions were running, which apps were running, and which machine was healthy enough for the next task.
+
+It auto-picks the healthiest machine, launches work over SSH, and sets up tunnels for dev server callbacks.
+
+![Fleet menu bar app screenshot](/images/posts/weekly-vibes-2026-05-03/fleet-menubar.png)
+
+![Fleet dashboard app screenshot](/images/posts/weekly-vibes-2026-05-03/fleet-dashboard.png)
+
+Links: [GitHub](https://github.com/neonwatty/fleet), [homepage](https://neonwatty.github.io/fleet/), latest release `v0.4.1`.
+
+## Other Experiments
+
+[Playwright Profiles](https://github.com/neonwatty/playwright-profiles) reached `v1.4.0` with more hardened auth profile handling.
+
+[Autopilot Loop](https://github.com/neonwatty/autopilot-loop) is a new Codex plugin/CLI experiment for repeated build, audit, fix, verify, and judge loops.
+
+[Commentary Video](https://github.com/neonwatty/commentary-video) is a prototype for turning audio commentary into slideshow-style MP4 videos.
+
+## The Vibe
+
+Small local software is underrated.
+
+Not every useful tool needs to become a SaaS. Sometimes the best thing is a menu bar app, a tiny iOS workflow, or a one-purpose command that saves one context switch twenty times a day.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Weekly Update</category>
+            <category>Mac Apps</category>
+            <category>Menu Bar Apps</category>
+            <category>iOS</category>
+            <category>Claude Code</category>
+            <category>Codex</category>
+            <category>Developer Tools</category>
+            <enclosure url="https://neonwatty.com/images/posts/weekly-vibes-2026-05-03/session-search-results.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[How to File Your Taxes with AI in 2026]]></title>
             <link>https://neonwatty.com/posts/how-to-file-taxes-with-ai-2026</link>
@@ -508,6 +1063,8 @@ In Codex, skills live in `.codex/skills/` and are invoked with `$skill-name`. Th
 
 **Talk to your agent:** Ask your agent what skills it supports and which ones would help your workflow.
 
+For concrete examples, I keep a [Claude Code skills guide](/posts/claude-code-skills-guide/) with reusable workflows for interviewing, logo design, UI review, SEO research, and repo guardrails. The most important primitive in many of those skills is [`AskUserQuestion`](/posts/askuserquestion-claude-code-skill/), because it gives the agent a clean way to stop and ask for a decision instead of guessing.
+
 -----
 
 ## Layer 9: MCP Servers
@@ -797,17 +1354,33 @@ The engineers who thrive now are the ones who automate quality and spend their f
             <category>Engineering</category>
         </item>
         <item>
-            <title><![CDATA[Claude Code SVG Logo Design: A Reusable Skill for Generating Logos]]></title>
+            <title><![CDATA[Claude Code Logo Generator: SVG Logo Design Skill]]></title>
             <link>https://neonwatty.com/posts/logo-designer-skill-claude-code</link>
             <guid isPermaLink="false">https://neonwatty.com/posts/logo-designer-skill-claude-code</guid>
             <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[I built a Claude Code skill that turns logo design into a conversation. Point it at your repo, pick a direction, and iterate until you're happy — no design tools needed.]]></description>
+            <description><![CDATA[A reusable Claude Code skill for generating SVG logos. Point it at your repo, explore multiple logo concepts, refine the strongest direction, and export production-ready icons.]]></description>
             <content:encoded><![CDATA[
-A few months back I wrote about [using Claude Code as an ad-hoc logo generator](/posts/ai-logo-generator-claude-code/).  That worked well but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I turned it into a reusable [Claude Code skill](https://github.com/neonwatty/logo-designer-skill).
+Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a repeatable logo design process: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
+
+That is what this reusable [Claude Code logo design skill](https://github.com/neonwatty/logo-designer-skill) does. It turns logo generation into a structured workflow instead of an ad-hoc conversation. Point it at a project, answer a few design questions, and it produces SVG logo concepts you can actually inspect, edit, and ship.
+
+A few months back I wrote about [using Claude Code as an ad-hoc AI logo generator](/posts/ai-logo-generator-claude-code/).  That worked well, but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I encoded the process as a Claude Code skill.
 
 The skill handles the full logo design workflow: interview, explore, refine, export.  You point it at a project, it gathers context automatically, generates SVG concepts in parallel, and then you iterate through conversation until you land on something you like.
 
 I used it to design logos for two apps this week — [Bullhorn](https://github.com/mean-weasel/bullhorn) (a social media scheduler) and [Seatify](https://github.com/mean-weasel/seatify) (an AI seating chart tool for weddings).  Bullhorn took 17 iterations, Seatify took about 6.
+
+## When to Use a Claude Code Logo Skill
+
+This works best for software projects where an SVG logo is a practical deliverable: app icons, favicons, extension icons, landing page marks, lightweight product brands, and internal tools. It is not a replacement for brand strategy or a professional identity system. It is a fast way to get from "this repo needs a logo" to a coherent set of SVG and PNG assets.
+
+The workflow is especially useful when you want:
+
+- **A logo that reflects the actual product** — Claude Code reads the repo before generating concepts
+- **Multiple directions quickly** — concepts and variations can run in parallel
+- **Editable output** — SVG is code, so the result can be reviewed and modified
+- **Small-size checks** — favicons and extension icons fail if details disappear at 16px
+- **Repeatability** — the same process works across projects without rewriting the prompt
 
 ## How It Works
 
@@ -1350,7 +1923,7 @@ Whenever you're working on something new—a feature, a complex process, a workf
 
 If you dive straight into development without fully pulling that thread, you end up building something brittle, incomplete, less robust than it seemed when you first had the idea.
 
-Claude's `AskUserQuestion` tool, used repetitively, helps dredge all that stuff out of the ether before you write any code. (This post was inspired by [a tweet from Thariq](https://x.com/trq212/status/2005315275026260309) about using the tool for spec-based development.)
+Claude's `AskUserQuestion` tool, used repetitively, helps dredge all that stuff out of the ether before you write any code. I wrote a focused companion post on [what AskUserQuestion is and how to use it inside Claude Code skills](/posts/askuserquestion-claude-code-skill/). This post is the broader pattern: interview skills that force the agent to clarify before it implements. (It was inspired by [a tweet from Thariq](https://x.com/trq212/status/2005315275026260309) about using the tool for spec-based development.)
 
 That tweet sparked an idea: what if you baked this questioning pattern into reusable skills? Instead of remembering to ask Claude to interview you, the skill does it automatically.
 
@@ -1474,6 +2047,8 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 **Repository:** [github.com/neonwatty/claude-skills](https://github.com/neonwatty/claude-skills)
 
 **Related posts:**
+- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill)
+- [Claude Code Skills Guide](/posts/claude-code-skills-guide)
 - [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content:encoded>
@@ -1592,7 +2167,7 @@ That's it. Generate workflows from your codebase, execute them on real browsers 
             <content:encoded><![CDATA[
 Exporting CSVs from Google Search Console is tedious. You click around the UI, filter, export, open in a spreadsheet, repeat. It's slow and annoying.
 
-With Claude Code + the [social-tools MCP server](https://www.npmjs.com/package/@neonwatty/social-tools), you can query GSC directly from the terminal. Ask questions in plain English, get answers immediately.
+With Claude Code + the [social-tools MCP server](https://www.npmjs.com/package/@neonwatty/social-tools), you can query GSC directly from the terminal. Ask questions in plain English, get answers immediately. Pair this with [Claude Code keyword research](/posts/keyword-research-claude-code/) and a clean [repo setup for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) and you can turn search data into content changes quickly.
 
 ## Setup
 
@@ -1936,6 +2511,8 @@ $ gh repo edit --remove-topic tailwindcss,react,mdx
             <content:encoded><![CDATA[
 Getting your keywords right is the whole enchilada when it comes to helping users find your stuff - your blog, product, whatever.  There are a ton of dedicated tools for this - like Ahrefs and SEMrush - but each has a learning curve, and using them to get your keywords right still requires a lot of manual work.
 
+This is the research half of my Claude Code SEO workflow. The measurement half is [pulling Google Search Console data with Claude Code](/posts/best-claude-code-seo-tools/), then using those real queries to update posts, add internal links, and build supporting pages.
+
 LLMs are a natural tool to turn to as an alternative keyword generator, but they aren't plugged into real search data.  So while they're super helpful for brainstorming, their recommendations still won't include fresh user search behavior by default.
 
 However once you give them access to real search data tools, they become incredibly powerful for keyword research.  For example, google's search autocomplete suggestions are a goldmine of real user search behavior.  They show you what people are actually searching for, in pretty much real time.
@@ -1998,6 +2575,7 @@ You can watch the output to confirm it's running the queries you want.  Once don
 # Related Posts
 
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
+- [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools) - Find which queries and pages are already working
 ]]></content:encoded>
             <author>Jeremy Watt</author>
             <category>Claude Code</category>
@@ -2259,15 +2837,25 @@ The back-and-forth debugging with Claude Code was exactly what this project need
             <pubDate>Sun, 05 Oct 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Turn your favorite YouTube moments into shareable GIFs.]]></description>
             <content:encoded><![CDATA[
-[ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) - a YouTube to GIF converter with no watermark - is now live in the Chrome Web Store!
+[ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is a YouTube to GIF converter Chrome extension with no watermark. It lets you clip a moment from a YouTube video, choose the GIF duration, adjust FPS and resolution, add optional text, and export a clean GIF directly from the YouTube player.
 
-It's a free GIF maker Chrome extension that lets you easily clip GIFs right from YouTube, by adding a simple video clipper interface directly to the YouTube player itself.  You can select your start time, gif duration, resolution and FPS, and even add text!
+It's a free GIF maker Chrome extension that keeps the workflow on the video page. No copy-pasting into another site, no downloader-to-editor chain, no watermark added on export.
+
+[Get ytgify on the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) →
 
 <div style="max-width: 800px; margin: 2rem auto;">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/hBBr8SluoQ8" title="ytgify Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></iframe>
 </div>
 
 Before making the extension, clipping GIFs off of YouTube was a slow and painful process, involving multiple apps to download the YouTube video, bring it into an editor, clip it, export as a GIF, etc. Now it's a breeze. I used Claude Code to [generate the SVG logo](/posts/ai-logo-generator-claude-code) and create [video storyboards with Playwright](/posts/storyboard-demo-videos) for the demo walkthrough.
+
+## How to Convert a YouTube Video to a GIF
+
+The short version: install the extension, open a YouTube video, choose the moment, tune the export settings, and generate the GIF. I split the detailed guides by intent so they do not all repeat the same thing:
+
+- [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
+- [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/) focuses on installation, browser workflow, and why the extension approach is faster.
+- [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/) walks through clipping decisions, export settings, and troubleshooting.
 
 Shared this out and was happy to see others liked it too - the extension got solid traction on Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1ntgjnn/a_youtubetogif_chrome_extension/), [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ntgb1c/youtube_gif_chrome_extension_built_with_claude/)) before launch.
 
@@ -2541,7 +3129,9 @@ This morning I spent some time using Claude Code as an AI logo generator - creat
   </video>
 </div>
 
-Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.  (I later turned this workflow into a [reusable Claude Code skill for logo design](/posts/logo-designer-skill-claude-code).)
+Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
+
+This post is the original one-off experiment. I later turned the workflow into a more complete [Claude Code logo generator skill for SVG logo design](/posts/logo-designer-skill-claude-code/) with repo context gathering, structured questions, parallel concepts, favicon checks, and export scripts.
 
 Here's a short gallery of my favorites.  Ended up using the first (for reasons detailed below).
 
