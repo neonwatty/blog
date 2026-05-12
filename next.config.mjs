@@ -2,8 +2,9 @@ import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Only use static export for production builds (allows API routes in dev for admin)
-  ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
+  // Static export is only enabled by the production build script.
+  // Plain `next build` keeps API routes available for local admin validation.
+  ...(process.env.STATIC_EXPORT === 'true' ? { output: 'export' } : {}),
   trailingSlash: true,
   basePath: '',
   assetPrefix: '',

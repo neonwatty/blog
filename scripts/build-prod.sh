@@ -26,7 +26,7 @@ fi
 # Run the build
 echo "Running production build..."
 build_success=true
-next build || build_success=false
+STATIC_EXPORT=true next build || build_success=false
 
 # Restore admin pages
 if [ -d "$BACKUP_DIR/admin" ]; then
