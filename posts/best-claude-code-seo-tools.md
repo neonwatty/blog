@@ -17,6 +17,8 @@ metaDescription: >-
   MCP server. Real examples, actual commands, no fluff.
 relatedPosts:
   - keyword-research-claude-code
+  - claude-code-skills-guide
+  - how-to-set-up-your-repo-for-claude-code-and-codex
   - github-repo-tags-claude-code
   - claude-code-cli-is-all-you-need
 ogImage: /images/posts/og/best-claude-code-seo-tools.png
@@ -24,7 +26,7 @@ ogImage: /images/posts/og/best-claude-code-seo-tools.png
 
 Exporting CSVs from Google Search Console is tedious. You click around the UI, filter, export, open in a spreadsheet, repeat. It's slow and annoying.
 
-With Claude Code + the [social-tools MCP server](https://www.npmjs.com/package/@neonwatty/social-tools), you can query GSC directly from the terminal. Ask questions in plain English, get answers immediately.
+With Claude Code + the [social-tools MCP server](https://www.npmjs.com/package/@neonwatty/social-tools), you can query GSC directly from the terminal. Ask questions in plain English, get answers immediately. Pair this with [Claude Code keyword research](/posts/keyword-research-claude-code/) and a clean [repo setup for Claude Code and Codex](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) and you can turn search data into content changes quickly.
 
 ## Setup
 

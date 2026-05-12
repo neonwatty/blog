@@ -1,10 +1,10 @@
 ---
-title: 'Claude Code SVG Logo Design: A Reusable Skill for Generating Logos'
+title: 'Claude Code Logo Generator: SVG Logo Design Skill'
 date: '2026-02-24'
 excerpt: >-
-  I built a Claude Code skill that turns logo design into a conversation. Point
-  it at your repo, pick a direction, and iterate until you're happy — no design
-  tools needed.
+  A reusable Claude Code skill for generating SVG logos. Point it at your repo,
+  explore multiple logo concepts, refine the strongest direction, and export
+  production-ready icons.
 tags:
   - Claude Code
   - Claude Code Skills
@@ -13,23 +13,41 @@ tags:
   - Claude Code SVG
 featured: true
 author: Jeremy Watt
-seoTitle: 'Claude Code SVG Logo Design Skill: Generate Logos with AI'
+seoTitle: 'Claude Code Logo Generator: SVG Logo Design Skill'
 metaDescription: >-
-  Can Claude Code generate images? Yes — this reusable Claude Code skill
-  generates SVG logos through conversation. Explore concepts, iterate designs,
-  and export to PNG.
+  Generate SVG logos with Claude Code using a reusable logo design skill. Explore
+  concepts, compare variations, refine designs, and export production-ready app
+  icons.
 relatedPosts:
+  - claude-code-skills-guide
   - interview-skills-claude-code
+  - askuserquestion-claude-code-skill
   - socratic-interview-skills-claude-code
   - ai-logo-generator-claude-code
 ogImage: /images/posts/og/logo-designer-skill-claude-code.png
 ---
 
-A few months back I wrote about [using Claude Code as an ad-hoc logo generator](/posts/ai-logo-generator-claude-code/).  That worked well but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I turned it into a reusable [Claude Code skill](https://github.com/neonwatty/logo-designer-skill).
+Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a repeatable logo design process: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
+
+That is what this reusable [Claude Code logo design skill](https://github.com/neonwatty/logo-designer-skill) does. It turns logo generation into a structured workflow instead of an ad-hoc conversation. Point it at a project, answer a few design questions, and it produces SVG logo concepts you can actually inspect, edit, and ship.
+
+A few months back I wrote about [using Claude Code as an ad-hoc AI logo generator](/posts/ai-logo-generator-claude-code/).  That worked well, but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I encoded the process as a Claude Code skill.
 
 The skill handles the full logo design workflow: interview, explore, refine, export.  You point it at a project, it gathers context automatically, generates SVG concepts in parallel, and then you iterate through conversation until you land on something you like.
 
 I used it to design logos for two apps this week — [Bullhorn](https://github.com/mean-weasel/bullhorn) (a social media scheduler) and [Seatify](https://github.com/mean-weasel/seatify) (an AI seating chart tool for weddings).  Bullhorn took 17 iterations, Seatify took about 6.
+
+## When to Use a Claude Code Logo Skill
+
+This works best for software projects where an SVG logo is a practical deliverable: app icons, favicons, extension icons, landing page marks, lightweight product brands, and internal tools. It is not a replacement for brand strategy or a professional identity system. It is a fast way to get from "this repo needs a logo" to a coherent set of SVG and PNG assets.
+
+The workflow is especially useful when you want:
+
+- **A logo that reflects the actual product** — Claude Code reads the repo before generating concepts
+- **Multiple directions quickly** — concepts and variations can run in parallel
+- **Editable output** — SVG is code, so the result can be reviewed and modified
+- **Small-size checks** — favicons and extension icons fail if details disappear at 16px
+- **Repeatability** — the same process works across projects without rewriting the prompt
 
 ## How It Works
 

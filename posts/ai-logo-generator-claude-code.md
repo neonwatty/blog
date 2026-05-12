@@ -16,6 +16,7 @@ metaDescription: >-
   workflow: generate, curate, and evolve logos with natural language prompts.
   Free method.
 relatedPosts:
+  - logo-designer-skill-claude-code
   - x-search-pro-launch
   - ytgify-launch
   - liars-dice-apple-watch-app
@@ -31,7 +32,9 @@ This morning I spent some time using Claude Code as an AI logo generator - creat
   </video>
 </div>
 
-Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.  (I later turned this workflow into a [reusable Claude Code skill for logo design](/posts/logo-designer-skill-claude-code).)
+Creating SVG logos with Claude Code is pretty fun - it's like having a generative AI logo design tool at your fingertips.  Since they're just XML, CC can bring pretty much any idea you have to life as an SVG.  You can work with this SVG logo maker to generate, modify, and iterate on designs through pure conversation.  You just describe what you want and watch it materialize as code.
+
+This post is the original one-off experiment. I later turned the workflow into a more complete [Claude Code logo generator skill for SVG logo design](/posts/logo-designer-skill-claude-code/) with repo context gathering, structured questions, parallel concepts, favicon checks, and export scripts.
 
 Here's a short gallery of my favorites.  Ended up using the first (for reasons detailed below).
 

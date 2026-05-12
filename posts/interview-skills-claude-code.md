@@ -20,6 +20,8 @@ metaDescription: >-
   features. Best practices for AskUserQuestion tool, prompt engineering, and
   workflow automation.
 relatedPosts:
+  - askuserquestion-claude-code-skill
+  - claude-code-skills-guide
   - socratic-interview-skills-claude-code
   - logo-designer-skill-claude-code
   - claude-code-workflow-testing-mcp
@@ -29,7 +31,7 @@ Whenever you're working on something new—a feature, a complex process, a workf
 
 If you dive straight into development without fully pulling that thread, you end up building something brittle, incomplete, less robust than it seemed when you first had the idea.
 
-Claude's `AskUserQuestion` tool, used repetitively, helps dredge all that stuff out of the ether before you write any code. (This post was inspired by [a tweet from Thariq](https://x.com/trq212/status/2005315275026260309) about using the tool for spec-based development.)
+Claude's `AskUserQuestion` tool, used repetitively, helps dredge all that stuff out of the ether before you write any code. I wrote a focused companion post on [what AskUserQuestion is and how to use it inside Claude Code skills](/posts/askuserquestion-claude-code-skill/). This post is the broader pattern: interview skills that force the agent to clarify before it implements. (It was inspired by [a tweet from Thariq](https://x.com/trq212/status/2005315275026260309) about using the tool for spec-based development.)
 
 That tweet sparked an idea: what if you baked this questioning pattern into reusable skills? Instead of remembering to ask Claude to interview you, the skill does it automatically.
 
@@ -153,5 +155,7 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 **Repository:** [github.com/neonwatty/claude-skills](https://github.com/neonwatty/claude-skills)
 
 **Related posts:**
+- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill)
+- [Claude Code Skills Guide](/posts/claude-code-skills-guide)
 - [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)

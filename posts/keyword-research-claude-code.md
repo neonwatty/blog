@@ -20,12 +20,15 @@ metaDescription: >-
   search for.
 relatedPosts:
   - best-claude-code-seo-tools
+  - claude-code-skills-guide
   - github-repo-tags-claude-code
   - social-starter-pack-cli-tools
 ogImage: /images/posts/og/keyword-research-claude-code.png
 ---
 
 Getting your keywords right is the whole enchilada when it comes to helping users find your stuff - your blog, product, whatever.  There are a ton of dedicated tools for this - like Ahrefs and SEMrush - but each has a learning curve, and using them to get your keywords right still requires a lot of manual work.
+
+This is the research half of my Claude Code SEO workflow. The measurement half is [pulling Google Search Console data with Claude Code](/posts/best-claude-code-seo-tools/), then using those real queries to update posts, add internal links, and build supporting pages.
 
 LLMs are a natural tool to turn to as an alternative keyword generator, but they aren't plugged into real search data.  So while they're super helpful for brainstorming, their recommendations still won't include fresh user search behavior by default.
 
@@ -89,3 +92,4 @@ You can watch the output to confirm it's running the queries you want.  Once don
 # Related Posts
 
 - [CLI is All You Need](/posts/claude-code-cli-is-all-you-need) - Why natural language + CLI tools beats custom tooling
+- [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools) - Find which queries and pages are already working
