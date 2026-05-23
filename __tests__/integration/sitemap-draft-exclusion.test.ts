@@ -76,7 +76,7 @@ describe('Sitemap draft exclusion integration', () => {
     expect(posts.find((p) => p.draft)).toBeUndefined()
   })
 
-  it('sitemap config getDynamicPaths excludes draft posts', () => {
+  it('sitemap config transform excludes draft posts discovered from build output', async () => {
     createPost(postsDir, 'visible.md', {
       title: 'Visible',
       date: '2024-01-01',
@@ -98,11 +98,12 @@ describe('Sitemap draft exclusion integration', () => {
       sitemapConfig = require('@/next-sitemap.config.cjs')
     })
 
-    // The sitemap config reads posts directly from disk using process.cwd()
-    // Its getDynamicPaths function filters out drafts internally
-    // We verify the config loaded correctly with the mocked cwd
-    expect(sitemapConfig!).toBeDefined()
-    expect(sitemapConfig!.siteUrl).toBeDefined()
-    expect(typeof sitemapConfig!.transform).toBe('function')
+    const transform = sitemapConfig!.transform as (config: Record<string, unknown>, path: string) => Promise<unknown>
+
+    await expect(transform({ autoLastmod: false }, '/posts/hidden/')).resolves.toBeNull()
+    await expect(transform({ autoLastmod: false }, '/posts/visible/')).resolves.toMatchObject({
+      loc: '/posts/visible/',
+      lastmod: '2024-01-01T00:00:00.000Z',
+    })
   })
 })

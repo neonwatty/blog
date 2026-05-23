@@ -11,6 +11,14 @@ export const tagDescriptions: Record<string, string> = {
     'Tools, workflows, and strategies for developer productivity — from CLI utilities and task management to automation patterns that save real time.',
   'developer tools':
     'Reviews and deep dives on developer tools — Claude Code extensions, CLI utilities, browser extensions, and the tooling that makes AI-assisted development practical.',
+  'mac apps':
+    'Native Mac app experiments, menu bar utilities, and local-first tools built to make AI-assisted development and daily workflows smoother.',
+  'menu bar apps':
+    'macOS menu bar apps and status-bar utilities — small native tools for search, usage monitoring, workspace context, PR velocity, and local agent workflows.',
+  swiftui:
+    'SwiftUI app experiments for Apple platforms, including native Mac utilities, menu bar apps, watchOS apps, and agent-assisted Xcode workflows.',
+  codex:
+    'OpenAI Codex workflows, tooling, and experiments — from repo setup and local sessions to usage monitoring and AI-assisted development alongside Claude Code.',
   cli: 'Command-line tools and workflows for developers — from social media posting to task management, all designed to work seamlessly with Claude Code.',
   testing:
     'Testing strategies for AI-assisted development — TDD, workflow testing, browser automation, iOS simulator testing, and managing test failures at scale.',

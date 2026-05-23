@@ -1,12 +1,19 @@
 const fs = require('fs')
 const path = require('path')
+const matter = require('gray-matter')
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml')
 
 function getPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames.filter((fileName) => fileName.endsWith('.md')).map((fileName) => fileName.replace(/\.md$/, ''))
+  return fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => {
+      const raw = fs.readFileSync(path.join(postsDirectory, fileName), 'utf8')
+      return !matter(raw).data.draft
+    })
+    .map((fileName) => fileName.replace(/\.md$/, ''))
 }
 
 function getSitemapPostSlugs() {
