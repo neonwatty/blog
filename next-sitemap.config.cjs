@@ -11,6 +11,7 @@ const POSTS_PER_PAGE = 10
 // Build source-driven route data so sitemap generation does not depend on a
 // fresh .next build manifest being present.
 const postDates = {}
+const publishedPostPaths = new Set()
 const postTags = new Set()
 let publishedPostCount = 0
 
@@ -25,7 +26,9 @@ try {
         const data = matter(fileContents).data
         if (!data.draft) {
           publishedPostCount += 1
-          postDates[`/posts/${id}/`] = data.lastUpdated || data.date
+          const postPath = `/posts/${id}/`
+          publishedPostPaths.add(postPath)
+          postDates[postPath] = data.lastUpdated || data.date
           const tags = Array.isArray(data.tags) ? data.tags : []
           tags.forEach((tag) => postTags.add(tag))
         }
@@ -88,6 +91,15 @@ module.exports = {
   },
 
   transform: async (config, path) => {
+    const normalizedPath = path.endsWith('/') ? path : `${path}/`
+    if (
+      normalizedPath.startsWith('/posts/') &&
+      normalizedPath !== '/posts/' &&
+      !publishedPostPaths.has(normalizedPath)
+    ) {
+      return null
+    }
+
     // Prevent duplicate URLs in sitemap
     const seenPath = path === '/' ? path : path.replace(/\/$/, '')
     if (seenUrls.has(seenPath)) {
@@ -121,7 +133,6 @@ module.exports = {
 
     // Use per-post date if available, otherwise fall back to build time
     // Handle both /posts/slug and /posts/slug/ formats
-    const normalizedPath = path.endsWith('/') ? path : `${path}/`
     const postDate = postDates[normalizedPath] || postDates[path]
     const lastmod = postDate
       ? new Date(postDate).toISOString()
