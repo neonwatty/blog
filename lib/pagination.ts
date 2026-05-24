@@ -1,4 +1,4 @@
-import { PostData, getSortedPostsData } from './posts'
+import { PostData, getIndexPostsData } from './posts'
 
 const POSTS_PER_PAGE = 10
 
@@ -11,7 +11,7 @@ export interface PaginatedPosts {
 }
 
 export function getPaginatedPosts(page: number): PaginatedPosts {
-  const allPosts = getSortedPostsData()
+  const allPosts = getIndexPostsData()
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE)
   const currentPage = Math.max(1, Math.min(page, totalPages))
   const start = (currentPage - 1) * POSTS_PER_PAGE
@@ -27,7 +27,7 @@ export function getPaginatedPosts(page: number): PaginatedPosts {
 }
 
 export function getAllPageNumbers(): number[] {
-  const allPosts = getSortedPostsData()
+  const allPosts = getIndexPostsData()
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE)
   return Array.from({ length: totalPages }, (_, i) => i + 1)
 }

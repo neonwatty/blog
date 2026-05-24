@@ -10,6 +10,7 @@ tags:
   - GIF
   - ytgify
 featured: false
+hideFromIndex: true
 author: Jeremy Watt
 seoTitle: YouTube to GIF Converter - No Watermark
 metaDescription: >-

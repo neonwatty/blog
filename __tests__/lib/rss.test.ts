@@ -6,7 +6,7 @@
 jest.mock('feed')
 
 jest.mock('@/lib/posts', () => ({
-  getSortedPostsData: jest.fn(() => [
+  getIndexPostsData: jest.fn(() => [
     {
       id: 'test-post',
       title: 'Test Post',

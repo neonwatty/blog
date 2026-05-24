@@ -49,6 +49,7 @@ describe('lib/schemas', () => {
         expect(result.data.tags).toEqual([])
         expect(result.data.featured).toBe(false)
         expect(result.data.draft).toBe(false)
+        expect(result.data.hideFromIndex).toBe(false)
         expect(result.data.relatedPosts).toEqual([])
       }
     })

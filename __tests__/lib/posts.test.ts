@@ -100,6 +100,7 @@ describe('Posts Library', () => {
       tags: ['test'],
       readingTime: '5 min read',
       featured: true,
+      hideFromIndex: true,
       author: 'Test Author',
       image: '/test-image.jpg',
       seoTitle: 'SEO Title',
@@ -109,6 +110,7 @@ describe('Posts Library', () => {
     }
 
     expect(mockPost.featured).toBe(true)
+    expect(mockPost.hideFromIndex).toBe(true)
     expect(mockPost.image).toBe('/test-image.jpg')
     expect(mockPost.seoTitle).toBe('SEO Title')
     expect(mockPost.metaDescription).toBe('Meta description')

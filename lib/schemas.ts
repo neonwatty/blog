@@ -7,6 +7,7 @@ export const PostFrontmatterSchema = z.object({
   tags: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
   draft: z.boolean().default(false),
+  hideFromIndex: z.boolean().default(false),
   image: z.string().optional(),
   ogImage: z.string().optional(),
   author: z.string().default('Jeremy Watt'),

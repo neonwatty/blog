@@ -15,7 +15,7 @@ tags:
   - XcodeBuildMCP
   - Developer Tools
 featured: false
-draft: true
+draft: false
 author: Jeremy Watt
 seoTitle: 'macOS Menu Bar Apps with AI Agents and XcodeBuildMCP'
 metaDescription: >-

@@ -10,6 +10,7 @@ tags:
   - GIF
   - ytgify
 featured: false
+hideFromIndex: true
 author: Jeremy Watt
 seoTitle: Convert a YouTube Clip to GIF with ytgify
 metaDescription: >-

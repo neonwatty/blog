@@ -1,8 +1,8 @@
 import { Feed } from 'feed'
-import { getSortedPostsData } from './posts'
+import { getIndexPostsData } from './posts'
 
 export function generateRSSFeed() {
-  const posts = getSortedPostsData()
+  const posts = getIndexPostsData()
   const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://neonwatty.com'
 
   const feed = new Feed({
