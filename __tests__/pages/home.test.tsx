@@ -10,6 +10,7 @@ jest.mock('next/navigation', () => ({
 // Mock the posts data
 jest.mock('@/lib/posts', () => ({
   getSortedPostsData: () => [],
+  getIndexPostsData: () => [],
 }))
 
 // Helper function to render with ThemeProvider
