@@ -117,6 +117,22 @@ describe('Posts pipeline integration', () => {
     }
   })
 
+  it('keeps hidden posts published while excluding them from index listings', () => {
+    createPost(postsDir, 'visible.md', { title: 'Visible', date: '2024-01-01', excerpt: 'ok', tags: [] })
+    createPost(postsDir, 'support.md', {
+      title: 'Support',
+      date: '2024-02-01',
+      excerpt: 'seo',
+      tags: [],
+      hideFromIndex: true,
+    })
+
+    const { getSortedPostsData, getIndexPostsData } = loadPostsModule(tmpDir)
+
+    expect(getSortedPostsData().map((post) => post.title)).toEqual(['Support', 'Visible'])
+    expect(getIndexPostsData().map((post) => post.title)).toEqual(['Visible'])
+  })
+
   it('getPostData returns rendered HTML', async () => {
     createPost(
       postsDir,

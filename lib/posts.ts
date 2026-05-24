@@ -139,6 +139,7 @@ export interface PostData {
   readingTime: string
   featured?: boolean
   draft?: boolean
+  hideFromIndex?: boolean
   image?: string
   ogImage?: string
   author?: string
@@ -180,6 +181,7 @@ export function getSortedPostsData(): PostData[] {
         readingTime: readingTimeStats.text,
         featured: validated.featured,
         draft: validated.draft,
+        hideFromIndex: validated.hideFromIndex,
         image: validated.image,
         ogImage: validated.ogImage,
         author: validated.author,
@@ -195,6 +197,10 @@ export function getSortedPostsData(): PostData[] {
   const filtered = isDev ? allPostsData : allPostsData.filter((post) => !post.draft)
 
   return filtered.sort((a, b) => (a.date < b.date ? 1 : -1))
+}
+
+export function getIndexPostsData(): PostData[] {
+  return getSortedPostsData().filter((post) => !post.hideFromIndex)
 }
 
 // Get all post IDs for static generation
@@ -268,6 +274,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     readingTime: readingTimeStats.text,
     featured: matterResult.data.featured || false,
     draft,
+    hideFromIndex: matterResult.data.hideFromIndex || false,
     image: matterResult.data.image,
     ogImage: matterResult.data.ogImage,
     author: matterResult.data.author || 'Jeremy Watt',
