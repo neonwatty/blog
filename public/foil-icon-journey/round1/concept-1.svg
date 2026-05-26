@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" rx="180" ry="180" fill="#1F5F66"/>
+    <rect x="18" y="18" width="988" height="988" rx="164" ry="164" fill="none" stroke="#D2E7E8" stroke-width="20" stroke-opacity="0.45"/>
+  </g>
+  <g id="grooves" fill="none" stroke="#FBB83D">
+    <circle cx="512" cy="512" r="490" stroke-width="30"/>
+    <circle cx="512" cy="512" r="420" stroke-width="28"/>
+    <circle cx="512" cy="512" r="350" stroke-width="26"/>
+    <circle cx="512" cy="512" r="280" stroke-width="24"/>
+    <circle cx="512" cy="512" r="210" stroke-width="22"/>
+    <circle cx="512" cy="512" r="140" stroke-width="20"/>
+    <circle cx="512" cy="512" r="70" stroke-width="20"/>
+  </g>
+  <g id="center-dot">
+    <circle cx="512" cy="512" r="34" fill="#FBB83D"/>
+  </g>
+  <g id="glint">
+    <path d="M 887.16 359.79 A 490 490 0 0 1 1002 512" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-opacity="0.85"/>
+  </g>
+</svg>

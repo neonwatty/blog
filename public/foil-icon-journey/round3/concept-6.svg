@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Foil — Concept 6: Off-Axis Foil Fragment</title>
+
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" fill="#0D0D0D"/>
+  </g>
+
+  <g id="diagonal-field">
+    <!-- Sharp diagonal slice of chartreuse pushing from lower-left, breaks symmetry -->
+    <polygon points="0,1024 0,360 760,1024" fill="#C8E040"/>
+  </g>
+
+  <g id="foil-shard" transform="translate(612 248) rotate(28)">
+    <!-- Bone-white foil fragment: a torn rectangle of "tinfoil" with helical groove marks.
+         Intentionally bleeds off the top-right edge of the canvas. -->
+    <path id="foil-body"
+          d="M -40 -40
+             L 520 -120
+             L 560 80
+             L 540 260
+             L 520 410
+             L 360 470
+             L 120 460
+             L -60 420
+             L -40 220
+             L -80 80
+             Z"
+          fill="#F2EAD3"/>
+
+    <!-- Single helical groove line — the Edison reference, off-axis -->
+    <g id="grooves" stroke="#0D0D0D" stroke-width="22" stroke-linecap="round" fill="none">
+      <path d="M 20 40 L 500 -20"/>
+      <path d="M 0 130 L 510 70"/>
+      <path d="M -10 220 L 520 160"/>
+      <path d="M 0 310 L 510 250"/>
+      <path d="M 30 390 L 490 340"/>
+    </g>
+
+    <!-- A single indented dot — the sound, captured -->
+    <circle id="indent" cx="280" cy="175" r="34" fill="#E91E63"/>
+  </g>
+
+  <g id="micro-mark">
+    <!-- Tiny lone groove fragment in the lower-right negative space, off-axis counterweight -->
+    <rect x="740" y="880" width="180" height="22" rx="11" fill="#F2EAD3" transform="rotate(-12 830 891)"/>
+  </g>
+</svg>

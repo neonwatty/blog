@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" rx="180" ry="180" fill="#2A2630"/>
+  </g>
+  <g id="inner-outline">
+    <rect x="18" y="18" width="988" height="988" rx="164" ry="164" fill="none" stroke="#4A4452" stroke-width="14"/>
+  </g>
+  <g id="grooves" fill="#E8DCC4">
+    <rect x="142" y="277" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="333" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="389" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="445" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="501" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="557" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="613" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="669" width="740" height="22" rx="11" ry="11"/>
+    <rect x="142" y="725" width="740" height="22" rx="11" ry="11"/>
+  </g>
+  <g id="pulse-glow">
+    <line x1="300" y1="770" x2="724" y2="254" stroke="#FF6B5B" stroke-width="120" stroke-linecap="round" fill="none" stroke-opacity="0.18"/>
+  </g>
+  <g id="pulse">
+    <line x1="300" y1="770" x2="724" y2="254" stroke="#FF6B5B" stroke-width="62" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
