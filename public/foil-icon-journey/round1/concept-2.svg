@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="foilSheen" x1="0" y1="0" x2="1024" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#B8C1C8"/>
+      <stop offset="18%" stop-color="#ECEFF2"/>
+      <stop offset="38%" stop-color="#8E9AA2"/>
+      <stop offset="58%" stop-color="#F2F5F7"/>
+      <stop offset="80%" stop-color="#98A2A9"/>
+      <stop offset="100%" stop-color="#C2C9D0"/>
+    </linearGradient>
+  </defs>
+  <g id="ribbon">
+    <path d="M 90 512 L 320 512 C 430 512 430 280 540 280 S 650 744 760 744 L 934 512" fill="none" stroke="url(#foilSheen)" stroke-width="110" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="leader">
+    <circle cx="90" cy="512" r="34" fill="#C97A47"/>
+    <circle cx="84" cy="506" r="12" fill="#F2D4B8"/>
+  </g>
+</svg>

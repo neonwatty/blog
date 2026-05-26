@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" fill="#1F5F66"/>
+  </g>
+  <g id="mark">
+    <!-- The cylinder, reduced to a single solid disc (end-on view) -->
+    <circle cx="512" cy="512" r="296" fill="#F4E0C0"/>
+    <!-- The recorded groove, reduced to a single off-center indent (negative space) -->
+    <circle cx="600" cy="512" r="44" fill="#1F5F66"/>
+  </g>
+</svg>

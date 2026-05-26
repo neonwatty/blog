@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" fill="#F4E0C0"/>
+  </g>
+
+  <g id="emblem-ring">
+    <circle cx="512" cy="512" r="380" fill="none" stroke="#4A2C1A" stroke-width="28"/>
+    <circle cx="512" cy="512" r="332" fill="none" stroke="#4A2C1A" stroke-width="6"/>
+  </g>
+
+  <g id="central-glyph">
+    <rect x="312" y="472" width="400" height="80" rx="40" ry="40" fill="#4A2C1A"/>
+    <circle cx="372" cy="512" r="14" fill="#F4E0C0"/>
+    <circle cx="432" cy="512" r="14" fill="#F4E0C0"/>
+    <circle cx="492" cy="512" r="14" fill="#F4E0C0"/>
+    <circle cx="552" cy="512" r="14" fill="#F4E0C0"/>
+    <circle cx="612" cy="512" r="14" fill="#F4E0C0"/>
+    <circle cx="672" cy="512" r="14" fill="#C97A47"/>
+  </g>
+
+  <g id="upper-banner">
+    <path d="M 232 332 Q 512 252 792 332" fill="none" stroke="#4A2C1A" stroke-width="22" stroke-linecap="round"/>
+  </g>
+
+  <g id="lower-banner">
+    <path d="M 232 692 Q 512 772 792 692" fill="none" stroke="#4A2C1A" stroke-width="22" stroke-linecap="round"/>
+  </g>
+
+  <g id="anchor-marks">
+    <circle cx="232" cy="332" r="14" fill="#4A2C1A"/>
+    <circle cx="792" cy="332" r="14" fill="#4A2C1A"/>
+    <circle cx="232" cy="692" r="14" fill="#4A2C1A"/>
+    <circle cx="792" cy="692" r="14" fill="#4A2C1A"/>
+  </g>
+</svg>
