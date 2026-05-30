@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://neonwatty.com</id>
     <title>Jeremy Watt's Blog</title>
-    <updated>2026-05-23T19:00:00.000Z</updated>
+    <updated>2026-05-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Jeremy Watt</name>
@@ -14,6 +14,176 @@
     <logo>https://neonwatty.com/images/logo.png</logo>
     <icon>https://neonwatty.com/favicon.ico</icon>
     <rights>All rights reserved 2026</rights>
+    <entry>
+        <title type="html"><![CDATA[Claude Code App Icon Design: 20 SVG Iterations for a macOS Dictation App]]></title>
+        <id>https://neonwatty.com/posts/foil-icon-design-claude-code</id>
+        <link href="https://neonwatty.com/posts/foil-icon-design-claude-code"/>
+        <updated>2026-05-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A real iteration log: designing a macOS app icon with Claude Code and the logo-designer-skill. 20 SVG iterations, 6 parallel subagents, and the surprisingly hard problem of curving a sound wave around a cylinder.]]></summary>
+        <content type="html"><![CDATA[
+I redesigned the macOS app icon for [Foil](https://github.com/mean-weasel/foil), a free dictation tool, using **Claude Code** and the [logo-designer-skill](https://github.com/neonwatty/logo-designer-skill). The brief: an abstract homage to Edison's 1877 tinfoil phonograph, no literal phonograph. Twenty SVG iterations later, this is where we landed:
+
+<div style="display: flex; justify-content: center; margin: 2rem auto;">
+  <img src="/foil-icon-journey/final/iter-20.svg" alt="Final Foil app icon" style="width: 280px; height: 280px; border-radius: 16px;">
+</div>
+
+Here are the major stops, and where Claude got stuck.
+
+<style>
+.mini-carousel-container { position: relative; max-width: 700px; margin: 1.5rem auto; background: #1a1a1a; border-radius: 12px; padding: 1.5rem; overflow: hidden; }
+.mini-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #4a5568 #1a1a1a; gap: 1.25rem; padding: 0.5rem 0; }
+.mini-slide { flex: 0 0 60%; scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; }
+.mini-slide img { width: 100%; max-width: 360px; height: auto; border-radius: 10px; background: transparent; }
+.mini-slide p { color: #a0a0a0; text-align: center; margin: 0.6rem 0 0; font-size: 0.85rem; }
+.mini-carousel::-webkit-scrollbar { height: 8px; }
+.mini-carousel::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 4px; }
+.mini-carousel::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+.scroll-hint { color: #606060; text-align: center; margin-top: 0.8rem; font-size: 0.85rem; }
+</style>
+
+## Round 1 — Generic Abstract (rejected)
+
+Five parallel subagents, no Edison reference research. Rings, ribbons, recording grooves, an "F" letterform — competent, abstract, all wrong.
+
+<div class="mini-carousel-container">
+  <div class="mini-carousel">
+    <div class="mini-slide"><img src="/foil-icon-journey/round1/concept-1.svg" alt="rings"><p>concept-1 — captured sound rings</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round1/concept-2.svg" alt="foil ribbon"><p>concept-2 — foil ribbon → waveform</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round1/concept-3.svg" alt="grooves and pulse"><p>concept-3 — grooves + capture pulse</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round1/concept-4.svg" alt="F letterform"><p>concept-4 — F from foil strips</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round1/concept-5.svg" alt="radial disc"><p>concept-5 — cross-section + pulse</p></div>
+  </div>
+  <p class="scroll-hint">← Scroll →</p>
+</div>
+
+## Round 2 — Edison-Grounded (closer)
+
+Grounded in real research this time: a horizontal brass cylinder wrapped in tinfoil with a single helical groove at 10 threads per inch. Better, still not the answer.
+
+<div class="mini-carousel-container">
+  <div class="mini-carousel">
+    <div class="mini-slide"><img src="/foil-icon-journey/round2/concept-1.svg" alt="3/4 cylinder"><p>3/4 cylinder + helix + indentations</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round2/concept-2.svg" alt="end-on spiral"><p>end-on continuous spiral</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round2/concept-3.svg" alt="minimal capsule"><p>minimal capsule + diagonal</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round2/concept-4.svg" alt="foil sheet with sound"><p>tinfoil sheet + sound indentations</p></div>
+  </div>
+  <p class="scroll-hint">← Scroll →</p>
+</div>
+
+## The Spiral Detour (twelve iterations)
+
+I picked a direction and asked Claude to refine. The refinement turned into twelve iterations of *spiral* shapes — Archimedean spirals, spirals with bursts, denser spirals, sharper spirals. Structural problem: bend a periodic waveform into a closed curve and your brain reads it as a gear, never as audio.
+
+<div class="mini-carousel-container">
+  <div class="mini-carousel">
+    <div class="mini-slide"><img src="/foil-icon-journey/spirals/iter-04.svg" alt="iter-4 spiral"><p>iter-4 — Archimedean + speech wiggle</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/spirals/iter-07.svg" alt="iter-7 denser"><p>iter-7 — denser 6-turn groove</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/spirals/iter-09.svg" alt="iter-9 sharper"><p>iter-9 — sharper mixed-frequency</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/spirals/iter-11.svg" alt="iter-11 bold"><p>iter-11 — bold clipped-sine</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/spirals/iter-12.svg" alt="iter-12 tamed"><p>iter-12 — tamed center</p></div>
+  </div>
+  <p class="scroll-hint">← Scroll →</p>
+</div>
+
+After iteration-12 I called it and restarted.
+
+## Round 3 — Six Lenses (unlocked it)
+
+Hard reset. Six parallel subagents, each with a *different* creative lens — minimalist, letterform, material, motion, vintage, experimental. Constraining each agent broke the convergence.
+
+<div class="mini-carousel-container">
+  <div class="mini-carousel">
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-1.svg" alt="minimalist"><p>geometric minimalist</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-2.svg" alt="letterform"><p>letterform F</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-3.svg" alt="material"><p>material / foil sheen</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-4.svg" alt="motion"><p>motion / capture in-progress</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-5.svg" alt="vintage emblem"><p>vintage emblem (modern)</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/round3/concept-6.svg" alt="experimental"><p>experimental / off-axis</p></div>
+  </div>
+  <p class="scroll-hint">← Scroll →</p>
+</div>
+
+The winner wasn't a single concept — it was concepts 1 and 3 merged: a horizontal cylinder with a sound wave inside it.
+
+## The Curvature Problem
+
+This is where Claude got stuck. Once we had a cylinder, I asked Claude to "curve the sound waves along with the sheet." That instruction sounded clear when I typed it. It wasn't.
+
+<div class="mini-carousel-container">
+  <div class="mini-carousel">
+    <div class="mini-slide"><img src="/foil-icon-journey/curvature/01-smile-arc-wrong.svg" alt="smile arc"><p>smile-arc — wrong: implies the center curves</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/curvature/02-right-only.svg" alt="right-only"><p>right-edge perspective only — correct geometry</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/curvature/03-curved-mild.svg" alt="mild curve"><p>curved bars c=14 — too subtle</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/curvature/04-curved-c50.svg" alt="curved 50"><p>c=50 — bars curve like longitude lines</p></div>
+    <div class="mini-slide"><img src="/foil-icon-journey/curvature/05-curved-c80.svg" alt="curved 80"><p>c=80 — crescent moons (too much)</p></div>
+  </div>
+  <p class="scroll-hint">← Scroll →</p>
+</div>
+
+Claude's first interpretation was a smile-arc — bars bowing upward in the middle, like the wave was painted on a surface bulging toward the viewer. Geometrically wrong (the cylinder's center doesn't curve across its length, only the right edge does). I had to say "double check the curvature is not curved across the cylinder" before we got to right-edge-only perspective. Pushing further to actually *curve each bar's shape* worked at moderate intensity and looked silly at high intensity — and the curved version was technically more accurate but worse as an icon.
+
+## The Final
+
+Straight bars, shifted slightly right, subtle right-edge perspective. One last move: change the body from light grey to pure white, pushing luminance contrast past WCAG AAA for the 16px menu-bar size.
+
+<div style="display: flex; gap: 1.5rem; justify-content: center; margin: 2rem auto; flex-wrap: wrap;">
+  <figure style="text-align: center; margin: 0;">
+    <img src="/foil-icon-journey/final/iter-19.svg" alt="iter-19" style="width: 240px; height: 240px; border-radius: 12px;">
+    <figcaption style="color: #888; font-size: 0.85rem; margin-top: 0.5rem;">iter-19 — grey foil</figcaption>
+  </figure>
+  <figure style="text-align: center; margin: 0;">
+    <img src="/foil-icon-journey/final/iter-20.svg" alt="iter-20" style="width: 240px; height: 240px; border-radius: 12px;">
+    <figcaption style="color: #888; font-size: 0.85rem; margin-top: 0.5rem;">iter-20 — white foil (final)</figcaption>
+  </figure>
+</div>
+
+## The Counts
+
+- **20** named iterations
+- **119** SVG files generated
+- **~60** distinct visual variations across the whole journey
+- **3** rounds of fresh concepts (5 + 4 + 6 = 15 starting points)
+- **12** iterations on the spiral dead end before restarting
+- **1** geometric misunderstanding that ate ~5 iterations to untangle
+
+## What I Took Away
+
+**Claude's capabilities on this kind of task are spiky.**
+
+Some operations were nearly frictionless. Centering the sound wave on the cylinder, shifting it right, replacing the body color from grey to pure white, generating six distinct concepts in parallel — all landed in one or two attempts.
+
+Other operations turned out to be surprisingly hard. The clearest example: getting Claude to *curve* the sound-wave bars along the cylinder's curvature. After we untangled the initial geometric misread (the smile-arc that implied the cylinder bows across its length), Claude could produce mathematically curved bars at any intensity I asked for — but none of them looked right:
+
+<div style="display: flex; gap: 0.8rem; justify-content: center; margin: 1.5rem auto; flex-wrap: wrap;">
+  <figure style="margin: 0; text-align: center;">
+    <img src="/foil-icon-journey/curvature/01-smile-arc-wrong.svg" alt="smile-arc mistake" style="width: 200px; height: 200px; border-radius: 10px;">
+    <figcaption style="color: #888; font-size: 0.75rem; margin-top: 0.4rem;">smile-arc (wrong geometry)</figcaption>
+  </figure>
+  <figure style="margin: 0; text-align: center;">
+    <img src="/foil-icon-journey/curvature/04-curved-c50.svg" alt="curved bars c=50" style="width: 200px; height: 200px; border-radius: 10px;">
+    <figcaption style="color: #888; font-size: 0.75rem; margin-top: 0.4rem;">curved bars c=50</figcaption>
+  </figure>
+  <figure style="margin: 0; text-align: center;">
+    <img src="/foil-icon-journey/curvature/05-curved-c80.svg" alt="curved bars c=80" style="width: 200px; height: 200px; border-radius: 10px;">
+    <figcaption style="color: #888; font-size: 0.75rem; margin-top: 0.4rem;">curved bars c=80 (crescent moons)</figcaption>
+  </figure>
+</div>
+
+We reverted to straight bars in iteration-19. Geometric fidelity and icon legibility turned out to be different optimization targets, and Claude couldn't navigate the gap between them without explicit steering from me.
+
+The skill ([logo-designer-skill](https://github.com/neonwatty/logo-designer-skill)) handles the structured flow — interview, parallel exploration, refinement, PNG export. Full walkthrough is [here](/posts/logo-designer-skill-claude-code/). And [Foil](https://github.com/mean-weasel/foil) is where the icon lives now.
+]]></content>
+        <author>
+            <name>Jeremy Watt</name>
+        </author>
+        <category label="Claude Code"/>
+        <category label="App Icon Design"/>
+        <category label="Claude Code Skills"/>
+        <category label="SVG"/>
+        <category label="macOS App Icon"/>
+        <category label="Logo Design"/>
+        <category label="AI Design"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Mac Menu Bar Is My New Scratchpad for AI Developer Tools]]></title>
         <id>https://neonwatty.com/posts/the-mac-menu-bar-is-my-new-scratchpad-for-ai-developer-tools</id>
@@ -140,22 +310,102 @@ The menu bar is a great place to put those tools.
         <category label="Developer Tools"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Claude Code Skills Guide]]></title>
+        <title type="html"><![CDATA[YouTube to GIF Converter: Make GIFs with No Watermark]]></title>
+        <id>https://neonwatty.com/posts/youtube-to-gif-no-watermark</id>
+        <link href="https://neonwatty.com/posts/youtube-to-gif-no-watermark"/>
+        <updated>2026-05-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Convert a YouTube video to a GIF with no watermark using ytgify, a Chrome extension built for clipping GIFs directly from the YouTube player.]]></summary>
+        <content type="html"><![CDATA[
+If you want a YouTube to GIF converter with no watermark, [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is the Chrome extension I built for exactly that workflow. It adds a GIF clipper directly to the YouTube player so you can pick a start time, duration, FPS, and resolution without downloading the video into a separate editor.
+
+The output is a clean GIF. No watermark, no branding overlay, no multi-app export chain. If you searched for "youtube to gif", "youtube video to gif no watermark", "youtube to gif maker", or "youtube to gif converter", this is the focused workflow.
+
+[Install ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) or read the full [ytgify launch post](/posts/ytgify-launch/) for the demo and background.
+
+## When No Watermark Actually Matters
+
+Watermarks are not always a problem. If you are making a quick throwaway reaction GIF for a private chat, any converter might be fine. They become a problem when the GIF is part of something you own or publish.
+
+Clean output matters for:
+
+- Product documentation where a watermark makes the screenshot feel unofficial
+- Support replies where the GIF should focus attention on the exact UI behavior
+- Blog posts where third-party branding distracts from the article
+- Social clips where the visual should stand on its own
+- Demo walkthroughs where the clip represents your product or tutorial
+
+For those cases, the GIF should show the content and nothing else.
+
+## YouTube Video to GIF No-Watermark Workflow
+
+1. Install [ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje).
+2. Open the YouTube video you want to clip.
+3. Use the ytgify controls in the player to choose the start time.
+4. Set the GIF duration, FPS, and resolution.
+5. Add optional text if the GIF needs a caption.
+6. Export the GIF.
+
+The main advantage is staying on YouTube while you work. You do not need to copy the video URL into another site, download a file, re-upload it, trim it, and then export. That makes ytgify useful as both a YouTube to GIF maker and a YouTube to GIF converter.
+
+## YouTube to GIF Maker Settings
+
+Start with these settings when you are not sure what to choose:
+
+| Use case | Duration | FPS | Resolution |
+| --- | --- | --- | --- |
+| Chat or reaction GIF | 2-4 seconds | 10-12 | Medium |
+| Blog or support GIF | 3-6 seconds | 12-15 | High enough for readable text |
+| Product demo GIF | As short as possible | 15+ if motion matters | High |
+
+The practical rule: shorten the clip before you lower quality. A concise GIF with readable frames usually works better than a long, heavily compressed one.
+
+## What to Check Before Export
+
+Before exporting, check three things:
+
+- **Composition** — the subject should be visible without relying on surrounding page context
+- **Duration** — shorter clips loop better and are easier to share
+- **Text readability** — if the YouTube clip contains UI text, use a high enough resolution to keep it readable
+
+If the GIF is for documentation or a support reply, I usually choose clarity over tiny file size. If it is for chat or social, I use a shorter duration and lower resolution.
+
+## How This Differs From Online YouTube to GIF Converters
+
+Most online converters make you leave YouTube, paste the URL into another site, wait for processing, then export through that site's constraints. Some are fine. Some add watermarks, compress too hard, or make you fight the trimming UI.
+
+ytgify is narrower: it is built for clipping a YouTube moment while you are already watching the video. That is the whole job.
+
+## Related ytgify Guides
+
+For the broader launch story, see [the ytgify launch post](/posts/ytgify-launch/). For a more Chrome-extension-specific workflow, see [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/). For a step-by-step clipping walkthrough, see [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/).
+]]></content>
+        <author>
+            <name>Jeremy Watt</name>
+        </author>
+        <category label="Chrome Extension"/>
+        <category label="YouTube"/>
+        <category label="GIF"/>
+        <category label="ytgify"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Claude Code Skills Guide: Workflows, Examples, and Setup]]></title>
         <id>https://neonwatty.com/posts/claude-code-skills-guide</id>
         <link href="https://neonwatty.com/posts/claude-code-skills-guide"/>
         <updated>2026-05-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A practical index of Claude Code skill workflows: questioning, logo design, UI review, SEO research, and repo guardrails.]]></summary>
+        <summary type="html"><![CDATA[A practical Claude Code skills hub for reusable workflows: logo design, interviews, Socratic reviews, AskUserQuestion, SEO research, and repo setup.]]></summary>
         <content type="html"><![CDATA[
 Claude Code skills are reusable workflow instructions. A good skill does not just tell the agent what output to produce. It tells the agent how to think through the work, when to ask questions, what evidence to gather, and when to stop.
 
-This page is a practical index of the Claude Code skill patterns I keep coming back to. It is organized by the kind of failure the skill prevents, because that is the useful way to think about skills: they are not decorations around a prompt, they are process guardrails.
+This page is a practical hub for the Claude Code skill patterns I keep coming back to. It is organized by the outcome you want: design a logo, interview a user before coding, run a Socratic UI review, research keywords, or set up a repo so skills have guardrails.
 
 ## Start Here
 
-- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill/) — how to use structured questions before an agent commits to a direction
-- [Claude Code Logo Generator: SVG Logo Design Skill](/posts/logo-designer-skill-claude-code/) — a full design workflow encoded as a reusable skill
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code/) — broader interview skill patterns for features, bugs, and workflows
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code/) — using skill-driven questioning for UI review
+- [Claude Code logo design skill for generating SVG logos](/posts/logo-designer-skill-claude-code/) — read a repo, generate multiple SVG concepts, refine the winner, and export app icons
+- [Claude Code interview skills for better specs before coding](/posts/interview-skills-claude-code/) — use multi-round interviews to surface requirements, edge cases, and tradeoffs
+- [Claude Code Socratic skills for iOS HIG testing](/posts/socratic-interview-skills-claude-code/) — turn platform guidelines into targeted review workflows
+- [AskUserQuestion in Claude Code skills](/posts/askuserquestion-claude-code-skill/) — ask structured clarifying questions instead of guessing user intent
+- [Claude Code SEO keyword research workflow](/posts/keyword-research-claude-code/) — use autocomplete and search data to find phrases people actually search for
+- [Repo setup for Claude Code and Codex skills](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) — add the guardrails that make agent workflows safer
 
 ## Skill Types
 
@@ -201,6 +451,19 @@ Claude Code is also useful for search and content workflows when it has access t
 
 - [SEO Keyword Research with Claude Code](/posts/keyword-research-claude-code/) — use autocomplete data to find search demand
 - [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools/) — query GSC data directly instead of clicking through exports
+
+## Choosing a Claude Code Skill
+
+Use the outcome to pick the right post:
+
+| Outcome | Start here |
+| --- | --- |
+| Create a product logo | [Claude Code logo design skill](/posts/logo-designer-skill-claude-code/) |
+| Clarify a vague feature or bug request | [Claude Code interview skills](/posts/interview-skills-claude-code/) |
+| Ask structured questions inside a skill | [AskUserQuestion Claude Code skill](/posts/askuserquestion-claude-code-skill/) |
+| Review an iOS UI against platform conventions | [Claude Code Socratic iOS HIG skill](/posts/socratic-interview-skills-claude-code/) |
+| Research search demand before writing | [Claude Code keyword research workflow](/posts/keyword-research-claude-code/) |
+| Prepare a repo for agents and skills | [Claude Code and Codex repo setup guide](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) |
 
 ## The Pattern
 
@@ -1290,15 +1553,17 @@ The engineers who thrive now are the ones who automate quality and spend their f
         <category label="Engineering"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Claude Code Logo Generator: SVG Logo Design Skill]]></title>
+        <title type="html"><![CDATA[Claude Code Logo Design Skill: Generate SVG Logos]]></title>
         <id>https://neonwatty.com/posts/logo-designer-skill-claude-code</id>
         <link href="https://neonwatty.com/posts/logo-designer-skill-claude-code"/>
         <updated>2026-02-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A reusable Claude Code skill for generating SVG logos. Point it at your repo, explore multiple logo concepts, refine the strongest direction, and export production-ready icons.]]></summary>
+        <summary type="html"><![CDATA[A reusable Claude Code skill for logo design. Point it at your repo, generate SVG logo concepts, refine the strongest direction, and export production-ready icons.]]></summary>
         <content type="html"><![CDATA[
-Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a repeatable logo design process: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
+Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a reusable logo design skill: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
 
 That is what this reusable [Claude Code logo design skill](https://github.com/neonwatty/logo-designer-skill) does. It turns logo generation into a structured workflow instead of an ad-hoc conversation. Point it at a project, answer a few design questions, and it produces SVG logo concepts you can actually inspect, edit, and ship.
+
+If you are looking for the broader index of skill patterns, start with the [Claude Code skills guide](/posts/claude-code-skills-guide/). This post is the concrete logo design example: a skill that turns "make my app a logo" into interview, SVG concept generation, refinement, and export.
 
 A few months back I wrote about [using Claude Code as an ad-hoc AI logo generator](/posts/ai-logo-generator-claude-code/).  That worked well, but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I encoded the process as a Claude Code skill.
 
@@ -1566,7 +1831,7 @@ None of these problems are unsolvable — but none of them are technical problem
         <category label="Developer Tools"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Claude Code Skills for iOS Human Interface Guidelines Testing]]></title>
+        <title type="html"><![CDATA[Claude Code Socratic Skills for iOS HIG Testing]]></title>
         <id>https://neonwatty.com/posts/socratic-interview-skills-claude-code</id>
         <link href="https://neonwatty.com/posts/socratic-interview-skills-claude-code"/>
         <link rel="enclosure" href="https://neonwatty.com/images/posts/socratic-ios/01-ios-tab-bar-events.png" type="image/png"/>
@@ -1844,7 +2109,7 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
 **Repository:** [github.com/neonwatty/claude-skills](https://github.com/neonwatty/claude-skills)
 
 **Related posts:**
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code)
+- [Claude Code Interview Skills: Ask Better Questions Before Coding](/posts/interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content>
         <author>
@@ -1857,7 +2122,7 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
         <category label="Human Interface Guidelines"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Claude Code Skills Tutorial: AskUserQuestion for Better Prompts]]></title>
+        <title type="html"><![CDATA[Claude Code Interview Skills: Ask Better Questions Before Coding]]></title>
         <id>https://neonwatty.com/posts/interview-skills-claude-code</id>
         <link href="https://neonwatty.com/posts/interview-skills-claude-code"/>
         <link rel="enclosure" href="https://neonwatty.com/images/posts/socratic-ios/01-ios-tab-bar-events.png" type="image/png"/>
@@ -1994,7 +2259,7 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 **Related posts:**
 - [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill)
 - [Claude Code Skills Guide](/posts/claude-code-skills-guide)
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
+- [Claude Code Socratic Skills for iOS HIG Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content>
         <author>
@@ -2817,7 +3082,7 @@ Before making the extension, clipping GIFs off of YouTube was a slow and painful
 
 The short version: install the extension, open a YouTube video, choose the moment, tune the export settings, and generate the GIF. I split the detailed guides by intent so they do not all repeat the same thing:
 
-- [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
+- [YouTube to GIF converter for no-watermark GIFs](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
 - [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/) focuses on installation, browser workflow, and why the extension approach is faster.
 - [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/) walks through clipping decisions, export settings, and troubleshooting.
 

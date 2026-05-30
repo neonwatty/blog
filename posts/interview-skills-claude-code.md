@@ -1,5 +1,5 @@
 ---
-title: 'Claude Code Skills Tutorial: AskUserQuestion for Better Prompts'
+title: 'Claude Code Interview Skills: Ask Better Questions Before Coding'
 date: '2026-01-15'
 excerpt: >-
   Claude's default mode is eager compliance. These interview skills flip the
@@ -16,9 +16,9 @@ featured: false
 image: /images/posts/socratic-ios/01-ios-tab-bar-events.png
 seoTitle: 'Claude Code Skills Examples: Using AskUserQuestion for Multi-Round Interviews'
 metaDescription: >-
-  Learn how to build Claude Code skills that interview users before implementing
-  features. Best practices for AskUserQuestion tool, prompt engineering, and
-  workflow automation.
+  Learn Claude Code interview skills that ask structured questions before
+  coding. Use AskUserQuestion to clarify specs, uncover edge cases, and reduce
+  rework.
 relatedPosts:
   - askuserquestion-claude-code-skill
   - claude-code-skills-guide
@@ -157,5 +157,5 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 **Related posts:**
 - [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill)
 - [Claude Code Skills Guide](/posts/claude-code-skills-guide)
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
+- [Claude Code Socratic Skills for iOS HIG Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)

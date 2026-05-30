@@ -1,10 +1,10 @@
 ---
-title: 'Claude Code Logo Generator: SVG Logo Design Skill'
+title: 'Claude Code Logo Design Skill: Generate SVG Logos'
 date: '2026-02-24'
 excerpt: >-
-  A reusable Claude Code skill for generating SVG logos. Point it at your repo,
-  explore multiple logo concepts, refine the strongest direction, and export
-  production-ready icons.
+  A reusable Claude Code skill for logo design. Point it at your repo, generate
+  SVG logo concepts, refine the strongest direction, and export production-ready
+  icons.
 tags:
   - Claude Code
   - Claude Code Skills
@@ -13,11 +13,11 @@ tags:
   - Claude Code SVG
 featured: true
 author: Jeremy Watt
-seoTitle: 'Claude Code Logo Generator: SVG Logo Design Skill'
+seoTitle: 'Claude Code Logo Design Skill: Generate SVG Logos from Your Repo'
 metaDescription: >-
-  Generate SVG logos with Claude Code using a reusable logo design skill. Explore
-  concepts, compare variations, refine designs, and export production-ready app
-  icons.
+  Use a Claude Code logo design skill to generate SVG logos from your repo.
+  Interview the user, explore concepts, refine variations, and export app icons
+  ready to ship.
 relatedPosts:
   - claude-code-skills-guide
   - interview-skills-claude-code
@@ -27,9 +27,11 @@ relatedPosts:
 ogImage: /images/posts/og/logo-designer-skill-claude-code.png
 ---
 
-Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a repeatable logo design process: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
+Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a reusable logo design skill: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
 
 That is what this reusable [Claude Code logo design skill](https://github.com/neonwatty/logo-designer-skill) does. It turns logo generation into a structured workflow instead of an ad-hoc conversation. Point it at a project, answer a few design questions, and it produces SVG logo concepts you can actually inspect, edit, and ship.
+
+If you are looking for the broader index of skill patterns, start with the [Claude Code skills guide](/posts/claude-code-skills-guide/). This post is the concrete logo design example: a skill that turns "make my app a logo" into interview, SVG concept generation, refinement, and export.
 
 A few months back I wrote about [using Claude Code as an ad-hoc AI logo generator](/posts/ai-logo-generator-claude-code/).  That worked well, but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I encoded the process as a Claude Code skill.
 

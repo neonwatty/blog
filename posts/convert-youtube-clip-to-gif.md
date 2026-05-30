@@ -88,4 +88,4 @@ If the loop feels awkward:
 
 ## More ytgify Notes
 
-The main [ytgify launch post](/posts/ytgify-launch/) has the background and demo video. If your main requirement is clean output, read [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/). If you want the extension-specific overview, read [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/).
+The main [ytgify launch post](/posts/ytgify-launch/) has the background and demo video. If your main requirement is clean output, read the [YouTube to GIF converter for no-watermark GIFs](/posts/youtube-to-gif-no-watermark/). If you want the extension-specific overview, read [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/).
