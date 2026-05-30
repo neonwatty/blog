@@ -138,22 +138,100 @@ The menu bar is a great place to put those tools.
             <enclosure url="https://neonwatty.com/images/posts/weekly-vibes-2026-05-03/session-search-results.png" length="0" type="image/png"/>
         </item>
         <item>
-            <title><![CDATA[Claude Code Skills Guide]]></title>
+            <title><![CDATA[YouTube to GIF Converter: Make GIFs with No Watermark]]></title>
+            <link>https://neonwatty.com/posts/youtube-to-gif-no-watermark</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/youtube-to-gif-no-watermark</guid>
+            <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Convert a YouTube video to a GIF with no watermark using ytgify, a Chrome extension built for clipping GIFs directly from the YouTube player.]]></description>
+            <content:encoded><![CDATA[
+If you want a YouTube to GIF converter with no watermark, [ytgify](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) is the Chrome extension I built for exactly that workflow. It adds a GIF clipper directly to the YouTube player so you can pick a start time, duration, FPS, and resolution without downloading the video into a separate editor.
+
+The output is a clean GIF. No watermark, no branding overlay, no multi-app export chain. If you searched for "youtube to gif", "youtube video to gif no watermark", "youtube to gif maker", or "youtube to gif converter", this is the focused workflow.
+
+[Install ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje) or read the full [ytgify launch post](/posts/ytgify-launch/) for the demo and background.
+
+## When No Watermark Actually Matters
+
+Watermarks are not always a problem. If you are making a quick throwaway reaction GIF for a private chat, any converter might be fine. They become a problem when the GIF is part of something you own or publish.
+
+Clean output matters for:
+
+- Product documentation where a watermark makes the screenshot feel unofficial
+- Support replies where the GIF should focus attention on the exact UI behavior
+- Blog posts where third-party branding distracts from the article
+- Social clips where the visual should stand on its own
+- Demo walkthroughs where the clip represents your product or tutorial
+
+For those cases, the GIF should show the content and nothing else.
+
+## YouTube Video to GIF No-Watermark Workflow
+
+1. Install [ytgify from the Chrome Web Store](https://chromewebstore.google.com/detail/ytgify/dnljofakogbecppbkmnoffppkfdmpfje).
+2. Open the YouTube video you want to clip.
+3. Use the ytgify controls in the player to choose the start time.
+4. Set the GIF duration, FPS, and resolution.
+5. Add optional text if the GIF needs a caption.
+6. Export the GIF.
+
+The main advantage is staying on YouTube while you work. You do not need to copy the video URL into another site, download a file, re-upload it, trim it, and then export. That makes ytgify useful as both a YouTube to GIF maker and a YouTube to GIF converter.
+
+## YouTube to GIF Maker Settings
+
+Start with these settings when you are not sure what to choose:
+
+| Use case | Duration | FPS | Resolution |
+| --- | --- | --- | --- |
+| Chat or reaction GIF | 2-4 seconds | 10-12 | Medium |
+| Blog or support GIF | 3-6 seconds | 12-15 | High enough for readable text |
+| Product demo GIF | As short as possible | 15+ if motion matters | High |
+
+The practical rule: shorten the clip before you lower quality. A concise GIF with readable frames usually works better than a long, heavily compressed one.
+
+## What to Check Before Export
+
+Before exporting, check three things:
+
+- **Composition** — the subject should be visible without relying on surrounding page context
+- **Duration** — shorter clips loop better and are easier to share
+- **Text readability** — if the YouTube clip contains UI text, use a high enough resolution to keep it readable
+
+If the GIF is for documentation or a support reply, I usually choose clarity over tiny file size. If it is for chat or social, I use a shorter duration and lower resolution.
+
+## How This Differs From Online YouTube to GIF Converters
+
+Most online converters make you leave YouTube, paste the URL into another site, wait for processing, then export through that site's constraints. Some are fine. Some add watermarks, compress too hard, or make you fight the trimming UI.
+
+ytgify is narrower: it is built for clipping a YouTube moment while you are already watching the video. That is the whole job.
+
+## Related ytgify Guides
+
+For the broader launch story, see [the ytgify launch post](/posts/ytgify-launch/). For a more Chrome-extension-specific workflow, see [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/). For a step-by-step clipping walkthrough, see [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/).
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>Chrome Extension</category>
+            <category>YouTube</category>
+            <category>GIF</category>
+            <category>ytgify</category>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code Skills Guide: Workflows, Examples, and Setup]]></title>
             <link>https://neonwatty.com/posts/claude-code-skills-guide</link>
             <guid isPermaLink="false">https://neonwatty.com/posts/claude-code-skills-guide</guid>
             <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[A practical index of Claude Code skill workflows: questioning, logo design, UI review, SEO research, and repo guardrails.]]></description>
+            <description><![CDATA[A practical Claude Code skills hub for reusable workflows: logo design, interviews, Socratic reviews, AskUserQuestion, SEO research, and repo setup.]]></description>
             <content:encoded><![CDATA[
 Claude Code skills are reusable workflow instructions. A good skill does not just tell the agent what output to produce. It tells the agent how to think through the work, when to ask questions, what evidence to gather, and when to stop.
 
-This page is a practical index of the Claude Code skill patterns I keep coming back to. It is organized by the kind of failure the skill prevents, because that is the useful way to think about skills: they are not decorations around a prompt, they are process guardrails.
+This page is a practical hub for the Claude Code skill patterns I keep coming back to. It is organized by the outcome you want: design a logo, interview a user before coding, run a Socratic UI review, research keywords, or set up a repo so skills have guardrails.
 
 ## Start Here
 
-- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill/) — how to use structured questions before an agent commits to a direction
-- [Claude Code Logo Generator: SVG Logo Design Skill](/posts/logo-designer-skill-claude-code/) — a full design workflow encoded as a reusable skill
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code/) — broader interview skill patterns for features, bugs, and workflows
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code/) — using skill-driven questioning for UI review
+- [Claude Code logo design skill for generating SVG logos](/posts/logo-designer-skill-claude-code/) — read a repo, generate multiple SVG concepts, refine the winner, and export app icons
+- [Claude Code interview skills for better specs before coding](/posts/interview-skills-claude-code/) — use multi-round interviews to surface requirements, edge cases, and tradeoffs
+- [Claude Code Socratic skills for iOS HIG testing](/posts/socratic-interview-skills-claude-code/) — turn platform guidelines into targeted review workflows
+- [AskUserQuestion in Claude Code skills](/posts/askuserquestion-claude-code-skill/) — ask structured clarifying questions instead of guessing user intent
+- [Claude Code SEO keyword research workflow](/posts/keyword-research-claude-code/) — use autocomplete and search data to find phrases people actually search for
+- [Repo setup for Claude Code and Codex skills](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) — add the guardrails that make agent workflows safer
 
 ## Skill Types
 
@@ -199,6 +277,19 @@ Claude Code is also useful for search and content workflows when it has access t
 
 - [SEO Keyword Research with Claude Code](/posts/keyword-research-claude-code/) — use autocomplete data to find search demand
 - [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools/) — query GSC data directly instead of clicking through exports
+
+## Choosing a Claude Code Skill
+
+Use the outcome to pick the right post:
+
+| Outcome | Start here |
+| --- | --- |
+| Create a product logo | [Claude Code logo design skill](/posts/logo-designer-skill-claude-code/) |
+| Clarify a vague feature or bug request | [Claude Code interview skills](/posts/interview-skills-claude-code/) |
+| Ask structured questions inside a skill | [AskUserQuestion Claude Code skill](/posts/askuserquestion-claude-code-skill/) |
+| Review an iOS UI against platform conventions | [Claude Code Socratic iOS HIG skill](/posts/socratic-interview-skills-claude-code/) |
+| Research search demand before writing | [Claude Code keyword research workflow](/posts/keyword-research-claude-code/) |
+| Prepare a repo for agents and skills | [Claude Code and Codex repo setup guide](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) |
 
 ## The Pattern
 
@@ -1268,15 +1359,17 @@ The engineers who thrive now are the ones who automate quality and spend their f
             <category>Engineering</category>
         </item>
         <item>
-            <title><![CDATA[Claude Code Logo Generator: SVG Logo Design Skill]]></title>
+            <title><![CDATA[Claude Code Logo Design Skill: Generate SVG Logos]]></title>
             <link>https://neonwatty.com/posts/logo-designer-skill-claude-code</link>
             <guid isPermaLink="false">https://neonwatty.com/posts/logo-designer-skill-claude-code</guid>
             <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[A reusable Claude Code skill for generating SVG logos. Point it at your repo, explore multiple logo concepts, refine the strongest direction, and export production-ready icons.]]></description>
+            <description><![CDATA[A reusable Claude Code skill for logo design. Point it at your repo, generate SVG logo concepts, refine the strongest direction, and export production-ready icons.]]></description>
             <content:encoded><![CDATA[
-Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a repeatable logo design process: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
+Claude Code can work surprisingly well as a logo generator when the output is SVG. The trick is not asking for one magic prompt. The trick is giving Claude Code a reusable logo design skill: read the repo, ask the right clarifying questions, generate several SVG directions, compare them at app-icon sizes, refine the winner, and export the final assets.
 
 That is what this reusable [Claude Code logo design skill](https://github.com/neonwatty/logo-designer-skill) does. It turns logo generation into a structured workflow instead of an ad-hoc conversation. Point it at a project, answer a few design questions, and it produces SVG logo concepts you can actually inspect, edit, and ship.
+
+If you are looking for the broader index of skill patterns, start with the [Claude Code skills guide](/posts/claude-code-skills-guide/). This post is the concrete logo design example: a skill that turns "make my app a logo" into interview, SVG concept generation, refinement, and export.
 
 A few months back I wrote about [using Claude Code as an ad-hoc AI logo generator](/posts/ai-logo-generator-claude-code/).  That worked well, but it was a one-off workflow — every new logo meant explaining the same process from scratch.  So I encoded the process as a Claude Code skill.
 
@@ -1538,7 +1631,7 @@ None of these problems are unsolvable — but none of them are technical problem
             <enclosure url="https://neonwatty.com/images/posts/why-nobody-claude-code.png" length="0" type="image/png"/>
         </item>
         <item>
-            <title><![CDATA[Claude Code Skills for iOS Human Interface Guidelines Testing]]></title>
+            <title><![CDATA[Claude Code Socratic Skills for iOS HIG Testing]]></title>
             <link>https://neonwatty.com/posts/socratic-interview-skills-claude-code</link>
             <guid isPermaLink="false">https://neonwatty.com/posts/socratic-interview-skills-claude-code</guid>
             <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
@@ -1815,7 +1908,7 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
 **Repository:** [github.com/neonwatty/claude-skills](https://github.com/neonwatty/claude-skills)
 
 **Related posts:**
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code)
+- [Claude Code Interview Skills: Ask Better Questions Before Coding](/posts/interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content:encoded>
             <author>Jeremy Watt</author>
@@ -1827,7 +1920,7 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
             <enclosure url="https://neonwatty.com/images/posts/socratic-ios/01-ios-tab-bar-events.png" length="0" type="image/png"/>
         </item>
         <item>
-            <title><![CDATA[Claude Code Skills Tutorial: AskUserQuestion for Better Prompts]]></title>
+            <title><![CDATA[Claude Code Interview Skills: Ask Better Questions Before Coding]]></title>
             <link>https://neonwatty.com/posts/interview-skills-claude-code</link>
             <guid isPermaLink="false">https://neonwatty.com/posts/interview-skills-claude-code</guid>
             <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
@@ -1963,7 +2056,7 @@ The insight: Claude is excellent at systematic work when given explicit criteria
 **Related posts:**
 - [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill)
 - [Claude Code Skills Guide](/posts/claude-code-skills-guide)
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code)
+- [Claude Code Socratic Skills for iOS HIG Testing](/posts/socratic-interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)
 ]]></content:encoded>
             <author>Jeremy Watt</author>
@@ -2767,7 +2860,7 @@ Before making the extension, clipping GIFs off of YouTube was a slow and painful
 
 The short version: install the extension, open a YouTube video, choose the moment, tune the export settings, and generate the GIF. I split the detailed guides by intent so they do not all repeat the same thing:
 
-- [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
+- [YouTube to GIF converter for no-watermark GIFs](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
 - [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/) focuses on installation, browser workflow, and why the extension approach is faster.
 - [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/) walks through clipping decisions, export settings, and troubleshooting.
 

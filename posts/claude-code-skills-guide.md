@@ -1,9 +1,9 @@
 ---
-title: Claude Code Skills Guide
+title: 'Claude Code Skills Guide: Workflows, Examples, and Setup'
 date: '2026-05-12'
 excerpt: >-
-  A practical index of Claude Code skill workflows: questioning, logo design,
-  UI review, SEO research, and repo guardrails.
+  A practical Claude Code skills hub for reusable workflows: logo design,
+  interviews, Socratic reviews, AskUserQuestion, SEO research, and repo setup.
 tags:
   - Claude Code
   - Claude Code Skills
@@ -11,29 +11,32 @@ tags:
   - Development
 featured: false
 author: Jeremy Watt
-seoTitle: 'Claude Code Skills Guide: Practical Workflows and Examples'
+seoTitle: 'Claude Code Skills Guide: Reusable Workflows, Examples, and Setup'
 metaDescription: >-
-  A guide to practical Claude Code skills and workflows, including
-  AskUserQuestion interviews, SVG logo design, repo setup, UI review, and SEO
-  keyword research.
+  Explore practical Claude Code skills for logo design, interviews, Socratic UI
+  review, AskUserQuestion prompts, SEO keyword research, and repo setup.
 relatedPosts:
   - askuserquestion-claude-code-skill
   - logo-designer-skill-claude-code
   - interview-skills-claude-code
+  - socratic-interview-skills-claude-code
+  - keyword-research-claude-code
   - how-to-set-up-your-repo-for-claude-code-and-codex
 ogImage: /images/posts/og/how-to-set-up-your-repo-for-claude-code-and-codex.png
 ---
 
 Claude Code skills are reusable workflow instructions. A good skill does not just tell the agent what output to produce. It tells the agent how to think through the work, when to ask questions, what evidence to gather, and when to stop.
 
-This page is a practical index of the Claude Code skill patterns I keep coming back to. It is organized by the kind of failure the skill prevents, because that is the useful way to think about skills: they are not decorations around a prompt, they are process guardrails.
+This page is a practical hub for the Claude Code skill patterns I keep coming back to. It is organized by the outcome you want: design a logo, interview a user before coding, run a Socratic UI review, research keywords, or set up a repo so skills have guardrails.
 
 ## Start Here
 
-- [AskUserQuestion Claude Code Skill](/posts/askuserquestion-claude-code-skill/) — how to use structured questions before an agent commits to a direction
-- [Claude Code Logo Generator: SVG Logo Design Skill](/posts/logo-designer-skill-claude-code/) — a full design workflow encoded as a reusable skill
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code/) — broader interview skill patterns for features, bugs, and workflows
-- [Claude Code Skills for iOS Human Interface Guidelines Testing](/posts/socratic-interview-skills-claude-code/) — using skill-driven questioning for UI review
+- [Claude Code logo design skill for generating SVG logos](/posts/logo-designer-skill-claude-code/) — read a repo, generate multiple SVG concepts, refine the winner, and export app icons
+- [Claude Code interview skills for better specs before coding](/posts/interview-skills-claude-code/) — use multi-round interviews to surface requirements, edge cases, and tradeoffs
+- [Claude Code Socratic skills for iOS HIG testing](/posts/socratic-interview-skills-claude-code/) — turn platform guidelines into targeted review workflows
+- [AskUserQuestion in Claude Code skills](/posts/askuserquestion-claude-code-skill/) — ask structured clarifying questions instead of guessing user intent
+- [Claude Code SEO keyword research workflow](/posts/keyword-research-claude-code/) — use autocomplete and search data to find phrases people actually search for
+- [Repo setup for Claude Code and Codex skills](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) — add the guardrails that make agent workflows safer
 
 ## Skill Types
 
@@ -79,6 +82,19 @@ Claude Code is also useful for search and content workflows when it has access t
 
 - [SEO Keyword Research with Claude Code](/posts/keyword-research-claude-code/) — use autocomplete data to find search demand
 - [Pull Google Search Console Data with Claude Code](/posts/best-claude-code-seo-tools/) — query GSC data directly instead of clicking through exports
+
+## Choosing a Claude Code Skill
+
+Use the outcome to pick the right post:
+
+| Outcome | Start here |
+| --- | --- |
+| Create a product logo | [Claude Code logo design skill](/posts/logo-designer-skill-claude-code/) |
+| Clarify a vague feature or bug request | [Claude Code interview skills](/posts/interview-skills-claude-code/) |
+| Ask structured questions inside a skill | [AskUserQuestion Claude Code skill](/posts/askuserquestion-claude-code-skill/) |
+| Review an iOS UI against platform conventions | [Claude Code Socratic iOS HIG skill](/posts/socratic-interview-skills-claude-code/) |
+| Research search demand before writing | [Claude Code keyword research workflow](/posts/keyword-research-claude-code/) |
+| Prepare a repo for agents and skills | [Claude Code and Codex repo setup guide](/posts/how-to-set-up-your-repo-for-claude-code-and-codex/) |
 
 ## The Pattern
 
