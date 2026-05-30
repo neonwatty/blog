@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <clipPath id="f-shape">
+      <path d="M 220 180 L 804 180 L 804 330 L 360 330 L 360 450 L 700 450 L 700 566 L 360 566 L 360 844 L 220 844 Z"/>
+    </clipPath>
+  </defs>
+  <g id="strips" clip-path="url(#f-shape)">
+    <rect x="220" y="180" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="216" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="252" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="288" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="324" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="360" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="396" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="432" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="468" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="540" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="576" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="612" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="648" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="684" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="720" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="756" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="792" width="584" height="22" fill="#8E9AA2"/>
+    <rect x="220" y="828" width="584" height="22" fill="#8E9AA2"/>
+  </g>
+  <g id="accent-strip" clip-path="url(#f-shape)">
+    <rect x="220" y="504" width="584" height="22" fill="#C97A47"/>
+  </g>
+</svg>

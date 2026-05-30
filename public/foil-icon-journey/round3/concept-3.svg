@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tealBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#226B72"/>
+      <stop offset="1" stop-color="#19535A"/>
+    </linearGradient>
+
+    <!-- Main foil sheen: crinkled metallic gradient across the sheet -->
+    <linearGradient id="foilSheen" x1="0.05" y1="0.15" x2="0.95" y2="0.85">
+      <stop offset="0.00" stop-color="#F2F5F7"/>
+      <stop offset="0.18" stop-color="#ECEFF2"/>
+      <stop offset="0.34" stop-color="#B6BFC5"/>
+      <stop offset="0.48" stop-color="#7C868D"/>
+      <stop offset="0.62" stop-color="#B6BFC5"/>
+      <stop offset="0.80" stop-color="#ECEFF2"/>
+      <stop offset="1.00" stop-color="#F2F5F7"/>
+    </linearGradient>
+
+    <!-- Underside / shadow side of the curled corner -->
+    <linearGradient id="foilUnder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5D666C"/>
+      <stop offset="0.55" stop-color="#8A949B"/>
+      <stop offset="1" stop-color="#C2CBD1"/>
+    </linearGradient>
+
+    <!-- Bright specular highlight band -->
+    <linearGradient id="specBand" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft drop shadow under the sheet -->
+    <radialGradient id="sheetShadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Groove line: thin amber accent -->
+    <linearGradient id="grooveAmber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FBB83D" stop-opacity="0"/>
+      <stop offset="0.15" stop-color="#FBB83D" stop-opacity="0.95"/>
+      <stop offset="0.85" stop-color="#F8A21A" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FBB83D" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Indentation crease shading -->
+    <linearGradient id="creaseShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A4247" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3A4247" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="sheetClip">
+      <path d="M 232 252
+               L 792 232
+               L 812 760
+               Q 720 808 612 798
+               Q 504 788 412 808
+               Q 304 828 220 792
+               Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <g id="background">
+    <rect width="1024" height="1024" rx="224" ry="224" fill="url(#tealBg)"/>
+  </g>
+
+  <!-- Soft contact shadow -->
+  <g id="shadow">
+    <ellipse cx="512" cy="830" rx="330" ry="38" fill="url(#sheetShadow)"/>
+  </g>
+
+  <!-- Crinkled foil sheet -->
+  <g id="foilSheet">
+    <!-- Main sheet body -->
+    <path d="M 232 252
+             L 792 232
+             L 812 760
+             Q 720 808 612 798
+             Q 504 788 412 808
+             Q 304 828 220 792
+             Z"
+          fill="url(#foilSheen)"/>
+
+    <!-- Crinkle / crease facets, clipped to sheet -->
+    <g clip-path="url(#sheetClip)">
+      <!-- Long diagonal crease ridge -->
+      <path d="M 250 290 L 540 360 L 780 300"
+            stroke="#F4F7F9" stroke-width="3" fill="none" opacity="0.75"/>
+      <path d="M 250 296 L 540 366 L 780 306"
+            stroke="#5D666C" stroke-width="2" fill="none" opacity="0.55"/>
+
+      <!-- Soft diagonal facet shading -->
+      <polygon points="232,252 792,232 540,360" fill="#FFFFFF" opacity="0.10"/>
+      <polygon points="540,360 792,232 812,760" fill="#7C868D" opacity="0.18"/>
+      <polygon points="232,252 540,360 412,808 220,792" fill="#ECEFF2" opacity="0.10"/>
+
+      <!-- Vertical crinkle ridge left -->
+      <path d="M 360 240 Q 348 500 372 808" stroke="#F8FAFB" stroke-width="2.5" fill="none" opacity="0.55"/>
+      <path d="M 362 240 Q 350 500 374 808" stroke="#6A7378" stroke-width="1.5" fill="none" opacity="0.45"/>
+
+      <!-- Vertical crinkle ridge right -->
+      <path d="M 660 232 Q 678 480 656 802" stroke="#F8FAFB" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <path d="M 662 232 Q 680 480 658 802" stroke="#6A7378" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+      <!-- Short crease near bottom -->
+      <path d="M 280 690 Q 460 660 760 700" stroke="#5D666C" stroke-width="2" fill="none" opacity="0.45"/>
+      <path d="M 280 686 Q 460 656 760 696" stroke="#F4F7F9" stroke-width="2" fill="none" opacity="0.55"/>
+
+      <!-- Subtle diagonal sheen band -->
+      <polygon points="180,240 360,200 880,720 700,820" fill="url(#specBand)" opacity="0.35"/>
+
+      <!-- Faint indentations (hill-and-dale impressions) along a horizontal band -->
+      <g id="impressions" opacity="0.7">
+        <ellipse cx="320" cy="540" rx="10" ry="4" fill="url(#creaseShade)"/>
+        <ellipse cx="356" cy="546" rx="14" ry="5" fill="url(#creaseShade)"/>
+        <ellipse cx="396" cy="540" rx="9" ry="4" fill="url(#creaseShade)"/>
+        <ellipse cx="430" cy="548" rx="16" ry="5" fill="url(#creaseShade)"/>
+        <ellipse cx="472" cy="540" rx="8" ry="3" fill="url(#creaseShade)"/>
+        <ellipse cx="506" cy="546" rx="13" ry="5" fill="url(#creaseShade)"/>
+        <ellipse cx="544" cy="538" rx="10" ry="4" fill="url(#creaseShade)"/>
+        <ellipse cx="582" cy="548" rx="17" ry="6" fill="url(#creaseShade)"/>
+        <ellipse cx="624" cy="540" rx="9" ry="4" fill="url(#creaseShade)"/>
+        <ellipse cx="660" cy="546" rx="14" ry="5" fill="url(#creaseShade)"/>
+        <ellipse cx="700" cy="540" rx="10" ry="4" fill="url(#creaseShade)"/>
+      </g>
+
+      <!-- Tiny specular dots on top edges of impressions -->
+      <g id="impressionsHi" opacity="0.85">
+        <ellipse cx="320" cy="535" rx="6" ry="1.2" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="356" cy="540" rx="8" ry="1.4" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="430" cy="542" rx="9" ry="1.4" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="506" cy="540" rx="7" ry="1.3" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="582" cy="541" rx="10" ry="1.5" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="660" cy="540" rx="8" ry="1.4" fill="#FFFFFF" opacity="0.7"/>
+        <ellipse cx="700" cy="534" rx="6" ry="1.2" fill="#FFFFFF" opacity="0.7"/>
+      </g>
+
+      <!-- The single accent: a fine amber groove tracing the recorded line -->
+      <path id="grooveAccent"
+            d="M 250 540 Q 410 522 540 540 Q 670 558 800 540"
+            fill="none"
+            stroke="url(#grooveAmber)"
+            stroke-width="3.2"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- Top edge highlight (catches light on the foil's top fold) -->
+    <path d="M 232 252 L 792 232"
+          stroke="#FFFFFF" stroke-width="3" opacity="0.55" fill="none"/>
+
+    <!-- Curled corner: top-right peel -->
+    <g id="curlCorner">
+      <!-- Underside of curl (shadow tone) -->
+      <path d="M 792 232
+               C 836 244 858 274 852 312
+               C 848 340 826 360 798 366
+               C 778 370 760 362 752 348
+               C 770 332 786 308 792 232 Z"
+            fill="url(#foilUnder)"/>
+      <!-- Top sheen of curl edge -->
+      <path d="M 792 232
+               C 832 244 852 272 848 304
+               C 844 326 826 342 808 344"
+            fill="none" stroke="#F4F7F9" stroke-width="3" opacity="0.85"/>
+      <!-- Inner shadow line where curl meets sheet -->
+      <path d="M 792 232 Q 778 286 758 340"
+            fill="none" stroke="#3A4247" stroke-width="2" opacity="0.55"/>
+    </g>
+
+    <!-- Bottom torn / soft edge accent -->
+    <path d="M 220 792 Q 304 828 412 808 Q 504 788 612 798 Q 720 808 812 760"
+          fill="none" stroke="#5D666C" stroke-width="2" opacity="0.5"/>
+    <path d="M 222 788 Q 304 822 412 802 Q 504 782 612 792 Q 720 802 812 754"
+          fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.45"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <g id="background">
+    <rect x="0" y="0" width="1024" height="1024" rx="224" ry="224" fill="#2A2630"/>
+  </g>
+
+  <g id="foil-letter-f">
+    <!-- Industrial slab-serif F, drawn as one solid shape.
+         Vertical stem with squared slab feet top and bottom.
+         Top crossarm extends right with a slab terminal.
+         Middle crossarm is shorter, also with a slab terminal.
+         Stem color: brushed-steel ivory. -->
+    <path d="
+      M 286 200
+      L 286 824
+      L 410 824
+      L 410 572
+      L 612 572
+      L 612 482
+      L 410 482
+      L 410 290
+      L 738 290
+      L 738 200
+      Z"
+      fill="#C5CED4"/>
+  </g>
+
+  <g id="edison-groove">
+    <!-- A single shallow indented dot — the "hill-and-dale" mark
+         pressed into the foil by Edison's stylus.
+         Placed at the terminus of the middle arm, copper accent. -->
+    <circle cx="612" cy="527" r="34" fill="#C97A47"/>
+  </g>
+</svg>
