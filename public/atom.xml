@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://neonwatty.com</id>
     <title>Jeremy Watt's Blog</title>
-    <updated>2026-05-23T19:00:00.000Z</updated>
+    <updated>2026-06-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Jeremy Watt</name>
@@ -14,6 +14,53 @@
     <logo>https://neonwatty.com/images/logo.png</logo>
     <icon>https://neonwatty.com/favicon.ico</icon>
     <rights>All rights reserved 2026</rights>
+    <entry>
+        <title type="html"><![CDATA[Always Be Gaslighting]]></title>
+        <id>https://neonwatty.com/posts/always-be-gaslighting</id>
+        <link href="https://neonwatty.com/posts/always-be-gaslighting"/>
+        <link rel="enclosure" href="https://neonwatty.com/images/posts/always-be-gaslighting/abg-always-be-gaslighting.gif" type="image/gif"/>
+        <updated>2026-06-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A meme about AI coding agent verification: treat “done” as a claim, not proof.]]></summary>
+        <content type="html"><![CDATA[
+<img src="/images/posts/always-be-gaslighting/abg-always-be-gaslighting.gif" alt="Always Be Gaslighting meme GIF" style="width: 100%; border-radius: 8px;" />
+
+The most dangerous moment in AI-assisted coding is not when the agent is confused. It is when the AI coding agent sounds confident.
+
+That is when you get the soft little con:
+
+> done
+
+> tests passed
+
+> looks good
+
+Maybe. Or maybe the agent has just created a beautiful paragraph about a reality it has not actually verified.
+
+So I made a tiny meme out of the Glengarry cadence:
+
+**ABG: Always Be Gaslighting.**
+
+Not because agents are malicious. Because language models are very good at turning uncertainty into clean prose. They can summarize the shape of completion before completion has earned the right to exist.
+
+The antidote, whether you call it AI agent verification, AI code review, or acceptance grounding, is boring and ruthless: evidence.
+
+For meaningful work, I want the agent to assume the implementation is still wrong until it can prove otherwise. Find the failure mode that would embarrass the PR after merge. Verify it with a command, test, trace, screenshot, audit record, direct inspection, or some other artifact that survives optimism.
+
+That is the gist of my [Agent Acceptance Grounding Prompts](https://gist.github.com/neonwatty/6f38f5d1f33894b7562642c90873ebb5): do not accept “done” as a fact. Treat it as a claim. Make the agent bring receipts.
+
+The meme version is shorter:
+
+**Always Be Gaslighting. Always demand proof.**
+]]></content>
+        <author>
+            <name>Jeremy Watt</name>
+        </author>
+        <category label="AI Coding Agents"/>
+        <category label="AI Agent Verification"/>
+        <category label="AI Code Review"/>
+        <category label="Prompting"/>
+        <category label="Memes"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Mac Menu Bar Is My New Scratchpad for AI Developer Tools]]></title>
         <id>https://neonwatty.com/posts/the-mac-menu-bar-is-my-new-scratchpad-for-ai-developer-tools</id>
