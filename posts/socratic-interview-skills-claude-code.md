@@ -1,5 +1,5 @@
 ---
-title: Claude Code Skills for iOS Human Interface Guidelines Testing
+title: Claude Code Socratic Skills for iOS HIG Testing
 date: '2026-01-15'
 excerpt: >-
   Claude's default mode is eager compliance—give it vague instructions and it'll
@@ -16,12 +16,10 @@ author: Jeremy Watt
 featured: true
 image: /images/posts/socratic-ios/01-ios-tab-bar-events.png
 seoTitle: >-
-  Claude Code Skills Tutorial: iOS Human Interface Guidelines (HIG) Workflow
-  Testing
+  Claude Code Socratic Skills: iOS HIG Testing Workflows
 metaDescription: >-
-  Learn how to build Claude Code skills that test iOS apps against Human
-  Interface Guidelines. Catch HIG violations like hamburger menus, FABs, and
-  web-style dropdowns automatically.
+  Build Claude Code Socratic skills for iOS HIG testing. Ask targeted questions,
+  generate workflows, and catch hamburger menus, FABs, and web-style dropdowns.
 relatedPosts:
   - interview-skills-claude-code
   - logo-designer-skill-claude-code
@@ -299,5 +297,5 @@ Stop letting Claude improvise your UX reviews. Give it a checklist.
 **Repository:** [github.com/neonwatty/claude-skills](https://github.com/neonwatty/claude-skills)
 
 **Related posts:**
-- [Claude Code Skills Tutorial: AskUserQuestion for Better Prompts](/posts/interview-skills-claude-code)
+- [Claude Code Interview Skills: Ask Better Questions Before Coding](/posts/interview-skills-claude-code)
 - [Claude Code Workflow Testing with MCP](/posts/claude-code-workflow-testing-mcp)

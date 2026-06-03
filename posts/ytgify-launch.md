@@ -40,7 +40,7 @@ Before making the extension, clipping GIFs off of YouTube was a slow and painful
 
 The short version: install the extension, open a YouTube video, choose the moment, tune the export settings, and generate the GIF. I split the detailed guides by intent so they do not all repeat the same thing:
 
-- [YouTube to GIF Converter - No Watermark](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
+- [YouTube to GIF converter for no-watermark GIFs](/posts/youtube-to-gif-no-watermark/) explains the no-watermark use case and when clean output matters.
 - [YouTube GIF Maker Chrome Extension](/posts/youtube-gif-maker-chrome-extension/) focuses on installation, browser workflow, and why the extension approach is faster.
 - [Convert a YouTube Clip to GIF](/posts/convert-youtube-clip-to-gif/) walks through clipping decisions, export settings, and troubleshooting.
 
