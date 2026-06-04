@@ -1,0 +1,11 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" rx="32" fill="#0f172a"/>
+  <rect x="132" y="74" width="376" height="224" rx="28" fill="#172235" stroke="#38bdf8" stroke-width="4"/>
+  <rect x="170" y="116" width="180" height="28" rx="14" fill="#38bdf8"/>
+  <rect x="170" y="164" width="300" height="22" rx="11" fill="#64748b"/>
+  <rect x="170" y="204" width="250" height="22" rx="11" fill="#64748b"/>
+  <path d="M214 252h84m-42-42v84" stroke="#f8fafc" stroke-width="16" stroke-linecap="round"/>
+  <path d="M356 252c26 0 48-22 48-48h-48v48Z" fill="#22c55e"/>
+  <path d="M420 252c0-26 22-48 48-48v48h-48Z" fill="#a78bfa"/>
+  <text x="320" y="326" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="38" font-weight="700">PRCard</text>
+</svg>

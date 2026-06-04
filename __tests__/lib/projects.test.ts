@@ -11,6 +11,7 @@ describe('Projects Library', () => {
       type: 'live',
       tags: ['test', 'web app'],
       lastUpdated: '2025-09-01',
+      displayOrder: 1,
     }
 
     expect(mockProject.id).toBe('test-project')
@@ -21,6 +22,7 @@ describe('Projects Library', () => {
     expect(mockProject.type).toBe('live')
     expect(mockProject.tags).toContain('test')
     expect(mockProject.lastUpdated).toBe('2025-09-01')
+    expect(mockProject.displayOrder).toBe(1)
   })
 
   test('ProjectData supports all project types', () => {
@@ -94,28 +96,42 @@ describe('Projects Library', () => {
       })
     })
 
-    test('projects are sorted by lastUpdated descending', () => {
+    test('projects use the curated display order', () => {
       const projects = getProjectsData()
-      for (let i = 0; i < projects.length - 1; i++) {
-        const current = new Date(projects[i].lastUpdated).getTime()
-        const next = new Date(projects[i + 1].lastUpdated).getTime()
-        expect(current).toBeGreaterThanOrEqual(next)
-      }
+      expect(projects.map((project) => project.id)).toEqual([
+        'bleep-that-sht',
+        'bugdrop',
+        'meme-search',
+        'debtisfun',
+        'seatify',
+        'prbar',
+        'prcard',
+        'foil',
+        'ytgify',
+      ])
     })
 
     test('projects contain expected data', () => {
       const projects = getProjectsData()
       const projectIds = projects.map((p) => p.id)
 
+      expect(projectIds).toContain('prbar')
+      expect(projectIds).toContain('foil')
+      expect(projectIds).toContain('debtisfun')
+      expect(projectIds).toContain('prcard')
       expect(projectIds).toContain('bugdrop')
       expect(projectIds).toContain('ytgify')
-      expect(projectIds).toContain('qc')
       expect(projectIds).toContain('meme-search')
-      expect(projectIds).toContain('polarize')
       expect(projectIds).toContain('bleep-that-sht')
       expect(projectIds).toContain('seatify')
-      expect(projectIds).toContain('bullhorn')
-      expect(projectIds).toContain('linkparty')
+      expect(projectIds).not.toContain('bullhorn')
+      expect(projectIds).not.toContain('linkparty')
+      expect(projectIds).not.toContain('qc')
+      expect(projectIds).not.toContain('agent-conveyor')
+      expect(projectIds).not.toContain('issuectl')
+      expect(projectIds).not.toContain('smart-reminders')
+      expect(projectIds).not.toContain('stay-caffeinated')
+      expect(projectIds).not.toContain('polarize')
     })
 
     test('all projects have lastUpdated field', () => {
@@ -143,15 +159,15 @@ describe('Projects Library', () => {
 
     test('finds all projects by id', () => {
       const projectIds = [
+        'prbar',
+        'foil',
+        'debtisfun',
+        'prcard',
         'bugdrop',
         'ytgify',
-        'qc',
         'meme-search',
-        'polarize',
         'bleep-that-sht',
         'seatify',
-        'bullhorn',
-        'linkparty',
       ]
 
       projectIds.forEach((id) => {
@@ -159,6 +175,17 @@ describe('Projects Library', () => {
         expect(project).toBeDefined()
         expect(project?.id).toBe(id)
       })
+    })
+
+    test('removed stale projects are not returned by id', () => {
+      expect(getProjectById('bullhorn')).toBeUndefined()
+      expect(getProjectById('linkparty')).toBeUndefined()
+      expect(getProjectById('qc')).toBeUndefined()
+      expect(getProjectById('agent-conveyor')).toBeUndefined()
+      expect(getProjectById('issuectl')).toBeUndefined()
+      expect(getProjectById('smart-reminders')).toBeUndefined()
+      expect(getProjectById('stay-caffeinated')).toBeUndefined()
+      expect(getProjectById('polarize')).toBeUndefined()
     })
   })
 })
