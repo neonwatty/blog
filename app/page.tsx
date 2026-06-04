@@ -57,14 +57,13 @@ export default function Home() {
                     className="text-base sm:text-lg md:text-xl leading-relaxed mb-2 sm:mb-3 max-w-2xl"
                     style={{ color: 'var(--color-text-secondary)' }}
                   >
-                    Machine Learning PhD & Certified HVAC Technician
+                    Shipping agentically.
                   </p>
                   <p
                     className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 max-w-2xl"
                     style={{ color: 'var(--color-text-tertiary)' }}
                   >
-                    I write practical guides about building with Claude Code and AI developer tools — CI automation,
-                    testing workflows, skills, plugins, and shipping products as a solo dev.
+                    Turning ideas into shipped software with AI agents.
                   </p>
 
                   {/* Social links */}

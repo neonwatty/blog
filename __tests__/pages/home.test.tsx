@@ -26,7 +26,8 @@ describe('Home Page', () => {
 
   test('renders tagline', () => {
     renderWithTheme(<Home />)
-    expect(screen.getByText('Machine Learning PhD & Certified HVAC Technician')).toBeInTheDocument()
+    expect(screen.getByText('Shipping agentically.')).toBeInTheDocument()
+    expect(screen.getByText('Turning ideas into shipped software with AI agents.')).toBeInTheDocument()
   })
 
   test('renders social links', () => {
