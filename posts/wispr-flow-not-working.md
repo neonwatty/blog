@@ -10,6 +10,7 @@ tags:
   - Productivity
   - Wispr Flow
 author: Jeremy Watt
+image: /images/posts/wispr-flow-not-working/wispr-flow-service-disruption-large.png
 seoTitle: 'Wispr Flow Not Working: A Nice Wrapper Needs a Real Moat'
 metaDescription: >-
   Wispr Flow is a nice wrapper around speech-to-text models. Useful, sure. But
@@ -35,6 +36,11 @@ You press a key. You talk. Audio goes to speech-to-text. Some AI cleanup happens
 Fine. Great. I want that.
 
 But then this starts to happen regularly: missed inserts, weird output, lost flow.
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin: 1.5rem 0;">
+  <img src="/images/posts/wispr-flow-not-working/wispr-flow-service-disruption-large.png" alt="Wispr Flow service disruption alert saying the team is actively working to fix it" style="width: 100%; border-radius: 8px;" />
+  <img src="/images/posts/wispr-flow-not-working/wispr-flow-service-disruption-compact.png" alt="Compact Wispr Flow service disruption alert with a View status button" style="width: 100%; border-radius: 8px;" />
+</div>
 
 And now the whole game changes.
 
