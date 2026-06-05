@@ -35,9 +35,7 @@ You press a key. You talk. Audio goes to speech-to-text. Some AI cleanup happens
 
 Fine. Great. I want that.
 
-But then this starts to happen regularly:
-
-![Wispr Flow producing broken garbage output and an argument validation error](/images/posts/wispr-flow-not-working/wispr-flow-garbage-output.png)
+But then this starts to happen regularly: missed inserts, weird output, lost flow.
 
 And now the whole game changes.
 
