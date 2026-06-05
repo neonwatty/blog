@@ -4,7 +4,7 @@
         <title>Jeremy Watt's Blog</title>
         <link>https://neonwatty.com</link>
         <description>Practical guides for building with Claude Code and AI developer tools — from CI automation and SEO workflows to skills, plugins, and solo product development.</description>
-        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 05 Jun 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -14,6 +14,77 @@
             <link>https://neonwatty.com</link>
         </image>
         <copyright>All rights reserved 2026</copyright>
+        <item>
+            <title><![CDATA[Wispr Flow Needs to Be Careful]]></title>
+            <link>https://neonwatty.com/posts/wispr-flow-not-working</link>
+            <guid isPermaLink="false">https://neonwatty.com/posts/wispr-flow-not-working</guid>
+            <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Wispr Flow is a nice wrapper around speech-to-text models. That is a real product. But wrappers live or die on trust.]]></description>
+            <content:encoded><![CDATA[
+Wispr Flow is nice.
+
+But let's be honest about the thing.
+
+It is a wrapper around speech-to-text models.
+
+Good wrapper. Useful wrapper. Polished wrapper.
+
+Still a wrapper.
+
+You press a key. You talk. Audio goes to speech-to-text. Some AI cleanup happens. The text comes back and gets pasted into the box.
+
+Fine. Great. I want that.
+
+But then this starts to happen regularly: missed inserts, weird output, lost flow.
+
+And now the whole game changes.
+
+Because the moat is not the model.
+
+The moat is trust.
+
+And trust is a bastard. You earn it in drops. You lose it in buckets.
+
+## The wrapper has to be excellent
+
+This category is getting easier to vibe out by the day.
+
+Global hotkey. Recording buffer. Speech-to-text API. LLM cleanup. Clipboard insert. Transcript history.
+
+Not trivial.
+
+But not magic.
+
+So if Wispr Flow is going to win, the wrapper has to be excellent.
+
+It has to paste every time.
+
+It has to fail before I lose the thought.
+
+It has to recover cleanly.
+
+It has to make privacy obvious, especially when the [subprocessor docs](https://docs.wisprflow.ai/articles/5375461355-subprocessors-third-party-security) involve outside AI infrastructure and the [privacy policy](https://wisprflow.ai/privacy-policy) talks about optional app-context awareness.
+
+Otherwise the question becomes obvious:
+
+Why this wrapper?
+
+Why not another?
+
+Why not one I vibe out myself?
+
+Wispr Flow should be careful.
+
+The product is not speech-to-text.
+
+The product is trust.
+]]></content:encoded>
+            <author>Jeremy Watt</author>
+            <category>AI Tools</category>
+            <category>Voice Dictation</category>
+            <category>Productivity</category>
+            <category>Wispr Flow</category>
+        </item>
         <item>
             <title><![CDATA[Always Be Gaslighting]]></title>
             <link>https://neonwatty.com/posts/always-be-gaslighting</link>

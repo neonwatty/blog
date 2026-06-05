@@ -11,6 +11,23 @@
     },
     "items": [
         {
+            "id": "https://neonwatty.com/posts/wispr-flow-not-working",
+            "content_html": "\nWispr Flow is nice.\n\nBut let's be honest about the thing.\n\nIt is a wrapper around speech-to-text models.\n\nGood wrapper. Useful wrapper. Polished wrapper.\n\nStill a wrapper.\n\nYou press a key. You talk. Audio goes to speech-to-text. Some AI cleanup happens. The text comes back and gets pasted into the box.\n\nFine. Great. I want that.\n\nBut then this starts to happen regularly: missed inserts, weird output, lost flow.\n\nAnd now the whole game changes.\n\nBecause the moat is not the model.\n\nThe moat is trust.\n\nAnd trust is a bastard. You earn it in drops. You lose it in buckets.\n\n## The wrapper has to be excellent\n\nThis category is getting easier to vibe out by the day.\n\nGlobal hotkey. Recording buffer. Speech-to-text API. LLM cleanup. Clipboard insert. Transcript history.\n\nNot trivial.\n\nBut not magic.\n\nSo if Wispr Flow is going to win, the wrapper has to be excellent.\n\nIt has to paste every time.\n\nIt has to fail before I lose the thought.\n\nIt has to recover cleanly.\n\nIt has to make privacy obvious, especially when the [subprocessor docs](https://docs.wisprflow.ai/articles/5375461355-subprocessors-third-party-security) involve outside AI infrastructure and the [privacy policy](https://wisprflow.ai/privacy-policy) talks about optional app-context awareness.\n\nOtherwise the question becomes obvious:\n\nWhy this wrapper?\n\nWhy not another?\n\nWhy not one I vibe out myself?\n\nWispr Flow should be careful.\n\nThe product is not speech-to-text.\n\nThe product is trust.\n",
+            "url": "https://neonwatty.com/posts/wispr-flow-not-working",
+            "title": "Wispr Flow Needs to Be Careful",
+            "summary": "Wispr Flow is a nice wrapper around speech-to-text models. That is a real product. But wrappers live or die on trust.",
+            "date_modified": "2026-06-05T00:00:00.000Z",
+            "author": {
+                "name": "Jeremy Watt"
+            },
+            "tags": [
+                "AI Tools",
+                "Voice Dictation",
+                "Productivity",
+                "Wispr Flow"
+            ]
+        },
+        {
             "id": "https://neonwatty.com/posts/always-be-gaslighting",
             "content_html": "\n<img src=\"/images/posts/always-be-gaslighting/abg-always-be-gaslighting.gif\" alt=\"Always Be Gaslighting meme GIF\" style=\"width: 100%; border-radius: 8px;\" />\n\nThe most dangerous moment in AI-assisted coding is not when the agent is confused. It is when the AI coding agent sounds confident.\n\nThat is when you get the soft little con:\n\n> done\n\n> tests passed\n\n> looks good\n\nMaybe. Or maybe the agent has just created a beautiful paragraph about a reality it has not actually verified.\n\nSo I made a tiny meme out of the Glengarry cadence:\n\n**ABG: Always Be Gaslighting.**\n\nNot because agents are malicious. Because language models are very good at turning uncertainty into clean prose. They can summarize the shape of completion before completion has earned the right to exist.\n\nThe antidote, whether you call it AI agent verification, AI code review, or acceptance grounding, is boring and ruthless: evidence.\n\nFor meaningful work, I want the agent to assume the implementation is still wrong until it can prove otherwise. Find the failure mode that would embarrass the PR after merge. Verify it with a command, test, trace, screenshot, audit record, direct inspection, or some other artifact that survives optimism.\n\nThat is the gist of my [Agent Acceptance Grounding Prompts](https://gist.github.com/neonwatty/6f38f5d1f33894b7562642c90873ebb5): do not accept “done” as a fact. Treat it as a claim. Make the agent bring receipts.\n\nThe meme version is shorter:\n\n**Always Be Gaslighting. Always demand proof.**\n",
             "url": "https://neonwatty.com/posts/always-be-gaslighting",
