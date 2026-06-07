@@ -15,20 +15,20 @@
     <icon>https://neonwatty.com/favicon.ico</icon>
     <rights>All rights reserved 2026</rights>
     <entry>
-        <title type="html"><![CDATA[Machine Learning Refined, From Scratch and In Public]]></title>
-        <id>https://neonwatty.com/posts/machine-learning-refined-from-scratch-social</id>
-        <link href="https://neonwatty.com/posts/machine-learning-refined-from-scratch-social"/>
+        <title type="html"><![CDATA[Machine Learning From Scratch in Python]]></title>
+        <id>https://neonwatty.com/posts/machine-learning-from-scratch-python-github</id>
+        <link href="https://neonwatty.com/posts/machine-learning-from-scratch-python-github"/>
         <link rel="enclosure" href="https://neonwatty.com/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png" type="image/png"/>
         <updated>2026-06-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Machine Learning Refined resurfaced on social this week, a nice reminder that from scratch is not just a teaching style. It is how the book was written.]]></summary>
+        <summary type="html"><![CDATA[Machine Learning Refined resurfaced on social this week, a nice reminder that from scratch is not just a teaching style. It is how the book, code, and exercises were built.]]></summary>
         <content type="html"><![CDATA[
-Over the last two weeks, it has been fun to see *Machine Learning Refined* resurface on social.
+Over the last two weeks, it has been fun to see *Machine Learning Refined* resurface among people looking to learn machine learning from scratch in Python.
 
-On May 26, [Tom Dörr shared the repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python, from-scratch implementations:
+On May 26, [Tom Dörr shared the Machine Learning Refined GitHub repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python implementations of machine learning algorithms from scratch:
 
 ![Tom Dörr sharing the Machine Learning Refined GitHub repo](/images/posts/machine-learning-refined-from-scratch-social/tom-doerr-machine-learning-refined-tweet.png)
 
-On June 6, [Dan Kornas shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building the fundamentals yourself:
+On June 6, [Dan Kornas shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building machine learning fundamentals yourself:
 
 ![Dan Kornas sharing Machine Learning Refined](/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png)
 
@@ -43,9 +43,9 @@ The repo is here: [github.com/neonwatty/machine-learning-refined](https://github
         <author>
             <name>Jeremy Watt</name>
         </author>
-        <category label="Machine Learning"/>
-        <category label="From Scratch"/>
-        <category label="Textbooks"/>
+        <category label="Machine Learning From Scratch"/>
+        <category label="Python"/>
+        <category label="Machine Learning Algorithms"/>
         <category label="GitHub"/>
     </entry>
     <entry>

@@ -11,20 +11,20 @@
     },
     "items": [
         {
-            "id": "https://neonwatty.com/posts/machine-learning-refined-from-scratch-social",
-            "content_html": "\nOver the last two weeks, it has been fun to see *Machine Learning Refined* resurface on social.\n\nOn May 26, [Tom Dörr shared the repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python, from-scratch implementations:\n\n![Tom Dörr sharing the Machine Learning Refined GitHub repo](/images/posts/machine-learning-refined-from-scratch-social/tom-doerr-machine-learning-refined-tweet.png)\n\nOn June 6, [Dan Kornas shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building the fundamentals yourself:\n\n![Dan Kornas sharing Machine Learning Refined](/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png)\n\nThat phrase, \"from scratch,\" is not just how the material is taught. It is how the book was written.\n\nEvery page was written, rewritten, thrown in the trash, and written again. Entire chapters, too. That is how we learned what worked and what did not.\n\nDoing the work is the only way you really learn anything.\n\nThe repo is here: [github.com/neonwatty/machine-learning-refined](https://github.com/neonwatty/machine-learning-refined).\n",
-            "url": "https://neonwatty.com/posts/machine-learning-refined-from-scratch-social",
-            "title": "Machine Learning Refined, From Scratch and In Public",
-            "summary": "Machine Learning Refined resurfaced on social this week, a nice reminder that from scratch is not just a teaching style. It is how the book was written.",
+            "id": "https://neonwatty.com/posts/machine-learning-from-scratch-python-github",
+            "content_html": "\nOver the last two weeks, it has been fun to see *Machine Learning Refined* resurface among people looking to learn machine learning from scratch in Python.\n\nOn May 26, [Tom Dörr shared the Machine Learning Refined GitHub repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python implementations of machine learning algorithms from scratch:\n\n![Tom Dörr sharing the Machine Learning Refined GitHub repo](/images/posts/machine-learning-refined-from-scratch-social/tom-doerr-machine-learning-refined-tweet.png)\n\nOn June 6, [Dan Kornas shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building machine learning fundamentals yourself:\n\n![Dan Kornas sharing Machine Learning Refined](/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png)\n\nThat phrase, \"from scratch,\" is not just how the material is taught. It is how the book was written.\n\nEvery page was written, rewritten, thrown in the trash, and written again. Entire chapters, too. That is how we learned what worked and what did not.\n\nDoing the work is the only way you really learn anything.\n\nThe repo is here: [github.com/neonwatty/machine-learning-refined](https://github.com/neonwatty/machine-learning-refined).\n",
+            "url": "https://neonwatty.com/posts/machine-learning-from-scratch-python-github",
+            "title": "Machine Learning From Scratch in Python",
+            "summary": "Machine Learning Refined resurfaced on social this week, a nice reminder that from scratch is not just a teaching style. It is how the book, code, and exercises were built.",
             "image": "https://neonwatty.com/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png",
             "date_modified": "2026-06-07T00:00:00.000Z",
             "author": {
                 "name": "Jeremy Watt"
             },
             "tags": [
-                "Machine Learning",
-                "From Scratch",
-                "Textbooks",
+                "Machine Learning From Scratch",
+                "Python",
+                "Machine Learning Algorithms",
                 "GitHub"
             ]
         },
