@@ -21,11 +21,11 @@ metaDescription: >-
 
 Over the last two weeks, it has been fun to see *Machine Learning Refined* resurface among people looking to learn machine learning from scratch in Python.
 
-On May 26, [Tom Dörr shared the Machine Learning Refined GitHub repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python implementations of machine learning algorithms from scratch:
+On May 26, [Tom Dörr](https://x.com/tom_doerr) ([@tom_doerr](https://x.com/tom_doerr)) [shared the Machine Learning Refined GitHub repo](https://x.com/tom_doerr/status/2059212700056441297), pointing to the pure-Python implementations of machine learning algorithms from scratch:
 
 ![Tom Dörr sharing the Machine Learning Refined GitHub repo](/images/posts/machine-learning-refined-from-scratch-social/tom-doerr-machine-learning-refined-tweet.png)
 
-On June 6, [Dan Kornas shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building machine learning fundamentals yourself:
+On June 6, [Dan Kornas](https://x.com/DanKornas) ([@DanKornas](https://x.com/DanKornas)) [shared a longer note](https://x.com/DanKornas/status/2063176802810405201) about the book, the repo, and the value of building machine learning fundamentals yourself:
 
 ![Dan Kornas sharing Machine Learning Refined](/images/posts/machine-learning-refined-from-scratch-social/dan-kornas-machine-learning-refined-tweet.png)
 
